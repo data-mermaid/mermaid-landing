@@ -1,0 +1,33 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: site_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Site Name'
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: fav_icon
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          display: 'Fav Icon'
+          type: assets
+          icon: assets
+          listable: hidden
+      -
+        handle: logo
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          display: Logo
+          type: assets
+          icon: assets
+          listable: hidden

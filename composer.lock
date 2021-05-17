@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78f424de6ce358da19fae8d0e2a550fe",
+    "content-hash": "35b9af4b3ad62658783d06312e423326",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2683,6 +2683,63 @@
                 "source": "https://github.com/michelf/php-smartypants/tree/1.8.1"
             },
             "time": "2016-12-13T01:01:17+00:00"
+        },
+        {
+            "name": "mitydigital/statamic-tinymce-cloud",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mitydigital/statamic-tinymce-cloud.git",
+                "reference": "1bb39656a3676ae95c8e07c981daffe17792facd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mitydigital/statamic-tinymce-cloud/zipball/1bb39656a3676ae95c8e07c981daffe17792facd",
+                "reference": "1bb39656a3676ae95c8e07c981daffe17792facd",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "^3.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "TinyMCE Cloud",
+                    "description": "A Statamic 3 fieldtype for TinyMCE using Tiny Cloud"
+                },
+                "laravel": {
+                    "providers": [
+                        "MityDigital\\StatamicTinymceCloud\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MityDigital\\StatamicTinymceCloud\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marty Friedel"
+                }
+            ],
+            "description": "A Statamic 3 fieldtype for TinyMCE using Tiny Cloud",
+            "keywords": [
+                "statamic",
+                "tiny cloud",
+                "tinymce",
+                "tinymce cloud"
+            ],
+            "support": {
+                "email": "dev@mity.com.au",
+                "issues": "https://github.com/mitydigital/statamic-tinymce-cloud/issues",
+                "source": "https://github.com/mitydigital/statamic-tinymce-cloud/tree/v1.0.3"
+            },
+            "time": "2021-02-14T23:25:58+00:00"
         },
         {
             "name": "monolog/monolog",

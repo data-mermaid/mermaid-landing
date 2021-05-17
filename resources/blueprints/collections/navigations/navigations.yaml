@@ -1,0 +1,57 @@
+title: Navigations
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: is_internal
+        field:
+          display: Internal
+          type: toggle
+          icon: toggle
+          listable: hidden
+      -
+        handle: target_windows
+        field:
+          options:
+            _blank: _blank
+            _self: _self
+            _parent: _parent
+            _top: _top
+          multiple: false
+          clearable: false
+          searchable: false
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: 'Target Windows'
+          type: select
+          icon: select
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - navigations
+          max_items: 1
+          listable: false
+          localizable: true

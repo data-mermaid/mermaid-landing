@@ -1,0 +1,108 @@
+title: Pages
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: intro
+        field:
+          antlers: false
+          display: Intro
+          type: textarea
+          icon: textarea
+          listable: hidden
+      -
+        handle: content
+        field:
+          init: |-
+            {
+            	"height": 500,
+            	"menubar": false,
+            	"plugins": [
+            		"advlist autolink lists link image charmap print preview anchor",
+            		"searchreplace visualblocks code fullscreen",
+            		"insertdatetime media table paste code help wordcount",
+            		"code"
+            	],
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+            }
+          display: Content
+          type: tinymce_cloud
+          icon: textarea
+          listable: hidden
+      -
+        handle: lead
+        field:
+          init: |-
+            {
+            	"height": 500,
+            	"menubar": false,
+            	"plugins": [
+            		"advlist autolink lists link image charmap print preview anchor",
+            		"searchreplace visualblocks code fullscreen",
+            		"insertdatetime media table paste code help wordcount",
+            		"code"
+            	],
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+            }
+          display: Lead
+          type: tinymce_cloud
+          icon: textarea
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  meta_data:
+    display: 'Meta Data'
+    fields:
+      -
+        handle: meta_title
+        field:
+          input_type: text
+          antlers: false
+          display: 'Meta Title'
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: meta_description
+        field:
+          antlers: false
+          display: 'Meta Description'
+          type: textarea
+          icon: textarea
+          listable: hidden
+      -
+        handle: meta_image
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          display: 'Meta Image'
+          type: assets
+          icon: assets
+          listable: hidden
