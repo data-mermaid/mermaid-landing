@@ -20,3 +20,5 @@ yarn-error.log
 /content/trees/navigation/
 /content/trees/collections/
 /content/globals/
+/content/collections/articles/
+/content/taxonomies/categories/

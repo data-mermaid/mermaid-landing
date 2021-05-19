@@ -1,0 +1,7 @@
+title: Articles
+taxonomies:
+  - categories
+revisions: false
+date_behavior:
+  past: public
+  future: private
