@@ -1,0 +1,67 @@
+title: Staffs
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Name
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+          display: Profile
+          listable: hidden
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+      -
+        handle: avatar
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Avatar
+          type: assets
+          icon: assets
+          listable: hidden
+      -
+        handle: position
+        field:
+          input_type: text
+          antlers: false
+          display: Position
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: url
+        field:
+          display: Url
+          type: link
+          icon: link
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
