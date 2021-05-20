@@ -12,12 +12,17 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/site.js', 'public/js')
 
-mix.postCss('resources/css/tailwind.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('postcss-nested'),
-    require('postcss-preset-env')({stage: 0})
-])
+/* tailwind compiler*/
+// mix.postCss('resources/css/tailwind.css', 'public/css', [
+//     require('postcss-import'),
+//     require('tailwindcss'),
+//     require('postcss-nested'),
+//     require('postcss-preset-env')({stage: 0})
+// ])
+
+/* bootstrap compiler  */
+mix.sass('resources/sass/style.scss', 'public/css').
+    sourceMaps();
 
 if (mix.inProduction()) {
    mix.version();

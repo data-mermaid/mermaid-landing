@@ -24,3 +24,4 @@ yarn-error.log
 /content/taxonomies/categories/
 /content/collections/staffs/
 .idea/*
+public/mix-manifest.json
