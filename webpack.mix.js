@@ -9,9 +9,13 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.autoload({
+   'jquery': ['$', 'window.jQuery', "jQuery", "window.$", "jquery", "window.jquery"],
+   'popper.js/dist/umd/popper.js': ['Popper', 'window.Popper']
+});
 
 mix.js('resources/js/site.js', 'public/js')
-
+    .sourceMaps();
 /* tailwind compiler*/
 // mix.postCss('resources/css/tailwind.css', 'public/css', [
 //     require('postcss-import'),
@@ -21,8 +25,8 @@ mix.js('resources/js/site.js', 'public/js')
 // ])
 
 /* bootstrap compiler  */
-mix.sass('resources/sass/style.scss', 'public/css').
-    sourceMaps();
+mix.sass('resources/sass/style.scss', 'public/css')
+    .sourceMaps();
 
 if (mix.inProduction()) {
    mix.version();
