@@ -1,0 +1,75 @@
+{{ paginate }}
+    <div class="row">
+        <div class="col">
+        <nav class="align-center">
+            <ul class="pagination justify-content-center">
+                {{ if prev_page }}
+                    <li class="page-item"><a class="page-link" href="{{ prev_page }}">&laquo;</a></li>
+                {{ else }}
+                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                {{ /if }}
+
+                {{ links:segments }}
+
+                {{ first }}
+                    {{ if page == current_page }}
+                        <li class="page-item active">
+                            <span class="page-link">{{ page }}</span>
+                        </li>
+                    {{ else }}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url }}">{{ page }}</a>
+                        </li>
+                    {{ /if }}
+                {{ /first }}
+
+                {{ if slider }}
+                    <li class="disabled"><span>...</span></li>
+                {{ /if }}
+
+                {{ slider }}
+                    {{ if page == current_page }}
+                        <li class="page-item active">
+                            <span class="page-link">{{ page }}</span>
+                        </li>
+                    {{ else }}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url }}">{{ page }}</a>
+                        </li>
+                    {{ /if }}
+                {{ /slider }}
+
+                {{ if slider || (!slider && last) }}
+                    <li class="page-item disabled">
+                        <span class="page-link">...</span>
+                    </li>
+                {{ /if }}
+
+                {{ last }}
+                    {{ if page == current_page }}
+                        <li class="page-item active">
+                            <span class="page-link">{{ page }}</span>
+                        </li>
+                    {{ else }}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url }}">{{ page }}</a>
+                        </li>
+                    {{ /if }}
+                {{ /last }}
+
+                {{ /links:segments }}
+
+                {{ if next_page }}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ next_page }}">&raquo;</a>
+                    </li>
+                {{ else }}
+                    <li class="page-item" class="disabled">
+                        <span class="page-link">&raquo;</span>
+                    </li>
+                {{ /if }}
+            </ul>
+        </nav>
+    </div>
+    </div>
+{{ /paginate }}
