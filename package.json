@@ -9,7 +9,9 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@popperjs/core": "^2.9.2",
         "autoprefixer": "^10.1.0",
+        "bootstrap": "^5.0.0-beta3",
         "cross-env": "^7.0",
         "laravel-mix": "^6.0",
         "postcss": "^8.2.1",
@@ -23,6 +25,6 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "bootstrap": "^5.0.1"
+        "popper.js": "^1.16.1"
     }
 }

@@ -9,9 +9,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     {{ nav:main_nav }}
-                    <li class="nav-item">
-                        <a href="{{ url }}" class="nav-link">{{ title }}</a>
-                    </li>
+                        {{ if children }}
+                            <li class="nav-item dropdown">
+                                <a href="{{ url }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ title }}</a>
+                                <ul class="dropdown-menu">
+                                    {{ children }}
+                                        <li>
+                                            <a href="{{ url }}" class="dropdown-item">{{ title }}</a>
+                                        </li>
+                                    {{ /children }}
+                                </ul>
+                            </li>
+                        {{ else }}
+                            <li class="nav-item">
+                                <a href="{{ url }}" class="nav-link">{{ title }}</a>
+                            </li>
+                        {{ /if }}
+
                     {{ /nav:main_nav }}
                 </ul>
             </div>

@@ -26,3 +26,6 @@ yarn-error.log
 .idea/*
 public/mix-manifest.json
 /content/trees/collections/
+/public/js/site.js
+/public/assets/*
+public/js/site.js
