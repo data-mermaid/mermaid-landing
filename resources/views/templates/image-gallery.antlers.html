@@ -22,12 +22,13 @@
                     {{ images }}
                         <div class="col-md-6 col-lg-4 filter {{ slug }}">
                             <a class="image"
-                               style="background-image:url('{{ url }}')"
                                data-image="{{ url }}"
                                data-title="{{ title }}"
                                data-caption="{{ caption }}"
                                data-copyright="{{ copyright }}"
-                            ></a>
+                            >
+                                <img src="{{ url }}" alt="{{ alt }}">
+                            </a>
                         </div>
                     {{ /images }}
                 {{ /collection:image_galleries }}
