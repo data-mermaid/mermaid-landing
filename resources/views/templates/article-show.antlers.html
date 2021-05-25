@@ -1,11 +1,37 @@
-<div class="container my-5">
+<div class="article-show container my-5">
     <div class="row">
         <div class="col-md-8">
-            <h1 class="mb-5">{{ title }}</h1>
+            {{ if categories }}
+                <div class="categories text-muted mb-4">
+                    {{ categories }}
+                        <a class="text-reset" href="{{ slug }}">{{ title }}</a> {{ if !last }} | {{ /if }}
+                    {{ /categories }}
+                </div>
+            {{ /if }}
+            
+            <h1 class="mb-1">{{ title }}</h1>
 
+            <div class="meta text-muted mb-4">
+                <span class="published-date">{{ publish_date }}</span>
+                {{ if updated_by }}
+                    by <span class="author">
+                    {{ updated_by }}
+                        {{ name }}
+                    {{ /updated_by }}
+                    </span>
+                {{ /if }}
+            </div>
+            
+            {{ if hero_image }}
+                <div class="hero-image mb-4">
+                    <img class="img-fluid" src="{{ hero_image }}" alt="">
+                </div>
+            {{ /if }}
+            
             <div class="content">
                 {{ content }}
             </div>
+            
         </div>
     </div>
 </div>
