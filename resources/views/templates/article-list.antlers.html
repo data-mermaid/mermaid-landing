@@ -1,4 +1,4 @@
-<div class="container my-5">
+<div class="container my-5 article-list">
     <h1 class="mb-3">{{ title }}</h1>
     {{ if intro }}
     <p class="lead mb-5">{{ intro }}</p>
@@ -7,12 +7,8 @@
         <div class="row">
             {{ posts }}
             <div class="col-lg-4 col-md-6">
-                <div class="card mb-4">
-                    {{ if hero_image }}
-                        <img src="{{ hero_image }}" class="card-img-top">
-                    {{ else }}
-                        <img src="https://via.placeholder.com/600x400" class="card-img-top">
-                    {{ /if }}
+                <div class="article card mb-4">
+                    <div class="card-img-top" style="background-image: url('{{ hero_image }}')"></div>
     
                     <div class="card-body">
                         <h5 class="card-title">{{ title }}</h5>
