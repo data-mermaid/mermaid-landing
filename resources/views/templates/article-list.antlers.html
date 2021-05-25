@@ -8,11 +8,14 @@
             {{ posts }}
             <div class="col-lg-4 col-md-6">
                 <div class="card mb-4">
-                    {{ if featured_image }}
-                    <img src="{{ featured_image }}" class="card-img-top">
-                    {{ else }}
-                    <img src="https://via.placeholder.com/600x400" class="card-img-top">
-                    {{ /if }}
+                    <a href="{{ link to='{url}' }}">
+                        {{ if hero_image }}
+                            <img src="{{ hero_image }}" class="card-img-top">
+                        {{ else }}
+                            <img src="https://via.placeholder.com/600x400" class="card-img-top">
+                        {{ /if }}
+                    </a>
+    
                     <div class="card-body">
                         <h5 class="card-title">{{ title }}</h5>
                         <p class="card-text">{{ excerpt }}</p>
