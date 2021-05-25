@@ -1,0 +1,31 @@
+<div class="container my-5">
+    <h1>{{ title }}</h1>
+    <div class="lead mb-5">
+        {{ intro }}
+    </div>
+    
+    <div class="content">
+        {{ content }}
+    </div>
+</div>
+<div class="container">
+    <div class="image-galleries">
+        <div class="filter-container text-center">
+            <button class="btn btn-outline-primary filter-button active" data-filter="all">All</button>
+            {{ collection:image_galleries }}
+            <button class="btn btn-outline-primary filter-button" data-filter="{{ slug }}">{{ title }}</button>
+            {{ /collection:image_galleries }}
+        </div>
+        <div class="images-container">
+            <div class="row">
+                {{ collection:image_galleries }}
+                {{ images }}
+                <div class="col-md-6 col-lg-4 image filter {{ slug }}">
+                    <img class="img-fluid" src="{{ url }}" alt="">
+                </div>
+                {{ /images }}
+                {{ /collection:image_galleries }}
+            </div>
+        </div>
+    </div>
+</div>
