@@ -18,4 +18,20 @@ $(document).ready(function () {
         }
         $(this).addClass("active");
     });
+
+    const imagePopup = new bootstrap.Modal(document.getElementById('image-gallery-popup'));
+
+    $('.image-galleries a.image').click(function () {
+        const $popup = $('#image-gallery-popup');
+        const imageUrl = $(this).attr('data-image');
+        const title = $(this).attr('data-title');
+        const caption = $(this).attr('data-caption');
+        const copyright = $(this).attr('data-copyright');
+
+        $popup.find('.image').html(`<img src="${imageUrl}"/ alt=${title}>`);
+        $popup.find('.title').html(title);
+        $popup.find('.caption').html(caption);
+        $popup.find('.copyright').html(copyright);
+        imagePopup.show();
+    })
 });

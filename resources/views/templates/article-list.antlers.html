@@ -8,7 +8,11 @@
             {{ posts }}
             <div class="col-lg-4 col-md-6">
                 <div class="article card mb-4">
-                    <div class="card-img-top" style="background-image: url('{{ hero_image }}')"></div>
+                    <div class="card-img-top">
+                        {{ if hero_image }}
+                            <img src="{{ hero_image }}" alt="">
+                        {{ /if }}
+                    </div>
     
                     <div class="card-body">
                         <h5 class="card-title">{{ title }}</h5>

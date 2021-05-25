@@ -1,5 +1,7 @@
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
-import 'bootstrap';
-import './image-galerries';
+// import 'bootstrap';
+window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
+
+import './image-galleries';

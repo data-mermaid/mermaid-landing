@@ -21,11 +21,34 @@
                 {{ collection:image_galleries }}
                     {{ images }}
                         <div class="col-md-6 col-lg-4 filter {{ slug }}">
-                            <div class="image" style="background-image:url('{{ url }}')"></div>
+                            <a class="image"
+                               data-image="{{ url }}"
+                               data-title="{{ title }}"
+                               data-caption="{{ caption }}"
+                               data-copyright="{{ copyright }}"
+                            >
+                                <img src="{{ url }}" alt="{{ alt }}">
+                            </a>
                         </div>
                     {{ /images }}
                 {{ /collection:image_galleries }}
             </div>
         </div>
     </div>
+    <div class="modal fade" id="image-gallery-popup" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="image"></div>
+                    <div class="meta">
+                        <div class="title"></div>
+                        <div class="caption"></div>
+                        <div class="copyright text-muted"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
