@@ -7,8 +7,18 @@
     }
 
     .images-container {
-        .image{
+        .image {
             margin-bottom: 30px;
+            padding-top: 66.66%;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid rgba(0,0,0,0.05);
+
+            &:hover {
+                cursor: pointer;
+                box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.1);
+            }
         }
     }
 }
