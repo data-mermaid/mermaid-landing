@@ -19,11 +19,11 @@
         <div class="images-container">
             <div class="row">
                 {{ collection:image_galleries }}
-                {{ images }}
-                <div class="col-md-6 col-lg-4 image filter {{ slug }}">
-                    <img class="img-fluid" src="{{ url }}" alt="">
-                </div>
-                {{ /images }}
+                    {{ images }}
+                        <div class="col-md-6 col-lg-4 filter {{ slug }}">
+                            <div class="image" style="background-image:url('{{ url }}')"></div>
+                        </div>
+                    {{ /images }}
                 {{ /collection:image_galleries }}
             </div>
         </div>

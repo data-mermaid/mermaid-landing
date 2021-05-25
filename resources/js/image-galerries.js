@@ -9,8 +9,8 @@ $(document).ready(function () {
         } else {
             // $('.filter[filter-item="'+value+'"]').removeClass('hidden');
             // $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
-            $parent.find(".image.filter").not('.' + value).hide('3000');
-            $parent.find('.image.filter').filter('.' + value).show('3000');
+            $parent.find(".filter").not('.' + value).hide('2000');
+            $parent.find('.filter').filter('.' + value).show('2000');
 
         }
         if ($parent.find(".filter-button").removeClass("active")) {
