@@ -3,35 +3,39 @@ sections:
     display: Main
     fields:
       -
-        handle: title
+        handle: name
         field:
           input_type: text
           antlers: false
-          display: Title
+          display: Name
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+      -
+        handle: email
+        field:
+          input_type: text
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+      -
+        handle: subject
+        field:
+          input_type: text
+          antlers: false
+          display: Subject
           type: text
           icon: text
           listable: hidden
       -
-        handle: caption
+        handle: message
         field:
-          input_type: text
           antlers: false
-          display: Caption
-          type: text
-          icon: text
+          display: Message
+          type: textarea
+          icon: textarea
           listable: hidden
-      -
-        handle: copyright
-        field:
-          input_type: text
-          antlers: false
-          display: Copyright
-          type: text
-          icon: text
-          listable: hidden
-      -
-        handle: alt
-        field:
-          display: 'Alt Text'
-          type: text
-          instructions: 'Description of the image'
