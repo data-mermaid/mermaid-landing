@@ -1,0 +1,50 @@
+title: Slideshows
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Name
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+          display: Description
+          listable: hidden
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+      -
+        handle: images
+        field:
+          mode: list
+          restrict: false
+          allow_uploads: true
+          display: Images
+          type: assets
+          icon: assets
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
