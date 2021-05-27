@@ -22,6 +22,14 @@ sections:
           icon: assets
           listable: hidden
       -
+        handle: intro
+        field:
+          antlers: false
+          display: Intro
+          type: textarea
+          icon: textarea
+          listable: hidden
+      -
         handle: content
         field:
           init: |-
