@@ -1,10 +1,17 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-8">
+            {{ if hero_image }}
+                <div class="hero-image mb-4">
+                    <img class="img-fluid" src="{{ hero_image }}" alt="">
+                </div>
+            {{ /if }}
             <h1>{{ title }}</h1>
 
-            <div class="lead mb-5">
-                {{ intro }}
+            <div class="lead mb-4">
+                <p>
+                    {{ intro }}
+                </p>
             </div>
 
             <div class="content">

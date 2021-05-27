@@ -32,13 +32,13 @@ sections:
           icon: textarea
           listable: hidden
       -
-        handle: image_hero
+        handle: hero_image
         field:
           mode: grid
           restrict: false
           allow_uploads: true
           max_files: 1
-          display: 'Image Hero'
+          display: 'Hero image'
           type: assets
           icon: assets
           listable: hidden
