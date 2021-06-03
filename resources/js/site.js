@@ -5,3 +5,4 @@ window.$ = window.jQuery = $;
 window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
 
 import './image-galleries';
+import './ajax-forms';
