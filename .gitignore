@@ -25,10 +25,10 @@ yarn-error.log
 /content/collections/staffs/
 .idea/*
 public/mix-manifest.json
-/content/trees/collections/
 /public/js/site.js
 /public/assets/*
 public/js/site.js
 /content/collections/image_galleries/
 /content/collections/slideshows/
 storage/forms/*
+/content/collections/testimonials/
