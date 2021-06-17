@@ -11,19 +11,6 @@ sections:
           validate:
             - required
       -
-        handle: slideshow
-        field:
-          max_items: 1
-          mode: select
-          collections:
-            - slideshows
-          display: Slideshow
-          type: entries
-          icon: entries
-          listable: hidden
-          if:
-            template: 'equals templates/home'
-      -
         handle: intro
         field:
           antlers: false
@@ -31,6 +18,7 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          instructions: 'Short description about the page.'
       -
         handle: hero_image
         field:
@@ -42,44 +30,9 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          instructions: 'The image you want to add.'
       -
-        handle: content
-        field:
-          init: |-
-            {
-            	"height": 500,
-            	"menubar": false,
-            	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
-            		"searchreplace visualblocks code fullscreen",
-            		"insertdatetime media table paste code help wordcount",
-            		"code"
-            	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-            }
-          display: Content
-          type: tinymce_cloud
-          icon: textarea
-          listable: hidden
-      -
-        handle: lead
-        field:
-          init: |-
-            {
-            	"height": 500,
-            	"menubar": false,
-            	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
-            		"searchreplace visualblocks code fullscreen",
-            		"insertdatetime media table paste code help wordcount",
-            		"code"
-            	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-            }
-          display: Lead
-          type: tinymce_cloud
-          icon: textarea
-          listable: hidden
+        import: page_builder
   sidebar:
     display: Sidebar
     fields:

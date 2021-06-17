@@ -1,0 +1,149 @@
+title: 'Page Builder'
+fields:
+  -
+    handle: components
+    field:
+      collapse: false
+      sets:
+        paragraph:
+          display: Paragraph
+          fields:
+            -
+              import: contents
+        slideshow:
+          display: Slideshow
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: slideshow
+              field:
+                max_items: 1
+                mode: default
+                collections:
+                  - slideshows
+                display: Slideshow
+                type: entries
+                icon: entries
+                listable: hidden
+        image_gallery:
+          display: 'Image Gallery'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: gallery
+              field:
+                max_items: 1
+                mode: default
+                collections:
+                  - image_galleries
+                display: Gallery
+                type: entries
+                icon: entries
+                listable: hidden
+        staff:
+          display: Staff
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: staff
+              field:
+                mode: select
+                collections:
+                  - staffs
+                display: Staff
+                type: entries
+                icon: entries
+                listable: hidden
+        faq:
+          display: FAQ
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: faq
+              field:
+                mode: select
+                collections:
+                  - faqs
+                display: FAQ
+                type: entries
+                icon: entries
+                listable: hidden
+        contact_form:
+          display: 'Contact Form'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: form
+              field:
+                max_items: 1
+                display: Form
+                type: form
+                icon: form
+                listable: hidden
+        testimonials:
+          display: Testimonials
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: testimony
+              field:
+                mode: select
+                collections:
+                  - testimonials
+                display: Testimony
+                type: entries
+                icon: entries
+                listable: hidden
+      display: 'Page Builder'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions: 'Build your page by using various predefined content models.'

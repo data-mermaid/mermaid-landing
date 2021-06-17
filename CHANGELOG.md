@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ### Added
+- Add fieldset and page builder [#9-page-builder-fieldtype](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/9)
 - Update Statamic core to v3.1.23 [#10-statamic-core-update](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/10)
 - New collection for FAQ [#8-faq-module](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/8)
 - New collection for testimonial [#7-testimonials-module](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/7)
