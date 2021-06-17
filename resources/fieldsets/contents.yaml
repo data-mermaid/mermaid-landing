@@ -1,0 +1,119 @@
+title: Contents
+fields:
+  -
+    handle: content
+    field:
+      always_show_set_button: false
+      sets:
+        image:
+          display: Image
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+        video:
+          display: Video
+          fields:
+            -
+              handle: video
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Video
+                type: assets
+                icon: assets
+                listable: hidden
+        pullout_quote:
+          display: 'Pullout Quote'
+          fields:
+            -
+              handle: author
+              field:
+                input_type: text
+                antlers: false
+                display: Author
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: quote_text
+              field:
+                antlers: false
+                display: 'Quote Text'
+                type: textarea
+                icon: textarea
+                listable: hidden
+        bullets:
+          display: Bullets
+          fields:
+            -
+              handle: list
+              field:
+                display: List
+                type: list
+                icon: list
+                listable: hidden
+        footnote:
+          display: Footnote
+          fields:
+            -
+              handle: description
+              field:
+                always_show_set_button: false
+                buttons:
+                  - bold
+                  - italic
+                  - removeformat
+                  - anchor
+                save_html: false
+                toolbar_mode: floating
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                display: Description
+                type: bard
+                icon: bard
+                listable: hidden
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - removeformat
+        - anchor
+        - h4
+        - h5
+        - underline
+        - strikethrough
+      container: assets
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      display: Content
+      type: bard
+      icon: bard
+      listable: hidden
