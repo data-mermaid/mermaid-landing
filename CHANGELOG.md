@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+### Fixed
+- Fix tinymce api key approved domain [#12-fix-tnymce-api-key](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/12)
 
 ### Added
 - Add fieldset and page builder [#9-page-builder-fieldtype](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/9)
