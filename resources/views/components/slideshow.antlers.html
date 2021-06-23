@@ -1,0 +1,9 @@
+<div>
+    <h3>{{ title }}</h3>
+    {{ slideshow }}
+        <h4>{{ title }}</h4>
+        {{ glide:images width="400" format="webp" }}
+            <img class="img-fluid" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ alt }}" title="{{ title ?? alt }}">
+        {{ /glide:images }}
+    {{ /slideshow }}
+</div>
