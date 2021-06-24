@@ -27,6 +27,125 @@ fields:
                 type: tinymce_cloud
                 icon: textarea
                 listable: hidden
+        pullout-quote:
+          display: 'Pullout Quote'
+          fields:
+            -
+              handle: quote_text
+              field:
+                antlers: false
+                display: 'Quote Text'
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: quotee
+              field:
+                input_type: text
+                antlers: false
+                display: Quotee
+                type: text
+                icon: text
+                listable: hidden
+        single-image:
+          display: 'Single Image'
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+        image-text:
+          display: 'Image Text'
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                width: 75
+                listable: hidden
+            -
+              handle: position
+              field:
+                options:
+                  left: Left
+                  right: Right
+                display: Position
+                default: left
+                type: button_group
+                icon: button_group
+                width: 25
+                listable: hidden
+            -
+              handle: text
+              field:
+                init: |-
+                  {
+                  	"height": 500,
+                  	"menubar": false,
+                  	"plugins": [
+                  		"advlist autolink lists link image charmap print preview anchor",
+                  		"searchreplace visualblocks code fullscreen",
+                  		"insertdatetime media table paste code help wordcount",
+                  		"code"
+                  	],
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  }
+                display: Text
+                type: tinymce_cloud
+                icon: textarea
+                listable: hidden
+        youtube:
+          display: Youtube
+          fields:
+            -
+              handle: url
+              field:
+                display: Url
+                type: video
+                icon: video
+                listable: hidden
+            -
+              handle: caption
+              field:
+                input_type: text
+                antlers: false
+                display: Caption
+                type: text
+                icon: text
+                listable: hidden
+        video:
+          display: Video
+          fields:
+            -
+              handle: video_url
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: File
+                type: assets
+                icon: assets
+                listable: hidden
+                validate:
+                  - 'mimes:mp4'
+                  - 'mimetypes:video/mp4'
         slideshow:
           display: Slideshow
           fields:
@@ -137,8 +256,8 @@ fields:
                 type: form
                 icon: form
                 listable: hidden
-        testimonials:
-          display: Testimonials
+        testimonial:
+          display: Testimonial
           fields:
             -
               handle: title
@@ -159,72 +278,8 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
-        single-image:
-          display: 'Single Image'
-          fields:
-            -
-              handle: image
-              field:
-                mode: grid
-                container: assets
-                restrict: false
-                allow_uploads: true
-                max_files: 1
-                display: Image
-                type: assets
-                icon: assets
-                listable: hidden
-        image-text:
-          display: 'Image Text'
-          fields:
-            -
-              handle: image
-              field:
-                mode: grid
-                container: assets
-                restrict: false
-                allow_uploads: true
-                max_files: 1
-                display: Image
-                type: assets
-                icon: assets
-                width: 75
-                listable: hidden
-            -
-              handle: position
-              field:
-                options:
-                  left: Left
-                  right: Right
-                display: Position
-                default: left
-                type: button_group
-                icon: button_group
-                width: 25
-                listable: hidden
-            -
-              handle: text
-              field:
-                init: |-
-                  {
-                  	"height": 500,
-                  	"menubar": false,
-                  	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor",
-                  		"searchreplace visualblocks code fullscreen",
-                  		"insertdatetime media table paste code help wordcount",
-                  		"code"
-                  	],
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-                  }
-                display: Text
-                type: tinymce_cloud
-                icon: textarea
-                listable: hidden
       display: 'Page Builder'
       type: replicator
       icon: replicator
       listable: false
       instructions: 'Build your page by using various predefined content models.'
-      if:
-        template: 'equals templates/page-show'

@@ -1,0 +1,10 @@
+<div>
+    {{ if url | is_embeddable }}
+        <!-- Youtube and Vimeo -->
+        <iframe src="{{ url | embed_url }}"></iframe>
+    {{ else }}
+        <!-- Other HTML5 video types -->
+        <video src="{{ url | embed_url }}"></video>
+    {{ /if }}
+    {{ caption }}
+</div>
