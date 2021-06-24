@@ -9,7 +9,9 @@
     <link rel="icon" href="{{ settings:fav_icon }}" type="image/gif" sizes="16x16">
     {{ partial:_meta }}
 </head>
+{{ partial:partials/seo }}
 <body>
+{{ yield:seo_body }}
 {{ partial:_header }}
 
 <div id="root">

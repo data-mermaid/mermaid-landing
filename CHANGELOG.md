@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix tinymce api key approved domain [#12-fix-tnymce-api-key](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/12)
 
 ### Added
+- Add google tag configuration [#17-config-seo](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/17)
 - Update basic styling for page builder fieldset [#15-page-builder-integration-styling](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/15)
 - Add integration for page builder fieldset [#14-integrate-page-builder](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/14)
 - Add default widget for CP dashboard [#13-add-default-dashboard-widget](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/13)
