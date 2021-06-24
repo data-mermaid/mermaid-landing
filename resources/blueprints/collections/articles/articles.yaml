@@ -11,24 +11,26 @@ sections:
           validate:
             - required
       -
-        handle: content
+        handle: hero_image
         field:
-          init: |-
-            {
-            	"height": 500,
-            	"menubar": false,
-            	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
-            		"searchreplace visualblocks code fullscreen",
-            		"insertdatetime media table paste code help wordcount",
-            		"code"
-            	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-            }
-          display: Content
-          type: tinymce_cloud
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Hero Image'
+          type: assets
+          icon: assets
+          listable: hidden
+      -
+        handle: intro
+        field:
+          antlers: false
+          display: Intro
+          type: textarea
           icon: textarea
           listable: hidden
+      -
+        import: page_builder
       -
         handle: external_link
         field:
@@ -37,13 +39,13 @@ sections:
           icon: link
           listable: hidden
       -
-        handle: attachment
+        handle: attachments
         field:
-          mode: grid
+          mode: list
           restrict: false
           allow_uploads: true
-          max_files: 1
-          display: Attachment
+          max_files: 0
+          display: Attachments
           type: assets
           icon: assets
           listable: hidden
@@ -67,6 +69,7 @@ sections:
           localizable: true
           validate:
             - required
+            - 'unique_entry_value:{collection},{id},{site}'
       -
         handle: publish_date
         field:

@@ -12,7 +12,9 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "mitydigital/statamic-tinymce-cloud": "^1.0",
-        "statamic/cms": "3.1.*"
+        "pecotamic/sitemap": "^1.2",
+        "simonridley/tracking-code-manager": "dev-master",
+        "statamic/cms": "3.1.26"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

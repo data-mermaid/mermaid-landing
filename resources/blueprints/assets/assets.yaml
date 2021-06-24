@@ -1,8 +1,37 @@
-title: Asset
-fields:
-  -
-    handle: alt
-    field:
-      display: 'Alt Text'
-      type: text
-      instructions: 'Description of the image'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: caption
+        field:
+          input_type: text
+          antlers: false
+          display: Caption
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: copyright
+        field:
+          input_type: text
+          antlers: false
+          display: Copyright
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: alt
+        field:
+          display: 'Alt Text'
+          type: text
+          instructions: 'Description of the image'

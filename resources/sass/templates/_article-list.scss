@@ -1,0 +1,28 @@
+.article-list{
+    .article{
+        .card-img-top{
+            padding-bottom: 66.66%;
+            background-color: #EEEEEE;
+            background-size: cover;
+            background-position: center;
+            //position: absolute;
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        &:hover{
+            .card-img-top{
+                img{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}

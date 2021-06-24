@@ -1,0 +1,39 @@
+<div class="sets image-gallery">
+    <h2>{{ title }}</h2>
+    {{ gallery }}
+        <div>{{ description }}</div>
+        <div class="images-container">
+            <div class="row">
+                {{ images }}
+                    <div class="col-6 col-md-6 col-lg-4">
+                        <a class="image"
+                           data-image="{{ glide:url  width="1500" format="webp" }}"
+                           data-title="{{ title }}"
+                           data-caption="{{ caption }}"
+                           data-copyright="{{ copyright }}"
+                        >
+                            <img src="{{ glide:url  width="400" format="webp" }}"
+                                 alt="{{ alt }}" title="{{ title ?? alt }}">
+                        </a>
+                    </div>
+                {{ /images }}
+                
+            </div>
+        </div>
+    {{ /gallery }}
+    <div class="modal fade" id="image-gallery-popup" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="image"></div>
+                    <div class="meta">
+                        <div class="title"></div>
+                        <div class="caption"></div>
+                        <div class="copyright text-muted"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

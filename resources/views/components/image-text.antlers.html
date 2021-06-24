@@ -1,0 +1,17 @@
+<div class="sets image-text my-4">
+    <div class="row">
+        {{ if position == 'left' }}
+            <div class="col-md-6">
+                <img class="img-fluid w-100" src="{{ glide:image width="600" format="webp" }}" alt="{{ image:alt }}">
+            </div>
+        {{ /if }}
+        <div class="col-md-6">
+            {{ text }}
+        </div>
+        {{ if position == 'right' }}
+            <div class="col-md-6">
+                <img class="img-fluid w-100" src="{{ glide:image width="600" format="webp" }}" alt="{{ image:alt }}">
+            </div>
+        {{ /if }}
+    </div>
+</div>

@@ -1,4 +1,7 @@
 title: Pages
+template: pages/show
+layout: main
+revisions: false
+route: '{parent_uri}/{slug}'
 structure:
   root: true
-route: '{parent_uri}/{slug}'

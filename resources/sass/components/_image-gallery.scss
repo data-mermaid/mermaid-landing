@@ -1,0 +1,20 @@
+.sets.image-gallery {
+    .images-container {
+        .image {
+            height: 0;
+            padding-bottom: 66.66%;
+            overflow: hidden;
+            margin-bottom: 30px;
+            display: block;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+    }
+}

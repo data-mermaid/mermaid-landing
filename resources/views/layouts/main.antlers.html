@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ yield:page-title ?? title | ucfirst }} | {{ settings:site_name }}</title>
+    <link rel="stylesheet" href="{{ mix src='css/style.css' }}">
+    <link rel="icon" href="{{ settings:fav_icon }}" type="image/gif" sizes="16x16">
+    {{ partial:_meta }}
+</head>
+{{ partial:partials/seo }}
+<body>
+{{ yield:seo_body }}
+{{ partial:_header }}
+
+<div id="root">
+    {{ template_content }}
+</div>
+
+{{ partial:_footer }}
+<script src="{{ mix src='/js/site.js' }}"></script>
+</body>
+</html>

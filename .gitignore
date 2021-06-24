@@ -23,3 +23,13 @@ yarn-error.log
 /content/collections/articles/
 /content/taxonomies/categories/
 /content/collections/staffs/
+.idea/*
+public/mix-manifest.json
+/public/js/site.js
+/public/assets/*
+public/js/site.js
+/content/collections/image_galleries/
+/content/collections/slideshows/
+storage/forms/*
+/content/collections/testimonials/
+/content/collections/faqs/

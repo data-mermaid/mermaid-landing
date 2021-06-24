@@ -18,44 +18,21 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          instructions: 'Short description about the page.'
       -
-        handle: content
+        handle: hero_image
         field:
-          init: |-
-            {
-            	"height": 500,
-            	"menubar": false,
-            	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
-            		"searchreplace visualblocks code fullscreen",
-            		"insertdatetime media table paste code help wordcount",
-            		"code"
-            	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-            }
-          display: Content
-          type: tinymce_cloud
-          icon: textarea
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Hero image'
+          type: assets
+          icon: assets
           listable: hidden
+          instructions: 'The image you want to add.'
       -
-        handle: lead
-        field:
-          init: |-
-            {
-            	"height": 500,
-            	"menubar": false,
-            	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
-            		"searchreplace visualblocks code fullscreen",
-            		"insertdatetime media table paste code help wordcount",
-            		"code"
-            	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-            }
-          display: Lead
-          type: tinymce_cloud
-          icon: textarea
-          listable: hidden
+        import: page_builder
   sidebar:
     display: Sidebar
     fields:
@@ -67,6 +44,7 @@ sections:
           localizable: true
           validate:
             - required
+            - 'unique_entry_value:{collection},{id},{site}'
       -
         handle: parent
         field:
@@ -76,6 +54,14 @@ sections:
           max_items: 1
           listable: false
           localizable: true
+      -
+        handle: template
+        field:
+          hide_partials: true
+          display: Template
+          type: template
+          icon: template
+          listable: hidden
   meta_data:
     display: 'Meta Data'
     fields:

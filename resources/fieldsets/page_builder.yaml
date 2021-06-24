@@ -1,0 +1,285 @@
+title: 'Page Builder'
+fields:
+  -
+    handle: components
+    field:
+      collapse: false
+      sets:
+        paragraph:
+          display: Paragraph
+          fields:
+            -
+              handle: content
+              field:
+                init: |-
+                  {
+                  	"height": 500,
+                  	"menubar": false,
+                  	"plugins": [
+                  		"advlist autolink lists link image charmap print preview anchor",
+                  		"searchreplace visualblocks code fullscreen",
+                  		"insertdatetime media table paste code help wordcount",
+                  		"code"
+                  	],
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  }
+                display: Content
+                type: tinymce_cloud
+                icon: textarea
+                listable: hidden
+        pullout-quote:
+          display: 'Pullout Quote'
+          fields:
+            -
+              handle: quote_text
+              field:
+                antlers: false
+                display: 'Quote Text'
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: quotee
+              field:
+                input_type: text
+                antlers: false
+                display: Quotee
+                type: text
+                icon: text
+                listable: hidden
+        single-image:
+          display: 'Single Image'
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+        image-text:
+          display: 'Image Text'
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                width: 75
+                listable: hidden
+            -
+              handle: position
+              field:
+                options:
+                  left: Left
+                  right: Right
+                display: Position
+                default: left
+                type: button_group
+                icon: button_group
+                width: 25
+                listable: hidden
+            -
+              handle: text
+              field:
+                init: |-
+                  {
+                  	"height": 500,
+                  	"menubar": false,
+                  	"plugins": [
+                  		"advlist autolink lists link image charmap print preview anchor",
+                  		"searchreplace visualblocks code fullscreen",
+                  		"insertdatetime media table paste code help wordcount",
+                  		"code"
+                  	],
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  }
+                display: Text
+                type: tinymce_cloud
+                icon: textarea
+                listable: hidden
+        youtube:
+          display: Youtube
+          fields:
+            -
+              handle: url
+              field:
+                display: Url
+                type: video
+                icon: video
+                listable: hidden
+            -
+              handle: caption
+              field:
+                input_type: text
+                antlers: false
+                display: Caption
+                type: text
+                icon: text
+                listable: hidden
+        video:
+          display: Video
+          fields:
+            -
+              handle: video_url
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: File
+                type: assets
+                icon: assets
+                listable: hidden
+                validate:
+                  - 'mimes:mp4'
+                  - 'mimetypes:video/mp4'
+        slideshow:
+          display: Slideshow
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: slideshow
+              field:
+                max_items: 1
+                mode: default
+                collections:
+                  - slideshows
+                display: Slideshow
+                type: entries
+                icon: entries
+                listable: hidden
+        image-gallery:
+          display: 'Image Gallery'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: gallery
+              field:
+                max_items: 1
+                mode: default
+                collections:
+                  - image_galleries
+                display: Gallery
+                type: entries
+                icon: entries
+                listable: hidden
+        staff:
+          display: Staff
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: staff
+              field:
+                mode: select
+                collections:
+                  - staffs
+                display: Staff
+                type: entries
+                icon: entries
+                listable: hidden
+        faq:
+          display: FAQ
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: faq
+              field:
+                mode: select
+                collections:
+                  - faqs
+                display: FAQ
+                type: entries
+                icon: entries
+                listable: hidden
+        form:
+          display: Form
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: form_type
+              field:
+                max_items: 1
+                display: 'Form Type'
+                type: form
+                icon: form
+                listable: hidden
+        testimonial:
+          display: Testimonial
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: testimony
+              field:
+                mode: select
+                collections:
+                  - testimonials
+                display: Testimony
+                type: entries
+                icon: entries
+                listable: hidden
+      display: 'Page Builder'
+      type: replicator
+      icon: replicator
+      listable: false
+      instructions: 'Build your page by using various predefined content models.'

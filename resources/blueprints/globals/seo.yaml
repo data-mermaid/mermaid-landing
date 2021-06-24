@@ -1,0 +1,76 @@
+sections:
+  trackers:
+    display: Trackers
+    fields:
+      -
+        handle: section_google_trackers
+        field:
+          display: 'Google Trackers'
+          type: section
+          icon: section
+          instructions: 'Configure Google trackers and an optional cookie notification.'
+          listable: hidden
+      -
+        handle: tracker_type
+        field:
+          options:
+            none: None
+            gtag: 'Google Analytics'
+            gtm: 'Google Tag Manager'
+          display: 'Google Tracker type'
+          type: button_group
+          icon: button_group
+          instructions: 'The type of Google Tracker you want added on each page.'
+          listable: false
+      -
+        handle: google_analytics
+        field:
+          input_type: text
+          antlers: false
+          display: 'Tracking ID'
+          type: text
+          icon: text
+          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent in the EU. You should then use Google Tag Manager to load the Analytics tracking scripts and enable the Cookie Banner.*'
+          listable: hidden
+          if:
+            tracker_type: 'equals gtag'
+          validate:
+            - 'required_if:tracker_type,gtag'
+          width: 50
+      -
+        handle: anonymize_ip
+        field:
+          display: 'Anonymize IP''s'
+          type: toggle
+          icon: toggle
+          instructions: 'Enable this to be except from needing cookie consent.'
+          listable: false
+          if:
+            tracker_type: 'equals gtag'
+          width: 50
+      -
+        handle: google_tag_manager
+        field:
+          input_type: text
+          antlers: false
+          display: 'Tracking ID'
+          type: text
+          icon: text
+          instructions: 'The GTM tracking ID.'
+          listable: hidden
+          validate:
+            - 'required_if:tracker_type,gtm'
+          if:
+            tracker_type: 'equals gtm'
+          width: 50
+      -
+        handle: use_cookie_banner
+        field:
+          display: 'Cookie banner'
+          type: toggle
+          icon: toggle
+          instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM and set GTM to only function when the cookie `cookie_consent` is set to `true`.'
+          listable: false
+          if:
+            tracker_type: 'equals gtm'
+          width: 50

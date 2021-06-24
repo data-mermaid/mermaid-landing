@@ -1,0 +1,24 @@
+<div class="sets faq my-4">
+    <h3>{{ title }}</h3>
+    <div class="accordion" id="accordion-1">
+        {{ faq }}
+            <div class="accordion-item">
+                <h4 class="accordion-header">
+                    <button type="button" class="accordion-button collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#accordion-item-{{ index }}"
+                    >
+                        {{ title }}
+                    </button>
+                </h4>
+                <div id="accordion-item-{{ index }}"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#accordion-1"
+                >
+                    <div class="accordion-body">
+                        {{ answer }}
+                    </div>
+                </div>
+            </div>
+        {{ /faq }}
+    </div>
+</div>

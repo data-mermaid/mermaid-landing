@@ -1,0 +1,29 @@
+<div class="container my-5 article-list">
+    <h1 class="mb-3">{{ title }}</h1>
+    {{ if intro }}
+    <p class="lead mb-5">{{ intro }}</p>
+    {{ /if }}
+    {{ collection:articles limit="6" paginate="true" as="posts" }}
+        <div class="row">
+            {{ posts }}
+            <div class="col-lg-4 col-md-6">
+                <div class="article card mb-4">
+                    <div class="card-img-top">
+                        {{ if hero_image }}
+                            <img src="{{ hero_image }}" alt="">
+                        {{ /if }}
+                    </div>
+    
+                    <div class="card-body">
+                        <h5 class="card-title">{{ title }}</h5>
+                        <p class="card-text">{{ intro }}</p>
+                        <a href="{{ link to='{url}' }}" class="btn btn-primary stretched-link">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {{ /posts }}
+        </div>
+    
+        {{ partial:_pagination }}
+    {{ /collection:articles }}
+</div>

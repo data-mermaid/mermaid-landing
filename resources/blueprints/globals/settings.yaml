@@ -21,6 +21,7 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          max_files: 1
       -
         handle: logo
         field:
@@ -31,3 +32,4 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          max_files: 1

@@ -38,7 +38,29 @@ return [
     */
 
     'widgets' => [
-        'getting_started',
+        [
+            'type' => 'collection',
+            'collection' => 'pages',
+            'width' => 50,
+            'limit' => 10,
+        ],
+        [
+            'type' => 'collection',
+            'collection' => 'articles',
+            'width' => 50,
+            'limit' => 10
+        ],
+        [
+            'type' => 'form',
+            'form' => 'contact_us',
+            'fields' => ['name','email'],
+            'width' => 100,
+            'limit' => 20,
+        ],
+        [
+            'type' => 'updater',
+            'width' => '100',
+        ],
     ],
 
     /*

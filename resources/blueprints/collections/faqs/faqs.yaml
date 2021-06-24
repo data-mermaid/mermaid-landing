@@ -1,0 +1,47 @@
+title: FAQs
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Question
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: answer
+        field:
+          init: |-
+            {
+            	"height": 500,
+            	"menubar": false,
+            	"plugins": [
+            		"advlist autolink lists link image charmap print preview anchor",
+            		"searchreplace visualblocks code fullscreen",
+            		"insertdatetime media table paste code help wordcount",
+            		"code"
+            	],
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+            }
+          display: Answer
+          type: tinymce_cloud
+          icon: textarea
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
