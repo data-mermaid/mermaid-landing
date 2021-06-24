@@ -8,3 +8,4 @@ import './image-galleries';
 
 import './sets/form-ajax';
 import './sets/slideshow';
+import './sets/image-gallery';
