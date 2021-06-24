@@ -30,24 +30,7 @@ sections:
           icon: textarea
           listable: hidden
       -
-        handle: content
-        field:
-          init: |-
-            {
-            	"height": 500,
-            	"menubar": false,
-            	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
-            		"searchreplace visualblocks code fullscreen",
-            		"insertdatetime media table paste code help wordcount",
-            		"code"
-            	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-            }
-          display: Content
-          type: tinymce_cloud
-          icon: textarea
-          listable: hidden
+        import: page_builder
       -
         handle: external_link
         field:
