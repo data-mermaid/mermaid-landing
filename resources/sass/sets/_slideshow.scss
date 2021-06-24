@@ -89,5 +89,11 @@
             }
 
         }
+
+        .slick-list{
+            .slick-track{
+                display: flex;
+            }
+        }
     }
 }
