@@ -4,12 +4,14 @@ window.$ = window.jQuery = $;
 
 require("slick-carousel/slick/slick");
 require("slick-carousel/slick/slick.css");
-// require("slick-carousel/slick/slick-theme.css");
 
 $(function () {
-    $('.slick-carousel').slick({
+    $('.slick-testimonial').slick({
         dots          : true,
+        arrows         : false,
         infinite      : true,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        autoplay      : true,
+        autoplaySpeed : 3000
     })
 });

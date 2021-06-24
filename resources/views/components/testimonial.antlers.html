@@ -1,9 +1,23 @@
 <div class="sets testimonial my-4">
-    <h3>{{ title }}</h3>
-    {{ testimony }}
-        <h4>{{ title }}</h4>
-        <h5>{{ position }}</h5>
-        {{ quotes }}
-        <img src="{{ glide:photo width="100" format="webp" }}" alt="{{ photo:alt }}">
-    {{ /testimony }}
+    {{ if title }}
+        <h2>{{ title }}</h2>
+    {{ /if }}
+    <div class="slick-testimonial">
+        {{ testimony }}
+            <div class="slick-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="img-fluid w-100" src="{{ glide:photo width="200" format="webp" }}" alt="{{ photo:alt }}">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="mb-4">
+                            {{ quotes }}
+                        </div>
+                        <h5>{{ title }}</h5>
+                        <h6 class="text-muted">{{ position }}</h6>
+                    </div>
+                </div>
+            </div>
+        {{ /testimony }}
+    </div>
 </div>
