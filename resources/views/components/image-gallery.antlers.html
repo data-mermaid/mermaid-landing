@@ -1,11 +1,20 @@
-<div>
+<div class="sets image-gallery">
     <h2>{{ title }}</h2>
-
     {{ gallery }}
-        <h3>{{ title }}</h3>
         <div>{{ description }}</div>
-        {{ glide:images width="300" format="webp" }}
-            <img class="img-fluid" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-        {{ /glide:images }}
+        <div class="images-container">
+            <div class="row">
+                {{ glide:images width="300" format="webp" }}
+                    <div class="col-6 col-md-6 col-lg-4">
+                        <div class="image">
+                            <img src="{{ url }}"  alt="{{ alt }}" title="{{ title ?? alt }}">
+                        </div>
+                    </div>
+                {{ /glide:images }}
+            </div>
+        </div>
+    
+        
+        
     {{ /gallery }}
 </div>

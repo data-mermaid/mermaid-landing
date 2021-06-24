@@ -1,9 +1,12 @@
-<div>
-    <h3>{{ title }}</h3>
+<div class="sets slideshow my-4">
+    <h2>{{ title }}</h2>
     {{ slideshow }}
-        <h4>{{ title }}</h4>
-        {{ glide:images width="400" format="webp" }}
-            <img class="img-fluid" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-        {{ /glide:images }}
+        <div class="slick-carousel">
+            {{ glide:images width="400" format="webp" }}
+                <div class="slick-item">
+                    <img class="img-fluid w-100" src="{{ url }}"  alt="{{ alt }}" title="{{ title ?? alt }}">
+                </div>
+            {{ /glide:images }}
+        </div>
     {{ /slideshow }}
 </div>
