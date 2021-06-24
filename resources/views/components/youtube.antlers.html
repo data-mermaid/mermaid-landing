@@ -1,10 +1,14 @@
-<div>
+<div class="sets youtube my-4">
     {{ if url | is_embeddable }}
         <!-- Youtube and Vimeo -->
-        <iframe src="{{ url | embed_url }}"></iframe>
+        <div class="ratio ratio-16x9">
+            <iframe src="{{ url | embed_url }}"></iframe>
+        </div>
     {{ else }}
         <!-- Other HTML5 video types -->
-        <video src="{{ url | embed_url }}"></video>
+        <video class="img-fluid w-100" src="{{ url | embed_url }}"></video>
     {{ /if }}
-    {{ caption }}
+    <div>
+        {{ caption }}
+    </div>
 </div>

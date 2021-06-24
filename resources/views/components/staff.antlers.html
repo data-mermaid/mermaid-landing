@@ -1,11 +1,24 @@
-<div>
+<div class="sets staff my-4">
     <h3>{{ title }}</h3>
-    {{ staff }}
-        <h4>{{ title }}</h4>
-        <h5>{{ position }}</h5>
-        {{ profile }}
-        <a href="{{ link }}">
-            <img src="{{ glide:avatar width="300" format="webp" }}" alt="{{ avatar:alt }}">
-        </a>
-    {{ /staff }}
+    <div class="row">
+        {{ staff }}
+            <div class="col-md-4">
+                <div class="card">
+                    {{ if link != '' }}
+                    <a href="{{ link }}" class="stretched-link">
+                    {{ /if }}
+                        <img class="card-img-top" src="{{ glide:avatar width="400" format="webp" }}" alt="{{ avatar:alt }}">
+                    {{ if link }}
+                    </a>
+                    {{ /if }}
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{ title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ position }}</h6>
+                        {{ profile }}
+                    </div>
+                </div>
+            </div>
+        {{ /staff }}
+    </div>
 </div>
