@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Changed
+- Finalize Page builder fieldset [#16-finalize-page-builder-component](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/16)
 
 ### Fixed
 - Fix tinymce api key approved domain [#12-fix-tnymce-api-key](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/12)

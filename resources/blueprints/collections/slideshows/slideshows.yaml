@@ -15,18 +15,24 @@ sections:
           input_type: text
           antlers: false
       -
-        handle: content
+        handle: description
         field:
-          type: markdown
-          localizable: true
+          init: |-
+            {
+            	"height": 500,
+            	"menubar": false,
+            	"plugins": [
+            		"advlist autolink lists link image charmap print preview anchor",
+            		"searchreplace visualblocks code fullscreen",
+            		"insertdatetime media table paste code help wordcount",
+            		"code"
+            	],
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+            }
           display: Description
+          type: tinymce_cloud
+          icon: textarea
           listable: hidden
-          restrict: false
-          automatic_line_breaks: true
-          automatic_links: false
-          escape_markup: false
-          smartypants: false
-          antlers: false
       -
         handle: images
         field:

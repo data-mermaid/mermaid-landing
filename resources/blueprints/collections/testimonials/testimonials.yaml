@@ -28,31 +28,10 @@ sections:
       -
         handle: quotes
         field:
-          always_show_set_button: false
-          buttons:
-            - h2
-            - h3
-            - bold
-            - italic
-            - unorderedlist
-            - orderedlist
-            - removeformat
-            - quote
-            - anchor
-            - underline
-          save_html: false
-          toolbar_mode: fixed
-          link_noopener: false
-          link_noreferrer: false
-          target_blank: false
-          reading_time: false
-          fullscreen: true
-          allow_source: true
-          enable_input_rules: true
-          enable_paste_rules: true
+          antlers: false
           display: Quotes
-          type: bard
-          icon: bard
+          type: textarea
+          icon: textarea
           listable: hidden
       -
         handle: photo
@@ -65,6 +44,7 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          container: assets
   sidebar:
     display: Sidebar
     fields:
