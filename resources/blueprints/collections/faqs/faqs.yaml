@@ -15,7 +15,7 @@ sections:
           input_type: text
           antlers: false
       -
-        handle: aswer
+        handle: answer
         field:
           init: |-
             {
@@ -29,7 +29,7 @@ sections:
             	],
             	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
             }
-          display: Aswer
+          display: Answer
           type: tinymce_cloud
           icon: textarea
           listable: hidden
