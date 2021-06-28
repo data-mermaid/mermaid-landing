@@ -1,0 +1,326 @@
+title: 'Homepage Builder'
+fields:
+  -
+    handle: components
+    field:
+      collapse: false
+      sets:
+        banner:
+          display: Banner
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+        introduction:
+          display: Introduction
+          fields:
+            -
+              handle: main_text
+              field:
+                antlers: false
+                display: 'Main Text'
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: secondary_text
+              field:
+                antlers: false
+                display: 'Secondary Text'
+                type: textarea
+                icon: textarea
+                listable: hidden
+        3-points-image:
+          display: '3 Points Image'
+          fields:
+            -
+              handle: point
+              field:
+                fields:
+                  -
+                    handle: title
+                    field:
+                      input_type: text
+                      antlers: false
+                      display: Title
+                      type: text
+                      icon: text
+                      listable: hidden
+                  -
+                    handle: description
+                    field:
+                      antlers: false
+                      display: Description
+                      type: textarea
+                      icon: textarea
+                      listable: hidden
+                mode: table
+                max_rows: 3
+                min_rows: 3
+                reorderable: true
+                display: Point
+                type: grid
+                icon: grid
+                listable: hidden
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+            -
+              handle: button_label
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Label'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: button_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Url'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+        parallax-image:
+          display: 'Parallax Image'
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+            -
+              handle: description
+              field:
+                init: |-
+                  {
+                  	"height": 500,
+                  	"menubar": false,
+                  	"plugins": [
+                  		"advlist autolink lists link image charmap print preview anchor",
+                  		"searchreplace visualblocks code fullscreen",
+                  		"insertdatetime media table paste code help wordcount",
+                  		"code"
+                  	],
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  }
+                display: Description
+                type: tinymce_cloud
+                icon: textarea
+                listable: hidden
+        4-columns-number:
+          display: '4 Columns Number'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: numbers
+              field:
+                fields:
+                  -
+                    handle: number
+                    field:
+                      input_type: text
+                      antlers: false
+                      display: Number
+                      type: text
+                      icon: text
+                      width: 50
+                      listable: hidden
+                  -
+                    handle: label
+                    field:
+                      input_type: text
+                      antlers: false
+                      display: Label
+                      type: text
+                      icon: text
+                      width: 50
+                      listable: hidden
+                mode: table
+                max_rows: 4
+                min_rows: 4
+                reorderable: true
+                display: Numbers
+                type: grid
+                icon: grid
+                listable: hidden
+        2-columns-info:
+          display: '2 Columns Info'
+          fields:
+            -
+              handle: left_section
+              field:
+                display: 'Left Section'
+                type: section
+                icon: section
+                listable: hidden
+            -
+              handle: left_title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: left_image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                width: 50
+                listable: hidden
+            -
+              handle: left_intro
+              field:
+                antlers: false
+                display: Intro
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: left_button_label
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Label'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: left_button_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Url'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: right_section
+              field:
+                display: 'Right Section'
+                type: section
+                icon: section
+                listable: hidden
+            -
+              handle: right_title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: right_image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                width: 50
+                listable: hidden
+            -
+              handle: right_intro
+              field:
+                antlers: false
+                display: Intro
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: right_button_label
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Label'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: right_button_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Url'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+      display: 'Homepage Builder'
+      type: replicator
+      icon: replicator
+      listable: false
+      instructions: 'Build your homepage by using various predefined content models.'
+      if:
+        template: 'equals templates/home'

@@ -33,6 +33,8 @@ sections:
           instructions: 'The image you want to add.'
       -
         import: page_builder
+      -
+        import: homepage_builder
   sidebar:
     display: Sidebar
     fields:
