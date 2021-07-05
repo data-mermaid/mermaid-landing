@@ -8,7 +8,7 @@ require("slick-carousel/slick/slick.css");
 $(function () {
     $('.slick-testimonial').slick({
         dots          : true,
-        arrows         : false,
+        arrows         : true,
         infinite      : true,
         adaptiveHeight: true,
         autoplay      : true,
