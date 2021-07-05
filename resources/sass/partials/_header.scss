@@ -1,8 +1,42 @@
-#main-header{
-    .navbar-brand{
-        img{
+.main-header {
+    background-color: transparent;
+    transition: 0.2s all ease-in-out;
+
+    .navbar {
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        .nav-link {
+            color: $color-white;
+        }
+    }
+
+    .navbar-brand {
+        img {
             height: 40px;
             max-height: 60px;
         }
+    }
+}
+
+#sticky-header {
+    position: fixed;
+    top: 0;
+    transform: translateY(-100%);
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: $color-blue-dark;
+    opacity: 0;
+
+    .navbar {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    &.sticky {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.3s ease-in-out;
     }
 }

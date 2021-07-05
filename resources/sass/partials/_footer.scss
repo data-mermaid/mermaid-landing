@@ -1,0 +1,61 @@
+footer.main-footer {
+    color: rgba($color-white, 0.6);
+
+    .content-container {
+        background-color: $color-blue-dark-2;
+        padding-bottom: 100px;
+        padding-top: 40px;
+    }
+
+    .logo {
+        height: 54px;
+        margin-bottom: 80px;
+    }
+
+    p {
+        color: rgba($color-white, 0.6);
+    }
+
+    h3 {
+        color: $color-white;
+    }
+
+    .subscribe {
+        a {
+            color: $color-white;
+        }
+
+        .btn {
+            margin-top: 15px;
+        }
+    }
+
+    .social-media {
+        display: flex;
+        margin-bottom: 100px;
+
+        .label {
+            margin-right: 20px;
+            margin-top: 9px;
+        }
+
+        .icon {
+            margin-left: 12px;
+            margin-right: 12px;
+            a{
+                opacity: 0.6;
+                transition: 0.3s all ease-in-out;
+                display: block;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+
+            img {
+                width: 18px;
+                max-width: 18px;
+                vertical-align: bottom;
+            }
+        }
+    }
+}

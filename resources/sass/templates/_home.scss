@@ -1,0 +1,198 @@
+.page-home {
+    .hero-banner {
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+
+        .hero-content-container {
+            margin-top: auto;
+            margin-bottom: auto;
+            padding-top: 114px;
+            width: 100%;
+
+            .hero-content {
+                max-width: 650px;
+
+            }
+        }
+
+        .separator {
+            margin-top: auto;
+            width: 100%;
+            margin-bottom: -2px;
+        }
+    }
+
+    .section.intro {
+        .content-container {
+            max-width: 785px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+    }
+
+    .section.principles {
+        position: relative;
+        padding-bottom: 0;
+
+        .img-bg {
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            bottom: 240px;
+            z-index: -1;
+        }
+
+        .intro-container {
+            padding-left: 40px;
+            max-width: 540px;
+
+            .intro-medium {
+                margin-bottom: 10px;
+            }
+        }
+
+        .principle-container {
+            margin-top: 160px;
+            border-radius: 24px;
+            background-color: $color-white;
+            text-align: center;
+            padding: 80px 40px;
+
+            .title {
+                margin-bottom: 50px;
+            }
+
+            .principle {
+                h3 {
+                    margin-bottom: 20px;
+                }
+
+                img {
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+
+    .section.numbers {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .number-container {
+            h3 {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .number {
+                font-size: 72px;
+                letter-spacing: 5px;
+                text-align: center;
+                color: $color-blue;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    background-color: $color-purple-light;
+                    z-index: -1;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .label {
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: uppercase;
+                color: $color-blue;
+            }
+
+            hr {
+                margin-top: 80px;
+                border-color: $color-blue-light;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .section.features {
+        .feature {
+            h2 {
+                margin-bottom: 30px;
+            }
+
+            .description {
+                max-width: 500px;
+            }
+
+            .btn {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .section.stories {
+        background-color: $color-blue-light;
+
+        h3 {
+            margin-bottom: 35px;
+        }
+
+        .story {
+            border-bottom: 1px solid $color-blue-light-2;
+            padding-bottom: 25px;
+            padding-top: 30px;
+
+            .thumbnail {
+                border-radius: 16px;
+                margin-bottom: 30px;
+                overflow: hidden;
+            }
+
+            .meta {
+                margin-bottom: 10px;
+
+                .category {
+                    font-weight: 500;
+                    color: $color-coral;
+                }
+
+                .published-date {
+
+                }
+            }
+
+            .title {
+                color: $color-black-text;
+                font-weight: 500;
+            }
+
+            &.featured {
+                border-bottom: 0;
+
+                .meta {
+                    margin-bottom: 15px;
+                }
+
+                .title {
+                    font-size: 36px;
+                    line-height: 48px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
