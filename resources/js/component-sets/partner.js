@@ -6,12 +6,14 @@ require("slick-carousel/slick/slick");
 require("slick-carousel/slick/slick.css");
 
 $(function () {
-    $('.slick-testimonials').slick({
+    $('.slick-partners').slick({
         // dots          : true,
         arrows         : true,
-        infinite      : true,
-        adaptiveHeight: true,
-        autoplay      : false,
-        autoplaySpeed : 5000
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        // infinite      : true,
+        // adaptiveHeight: true,
+        autoplay      : true,
+        autoplaySpeed : 3000
     })
 });
