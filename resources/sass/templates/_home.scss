@@ -127,17 +127,71 @@
         }
     }
 
-    .section.features{
-        .feature{
-            h2{
+    .section.features {
+        .feature {
+            h2 {
                 margin-bottom: 30px;
             }
-            .description{
+
+            .description {
                 max-width: 500px;
             }
-            .btn{
+
+            .btn {
                 margin-top: 15px;
                 margin-bottom: 15px;
+            }
+        }
+    }
+
+    .section.stories {
+        background-color: $color-blue-light;
+
+        h3 {
+            margin-bottom: 35px;
+        }
+
+        .story {
+            border-bottom: 1px solid $color-blue-light-2;
+            padding-bottom: 25px;
+            padding-top: 30px;
+
+            .thumbnail {
+                border-radius: 16px;
+                margin-bottom: 30px;
+                overflow: hidden;
+            }
+
+            .meta {
+                margin-bottom: 10px;
+
+                .category {
+                    font-weight: 500;
+                    color: $color-coral;
+                }
+
+                .published-date {
+
+                }
+            }
+
+            .title {
+                color: $color-black-text;
+                font-weight: 500;
+            }
+
+            &.featured {
+                border-bottom: 0;
+
+                .meta {
+                    margin-bottom: 15px;
+                }
+
+                .title {
+                    font-size: 36px;
+                    line-height: 48px;
+                    margin-bottom: 25px;
+                }
             }
         }
     }
