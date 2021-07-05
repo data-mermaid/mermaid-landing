@@ -1,5 +1,51 @@
-<footer class="bd-footer py-3 mt-3 bg-light">
-    <div class="container">
-       {{ settings:site_name }} &copy; {{ now format="Y" }}
+<footer class="main-footer">
+    <div class="footer-separator">
+        <img src="/images/footer-waves.svg" alt="">
+    </div>
+    <div class="content-container">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-6">
+                    <img class="logo" src="{{ settings:logo }}" alt="">
+                    
+                    <div class="subscribe">
+                        <h3>
+                            Subscribe to MERMAID mail
+                        </h3>
+                        <p>Get quarterly updates from us. Read our <a href="#">Privacy Policy</a>.</p>
+                        <a href="#" class="btn btn-light">Sign up</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="social-media">
+                        <div class="label">Follow us on</div>
+                        <div class="icon linkedin">
+                            <a href="#">
+                                <img src="/images/icon/linkedin.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="icon twitter">
+                            <a href="#">
+                                <img src="/images/icon/twitter.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="icon youtube">
+                            <a href="#">
+                                <img src="/images/icon/youtube.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-menu">
+                    
+                    </div>
+                    <div class="copyright">
+                        Copyright &copy; {{ now format="Y" }} {{ settings:site_name }}.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        
+        </div>
     </div>
 </footer>
