@@ -1,4 +1,182 @@
-<div class="container my-5">
+<div class="page-home transparent-menu">
+    <section class="hero-banner" style="background-image: url('/images/static/banner.jpg');">
+        <div class="hero-content-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="hero-content text-light">
+                            <h1>MERMAID (Marine Ecological Research Management Aid)</h1>
+                            <p class="intro-medium">Transform your underwater insights into data-driven actions that save coral reefs</p>
+                            <div class="scroll-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separator">
+            <img src="/images/waves-blue.svg" alt="">
+        </div>
+    </section>
+    
+    <section class="section intro">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="content-container">
+                        <div class="intro-large">
+                            <p>MERMAID aggregates and manages data on coral reef health - empowering scientists, communities, and governments in linking science to rapid action in marine conservation efforts.</p>
+                        </div>
+                        <div class="intro-medium">
+                            <p>For the first time, marine scientists can gather, analyze and share field-based reef surveys on an open-source platform that provides granular data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section principles" >
+        <div class="img-bg" style="background-image:url(/images/static/bg-1.jpg) "></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="intro-container">
+                        <div class="intro-medium text-light">
+                            MERMAID helps answer:
+                        </div>
+                        <div class="intro-large text-light">
+                            Is conservation working? Are reefs recovering? How can conservation efforts help reefs adapt to a changing climate?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container principle-container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">MERMAID brings information and people together to protect coral reefs</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="principle">
+                        <img src="/images/static/feature-field-driven.png" alt="">
+                        <h3>Field driven</h3>
+                        <p>MERMAID is powered by data collected and shared by scientists across the world.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="principle">
+                        <img src="/images/static/feature-community.png" alt="">
+                        <h3>Community centric</h3>
+                        <p>MERMAID makes data accessible to coastal communities—empowering people with the knowledge to manage resources sustainably.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="principle">
+                        <img src="/images/static/feature-human-centered.png" alt="">
+                        <h3>Human centered</h3>
+                        <p>MERMAID encourages collaboration and the sharing of data, fueling discoveries and rapid action for reef protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section numbers">
+        <div class="container number-container">
+            <div class="row">
+                <div class="col">
+                    <h3>
+                        MERMAID by numbers
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="number">
+                        258
+                    </div>
+                    <div class="label">
+                        Registered users
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="number">
+                        109
+                    </div>
+                    <div class="label">
+                        Organizations
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="number">
+                        2,601
+                    </div>
+                    <div class="label">
+                        Coral reef sites
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="number">
+                        14
+                    </div>
+                    <div class="label">
+                        Countries
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature">
+                        <h2>Collect reef data...</h2>
+                        <div class="description">
+                            <p>
+                                Aggregate your observations directly onto the MERMAID platform—quickly, effectively and accurately.
+                            </p>
+                            <a href="#" class="btn btn-primary">
+                                Get started
+                            </a>
+                        </div>
+                        <div class="img-container">
+                            <img class="img-fluid" src="/images/static/collect.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature">
+                        <h2>...And visualize it</h2>
+                        <div class="description">
+                            <p>
+                                Interact with the global MERMAID dashboard to get a snapshot of coral reef health around the globe.
+                            </p>
+                            <a href="#" class="btn btn-primary">
+                                View the dashboard
+                            </a>
+                        </div>
+                        <div class="img-container">
+                            <img class="img-fluid" src="/images/static/dash.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div class="container py-5 bg-light">
     <div class="row">
         <div class="col-lg-8 col-md-10">
             {{ if hero_image }}
@@ -9,16 +187,16 @@
             </div>
             {{ /if }}
             <h1>{{ title }}</h1>
-
+            
             <div class="lead mb-4">
                 <p>
                     {{ intro }}
                 </p>
             </div>
-
+            
             <div class="content">
                 {{ components }}
-                    {{ partial src="components/home/{type}" }}
+                {{ partial src="components/home/{type}" }}
                 {{ /components }}
             </div>
         </div>

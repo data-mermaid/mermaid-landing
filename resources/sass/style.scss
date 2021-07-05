@@ -1,14 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import "partials/variable";
+@import "partials/typography";
+@import "partials/utilities";
+@import "partials/button";
+
 @import "partials/header";
 @import "partials/footer";
 
 @import "components/image-galleries";
 
-@import "templates/article-list";
-@import "templates/article-show";
-
 @import "components/image-gallery";
 @import "components/slideshow";
 @import "components/testimonial";
+
+
+@import "templates/home";
