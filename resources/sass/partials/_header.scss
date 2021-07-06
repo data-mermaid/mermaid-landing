@@ -6,8 +6,132 @@
         padding-top: 32px;
         padding-bottom: 32px;
 
-        .nav-link {
-            color: $color-white;
+        .nav-item {
+            margin: 0 20px;
+
+            .dropdown-menu {
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.3s all ease-in-out;
+
+                margin-top: 7px;
+                background-color: rgba(#000000, 0.7);
+                border: 0;
+                box-shadow: 0px 10px 40px rgba(52, 65, 79, 0.4);
+                border-radius: 0px 8px 8px 8px;
+                z-index: 0;
+
+                .dropdown-item {
+                    color: $color-white;
+                    padding: 0;
+                    margin: 10px 25px;
+                    position: relative;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 20px;
+                        height: 2px;
+                        left: 0;
+                        bottom: -2px;
+                        background-color: $color-coral;
+                        opacity: 0;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .dropdown-menu {
+                    display: block;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .nav-link {
+                color: $color-white;
+                transition: all 0.3s ease-in-out;
+                position: relative;
+                padding: 3px 0;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    left: 0;
+                    bottom: -10px;
+                    background-color: $color-coral;
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                    z-index: 2;
+                }
+
+                &:hover,
+                &:focus,
+                &.show {
+                    color: $color-white;
+
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+
+
+                &.dropdown-toggle {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+
+
+            &.current{
+                .nav-link{
+                    &:before{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
+                .nav-link {
+                    padding: 3px 20px;
+                    background-color: $color-coral;
+                    border-radius: 15px;
+                    &:before {
+                        display: none;
+                    }
+                    &:hover {
+                        background-color: $color-coral-dark;
+
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &:nth-last-child(1) {
+                margin-left: 8px;
+                margin-right: 0;
+            }
+
+            &:nth-last-child(2) {
+                margin-right: 8px;
+                margin-left: 10px;
+            }
         }
     }
 
@@ -32,6 +156,24 @@
     .navbar {
         padding-top: 12px;
         padding-bottom: 12px;
+
+        .nav-link {
+            &:before {
+                bottom: -20px;
+            }
+        }
+
+        .nav-item {
+            .dropdown-menu {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .navbar-brand {
+        img {
+            filter: brightness(0) invert(1);
+        }
     }
 
     &.sticky {

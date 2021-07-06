@@ -1,4 +1,12 @@
 .page-home {
+    .main-header{
+        .navbar-brand{
+            img{
+                filter:  brightness(0) invert(1);
+            }
+        }
+    }
+
     .hero-banner {
         background-size: cover;
         min-height: 100vh;
