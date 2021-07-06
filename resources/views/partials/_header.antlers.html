@@ -12,19 +12,29 @@
                 <ul class="navbar-nav ms-auto">
                     {{ nav:main_nav }}
                         {{ if children }}
-                            <li class="nav-item dropdown {{ if is_current }}current{{ /if }}">
+                            <li class="nav-item dropdown {{ if is_current || is_parent }}current{{ /if }}">
                                 <a href="{{ url }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ title }}</a>
                                 <ul class="dropdown-menu">
                                     {{ children }}
                                         <li>
-                                            <a href="{{ url }}" class="dropdown-item">{{ title }}</a>
+                                            <a href="{{ url }}"
+                                               class="dropdown-item {{ if is_current }}current{{ /if }}"
+                                                {{ if is_external }} target="_blank "{{ /if }}
+                                            >
+                                                {{ title }}
+                                            </a>
                                         </li>
                                     {{ /children }}
                                 </ul>
                             </li>
                         {{ else }}
                             <li class="nav-item {{ if is_current  }}current{{ /if }}">
-                                <a href="{{ url }}" class="nav-link">{{ title }}</a>
+                                <a href="{{ url }}"
+                                   class="nav-link"
+                                    {{ if is_external }} target="_blank "{{ /if }}
+                                >
+                                    {{ title }}
+                                </a>
                             </li>
                         {{ /if }}
 
@@ -49,19 +59,35 @@
                 <ul class="navbar-nav ms-auto">
                     {{ nav:main_nav }}
                     {{ if children }}
-                    <li class="nav-item dropdown {{ if is_current }}current{{ /if }}">
-                        <a href="{{ url }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ title }}</a>
+                    <li class="nav-item dropdown {{ if is_current || is_parent }}current{{ /if }}">
+                        <a href="{{ url }}"
+                           {{ if is_external }} target="_blank "{{ /if }}
+                           class="nav-link dropdown-toggle"
+                           data-bs-toggle="dropdown"
+                        >
+                            {{ title }}
+                        </a>
                         <ul class="dropdown-menu">
                             {{ children }}
                             <li>
-                                <a href="{{ url }}" class="dropdown-item">{{ title }}</a>
+                                <a href="{{ url }}"
+                                    {{ if is_external }} target="_blank "{{ /if }}
+                                   class="dropdown-item {{ if is_current }}current{{ /if }}"
+                                >
+                                    {{ title }}
+                                </a>
                             </li>
                             {{ /children }}
                         </ul>
                     </li>
                     {{ else }}
                     <li class="nav-item {{ if is_current }}  current {{ /if }}">
-                        <a href="{{ url }}" class="nav-link">{{ title }}</a>
+                        <a href="{{ url }}"
+                           class="nav-link"
+                            {{ if is_external }} target="_blank "{{ /if }}
+                        >
+                            {{ title }}
+                        </a>
                     </li>
                     {{ /if }}
                     
