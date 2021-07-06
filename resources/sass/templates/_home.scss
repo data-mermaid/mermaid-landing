@@ -218,6 +218,12 @@
             margin-bottom: -300px;
             margin-top: 60px;
 
+            /* SVG masking */
+            mask:url('/images/subscribe-mask.svg');
+            mask-size: 100%;
+            mask-position: center bottom;
+            mask-repeat: no-repeat;
+
             .bg-image {
                 position: absolute;
                 width: 100%;
@@ -249,6 +255,7 @@
             }
 
             .wave {
+                display: none;
                 margin-top: auto;
                 position: absolute;
                 bottom: 0;
