@@ -87,9 +87,19 @@
                     }
                 }
 
+
                 &.dropdown-toggle {
                     &:after {
                         display: none;
+                    }
+                }
+            }
+
+
+            &.current{
+                .nav-link{
+                    &:before{
+                        opacity: 1;
                     }
                 }
             }
@@ -100,7 +110,9 @@
                     padding: 3px 20px;
                     background-color: $color-coral;
                     border-radius: 15px;
-
+                    &:before {
+                        display: none;
+                    }
                     &:hover {
                         background-color: $color-coral-dark;
 
