@@ -11,3 +11,5 @@ import './component-sets/slideshow';
 import './component-sets/testimonial';
 import './component-sets/partner';
 import './component-sets/image-gallery';
+
+import './component-sets/floating-icons';
