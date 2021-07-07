@@ -26,6 +26,7 @@ footer.main-footer {
             color: $color-white;
             text-decoration: none;
             position: relative;
+
             &:after {
                 content: '';
                 position: absolute;
@@ -53,11 +54,13 @@ footer.main-footer {
         .icon {
             margin-left: 12px;
             margin-right: 12px;
-            a{
-                opacity: 0.6;
+
+            a {
+                opacity: 0.5;
                 transition: 0.3s all ease-in-out;
                 display: block;
-                &:hover{
+
+                &:hover {
                     opacity: 1;
                 }
             }

@@ -8,55 +8,81 @@
     letter-spacing: 1px;
     border-radius: 24px;
     border-width: 0;
-    transition: 0.3s all ease-in-out;
+    transition: all 2s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    &:before, &:after {
+        content: "";
+        height: 500px;
+        width: 500px;
+        top: 200%;
+        position: absolute;
+        z-index: -1;
+        left: -50%;
+        transition: all 1.4s ease;
+    }
+
+    &:before {
+        border-radius: 60% 70% 20% 40%;
+        background: $color-coral-dark;
+        opacity: .8;
+        animation: water 12s ease-in-out infinite both alternate;
+    }
+
+    &:after {
+        border-radius: 60% 70% 20% 40%;
+        background: $color-coral-dark;
+        opacity: .1;
+        animation: water 14s ease-in-out infinite both alternate;
+    }
+
+    &:hover {
+        background: $color-coral-dark;
+        color: white;
+
+        &:before, &:after {
+            opacity: 1;
+            top: -100%;
+        }
+    }
+
+    &:focus{
+        box-shadow: none!important;
+    }
 
     &.btn-primary {
         color: $color-white;
         background-color: $color-coral;
-        transition: all 2s ease;
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
 
-        //&:hover {
-        //    background-color: $color-coral-dark;
-        //}
-
-        &:before, &:after {
-            content: "";
-            height: 500px;
-            width: 500px;
-            top: 200%;
-            position: absolute;
-            z-index: -1;
-            left: -50%;
-            transition: all 1.4s ease;
-        }
         &:before {
-            border-radius: 60% 70% 20% 40%;
             background: $color-coral-dark;
-            opacity: .5;
-            animation: water 12s ease-in-out infinite both alternate;
         }
+
         &:after {
-            border-radius: 60% 70% 20% 40%;
             background: $color-coral-dark;
-            opacity: .8;
-            animation: water 14s ease-in-out infinite both alternate;
         }
+
         &:hover {
             background: $color-coral-dark;
-            color: white;
-            &:before, &:after {
-                opacity: 1;
-                top: -100%;
-            }
         }
     }
 
     &.btn-light {
         color: $color-blue !important;
         background-color: $color-white;
+        &:before {
+            background: $color-blue-light-2;
+        }
+
+        &:after {
+            background: $color-blue-light-2;
+        }
+
+        &:hover {
+            background: $color-blue-light-2;
+        }
     }
 }
 
