@@ -13,14 +13,71 @@
     &.btn-primary {
         color: $color-white;
         background-color: $color-coral;
+        transition: all 2s ease;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
 
+        //&:hover {
+        //    background-color: $color-coral-dark;
+        //}
+
+        &:before, &:after {
+            content: "";
+            height: 500px;
+            width: 500px;
+            top: 200%;
+            position: absolute;
+            z-index: -1;
+            left: -50%;
+            transition: all 1.4s ease;
+        }
+        &:before {
+            border-radius: 60% 70% 20% 40%;
+            background: $color-coral-dark;
+            opacity: .5;
+            animation: water 12s ease-in-out infinite both alternate;
+        }
+        &:after {
+            border-radius: 60% 70% 20% 40%;
+            background: $color-coral-dark;
+            opacity: .8;
+            animation: water 14s ease-in-out infinite both alternate;
+        }
         &:hover {
-            background-color: $color-coral-dark;
+            background: $color-coral-dark;
+            color: white;
+            &:before, &:after {
+                opacity: 1;
+                top: -100%;
+            }
         }
     }
 
     &.btn-light {
-        color: $color-blue!important;
+        color: $color-blue !important;
         background-color: $color-white;
+    }
+}
+
+@keyframes water {
+    0% {
+        transform: rotate(0);
+    }
+    20% {
+        border-radius: 50% 63% 80% 49%;
+    }
+    40% {
+        border-radius: 60% 64% 64% 48%;
+    }
+    60% {
+        border-radius: 80% 63% 51% 49%;
+    }
+    80% {
+        border-radius: 40% 60% 42% 58%;
+    }
+    100% {
+        border-radius: 62% 67% 70% 53%;
+        transform: rotate(180deg);
     }
 }
