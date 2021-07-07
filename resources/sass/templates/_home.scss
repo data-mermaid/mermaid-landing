@@ -43,6 +43,11 @@
                 }
             }
         }
+        .floating-icons{
+            top: 0;
+            right: 0;
+            width: 50%;
+        }
 
         .separator {
             margin-top: auto;
@@ -88,6 +93,12 @@
     .section.principles {
         position: relative;
         padding-bottom: 0;
+
+        .floating-icons{
+            right: 0;
+            top: 0;
+            width: 50%;
+        }
 
         .img-bg {
             background-size: cover;
