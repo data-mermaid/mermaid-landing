@@ -2,6 +2,10 @@
     background-color: transparent;
     transition: 0.2s all ease-in-out;
 
+    .container {
+        z-index: 100;
+    }
+
     .navbar {
         padding-top: 32px;
         padding-bottom: 32px;
@@ -57,9 +61,10 @@
                     opacity: 1;
                     visibility: visible;
                 }
-                .nav-link{
+
+                .nav-link {
                     &:before {
-                        opacity: 1!important;
+                        opacity: 1 !important;
                     }
                 }
             }
