@@ -57,6 +57,11 @@
                     opacity: 1;
                     visibility: visible;
                 }
+                .nav-link{
+                    &:before {
+                        opacity: 1!important;
+                    }
+                }
             }
 
             .nav-link {
@@ -97,9 +102,9 @@
             }
 
 
-            &.current{
-                .nav-link{
-                    &:before{
+            &.current {
+                .nav-link {
+                    &:before {
                         opacity: 1;
                     }
                 }
@@ -111,14 +116,57 @@
                     padding: 3px 20px;
                     background-color: $color-coral;
                     border-radius: 15px;
+                    position: relative;
+                    display: block;
+                    transition: all 2s ease;
+                    overflow: hidden;
+                    z-index: 1;
+
                     &:before {
-                        display: none;
+                        //display: none;
                     }
+
                     &:hover {
                         background-color: $color-coral-dark;
 
                         &:before {
                             display: none;
+                        }
+
+                    }
+
+                    &:before, &:after {
+                        content: "";
+                        height: 500px;
+                        width: 500px;
+                        top: 150%;
+                        position: absolute;
+                        z-index: -1;
+                        left: -50%;
+                        transition: all 1.4s ease;
+                    }
+
+                    &:before {
+                        border-radius: 60% 70% 20% 40%;
+                        background: $color-coral-dark;
+                        opacity: .5;
+                        animation: water 12s ease-in-out infinite both alternate;
+                    }
+
+                    &:after {
+                        border-radius: 60% 70% 20% 40%;
+                        background: $color-coral-dark;
+                        opacity: .8;
+                        animation: water 14s ease-in-out infinite both alternate;
+                    }
+
+                    &:hover {
+                        background: $color-coral-dark;
+                        color: white;
+
+                        &:before, &:after {
+                            opacity: 1;
+                            top: -100%;
                         }
                     }
                 }
