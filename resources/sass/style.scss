@@ -1,6 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import "partials/variable";
+@import "mixins/breakpoints";
+
 @import "partials/typography";
 @import "partials/utilities";
 @import "partials/button";
