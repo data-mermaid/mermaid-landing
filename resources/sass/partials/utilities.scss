@@ -25,6 +25,12 @@
     background-color: $color-blue-dark-2;
 }
 
+.narrow-content{
+    max-width: 785px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .floating-icons {
     position: absolute;
     height: 100%;

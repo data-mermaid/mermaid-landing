@@ -23,6 +23,7 @@ footer.main-footer {
 
     .subscribe {
         a:not(.btn) {
+            transition: 0.3s all ease-in-out;
             color: rgba($color-white,0.6);
             text-decoration: none;
             position: relative;

@@ -1,0 +1,24 @@
+<svg width="135" height="135" viewBox="0 0 135 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect width="135" height="135" fill="white"/>
+<g filter="url(#filter0_f)">
+<circle cx="67" cy="67" r="50" fill="#DDD7FA"/>
+</g>
+<circle cx="67" cy="67" r="50" fill="white"/>
+<path d="M81.7867 90.0127C94.4963 90.0127 104.799 79.7096 104.799 67C104.799 54.2904 94.4963 43.9872 81.7867 43.9872C69.0771 43.9872 58.7739 54.2904 58.7739 67C58.7739 79.7096 69.0771 90.0127 81.7867 90.0127Z" stroke="#2970BB" stroke-width="4"/>
+<path d="M81.7866 55.4067V67L87.5832 72.7966" stroke="#2970BB" stroke-width="4" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.9731 67.5C27.9731 66.3954 28.8686 65.5 29.9731 65.5L50.1991 65.5C51.3037 65.5 52.1991 66.3954 52.1991 67.5C52.1991 68.6046 51.3037 69.5 50.1991 69.5L29.9731 69.5C28.8686 69.5 27.9731 68.6046 27.9731 67.5Z" fill="#C0B6EF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.4302 57.4067C31.4302 56.3022 32.3256 55.4067 33.4302 55.4067L53.6562 55.4067C54.7607 55.4067 55.6562 56.3022 55.6562 57.4067C55.6562 58.5113 54.7607 59.4067 53.6562 59.4067L33.4302 59.4067C32.3256 59.4067 31.4302 58.5113 31.4302 57.4067Z" fill="#C0B6EF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31.4302 77.593C31.4302 76.4884 32.3256 75.593 33.4302 75.593L53.6562 75.593C54.7607 75.593 55.6562 76.4884 55.6562 77.593C55.6562 78.6976 54.7607 79.593 53.6562 79.593L33.4302 79.593C32.3256 79.593 31.4302 78.6976 31.4302 77.593Z" fill="#C0B6EF"/>
+</g>
+<defs>
+<filter id="filter0_f" x="-4" y="-4" width="142" height="142" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="10.5" result="effect1_foregroundBlur"/>
+</filter>
+<clipPath id="clip0">
+<rect width="135" height="135" fill="white"/>
+</clipPath>
+</defs>
+</svg>

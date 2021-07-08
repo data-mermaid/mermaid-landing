@@ -1,0 +1,126 @@
+.page-generic-container {
+    padding-top: 170px;
+
+    h1.main-title {
+        margin-bottom: 95px;
+    }
+
+    .animated-header {
+        z-index: 2;
+        height: 21%;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 165px;
+
+        svg {
+            g.parallax {
+                path {
+                    animation: move-forever 80s cubic-bezier(.55, .5, .45, .5) infinite;
+
+                    &:nth-child(1) {
+                        animation-delay: -2s;
+                        animation-duration: 8s;
+                    }
+
+                    &:nth-child(2) {
+                        animation-delay: -4s;
+                        animation-duration: 16s;
+                    }
+
+                    &:nth-child(3) {
+                        animation-delay: -8s;
+                        animation-duration: 32s;
+                    }
+                }
+            }
+        }
+    }
+
+    .image-box {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        padding-top: 75px;
+        padding-bottom: 75px;
+        background-position: center;
+        background-size: cover;
+
+        &.top-text {
+            .padding.before {
+                display: none;
+            }
+        }
+
+        &.bottom-text {
+            .padding.after {
+                display: none;
+            }
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            display: grid;
+            overflow: hidden;
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: 1fr;
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+            //max-width: 790px;
+            & > div {
+                flex: 1;
+            }
+        }
+
+        .intro-medium {
+            color: $color-black-text;
+        }
+
+        .intro-large {
+            color: $color-blue-text;
+            margin-bottom: 0;
+
+            &:before {
+                border-color: $color-blue-text;
+            }
+        }
+
+        &.top-text {
+
+        }
+    }
+
+    .features {
+        margin-top: 62px;
+        margin-bottom: 60px;
+
+        .row {
+            --bs-gutter-x: 30px;
+        }
+
+        .heading {
+            margin-bottom: 70px;
+        }
+
+        .feature {
+            text-align: center;
+            margin-bottom: 70px;
+
+            .image {
+                margin-bottom: 20px;
+
+                img {
+                    max-width: 135px;
+                }
+
+                &.full-width {
+                    max-width: 100%;
+                }
+            }
+
+            .title {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

@@ -70,7 +70,7 @@
             }
 
             .nav-link {
-                color: $color-white;
+                color: $color-blue-text;
                 transition: all 0.3s ease-in-out;
                 position: relative;
                 padding: 3px 0;
@@ -91,7 +91,7 @@
                 &:hover,
                 &:focus,
                 &.show {
-                    color: $color-white;
+                    color: $color-blue-text;
 
                     &:before {
                         opacity: 1;
@@ -118,6 +118,7 @@
             &:nth-last-child(1),
             &:nth-last-child(2) {
                 .nav-link {
+                    color: $color-white;
                     padding: 3px 20px;
                     background-color: $color-coral;
                     border-radius: 15px;
@@ -184,6 +185,20 @@
     }
 }
 
+.page-home {
+    .main-header {
+        .navbar {
+            .nav-link {
+                color: $color-white;
+
+                &:hover {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+
 #sticky-header {
     position: fixed;
     top: 0;
@@ -199,6 +214,12 @@
         padding-bottom: 12px;
 
         .nav-link {
+            color: $color-white;
+
+            &:hover {
+                color: $color-white;
+            }
+
             &:before {
                 bottom: -20px;
             }

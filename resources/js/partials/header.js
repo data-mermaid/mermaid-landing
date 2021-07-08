@@ -1,5 +1,6 @@
 $(function () {
     let oldScroll = $(window).scrollTop();
+    let didScroll = false;
     $(window).scroll(function () {
         didScroll = true;
     });
