@@ -87,13 +87,16 @@
             max-width: 785px;
             margin-left: auto;
             margin-right: auto;
-
+            .intro-large{
+                margin-bottom: 35px;
+            }
         }
     }
 
     .section.principles {
         position: relative;
         padding-bottom: 0;
+        padding-top: 135px;
 
         .floating-icons{
             right: 0;
@@ -231,7 +234,7 @@
             span {
                 display: inline-block;
                 backface-visibility: hidden;
-                transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);
+                transition: transform .3s cubic-bezier(0.86, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);
             }
 
             .label {
@@ -348,7 +351,6 @@
             margin-bottom: -300px;
             margin-top: 60px;
 
-
             .bg-container {
                 position: absolute;
                 width: 100%;
@@ -432,6 +434,7 @@
                     color: $color-white;
                     text-decoration: none;
                     position: relative;
+                    transition: 0.2s all ease-in-out;
 
                     &:after {
                         content: '';
@@ -439,7 +442,15 @@
                         left: 0;
                         bottom: -5px;
                         width: 100%;
-                        border-bottom: 1px solid rgba($color-white, 0.5);
+                        transition: 0.2s all ease-in-out;
+                        height: 1px;
+                        background-color: rgba($color-white, 0.5);;
+                    }
+                    &:hover{
+                        &:after {
+                            height: 2px;
+                            background-color: rgba($color-white, 0.5);;
+                        }
                     }
                 }
             }
@@ -456,12 +467,14 @@
 
             .avatar {
                 position: relative;
-                //text-align: right;
+                text-align: center;
                 max-height: 300px;
 
                 img {
-                    margin-left: 60px;
+                    margin-left: auto;
+                    margin-right: auto;
                     max-height: 300px;
+                    max-width: 100%;
                 }
 
                 &:before {
@@ -469,8 +482,8 @@
                     position: absolute;
                     left: 0;
                     top: 0;
-                    height: 300px;
-                    width: 300px;
+                    height: 100%;
+                    width: 100%;
                     border-radius: 50%;
                     background-color: $color-purple-light;
                     z-index: -1;
@@ -545,6 +558,12 @@
                         filter: grayscale(0);
                     }
                 }
+            }
+        }
+
+        @include media-breakpoint-up(xxl) {
+            .container {
+                //max-width: 1200px;
             }
         }
     }
