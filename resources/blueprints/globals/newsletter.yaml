@@ -1,0 +1,53 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: lead
+        field:
+          antlers: false
+          display: Lead
+          type: textarea
+          icon: textarea
+          listable: hidden
+      -
+        handle: button_label
+        field:
+          input_type: text
+          antlers: false
+          display: 'Button Label'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+      -
+        handle: button_url
+        field:
+          input_type: text
+          antlers: false
+          display: 'Button Url'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+      -
+        handle: image
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Image
+          type: assets
+          icon: assets
+          listable: hidden
