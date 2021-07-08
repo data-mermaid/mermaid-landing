@@ -1,14 +1,14 @@
-$(function(){
+$(function () {
     let oldScroll = $(window).scrollTop();
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         didScroll = true;
     });
 
     /*throttling the scroll function*/
-    setInterval(function(){
-        if(didScroll){
+    setInterval(function () {
+        if (didScroll) {
             didScroll = false;
-
+            $stickyHeader = $('#sticky-header');
             /* if scrolled past main header show sticky header*/
             // if ($(this).scrollTop() > 150){
             //     $('#sticky-header').addClass("sticky");
@@ -16,12 +16,18 @@ $(function(){
             // else{
             //     $('#sticky-header').removeClass("sticky");
             // }
-
+            if ($(this).scrollTop() > 300) {
+                $('.scroll-button').css('opacity', 0);
+            }
             /* if scroll up show sticky header*/
-            if(oldScroll > $(this).scrollTop()){
-                $('#sticky-header').addClass("sticky");
+            if (oldScroll > $(this).scrollTop()) {
+                if ($(this).scrollTop() < 80) {
+                    $stickyHeader.removeClass("sticky");
+                } else {
+                    $stickyHeader.addClass("sticky");
+                }
             } else {
-                $('#sticky-header').removeClass("sticky");
+                $stickyHeader.removeClass("sticky");
             }
             oldScroll = $(window).scrollTop();
         }
