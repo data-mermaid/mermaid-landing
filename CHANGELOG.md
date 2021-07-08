@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Changed
-
+- Homepage builder refinement [#20-homepage-refinement](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/20)
 
 ### Fixed
 
