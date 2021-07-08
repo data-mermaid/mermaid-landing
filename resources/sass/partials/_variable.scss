@@ -16,3 +16,13 @@ $color-black-text: #363E47;
 $color-white: #FFFFFF;
 
 $font-family: 'GT Walsheim Pro', sans-serif;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xl2: 1366px,
+    xxl: 1400px
+);
