@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import "partials/variable";
-@import "mixins/breakpoints";
+//@import "mixins/breakpoints";
 
 @import "partials/typography";
 @import "partials/utilities";
@@ -11,6 +11,7 @@
 @import "partials/footer";
 
 @import "partials/slick-theme";
+@import "partials/accordion";
 
 @import "components/image-galleries";
 
@@ -20,3 +21,4 @@
 
 
 @import "templates/home";
+@import "templates/page-generic";

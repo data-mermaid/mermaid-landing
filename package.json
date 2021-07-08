@@ -14,6 +14,7 @@
         "autoprefixer": "^10.1.0",
         "bootstrap": "^5.0.0-beta3",
         "cross-env": "^7.0",
+        "exports-loader": "^3.0.0",
         "laravel-mix": "^6.0",
         "postcss": "^8.2.1",
         "postcss-import": "^14.0.0",
