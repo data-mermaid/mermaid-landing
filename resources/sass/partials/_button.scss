@@ -26,21 +26,21 @@
 
     &:before {
         border-radius: 60% 70% 20% 40%;
-        background: $color-coral-dark-2;
+        //background: $color-coral-dark-2;
         opacity: .8;
         animation: water 12s ease-in-out infinite both alternate;
     }
 
     &:after {
         border-radius: 60% 70% 20% 40%;
-        background: $color-coral-dark-2;
+        //background: $color-coral-dark-2;
         opacity: .1;
         animation: water 14s ease-in-out infinite both alternate;
     }
 
     &:hover {
-        background: $color-coral-dark-2;
-        color: white;
+        //background: $color-coral-dark-2;
+        //color: white;
 
         &:before, &:after {
             opacity: 1;

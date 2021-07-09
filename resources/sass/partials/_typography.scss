@@ -11,6 +11,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+p{
+    margin-bottom: 28px;
+}
+
 h1 {
     font-style: normal;
     font-weight: 500;
@@ -35,6 +39,7 @@ h3 {
     font-size: 24px;
     line-height: 34px;
     color: $color-blue-dark;
+    margin-bottom: 12px;
 }
 
 h4 {
@@ -64,6 +69,7 @@ h6 {
 
 .intro-large {
     position: relative;
+    margin-bottom: 35px;
 
     &:before {
         content: '';
@@ -93,7 +99,7 @@ h6 {
     .intro-large,
     &.intro-large {
         &:before {
-            border-left: 4px solid $color-white;
+            border-left: 4px solid $color-white!important;
         }
     }
 }

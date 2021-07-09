@@ -20,12 +20,30 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                width: 66
+            -
+              handle: show_icon
+              field:
+                display: 'Show Icon'
+                type: toggle
+                icon: toggle
+                width: 33
+                listable: hidden
             -
               handle: title
               field:
                 input_type: text
                 antlers: false
                 display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: subtitle
+              field:
+                input_type: text
+                antlers: false
+                display: Subtitle
                 type: text
                 icon: text
                 listable: hidden
@@ -56,11 +74,52 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
-        3-points-image:
-          display: '3 Points Image'
+        mermaid-help-answer:
+          display: 'Mermaid Help Answer'
           fields:
             -
-              handle: point
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+        mermaid-uniqueness:
+          display: 'Mermaid Uniqueness'
+          fields:
+            -
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: column
               field:
                 fields:
                   -
@@ -73,35 +132,62 @@ fields:
                       icon: text
                       listable: hidden
                   -
-                    handle: description
+                    handle: lead
                     field:
                       antlers: false
-                      display: Description
+                      display: Lead
                       type: textarea
                       icon: textarea
                       listable: hidden
-                mode: table
+                  -
+                    handle: image
+                    field:
+                      mode: grid
+                      container: assets
+                      restrict: false
+                      allow_uploads: true
+                      max_files: 1
+                      display: Image
+                      type: assets
+                      icon: assets
+                      listable: hidden
+                mode: stacked
                 max_rows: 3
                 min_rows: 3
                 reorderable: true
-                display: Point
+                display: Column
                 type: grid
                 icon: grid
                 listable: hidden
+        mermaid-tools:
+          display: 'Mermaid Tools'
+          fields:
             -
-              handle: image
+              handle: collect_section
               field:
-                mode: grid
-                container: assets
-                restrict: false
-                allow_uploads: true
-                max_files: 1
-                display: Image
-                type: assets
-                icon: assets
+                display: 'Collect Section'
+                type: section
+                icon: section
+                listable: hidden
+                instructions: 'Will appear on left side'
+            -
+              handle: collect_heading
+              field:
+                antlers: false
+                display: Heading
+                type: textarea
+                icon: textarea
                 listable: hidden
             -
-              handle: button_label
+              handle: collect_lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: collect_button_label
               field:
                 input_type: text
                 antlers: false
@@ -111,7 +197,7 @@ fields:
                 width: 50
                 listable: hidden
             -
-              handle: button_url
+              handle: collect_button_url
               field:
                 input_type: text
                 antlers: false
@@ -120,11 +206,8 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
-        parallax-image:
-          display: 'Parallax Image'
-          fields:
             -
-              handle: image
+              handle: collect_image
               field:
                 mode: grid
                 container: assets
@@ -136,33 +219,70 @@ fields:
                 icon: assets
                 listable: hidden
             -
-              handle: description
+              handle: dashboard_section
               field:
-                init: |-
-                  {
-                  	"height": 500,
-                  	"menubar": false,
-                  	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor",
-                  		"searchreplace visualblocks code fullscreen",
-                  		"insertdatetime media table paste code help wordcount",
-                  		"code"
-                  	],
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
-                  }
-                display: Description
-                type: tinymce_cloud
+                display: 'Dashboard Section'
+                type: section
+                icon: section
+                listable: hidden
+                instructions: 'Will appear on right side'
+            -
+              handle: dashboard_heading
+              field:
+                antlers: false
+                display: Heading
+                type: textarea
                 icon: textarea
                 listable: hidden
-        4-columns-number:
-          display: '4 Columns Number'
-          fields:
             -
-              handle: title
+              handle: dashboard_lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: dashboard_button_label
               field:
                 input_type: text
                 antlers: false
-                display: Title
+                display: 'Button Label'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: dashboard_button_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Url'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: dashboard_image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+        mermaid-by-number:
+          display: 'Mermaid By Number'
+          fields:
+            -
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
                 type: text
                 icon: text
                 listable: hidden
@@ -171,16 +291,6 @@ fields:
               field:
                 fields:
                   -
-                    handle: number
-                    field:
-                      input_type: text
-                      antlers: false
-                      display: Number
-                      type: text
-                      icon: text
-                      width: 50
-                      listable: hidden
-                  -
                     handle: label
                     field:
                       input_type: text
@@ -188,7 +298,15 @@ fields:
                       display: Label
                       type: text
                       icon: text
-                      width: 50
+                      listable: hidden
+                  -
+                    handle: value
+                    field:
+                      input_type: text
+                      antlers: false
+                      display: Value
+                      type: text
+                      icon: text
                       listable: hidden
                 mode: table
                 max_rows: 4
@@ -198,124 +316,72 @@ fields:
                 type: grid
                 icon: grid
                 listable: hidden
-        2-columns-info:
-          display: '2 Columns Info'
+        reef-stories:
+          display: 'Reef Stories'
           fields:
             -
-              handle: left_section
+              handle: list_of_article
               field:
-                display: 'Left Section'
+                display: 'List of article'
                 type: section
                 icon: section
+                instructions: 'Automatically populate articles'
                 listable: hidden
             -
-              handle: left_title
+              handle: url
               field:
                 input_type: text
                 antlers: false
-                display: Title
+                display: Url
                 type: text
                 icon: text
-                width: 50
                 listable: hidden
+        newsletter:
+          display: Newsletter
+          fields:
             -
-              handle: left_image
+              handle: predefined_component
               field:
-                mode: grid
-                container: assets
-                restrict: false
-                allow_uploads: true
-                max_files: 1
-                display: Image
-                type: assets
-                icon: assets
-                width: 50
-                listable: hidden
-            -
-              handle: left_intro
-              field:
-                antlers: false
-                display: Intro
-                type: textarea
-                icon: textarea
-                listable: hidden
-            -
-              handle: left_button_label
-              field:
-                input_type: text
-                antlers: false
-                display: 'Button Label'
-                type: text
-                icon: text
-                width: 50
-                listable: hidden
-            -
-              handle: left_button_url
-              field:
-                input_type: text
-                antlers: false
-                display: 'Button Url'
-                type: text
-                icon: text
-                width: 50
-                listable: hidden
-            -
-              handle: right_section
-              field:
-                display: 'Right Section'
+                display: 'Predefined component'
                 type: section
                 icon: section
+                instructions: 'Will Displaying the newsletter component'
                 listable: hidden
+        testimonials:
+          display: Testimonials
+          fields:
             -
-              handle: right_title
+              handle: testimony
+              field:
+                mode: select
+                collections:
+                  - testimonials
+                display: Testimony
+                type: entries
+                icon: entries
+                listable: hidden
+        mermaid-users:
+          display: 'Mermaid Users'
+          fields:
+            -
+              handle: heading
               field:
                 input_type: text
                 antlers: false
-                display: Title
+                display: Heading
                 type: text
                 icon: text
-                width: 50
                 listable: hidden
             -
-              handle: right_image
+              handle: group
               field:
-                mode: grid
-                container: assets
-                restrict: false
-                allow_uploads: true
-                max_files: 1
-                display: Image
-                type: assets
-                icon: assets
-                width: 50
-                listable: hidden
-            -
-              handle: right_intro
-              field:
-                antlers: false
-                display: Intro
-                type: textarea
-                icon: textarea
-                listable: hidden
-            -
-              handle: right_button_label
-              field:
-                input_type: text
-                antlers: false
-                display: 'Button Label'
-                type: text
-                icon: text
-                width: 50
-                listable: hidden
-            -
-              handle: right_button_url
-              field:
-                input_type: text
-                antlers: false
-                display: 'Button Url'
-                type: text
-                icon: text
-                width: 50
+                max_items: 1
+                mode: select
+                collections:
+                  - mermaid_users
+                display: Group
+                type: entries
+                icon: entries
                 listable: hidden
       display: 'Homepage Builder'
       type: replicator
