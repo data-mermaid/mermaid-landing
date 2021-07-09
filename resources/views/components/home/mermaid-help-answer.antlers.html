@@ -1,7 +1,19 @@
 <div>
-    {{ heading }}
+   <h4>{{ help_heading }}</h4>
     {{ lead }}
     {{ glide:image width="200" format="webp" }}
         <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
     {{ /glide:image }}
+</div>
+<div>
+    <h3>{{ column_heading }}</h3>
+    <div>
+        {{ column }}
+        <h4>{{ title }}</h4>
+        <p>{{ lead }}</p>
+        {{ glide:image width="200" format="webp" }}
+        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
+        {{ /glide:image }}
+        {{ /column }}
+    </div>
 </div>

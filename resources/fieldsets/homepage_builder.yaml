@@ -47,14 +47,6 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
-            -
-              handle: lead
-              field:
-                antlers: false
-                display: Lead
-                type: textarea
-                icon: textarea
-                listable: hidden
         introduction:
           display: Introduction
           fields:
@@ -78,7 +70,14 @@ fields:
           display: 'Mermaid Help Answer'
           fields:
             -
-              handle: heading
+              handle: help_answer_section
+              field:
+                display: 'Help Answer Section'
+                type: section
+                icon: section
+                listable: hidden
+            -
+              handle: help_heading
               field:
                 input_type: text
                 antlers: false
@@ -106,11 +105,15 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
-        mermaid-uniqueness:
-          display: 'Mermaid Uniqueness'
-          fields:
             -
-              handle: heading
+              handle: column_section
+              field:
+                display: 'Column Section'
+                type: section
+                icon: section
+                listable: hidden
+            -
+              handle: column_heading
               field:
                 input_type: text
                 antlers: false
@@ -336,13 +339,10 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
-        newsletter:
-          display: Newsletter
-          fields:
             -
-              handle: predefined_component
+              handle: newsletter_component
               field:
-                display: 'Predefined component'
+                display: 'Newsletter Component'
                 type: section
                 icon: section
                 instructions: 'Will Displaying the newsletter component'
