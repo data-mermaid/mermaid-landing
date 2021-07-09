@@ -33,4 +33,5 @@ public/js/site.js
 storage/forms/*
 /content/collections/testimonials/
 /content/collections/faqs/
+/content/collections/mermaid_users/
 public/fonts/GT*
