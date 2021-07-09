@@ -8,11 +8,15 @@
         <div class="row">
             {{ numbers }}
             <div class="col-6 col-md-3">
-                <div class="number">
-                    {{ value }}
-                </div>
-                <div class="label">
-                    {{ label }}
+                <div class="number-container">
+                    <div class="number">
+                        <span class="counter" data-count="{{ value }}">
+                            {{ value }}
+                        </span>
+                    </div>
+                    <div class="label">
+                        {{ label }}
+                    </div>
                 </div>
             </div>
             {{ /numbers }}
