@@ -1,19 +1,42 @@
-<div>
-   <h4>{{ help_heading }}</h4>
-    {{ lead }}
-    {{ glide:image width="200" format="webp" }}
-        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
-    {{ /glide:image }}
-</div>
-<div>
-    <h3>{{ column_heading }}</h3>
-    <div>
-        {{ column }}
-        <h4>{{ title }}</h4>
-        <p>{{ lead }}</p>
-        {{ glide:image width="200" format="webp" }}
-        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
-        {{ /glide:image }}
-        {{ /column }}
+<section class="section principles">
+    <div class="img-bg" style="background-image:url({{ glide:image width="1920" format="webp" }}) ">
+        {{ partial src="partials/_floating-icons" }}
     </div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="intro-container">
+                    <div class="intro-medium text-light">
+                        {{ help_heading }}
+                    </div>
+                    <div class="intro-large text-light">
+                        {{ lead }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container principle-container">
+        <div class="row">
+            <div class="col">
+                <h3 class="title">
+                    {{ column_heading }}
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            {{ column }}
+            <div class="col-md-4">
+                <div class="principle">
+                    {{ glide:image width="400" format="webp" }}
+                    <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
+                    {{ /glide:image }}
+                    <h3>{{ title }}</h3>
+                    <p>{{ lead }}</p>
+                </div>
+            </div>
+            {{ /column }}
+        </div>
+    </div>
+</section>

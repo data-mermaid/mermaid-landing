@@ -6,7 +6,7 @@ require("slick-carousel/slick/slick");
 require("slick-carousel/slick/slick.css");
 
 $(function () {
-    var time = 5;
+    var time = 50000;
     var $bar,
         $slick,
         isPause,

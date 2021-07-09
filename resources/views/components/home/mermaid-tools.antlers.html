@@ -1,22 +1,42 @@
-<div>
-    <div>
-        <h4>Collect</h4>
-        {{ collect_heading }}<br/>
-        {{ collect_lead }}<br/>
-        {{ collect_button_label }}<br/>
-        {{ collect_button_url }}<br/>
-        {{ glide:collect_image width="200" format="webp" }}
-        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
-        {{ /glide:collect_image }}
+<section class="section features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature">
+                    <h2>{{ collect_heading }}</h2>
+                    <div class="description">
+                        <p>
+                            {{ collect_lead }}
+                        </p>
+                        <a href="{{ collect_button_url }}" class="btn btn-primary">
+                            collect_button_label
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        {{ glide:collect_image width="800" format="webp" }}
+                        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
+                        {{ /glide:collect_image }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature">
+                    <h2>{{ dashboard_heading }}</h2>
+                    <div class="description">
+                        <p>
+                            {{ dashboard_lead }}
+                        </p>
+                        <a href="{{ dashboard_button_url }}" class="btn btn-primary">
+                            {{ dashboard_button_label }}
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        {{ glide:dashboard_image width="800" format="webp" }}
+                        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
+                        {{ /glide:dashboard_image }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <h4>Dashboard</h4>
-        {{ dashboard_heading }}<br/>
-        {{ dashboard_lead }}<br/>
-        {{ dashboard_button_label }}<br/>
-        {{ dashboard_button_url }}<br/>
-        {{ glide:dashboard_image width="200" format="webp" }}
-        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
-        {{ /glide:dashboard_image }}
-    </div>
-</div>
+</section>
