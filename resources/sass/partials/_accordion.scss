@@ -20,6 +20,7 @@
             &:after{
                 display: none;
             }
+
             &:before{
                 content: '+';
                 position: absolute;
@@ -36,6 +37,9 @@
                 &:before {
                     content: '-';
                 }
+            }
+            &:hover{
+                color: $color-coral;
             }
 
         }
