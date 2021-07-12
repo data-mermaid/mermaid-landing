@@ -1,9 +1,9 @@
 title: 'Homepage Builder'
 fields:
   -
-    handle: components
+    handle: home_components
     field:
-      collapse: false
+      collapse: accordion
       sets:
         banner:
           display: Banner
@@ -388,5 +388,5 @@ fields:
       icon: replicator
       listable: false
       instructions: 'Build your homepage by using various predefined content models.'
-      if:
+      if_any:
         template: 'equals templates/home'
