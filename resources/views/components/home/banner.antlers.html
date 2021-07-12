@@ -1,7 +1,60 @@
-<div class="hero-image mb-4">
-    {{ glide:image width="300" format="webp" }}
-    <img class="img-fluid w-100" src="{{ url }}" alt="{{ alt }}">
-    {{ /glide:image }}
-</div>
-<h3>{{ title }}</h3>
-{{ lead }}
+<section class="hero-banner" style="background-image: url('{{ glide:image width="1920" format="webp" }}');">
+    <div class="hero-content-container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="hero-content text-light">
+                        <h1>{{ title }}</h1>
+                        <p class="intro-medium">
+                            {{ subtitle }}
+                        </p>
+                        <div class="scroll-button">
+                            <svg fill="none" height="36" viewBox="0 0 25 36" width="25"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect height="34" rx="9" stroke="#fff" stroke-width="2" width="22" x="1.49182"
+                                      y="1"/>
+                                <circle class="scroll-wheel" cx="12.4918" cy="12" fill="#fff" r="2.25"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ if show_icon }}
+    {{ partial src="partials/_floating-icons" }}
+    {{ /if }}
+    
+    <div class="separator-animated">
+        <svg enable-background="new 0 0 150 13.5" viewBox="0 0 150 13.5" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+            <linearGradient id="a" gradientTransform="matrix(1 0 0 -1 0 608)" gradientUnits="userSpaceOnUse"
+                            x1="698.9582" x2="674.4582" y1="657.3207" y2="482.96">
+                <stop offset="0" stop-color="#2970bb"/>
+                <stop offset="1" stop-color="#044c99"/>
+            </linearGradient>
+            <linearGradient id="b" gradientTransform="matrix(1 0 0 -1 0 608)" gradientUnits="userSpaceOnUse"
+                            x1="655.195" x2="690.751" y1="655.7264" y2="461.3845">
+                <stop offset="0" stop-color="#2b7dc6"/>
+                <stop offset="1" stop-color="#5094de"/>
+            </linearGradient>
+            <g class="parallax d-none">
+                <path d="m-112 10.1c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.4 88-8.4 58 8.4 88 8.4v20.6h-352z"
+                      fill="url(#a)" opacity=".8"/>
+                <path d="m-112 11.5c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.5 88-8.5 58 8.4 88 8.4v20.6h-352z"
+                      fill="url(#b)"/>
+                <path d="m-112 13.4c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.4 88-8.4 58 8.4 88 8.4v20.6h-352z"
+                      fill="#fff"/>
+            </g>
+            
+            <g class="parallax">
+                <path d="m-112 9.3c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.4 88-8.4 58 8.4 88 8.4v20.6h-352z"
+                      fill="url(#a)" opacity=".8"/>
+                <path d="m-112 10.7c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.5 88-8.5 58 8.4 88 8.4v20.6h-352z"
+                      fill="url(#b)"/>
+                <path d="m-112 12.6c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.4 88-8.4 58 8.4 88 8.4v20.6h-352z"
+                      fill="#fff"/>
+            </g>
+        </svg>
+    </div>
+</section>

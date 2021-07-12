@@ -1,6 +1,30 @@
-<div>
-    {{ heading }}
-    {{ numbers }}
-        <li>{{ label }} - {{ value }}</li>
-    {{ /numbers }}
-</div>
+<section class="section numbers">
+    <div class="container number-container">
+        <div class="row">
+            <div class="col">
+                <h3>{{ heading }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            {{ numbers }}
+            <div class="col-6 col-md-3">
+                <div class="number-container">
+                    <div class="number">
+                        <span class="counter" data-count="{{ value }}">
+                            {{ value }}
+                        </span>
+                    </div>
+                    <div class="label">
+                        {{ label }}
+                    </div>
+                </div>
+            </div>
+            {{ /numbers }}
+        </div>
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>
