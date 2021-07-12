@@ -1,0 +1,70 @@
+<div class="page-generic-container">
+    {{ partial src="partials/_animated-wave" }}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="narrow-content">
+                    <h1 class="main-title">{{ title }}</h1>
+                    <div class="intro-large">
+                        {{ intro }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container teams">
+        <div class="row">
+            <div class="col">
+                <div class="narrow-content">
+                    <h3 class="team-title">MERMAID Team</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {{ collection from="staffs" sort="order" }}
+            <div class="col-sm-6 col-md-4">
+                <div class="team">
+                    
+                    <div class="avatar">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ slug }}">
+                            <img class="img-fluid" src="{{ glide:avatar width="200" format="webp" }}"
+                                 alt="{{ avatar:alt }}">
+                        </a>
+                    </div>
+                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ slug }}">{{ title }}</a></h3>
+                    <p>
+                        {{ position }}
+                        <br>
+                        {{ organization }}
+                    </p>
+                
+                </div>
+            </div>
+    
+            <!-- Modal -->
+            <div class="modal modal-team fade" id="modal-{{ slug }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>{{ title }}</h3>
+                            <div class="position">
+                                {{ position }}
+                                <br>
+                                {{ organization }}
+                            </div>
+                            
+                            <div class="detail">
+                                {{ profile }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {{ /collection }}
+        </div>
+    </div>
+</div>

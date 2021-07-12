@@ -55,6 +55,15 @@ sections:
           icon: text
           listable: hidden
       -
+        handle: organization
+        field:
+          input_type: text
+          antlers: false
+          display: Organization
+          type: text
+          icon: text
+          listable: hidden
+      -
         handle: link
         field:
           display: Url
