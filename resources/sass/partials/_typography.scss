@@ -12,8 +12,17 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-p{
+p {
     margin-bottom: 28px;
+}
+
+a {
+    color: $color-coral;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-coral-dark;
+    }
 }
 
 h1 {
@@ -100,7 +109,7 @@ h6 {
     .intro-large,
     &.intro-large {
         &:before {
-            border-left: 4px solid $color-white!important;
+            border-left: 4px solid $color-white !important;
         }
     }
 }

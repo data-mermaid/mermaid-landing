@@ -1,28 +1,5 @@
 <div class="page-generic-container">
-    <div class="animated-header">
-        <svg enable-background="new 0 0 150 30" viewBox="0 0 150 30" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink">
-    
-            <linearGradient id="a" gradientTransform="rotate(90)">
-                <stop offset="0" stop-color="#c2e1ff"/>
-                <stop offset="1" stop-color="#fff"/>
-            </linearGradient>
-            <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="683" x2="683" xlink:href="#a" y1="0" y2="193.81" gradientTransform="rotate(90)"/>
-            <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="683" x2="683" y1="51" y2="280" >
-                <stop offset="0" stop-color="#88bdf2"/>
-                <stop offset="1" stop-color="#c2e1ff"/>
-            </linearGradient>
-            
-            <g class="parallax" opacity=".2">
-                <path d="m-112 9.3c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.4 88-8.4 58 8.4 88 8.4v20.6h-352z"
-                      fill="url(#b)"/>
-                <path d="m-112 10.7c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.5 88-8.5 58 8.4 88 8.4v20.6h-352z"
-                      fill="url(#c)"/>
-                <path d="m-112 12.6c30 0 58-8.4 88-8.4s58 8.4 88 8.4 58-8.4 88-8.4 58 8.4 88 8.4v20.6h-352z"
-                      fill="url(#a)"/>
-            </g>
-        </svg>
-    </div>
+    {{ partial src="partials/_animated-wave" }}
     
     <div class="container">
         <div class="row">
@@ -34,7 +11,8 @@
                     </div>
                 </div>
                 <div class="narrow-content">
-                    <p>MERMAID is an open-source application that collects and manages real-time data on coral reef health, developed in partnership between the WCS, WWF, and Sparkgeo.</p>
+                    <p>MERMAID is an open-source application that collects and manages real-time data on coral reef health, developed in partnership between the
+                        <a href="">WCS</a>, WWF, and Sparkgeo.</p>
     
                     <p>Reef scientists have historically used clipboards to record their underwater findings. This process can take hours, days and sometimes months to complete. Transferring data from paper to spreadsheet. Calculating information. Editing each cell and correcting typos. One. Point. At. A. Time.</p>
     
