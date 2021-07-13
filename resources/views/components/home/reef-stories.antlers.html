@@ -18,76 +18,61 @@
         </div>
         <div class="row">
             <div class="col-md-6" data-aos="fade-up">
-                <div class="story featured">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img class="img-fluid" src="/images/static/article-1.jpg" alt="">
-                        </a>
+                {{ collection:articles limit="1"}}
+                {{ dump }}
+                    <div class="story featured">
+                        <div class="thumbnail">
+                            <a href="{{ link to='{url}' }}">
+                                {{ glide:hero_image width="600" format="webp" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
+                                {{ /glide:hero_image }}
+                            </a>
+                        </div>
+                        <div class="meta">
+                            {{ if categories }}
+                            <span class="category">
+                                {{ categories }}
+                                    {{ title }}
+                                {{ /categories }}
+                            </span>
+                            —
+                            {{ /if }}
+                            <span class="published-date">
+                                {{ publish_date format="d M Y" }}
+                            </span>
+                        </div>
+                        <h4 class="title">
+                            <a href="{{ link to='{url}' }}">
+                                {{ title }}
+                            </a>
+                        </h4>
+                        <div class="excerpt">
+                            {{ intro }}
+                        </div>
                     </div>
-                    <div class="meta">
-                        <span class="category">News</span>
-                        —
-                        <span class="published-date">14 Jun 2021</span>
-                    </div>
-                    <h4 class="title">
-                        <a href="#">
-                            Researchers obtain first data from beneath 'Doomsday Glacier
-                        </a>
-                    </h4>
-                    <div class="excerpt">
-                        <p>In 2019, we joined the research vessel Barba as part of its Arctic Whale expedition to study the effects of microplastics on Atlantic whale species in the coastal waters…</p>
-                    </div>
-                </div>
+                {{ /collection:articles }}
             </div>
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                {{ collection:articles limit="4" offset="1"}}
                 <div class="story">
                     <div class="meta">
-                        <span class="category">News</span>
+                        {{ if categories }}
+                        <span class="category">
+                            {{ categories }}{{ if index > 0}}, {{ /if }}{{ title }}{{ /categories }}
+                        </span>
                         —
-                        <span class="published-date">15 Jun 2021</span>
+                        {{ /if }}
+                        <span class="published-date">
+                            {{ publish_date format="d M Y" }}
+                        </span>
                     </div>
                     <h4 class="title">
-                        <a href="#">
-                            Filipino Scientist Goes 10,000 Meters Down the Ocean and Finds a Teddy Bear
+                        <a href="{{ link to='{url}' }}">
+                            {{ title }}
                         </a>
                     </h4>
                 </div>
-                <div class="story">
-                    <div class="meta">
-                        <span class="category">News</span>
-                        —
-                        <span class="published-date">15 Jun 2021</span>
-                    </div>
-                    <h4 class="title">
-                        <a href="#">
-                            Activists and scientists demand political support for Europe's first wild river national park
-                        </a>
-                    </h4>
-                </div>
-                <div class="story">
-                    <div class="meta">
-                        <span class="category">News</span>
-                        —
-                        <span class="published-date">15 Jun 2021</span>
-                    </div>
-                    <h4 class="title">
-                        <a href="#">
-                            Methane-Eating Microbes in Ocean Play Important Role in Moderating Earth’s Temperature
-                        </a>
-                    </h4>
-                </div>
-                <div class="story">
-                    <div class="meta">
-                        <span class="category">News</span>
-                        —
-                        <span class="published-date">15 Jun 2021</span>
-                    </div>
-                    <h4 class="title">
-                        <a href="#">
-                            Mayflower 400: First Crewless Ship Run By AI To Sail Across The Atlantic
-                        </a>
-                    </h4>
-                </div>
+                {{ /collection:articles}}
             </div>
         </div>
     </div>
