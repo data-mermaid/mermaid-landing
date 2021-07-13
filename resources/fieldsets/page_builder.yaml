@@ -21,7 +21,7 @@ fields:
                   		"insertdatetime media table paste code help wordcount",
                   		"code"
                   	],
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
                   }
                 display: Content
                 type: tinymce_cloud
@@ -450,4 +450,4 @@ fields:
       listable: false
       instructions: 'Build your page by using various predefined content models.'
       if:
-        template: 'equals templates/page-show'
+        template: 'contains_any page-show, article-show'
