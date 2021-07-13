@@ -1,7 +1,9 @@
 <div class="container image-gallery">
     <div class="row">
         <div class="col">
+            {{ if title }}
             <h3 class="heading text-center">{{ title }}</h3>
+            {{ /if }}
             
             {{ gallery }}
             <div>{{ description }}</div>

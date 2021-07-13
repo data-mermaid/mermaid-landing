@@ -1,6 +1,8 @@
 <div class="narrow-content">
     <div class="accordion-container" >
+        {{ if }}
         <h3>{{ title }}</h3>
+        {{ /if }}
         <div class="accordion" id="accordion-{{ index }}">
             {{ faq }}
             <div class="accordion-item">

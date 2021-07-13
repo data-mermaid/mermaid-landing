@@ -11,9 +11,11 @@
             <video class="img-fluid w-100" src="{{ url | embed_url }}"></video>
             {{ /if }}
             
+            {{ if caption }}
             <div class="caption">
                 {{ caption }}
             </div>
+            {{ /if }}
         </div>
     </div>
 </div>

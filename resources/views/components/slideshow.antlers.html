@@ -1,14 +1,20 @@
-<div class="sets slideshow my-4">
-    {{ if title }}
-        <h2>{{ title }}</h2>
-    {{ /if }}
-    {{ slideshow }}
-        <div class="slick-slideshow">
-            {{ glide:images width="400" format="webp" }}
+<div class="container slideshow">
+    <div class="row">
+        <div class="col">
+            {{ if title }}
+            <h3>{{ title }}</h3>
+            {{ /if }}
+            <h3>{{ title }}</h3>
+            {{ slideshow }}
+            <div class="slick-slideshow">
+                {{ glide:images width="1200" format="webp" }}
                 <div class="slick-item">
-                    <img class="img-fluid w-100" src="{{ url }}"  alt="{{ alt }}" title="{{ title ?? alt }}">
+                    <img class="img-fluid w-100" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
                 </div>
-            {{ /glide:images }}
+                {{ /glide:images }}
+            </div>
+            {{ /slideshow }}
         </div>
-    {{ /slideshow }}
+    </div>
+
 </div>
