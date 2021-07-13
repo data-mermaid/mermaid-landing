@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ### Added
+- Add new Module tutorials [#26-module-tutorials](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/26)
 - Add CTA, Image box, features component to Page builder fieldset [#23-page-builder-adjustment](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/23)
 - Add Social Media and Newsletter globals variable [#22-globals-variable](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/22)
 - Homepage builder fieldset [#18-homepage-component-cms](https://gitlab.com/catalyzecommunications/statamic-boilerplate/-/issues/18)
