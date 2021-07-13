@@ -64,6 +64,7 @@ sections:
           type: template
           icon: template
           listable: hidden
+          default: 'templates/page-show'
   meta_data:
     display: 'Meta Data'
     fields:

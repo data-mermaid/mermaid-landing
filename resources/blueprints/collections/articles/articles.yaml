@@ -30,14 +30,38 @@ sections:
           icon: textarea
           listable: hidden
       -
-        import: page_builder
+        handle: external
+        field:
+          display: External
+          type: toggle
+          icon: toggle
+          listable: hidden
       -
         handle: external_link
         field:
+          input_type: text
+          antlers: false
           display: 'External Link'
-          type: link
-          icon: link
+          type: text
+          icon: text
+          width: 50
           listable: hidden
+          if:
+            external: 'equals true'
+      -
+        handle: external_resource
+        field:
+          input_type: text
+          antlers: false
+          display: Resource
+          type: text
+          icon: text
+          listable: hidden
+          width: 50
+          if:
+            external: 'equals true'
+      -
+        import: page_builder
       -
         handle: attachments
         field:
@@ -93,6 +117,8 @@ sections:
             - categories
           display: Categories
           mode: select
+          listable: hidden
+          max_items: 1
       -
         handle: keywords
         field:
@@ -101,6 +127,15 @@ sections:
           icon: tags
           instructions: 'Press enter'
           listable: hidden
+      -
+        handle: template
+        field:
+          hide_partials: true
+          display: Template
+          type: template
+          icon: template
+          listable: hidden
+          default: templates/article-show
   meta_data:
     display: 'Meta Data'
     fields:
