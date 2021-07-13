@@ -1,12 +1,27 @@
-.sets.image-gallery {
+.image-gallery {
+    margin-top: 90px;
+    margin-bottom: 90px;
+
+    .heading {
+        margin-bottom: 40px;
+    }
+
+    .filter-container {
+        margin-bottom: 40px;
+    }
+
     .images-container {
-        .image {
+        a.image {
+            cursor: pointer;
+            display: block;
+            position: relative;
             height: 0;
             padding-bottom: 66.66%;
             overflow: hidden;
             margin-bottom: 30px;
-            display: block;
-            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease-in-out;
+            border-radius: 8px;
 
             img {
                 width: 100%;
@@ -15,6 +30,70 @@
                 position: absolute;
                 transition: all 0.2s ease-in-out;
             }
+
+            &:hover {
+                box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.1);
+
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+#image-gallery-popup {
+    .btn-close {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #FFF;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        opacity: 1;
+        padding: 10px;
+        width: 14px;
+        height: 14px;
+        background-size: 14px;
+        box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-body {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .image {
+        text-align: center;
+        box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.1);
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin: auto;
+            object-fit: contain;
+            width: auto;
+            //height: auto;
+            height: 85vh;
+        }
+    }
+
+    .meta {
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .title {
+            font-weight: bold;
+        }
+
+        .caption {
+
+        }
+
+        .copyright {
+            font-size: 75%;
         }
     }
 }
