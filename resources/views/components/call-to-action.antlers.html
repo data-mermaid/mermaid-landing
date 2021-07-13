@@ -1,7 +1,21 @@
-<div>
-    {{ title }}
-    {{ lead }}
-    {{ button_label }}
-    {{ button_url }}
-    {{ image }}
+<div class="container cta">
+    <div class="bg-container">
+        <div class="bg-image" style="background-image: url('{{ glide:image width="1500" format="webp" }}');"></div>
+        <div class="bg-gradient"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="content">
+                <h2>
+                    {{ title }}
+                </h2>
+                <div class="intro-medium">
+                    {{ lead }}
+                </div>
+                <a href="{{ button_url }}" class="btn btn-primary">
+                    {{ button_label }}]
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
