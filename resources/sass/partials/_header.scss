@@ -124,42 +124,47 @@
                     border-radius: 15px;
                     position: relative;
                     display: block;
-                    transition: background 2s ease;
+                    transition: opacity 0.3s cubic-bezier(0.2, 0, 0.1, 1), transform 0.3s cubic-bezier(0.2, 0, 0.1, 1), box-shadow 1.5s ease, color 1.5s ease, background 1.5s ease;
                     overflow: hidden;
                     z-index: 1;
 
                     &:before, &:after {
-                        content: "";
-                        height: 500px;
-                        width: 500px;
-                        top: 150%;
+                        content: '';
                         position: absolute;
-                        z-index: -1;
+                        top: 0;
+                        bottom: auto;
+                        right: -50%;
                         left: -50%;
-                        transition: all 1.4s ease;
+                        height: 0;
+                        width: auto;
+                        padding-bottom: 200%;
+                        border-radius: 35%;
+                        z-index: -1;
+                        pointer-events: none;
+                        transition: all 0s ease 1s, opacity 1s cubic-bezier(0.2, 0, 0.1, 1);
+                        opacity: 0;
                     }
 
                     &:before {
-                        border-radius: 60% 70% 20% 40%;
-                        background: $color-coral-dark-2;
-                        opacity: .5;
-                        animation: water 12s ease-in-out infinite both alternate;
+                        transform: translate3d(-5%, 4.8em, 0) rotate(330deg);
+                        background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
                     }
 
                     &:after {
-                        border-radius: 60% 70% 20% 40%;
-                        background: $color-coral-dark-2;
-                        opacity: .8;
-                        animation: water 14s ease-in-out infinite both alternate;
+                        transform: translate3d(5%, 4.8em, 0) rotate(0deg);
+                        background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
                     }
 
                     &:hover {
-                        background: $color-coral-dark-2;
-                        color: white;
+                        //background: $color-coral-dark-2;
+                        //color: white;
 
                         &:before, &:after {
+                            transition: all 2s ease 0s, opacity 0.2s ease;
                             opacity: 1;
-                            top: -100%;
+                            transform: translate3d(0, -1em, 0) rotate(
+                                            180deg
+                            );
                         }
                     }
                 }
