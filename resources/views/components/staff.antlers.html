@@ -1,24 +1,30 @@
-<div class="sets staff my-4">
-    <h3>{{ title }}</h3>
-    <div class="row">
-        {{ staff }}
-            <div class="col-md-4">
-                <div class="card">
-                    {{ if link != '' }}
-                    <a href="{{ link }}" class="stretched-link">
-                    {{ /if }}
-                        <img class="card-img-top" src="{{ glide:avatar width="400" format="webp" }}" alt="{{ avatar:alt }}">
-                    {{ if link }}
-                    </a>
-                    {{ /if }}
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">{{ title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ position }}</h6>
-                        {{ profile }}
-                    </div>
+<section class="teams">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="narrow-content">
+                    <h3 class="team-title">{{ title }}</h3>
                 </div>
             </div>
-        {{ /staff }}
+        </div>
+        <div class="row">
+            {{ staff }}
+            <div class="col-sm-6 col-md-4">
+                <div class="team">
+                    <div class="avatar">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ slug }}">
+                            <img class="" src="{{ glide:avatar width="400" format="webp" }}" alt="{{ avatar:alt }}">
+                        </a>
+                    </div>
+                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ slug }}">{{ title }}</a></h3>
+                    <p>
+                        {{ position }}
+                        <br>
+                        {{ organization }}
+                    </p>
+                </div>
+            </div>
+            {{ /staff }}
+        </div>
     </div>
-</div>
+</section>

@@ -1,24 +1,21 @@
-<div class="sets faq my-4">
-    <h3>{{ title }}</h3>
-    <div class="accordion" id="accordion-1">
-        {{ faq }}
+<div class="narrow-content">
+    <div class="accordion-container" >
+        <h3>{{ title }}</h3>
+        <div class="accordion" id="accordion-{{ index }}">
+            {{ faq }}
             <div class="accordion-item">
                 <h4 class="accordion-header">
-                    <button type="button" class="accordion-button collapsed"
-                            data-bs-toggle="collapse" data-bs-target="#accordion-item-{{ index }}"
-                    >
+                    <button class="accordion-button {{ if index != 0 }}collapsed{{ /if }}" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-{{ handle }}-{{ index }}" aria-expanded="true" aria-controls="lorem">
                         {{ title }}
                     </button>
                 </h4>
-                <div id="accordion-item-{{ index }}"
-                     class="accordion-collapse collapse"
-                     data-bs-parent="#accordion-1"
-                >
+                <div id="accordion-{{ handle }}-{{ index }}" class="accordion-collapse collapse {{ if index == 0 }}show{{ /if }}" aria-labelledby="headingOne">
                     <div class="accordion-body">
-                        {{ answer }}
+                        {{ answer}}
                     </div>
                 </div>
             </div>
-        {{ /faq }}
+            {{ /faq }}
+        </div>
     </div>
 </div>

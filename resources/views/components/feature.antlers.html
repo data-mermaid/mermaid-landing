@@ -1,8 +1,30 @@
-<div>
-    <h3>{{ heading }}</h3>
-    {{ features }}
-        {{ image }}
-        <h4>{{ title }}</h4>
-        {{ lead }}
-    {{ /features }}
+<div class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h3 class="heading">
+                    {{ heading }}
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            {{ features }}
+            <div class="col-md-4">
+                <div class="feature">
+                    <div class="image">
+                        {{ glide:image width="400" format="webp" }}
+                        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
+                        {{ /glide:image }}
+                    </div>
+                    <div class="title">
+                        <h3>{{ title}}</h3>
+                    </div>
+                    <div class="description">
+                        {{ lead }}
+                    </div>
+                </div>
+            </div>
+            {{ /features }}
+        </div>
+    </div>
 </div>

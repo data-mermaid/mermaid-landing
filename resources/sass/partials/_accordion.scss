@@ -1,11 +1,12 @@
-.accordion{
-    .accordion-item{
+.accordion {
+    .accordion-item {
         border-left: 0;
         border-right: 0;
         border-color: $color-blue-light-2;
     }
-    .accordion-header{
-        .accordion-button{
+
+    .accordion-header {
+        .accordion-button {
             font-style: normal;
             font-weight: 500;
             font-size: 20px;
@@ -17,11 +18,11 @@
             border: 0;
             box-shadow: none;
 
-            &:after{
+            &:after {
                 display: none;
             }
 
-            &:before{
+            &:before {
                 content: '+';
                 position: absolute;
                 left: 0;
@@ -32,24 +33,31 @@
                 line-height: 54px;
             }
 
-            &.collapsed{
+            &.collapsed {
                 color: $color-black-text;
+
                 &:before {
                     content: '-';
                 }
             }
-            &:hover{
+
+            &:hover {
                 color: $color-coral;
             }
 
         }
     }
-    .accordion-body{
+
+    .accordion-body {
         padding: 0 20px 20px 45px;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
-.accordion-container{
+.accordion-container {
     margin-top: 35px;
     margin-bottom: 35px;
 }

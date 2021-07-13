@@ -1,0 +1,44 @@
+.modal {
+    .modal-dialog {
+        .modal-content {
+            border-radius: 16px;
+            border: none;
+
+            .modal-header {
+                border-bottom: 0;
+                padding: 20px;
+            }
+
+            .modal-body{
+                padding: 30px;
+            }
+        }
+    }
+
+    .btn-close {
+        //background: url(/images/icon/close.svg);
+        background: none;
+        opacity: 1;
+        position: relative;
+
+        &:before {
+            content: '✕';
+            color: $color-coral;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        &:hover {
+            &:before {
+                color: $color-coral-dark;
+            }
+        }
+        &:focus{
+            box-shadow: none;
+        }
+    }
+}
