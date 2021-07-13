@@ -1,0 +1,12 @@
+title: Tutorials
+template: templates/article-show
+layout: main
+mount: c15930d3-b5a9-4f99-b1eb-05e347c0a830
+taxonomies:
+  - categories
+revisions: false
+route: '{mount}/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
