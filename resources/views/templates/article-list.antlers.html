@@ -7,7 +7,7 @@
             </div>
         </div>
     </div>
-    
+    {{ if get:page <= 1 }}
     <div class="featured-articles">
         <div class="container">
             <div class="row">
@@ -84,9 +84,10 @@
             </div>
         </div>
     </div>
+    {{ /if }}
     
     {{ collection:articles limit="3" paginate="true" as="posts" taxonomy:categories=get:category }}
-    <div class="articles {{ if get:page && !get:page == 1 }} no-bg {{ /if }}">
+    <div class="articles {{ if get:page > 1 }} no-bg {{ /if }}">
         <div class="container">
             <div class="row">
                 <div class="col">
