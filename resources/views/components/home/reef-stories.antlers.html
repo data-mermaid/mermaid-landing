@@ -92,21 +92,18 @@
     
     <div class="container subscribe" data-aos="fade-up">
         <div class="bg-container">
-            <div class="bg-image" style="background-image: url('/images/static/banner.jpg');"></div>
+            <div class="bg-image" style="background-image: url('{{ settings:subscribe_image }}');"></div>
             <div class="bg-gradient"></div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="content">
-                    <h2>Subscribe to Mermaid Mail</h2>
+                    <h2>{{ settings:subscribe_title }}</h2>
                     <div class="intro-medium">
-                        <p>Get quarterly updates from us.
-                            <br>
-                            Read our <a href="#">Privacy policy</a>.
-                        </p>
+                        {{ settings:subscribe_lead }}
                     </div>
-                    <a href="#" class="btn btn-primary">
-                        Sign up
+                    <a href="{{ settings:subscribe_button_url }}" class="btn btn-primary">
+                        {{ settings:subscribe_button_label }}
                     </a>
                 </div>
             </div>

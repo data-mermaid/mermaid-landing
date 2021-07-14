@@ -1,6 +1,10 @@
 .article-list-page {
     padding-top: 50px;
-
+    @include media-breakpoint-up(xl2) {
+        .row {
+            --bs-gutter-x: 40px;
+        }
+    }
     .animated-header {
         z-index: -1;
         height: 21%;

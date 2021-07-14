@@ -33,3 +33,63 @@ sections:
           icon: assets
           listable: hidden
           max_files: 1
+  subscribe_cta:
+    display: 'Subscribe CTA'
+    fields:
+      -
+        handle: subscribe_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: subscribe_lead
+        field:
+          init: |-
+            {
+            	"height": 500,
+            	"menubar": false,
+            	"plugins": [
+            		"advlist autolink lists link image charmap print preview anchor",
+            		"searchreplace visualblocks code fullscreen",
+            		"insertdatetime media table paste code help wordcount",
+            		"code"
+            	],
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+            }
+          display: Lead
+          type: tinymce_cloud
+          icon: textarea
+          listable: hidden
+      -
+        handle: subscribe_button_label
+        field:
+          input_type: text
+          antlers: false
+          display: 'Button Label'
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: subscribe_button_url
+        field:
+          input_type: text
+          antlers: false
+          display: 'Button URL'
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: subscribe_image
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Image
+          type: assets
+          icon: assets
+          listable: hidden

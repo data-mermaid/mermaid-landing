@@ -370,7 +370,7 @@
 
                 /* SVG masking */
                 mask: url('/images/subscribe-mask.svg');
-                mask-size: 100%;
+                mask-size: cover;
                 mask-position: center bottom;
                 mask-repeat: no-repeat;
             }
