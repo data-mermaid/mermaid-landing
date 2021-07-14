@@ -18,26 +18,21 @@
                         </a>
                     </div>
                 </div>
-                {{ dump }}
                 <div class="col-md-4">
+                    {{ if social_media:social_media }}
                     <div class="social-media">
                         <div class="label">Follow us on</div>
-                        <div class="icon linkedin">
-                            <a href="#">
-                                <img src="/images/icon/linkedin.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="icon twitter">
-                            <a href="#">
-                                <img src="/images/icon/twitter.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="icon youtube">
-                            <a href="#">
-                                <img src="/images/icon/youtube.svg" alt="">
-                            </a>
+                        <div class="icons">
+                        {{ social_media:social_media }}
+                            <div class="icon {{ type }}">
+                                <a href="{{ prefix }}{{ url }}">
+                                    <img src="/images/icon/{{ type }}.svg" alt="">
+                                </a>
+                            </div>
+                        {{ /social_media:social_media }}
                         </div>
                     </div>
+                    {{ /if }}
                     <div class="footer-menu">
                     
                     </div>

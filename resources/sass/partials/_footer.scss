@@ -24,7 +24,7 @@ footer.main-footer {
     .subscribe {
         a:not(.btn) {
             transition: 0.3s all ease-in-out;
-            color: rgba($color-white,0.6);
+            color: rgba($color-white, 0.6);
             text-decoration: none;
             position: relative;
 
@@ -54,30 +54,49 @@ footer.main-footer {
     .social-media {
         display: flex;
         margin-bottom: 100px;
+        flex-wrap: wrap;
 
         .label {
             margin-right: 20px;
             margin-top: 9px;
         }
 
-        .icon {
-            margin-left: 12px;
-            margin-right: 12px;
+        .icons {
+            display: flex;
+            flex-wrap: wrap;
 
-            a {
-                opacity: 0.5;
-                transition: 0.2s all ease-in-out;
-                display: block;
+            .icon {
+                margin-left: 12px;
+                margin-right: 12px;
 
-                &:hover {
-                    opacity: 1;
+                &:first-child {
+                    margin-left: 0;
                 }
-            }
 
-            img {
-                width: 18px;
-                max-width: 18px;
-                vertical-align: bottom;
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    opacity: 0.5;
+                    transition: 0.2s all ease-in-out;
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    //width: 18px;
+                    //height: 18px;
+                    //max-width: 18px;
+                    //max-height: 18px;
+                    vertical-align: bottom;
+                }
             }
         }
     }
