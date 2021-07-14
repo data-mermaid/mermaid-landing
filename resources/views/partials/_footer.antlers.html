@@ -10,14 +10,15 @@
                     
                     <div class="subscribe">
                         <h3>
-                            {{ settings:subscribe_title }}
+                            {{ newsletter:title }}
                         </h3>
-                        {{ settings:subscribe_lead }}
-                        <a href="{{ settings:subscribe_button_url }}" class="btn btn-light">
-                            {{ settings:subscribe_button_label }}
+                        {{ newsletter:lead }}
+                        <a href="{{ newsletter:button_url }}" class="btn btn-light">
+                            {{ newsletter:button_label }}
                         </a>
                     </div>
                 </div>
+                {{ dump }}
                 <div class="col-md-4">
                     <div class="social-media">
                         <div class="label">Follow us on</div>

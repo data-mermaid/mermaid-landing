@@ -78,11 +78,13 @@
                     <h4 class="title">
                         {{ if external_link  }}
                         <a href="{{ external_link }}" target="_blank">
-                        {{ else }}
-                        <a href="{{ link to='{url}' }}">
-                        {{ endif }}
                             {{ title }}
                         </a>
+                        {{ else }}
+                        <a href="{{ link to='{url}' }}">
+                            {{ title }}
+                        </a>
+                        {{ endif }}
                     </h4>
                 </div>
                 {{ /collection:articles}}
@@ -92,18 +94,19 @@
     
     <div class="container subscribe" data-aos="fade-up">
         <div class="bg-container">
-            <div class="bg-image" style="background-image: url('{{ settings:subscribe_image }}');"></div>
+            
+            <div class="bg-image" style="background-image: url('{{ glide:newsletter:image width="1200" format="webp" }}');"></div>
             <div class="bg-gradient"></div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="content">
-                    <h2>{{ settings:subscribe_title }}</h2>
+                    <h2>{{ newsletter:title }}</h2>
                     <div class="intro-medium">
-                        {{ settings:subscribe_lead }}
+                        {{ newsletter:lead }}
                     </div>
-                    <a href="{{ settings:subscribe_button_url }}" class="btn btn-primary">
-                        {{ settings:subscribe_button_label }}
+                    <a href="{{ newsletter:button_url }}" class="btn btn-primary">
+                        {{ newsletter:button_label }}
                     </a>
                 </div>
             </div>
