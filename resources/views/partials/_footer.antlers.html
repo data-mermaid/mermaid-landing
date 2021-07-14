@@ -10,35 +10,35 @@
                     
                     <div class="subscribe">
                         <h3>
-                            {{ settings:subscribe_title }}
+                            {{ newsletter:title }}
                         </h3>
-                        {{ settings:subscribe_lead }}
-                        <a href="{{ settings:subscribe_button_url }}" class="btn btn-light">
-                            {{ settings:subscribe_button_label }}
+                        {{ newsletter:lead }}
+                        <a href="{{ newsletter:button_url }}" class="btn btn-light">
+                            {{ newsletter:button_label }}
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
+                    {{ if social_media:social_media }}
                     <div class="social-media">
                         <div class="label">Follow us on</div>
-                        <div class="icon linkedin">
-                            <a href="#">
-                                <img src="/images/icon/linkedin.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="icon twitter">
-                            <a href="#">
-                                <img src="/images/icon/twitter.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="icon youtube">
-                            <a href="#">
-                                <img src="/images/icon/youtube.svg" alt="">
-                            </a>
+                        <div class="icons">
+                        {{ social_media:social_media }}
+                            <div class="icon {{ type }}">
+                                <a href="{{ prefix }}{{ url }}">
+                                    <img src="/images/icon/{{ type }}.svg" alt="">
+                                </a>
+                            </div>
+                        {{ /social_media:social_media }}
                         </div>
                     </div>
+                    {{ /if }}
                     <div class="footer-menu">
-                    
+                        {{ nav:footer_nav }}
+                        <div class="nav-item">
+                            <a href="{{ url }}" {{ if is_external }}target="_blank "{{ /if }}>{{ title }}</a>
+                        </div>
+                        {{ /nav:footer_nav }}
                     </div>
                     <div class="copyright">
                         Copyright &copy; {{ now format="Y" }} {{ settings:site_name }}.
