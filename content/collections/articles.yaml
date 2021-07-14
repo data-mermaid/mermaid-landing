@@ -1,7 +1,7 @@
 title: Articles
 template: templates/article-show
 layout: main
-mount: c15930d3-b5a9-4f99-b1eb-05e347c0a830
+mount: b645c81b-da57-4859-9dab-69225a91fa2a
 taxonomies:
   - categories
 revisions: false

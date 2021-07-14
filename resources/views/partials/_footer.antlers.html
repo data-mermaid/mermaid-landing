@@ -10,10 +10,12 @@
                     
                     <div class="subscribe">
                         <h3>
-                            Subscribe to MERMAID mail
+                            {{ settings:subscribe_title }}
                         </h3>
-                        <p>Get quarterly updates from us. Read our <a href="#">Privacy Policy</a>.</p>
-                        <a href="#" class="btn btn-light">Sign up</a>
+                        {{ settings:subscribe_lead }}
+                        <a href="{{ settings:subscribe_button_url }}" class="btn btn-light">
+                            {{ settings:subscribe_button_label }}
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-4">

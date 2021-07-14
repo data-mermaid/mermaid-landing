@@ -5,9 +5,11 @@
         <nav class="align-center">
             <ul class="pagination justify-content-center">
                 {{ if prev_page }}
-                    <li class="page-item"><a class="page-link" href="{{ prev_page }}">&laquo;</a></li>
+                    <li class="page-item prev">
+                        <a class="page-link" href="{{ prev_page }}"></a>
+                    </li>
                 {{ else }}
-                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                    <li class="page-item prev disabled"><span class="page-link"></span></li>
                 {{ /if }}
 
                 {{ links:segments }}
@@ -61,12 +63,12 @@
                 {{ /links:segments }}
 
                 {{ if next_page }}
-                    <li class="page-item">
-                        <a class="page-link" href="{{ next_page }}">&raquo;</a>
+                    <li class="page-item next">
+                        <a class="page-link" href="{{ next_page }}"></a>
                     </li>
                 {{ else }}
-                    <li class="page-item disabled">
-                        <span class="page-link">&raquo;</span>
+                    <li class="page-item next disabled">
+                        <span class="page-link"></span>
                     </li>
                 {{ /if }}
             </ul>
