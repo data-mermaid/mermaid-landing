@@ -93,6 +93,8 @@ sections:
             - categories
           display: Categories
           mode: select
+          listable: hidden
+          max_items: 1
       -
         handle: keywords
         field:

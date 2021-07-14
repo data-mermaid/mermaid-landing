@@ -35,7 +35,7 @@
                             {{ if categories }}
                             <span class="category">
                                 {{ categories }}
-                                    {{ title }}
+                                <a href="{{ url }}">{{ title }}</a>
                                 {{ /categories }}
                             </span>
                             —
@@ -61,11 +61,13 @@
             </div>
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 {{ collection:articles limit="4" offset="1"}}
-                <div class="story">
+                <div class="story {{ if external_link }}external{{ /if }}" >
                     <div class="meta">
                         {{ if categories }}
                         <span class="category">
-                            {{ categories }}{{ if index > 0}}, {{ /if }}{{ title }}{{ /categories }}
+                            {{ categories }}
+                            <a href="{{ url }}">{{ title }}</a>
+                            {{ /categories }}
                         </span>
                         —
                         {{ /if }}
@@ -92,10 +94,6 @@
         <div class="bg-container">
             <div class="bg-image" style="background-image: url('/images/static/banner.jpg');"></div>
             <div class="bg-gradient"></div>
-            &lt;!&ndash;
-            <div class="wave">
-                <img src="/images/subscribe-waves.svg" alt="">
-            </div> &ndash;&gt;
         </div>
         <div class="row">
             <div class="col">

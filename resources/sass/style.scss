@@ -7,6 +7,8 @@
 @import "partials/utilities";
 @import "partials/button";
 @import "partials/modal";
+@import "partials/pagination";
+@import "partials/nav-pills";
 
 @import "partials/header";
 @import "partials/footer";
@@ -29,5 +31,6 @@
 @import "components/image-text";
 
 
-@import "templates/home";
 @import "templates/page-generic";
+@import "templates/home";
+@import "templates/article-list";
