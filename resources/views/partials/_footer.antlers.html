@@ -34,7 +34,11 @@
                     </div>
                     {{ /if }}
                     <div class="footer-menu">
-                    
+                        {{ nav:footer_nav }}
+                        <div class="nav-item">
+                            <a href="{{ url }}" {{ if is_external }}target="_blank "{{ /if }}>{{ title }}</a>
+                        </div>
+                        {{ /nav:footer_nav }}
                     </div>
                     <div class="copyright">
                         Copyright &copy; {{ now format="Y" }} {{ settings:site_name }}.
