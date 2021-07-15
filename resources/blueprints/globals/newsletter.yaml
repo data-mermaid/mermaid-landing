@@ -61,10 +61,8 @@ sections:
           display: Image
           type: assets
           icon: assets
-          listable: hidden
+          listable: true
           instructions: Small
-          if:
-            size: 'equals small'
           width: 50
       -
         handle: large_image
@@ -78,18 +76,5 @@ sections:
           type: assets
           icon: assets
           instructions: Large
-          listable: hidden
-          if:
-            size: 'equals large'
-          width: 50
-      -
-        handle: size
-        field:
-          options:
-            small: Small
-            large: Large
-          display: 'Image Size'
-          type: button_group
-          icon: button_group
-          listable: hidden
+          listable: true
           width: 50
