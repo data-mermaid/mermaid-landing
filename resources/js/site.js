@@ -13,5 +13,6 @@ import './component-sets/image-gallery';
 import './component-sets/counter';
 
 import './component-sets/floating-icons';
+import './component-sets/article';
 
 import './page/home';
