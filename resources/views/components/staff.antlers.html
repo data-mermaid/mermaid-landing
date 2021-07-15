@@ -13,21 +13,44 @@
             {{ staff }}
             <div class="col-sm-6 col-md-4">
                 <div class="team">
-                    <div class="avatar">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ slug }}">
-                            <img class="" src="{{ glide:avatar width="400" format="webp" }}" alt="{{ avatar:alt }}">
-                        </a>
+                    <div class="team-summary">
+                        <div class="avatar">
+                            <a href="#" class="open-details">
+                                <img class="" src="{{ glide:avatar width="400" format="webp" }}" alt="{{ avatar:alt }}">
+                            </a>
+                        </div>
+                        <h3><a href="#" class="open-details">{{ title }}</a></h3>
+                        <!-- <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ slug }}">{{ title }}</a></h3>-->
+                        <p>
+                            {{ position }}
+                            <br>
+                            {{ organization }}
+                        </p>
                     </div>
-                    <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ slug }}">{{ title }}</a></h3>
-                    <p>
-                        {{ position }}
-                        <br>
-                        {{ organization }}
-                    </p>
+                    
+                    
+                    <div class="team-details">
+                        <div class="btn-close-container">
+                            <button class="btn-close"></button>
+                        </div>
+                        <div class="content">
+                            <h3>{{ title }}</h3>
+                            <div class="position">
+                                {{ position }}
+                                <br>
+                                {{ organization }}
+                            </div>
+                            
+                            <div class="detail">
+                                {{ profile }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-    
+            
             <!-- Modal -->
+            <!--
             <div class="modal modal-team fade" id="modal-{{ slug }}" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -41,7 +64,7 @@
                                 <br>
                                 {{ organization }}
                             </div>
-                    
+                            
                             <div class="detail">
                                 {{ profile }}
                             </div>
@@ -49,7 +72,7 @@
                     </div>
                 </div>
             </div>
-    
+            -->
             {{ /staff }}
         </div>
     </div>
