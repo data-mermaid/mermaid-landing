@@ -128,6 +128,13 @@ sections:
           instructions: 'Press enter'
           listable: hidden
       -
+        handle: featured
+        field:
+          display: Featured
+          type: toggle
+          icon: toggle
+          listable: hidden
+      -
         handle: template
         field:
           hide_partials: true
