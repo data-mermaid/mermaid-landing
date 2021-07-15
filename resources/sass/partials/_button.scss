@@ -178,24 +178,29 @@
     }
 }
 
-//@keyframes water {
-//    0% {
-//        transform: rotate(0);
-//    }
-//    20% {
-//        border-radius: 50% 63% 80% 49%;
-//    }
-//    40% {
-//        border-radius: 60% 64% 64% 48%;
-//    }
-//    60% {
-//        border-radius: 80% 63% 51% 49%;
-//    }
-//    80% {
-//        border-radius: 40% 60% 42% 58%;
-//    }
-//    100% {
-//        border-radius: 62% 67% 70% 53%;
-//        transform: rotate(180deg);
-//    }
-//}
+.btn-close {
+    //background: url(/images/icon/close.svg);
+    background: none;
+    opacity: 1;
+    position: relative;
+
+    &:before {
+        content: '✕';
+        color: $color-coral;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 22px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    &:hover {
+        &:before {
+            color: $color-coral-dark;
+        }
+    }
+    &:focus{
+        box-shadow: none;
+    }
+}

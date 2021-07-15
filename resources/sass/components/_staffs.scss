@@ -3,6 +3,7 @@
     h3.team-title {
         margin-bottom: 90px;
     }
+
     //padding-bottom: 90px;
     border-bottom: 1px solid $color-blue-light;
 }
@@ -10,6 +11,7 @@
 .staff, .team {
     border: 0;
     margin-bottom: 100px;
+    position: relative;
 
     .avatar {
         position: relative;
@@ -42,6 +44,7 @@
 
             &:after {
                 content: '';
+                display: none;
                 position: absolute;
                 left: 0;
                 bottom: 0;
@@ -95,6 +98,62 @@
     p {
         text-align: center;
     }
+    //display: flex;
+    //flex-wrap: wrap;
+    .team-summary{
+        width: 100%;
+    }
+    .team-details {
+        text-align: center;
+        background: $color-white;
+        box-shadow: 0px 8px 36px rgba(0, 0, 0, 0.15);
+        border-radius: 16px;
+        position: absolute;;
+        top: 0;
+        left: 0;
+        //bottom: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        min-height: 100%;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+        z-index: 2;
+
+        .content {
+            padding: 30px;
+            padding-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            color: $color-black-text;
+            margin-bottom: 20px;
+        }
+
+        .position {
+            margin-bottom: 20px;
+        }
+
+        .btn-close-container {
+            text-align: right;
+            padding: 15px;
+
+            .btn-close {
+                padding: 5px;
+            }
+        }
+    }
+
+    &.display-details {
+        .team-details {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
 }
 
 
@@ -103,9 +162,11 @@
         color: $color-black-text;
         margin-bottom: 20px;
     }
-    .position{
+
+    .position {
         margin-bottom: 20px;
     }
+
     .modal-dialog {
         width: 380px;
 
@@ -113,7 +174,8 @@
             .modal-body {
                 text-align: center;
                 padding-top: 0;
-                p:last-child{
+
+                p:last-child {
                     margin-bottom: 0;
                 }
             }

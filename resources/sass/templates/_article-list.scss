@@ -190,6 +190,17 @@
                     line-height: 48px;
                     margin-bottom: 25px;
                 }
+
+                &.external {
+                    .thumbnail {
+                        a {
+                            &:before {
+                                top: 20px;
+                                left: 20px;
+                            }
+                        }
+                    }
+                }
             }
 
             &.external {
@@ -207,8 +218,8 @@
                             width: 34px;
                             height: 34px;
                             z-index: 5;
-                            left: 20px;
-                            top: 20px;
+                            left: 15px;
+                            top: 15px;
                             transition: all 0.3s ease-in-out;
                         }
 
@@ -349,29 +360,34 @@
     }
 
     .article {
-        .card-img-top {
-            padding-bottom: 66.66%;
-            background-color: #EEEEEE;
-            background-size: cover;
-            background-position: center;
-            //position: absolute;
-            position: relative;
-            height: 0;
-            overflow: hidden;
-
+        .thumbnail {
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                position: absolute;
-                transition: all 0.2s ease-in-out;
+                transition: 0.3s all ease-in-out;
             }
         }
 
-        &:hover {
-            .card-img-top {
-                img {
-                    transform: scale(1.05);
+        &.hover {
+            &.external {
+                .thumbnail {
+                    a:before {
+                        background-color: $color-coral;
+                        border-color: $color-coral;
+                    }
+                }
+            }
+
+            .thumbnail {
+                a {
+                    img {
+                        transform: scale(1.04);
+                    }
+                }
+            }
+
+            .title {
+                a {
+                    background-size: 100% 2px;
+                    background-image: linear-gradient(to right, $color-coral 0%, $color-coral 0%);
                 }
             }
         }

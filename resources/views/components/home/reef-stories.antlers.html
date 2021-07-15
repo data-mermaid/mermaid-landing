@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h3>Reef stories</h3>
+                <h3>Reef Stories</h3>
             </div>
             <div class="col text-end">
                 <a href="{{ url }}" class="view-more">
@@ -43,9 +43,9 @@
                         
                         {{ if categories }}
                         <span class="category">
-                                {{ categories }}
-                                <a href="{{ url }}">{{ title }}</a>
-                                {{ /categories }}
+                            {{ categories }}
+                            {{ title }}
+                            {{ /categories }}
                             </span>
                         —
                         {{ /if }}
@@ -83,7 +83,7 @@
                         {{ if categories }}
                         <span class="category">
                             {{ categories }}
-                            <a href="{{ url }}">{{ title }}</a>
+                            {{ title }}
                             {{ /categories }}
                         </span>
                         —
