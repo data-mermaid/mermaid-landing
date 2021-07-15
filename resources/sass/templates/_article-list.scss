@@ -109,8 +109,8 @@
             padding-top: 40px;
             position: relative;
 
-            &:first-of-type{
-                padding-top: 0!important;
+            &:first-of-type {
+                padding-top: 0 !important;
             }
 
             &:last-child {
@@ -129,6 +129,15 @@
 
             .meta {
                 margin-bottom: 10px;
+
+                .external-source {
+                    font-weight: 500;
+                    color: $color-coral;
+                }
+
+                .external-source-separator {
+                    margin: 0 5px;
+                }
 
                 .category {
                     font-weight: 500;
@@ -296,6 +305,15 @@
 
             .meta {
                 margin-bottom: 10px;
+
+                .external-source {
+                    font-weight: 500;
+                    color: $color-coral;
+                }
+
+                .external-source-separator {
+                    margin: 0 5px;
+                }
 
                 .category {
                     font-weight: 500;

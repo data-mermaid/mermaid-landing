@@ -304,7 +304,13 @@
 
             .meta {
                 margin-bottom: 10px;
-
+                .external-source{
+                    font-weight: 500;
+                    color: $color-coral;
+                }
+                .external-source-separator{
+                    margin: 0 5px;
+                }
                 .category {
                     font-weight: 500;
                     color: $color-coral;

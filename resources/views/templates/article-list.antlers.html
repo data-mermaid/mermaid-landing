@@ -13,10 +13,10 @@
             <div class="row">
                 <div class="col-md-6" data-aos="fade-up">
                     {{ collection:articles limit="1" featured:is="true"}}
-                    <div class="article featured">
+                    <div class="article featured {{ if external }}external{{ /if }}">
                         <div class="thumbnail">
                             <a
-                                    {{ if external_link }}
+                                    {{ if external }}
                                     href="{{ external_link }}" target="_blank"
                                     {{ else }}
                                     href="{{ link to='{url}' }}"
@@ -28,6 +28,12 @@
                             </a>
                         </div>
                         <div class="meta">
+                            {{ if external }}
+                            <span class="external-source">
+                                {{ external_resource }}
+                            </span>
+                            <img class="external-source-separator" src="/images/icon/slash-breadcrumbs.svg" alt="">
+                            {{ /if }}
                             {{ if categories }}
                             <span class="category">
                                 {{ categories }}
@@ -36,20 +42,22 @@
                             </span>
                             —
                             {{ /if }}
+                            
                             <span class="published-date">
                                 {{ publish_date format="d M Y" }}
                             </span>
                         </div>
                         <h4 class="title">
-                            {{ if external_link }}
-                            <a href="{{ external_link }}" target="_blank">
+                            <a
+                                    {{ if external }}
+                                    href="{{ external_link }}" target="_blank"
+                                    {{ else }}
+                                    href="{{ link to='{url}' }}"
+                                    {{ endif }}
+                            >
                                 {{ title }}
                             </a>
-                            {{ else }}
-                            <a href="{{ link to='{url}' }}">
-                                {{ title }}
-                            </a>
-                            {{ endif }}
+                        
                         </h4>
                         <div class="excerpt">
                             {{ intro }}
@@ -60,25 +68,31 @@
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     {{ collection:articles limit="3" offset="1" featured:is="true" }}
                     {{ if !no_results }}
-                    <div class="article {{ if external_link }}external{{ /if }}">
+                    <div class="article {{ if external }}external{{ /if }}">
                         <div class="d-flex">
                             <div class="thumbnail">
-                                {{ if external_link }}
-                                <a href="{{ external_link }}" target="_blank">
+                                <a
+                                        {{ if external }}
+                                        href="{{ external_link }}" target="_blank"
+                                        {{ else }}
+                                        href="{{ link to='{url}' }}"
+                                        {{ endif }}
+                                >
                                     {{ glide:hero_image width="600" format="webp" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
+                                    <img class=" img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
                                     {{ /glide:hero_image }}
                                 </a>
-                                {{ else }}
-                                <a href="{{ link to='{url}' }}">
-                                    {{ glide:hero_image width="600" format="webp" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-                                    {{ /glide:hero_image }}
-                                </a>
-                                {{ endif }}
                             </div>
                             <div class="content">
                                 <div class="meta">
+                                    {{ if external }}
+                                    <span class="external-source">
+                                        {{ external_resource }}
+                                    </span>
+                                    <img class="external-source-separator" src="/images/icon/slash-breadcrumbs.svg"
+                                         alt="">
+                                    {{ /if }}
+                                    
                                     {{ if categories }}
                                     <span class="category">
                                     {{ categories }}
@@ -87,20 +101,21 @@
                                     </span>
                                     —
                                     {{ /if }}
+                                    
                                     <span class="published-date">
                                     {{ publish_date format="d M Y" }}
                                     </span>
                                 </div>
                                 <h4 class="title">
-                                    {{ if external_link }}
-                                    <a href="{{ external_link }}" target="_blank">
+                                    <a
+                                            {{ if external }}
+                                            href="{{ external_link }}" target="_blank"
+                                            {{ else }}
+                                            href="{{ link to='{url}' }}"
+                                            {{ endif }}
+                                    >
                                         {{ title }}
                                     </a>
-                                    {{ else }}
-                                    <a href="{{ link to='{url}' }}">
-                                        {{ title }}
-                                    </a>
-                                    {{ endif }}
                                 </h4>
                             </div>
                         </div>
@@ -114,7 +129,7 @@
     {{ /if }}
     
     {{ collection:articles limit="3" paginate="true" as="posts" taxonomy:categories=get:category }}
-        <div class="articles {{ if get:page > 1 || get:category != null }} no-bg {{ /if }}">
+    <div class="articles {{ if get:page > 1 || get:category != null }} no-bg {{ /if }}">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -139,60 +154,63 @@
             <div class="row">
                 <div class="col-md-8">
                     {{ if no_results }}
-                        <p>No stories found.</p>
+                    <p>No stories found.</p>
                     {{ else }}
-                        {{ posts }}
-                        <div class="article {{ if external_link }}external{{ /if }}">
-                            <div class="d-flex">
-                                <div class="thumbnail">
-                                    {{ if external_link }}
-                                    <a href="{{ external_link }}" target="_blank">
-                                        {{ glide:hero_image width="600" format="webp" }}
-                                        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-                                        {{ /glide:hero_image }}
-                                    </a>
-                                    {{ else }}
-                                    <a href="{{ link to='{url}' }}">
-                                        {{ glide:hero_image width="600" format="webp" }}
-                                        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-                                        {{ /glide:hero_image }}
-                                    </a>
-                                    {{ endif }}
-                                </div>
-                                <div class="content">
-                                    <div class="meta">
-                                        {{ if categories }}
-                                        <span class="category">
-                                            {{ categories }}
-                                            <a href="{{ url }}">{{ title }}</a>
-                                            {{ /categories }}
+                    {{ posts }}
+                    <div class="article {{ if external }}external{{ /if }}">
+                        <div class="d-flex">
+                            <div class="thumbnail">
+                                <a
+                                        {{ if external }}
+                                        href="{{ external_link }}" target="_blank"
+                                        {{ else }}
+                                        href="{{ link to='{url}' }}"
+                                        {{ endif }}
+                                >
+                                    {{ glide:hero_image width="600" format="webp" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
+                                    {{ /glide:hero_image }}
+                                </a>
+                            </div>
+                            <div class="content">
+                                <div class="meta">
+                                    {{ if external }}
+                                    <span class="external-source">
+                                        {{ external_resource }}
+                                    </span>
+                                    <img class="external-source-separator" src="/images/icon/slash-breadcrumbs.svg"
+                                         alt="">
+                                    {{ /if }}
+                                    
+                                    {{ if categories }}
+                                    <span class="category">
+                                        {{ categories }}
+                                        <a href="{{ url }}">{{ title }}</a>
+                                        {{ /categories }}
                                         </span>
-                                        —
-                                        {{ /if }}
-                                        <span class="published-date">
+                                    —
+                                    {{ /if }}
+                                    
+                                    <span class="published-date">
                                             {{ publish_date format="d M Y" }}
                                         </span>
-                                    </div>
-                                    <h4 class="title">
-                                        {{ if external_link }}
-                                        <a href="{{ external_link }}" target="_blank">
-                                            {{ title }}
-        
-                                            {{ if featured }}
-                                            hohohoho
-                                            {{ /if }}
-                                        </a>
-                                        {{ else }}
-                                        <a href="{{ link to='{url}' }}">
-                                            {{ title }}
-                                        </a>
-                                        {{ endif }}
-                                    </h4>
                                 </div>
+                                <h4 class="title">
+                                    <a
+                                            {{ if external }}
+                                            href="{{ external_link }}" target="_blank"
+                                            {{ else }}
+                                            href="{{ link to='{url}' }}"
+                                            {{ endif }}
+                                    >
+                                        {{ title }}
+                                    </a>
+                                </h4>
                             </div>
                         </div>
-                        {{ /posts }}
-                        {{ partial:_pagination }}
+                    </div>
+                    {{ /posts }}
+                    {{ partial:_pagination }}
                     {{ endif }}
                 </div>
                 <div class="col-md-4">
