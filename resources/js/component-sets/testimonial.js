@@ -18,7 +18,7 @@ $(function () {
         // dots          : true,
         arrows         : true,
         infinite      : true,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         autoplay      : false,
         // autoplaySpeed : time*1000
     })
