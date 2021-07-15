@@ -51,7 +51,7 @@ sections:
           width: 50
           listable: hidden
       -
-        handle: image
+        handle: small_image
         field:
           mode: grid
           container: assets
@@ -62,3 +62,34 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          instructions: Small
+          if:
+            size: 'equals small'
+          width: 50
+      -
+        handle: large_image
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Image
+          type: assets
+          icon: assets
+          instructions: Large
+          listable: hidden
+          if:
+            size: 'equals large'
+          width: 50
+      -
+        handle: size
+        field:
+          options:
+            small: Small
+            large: Large
+          display: 'Image Size'
+          type: button_group
+          icon: button_group
+          listable: hidden
+          width: 50
