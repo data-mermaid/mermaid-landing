@@ -285,6 +285,32 @@
                     }
                 }
             }
+
+            &.hover {
+                &.external {
+                    .thumbnail {
+                        a:before {
+                            background-color: $color-coral;
+                            border-color: $color-coral;
+                        }
+                    }
+                }
+
+                .thumbnail {
+                    a {
+                        img {
+                            transform: scale(1.04);
+                        }
+                    }
+                }
+
+                .title {
+                    a {
+                        background-size: 100% 2px;
+                        background-image: linear-gradient(to right, $color-coral 0%, $color-coral 0%);
+                    }
+                }
+            }
         }
     }
 }
