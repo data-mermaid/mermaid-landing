@@ -111,6 +111,29 @@
                         fill: $color-white;
                     }
                 }
+
+                .copied-tooltip{
+                    display: block;
+                    position: absolute;
+                    left: calc(100% + 10px);
+                    font-size: 14px;
+                    line-height: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-radius: 4px;
+                    background-color: $color-blue-light-3;
+                    color: $color-blue-text;
+                    padding: 3px 10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.2s ease-in-out;
+                }
+                &.copied{
+                    .copied-tooltip{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
             }
         }
     }
