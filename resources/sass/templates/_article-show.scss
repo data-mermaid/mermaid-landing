@@ -178,6 +178,9 @@
                 margin-right: 30px;
                 overflow: hidden;
                 position: relative;
+                img{
+                    transition: 0.3s all ease-in-out;
+                }
             }
 
             .meta {
