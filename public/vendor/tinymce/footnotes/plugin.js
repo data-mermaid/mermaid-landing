@@ -154,7 +154,7 @@
                     var searchFor = function(_selector, el) {
                         if (!el) {return false};
                         if(el) {
-                            return $node;
+                            return el;
                         }
                         else {
                             var found = null;
