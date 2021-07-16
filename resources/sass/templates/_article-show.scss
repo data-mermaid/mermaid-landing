@@ -20,7 +20,8 @@
 
     .hero-image {
         margin-bottom: 35px;
-
+        overflow: hidden;
+        border-radius: 16px;
         img {
             margin-bottom: 20px;
         }
