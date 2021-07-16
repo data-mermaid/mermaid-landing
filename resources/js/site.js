@@ -12,6 +12,7 @@ import './component-sets/partner';
 import './component-sets/image-gallery';
 import './component-sets/counter';
 import './component-sets/staffs';
+import './component-sets/paragraph';
 
 import './component-sets/floating-icons';
 import './component-sets/article';
