@@ -41,6 +41,9 @@
             }
         }
     }
+    sup{
+        font-size: 10px;
+    }
 }
 
 
@@ -51,13 +54,10 @@
         span{
             font-size: 16px;
             line-height: 1.75;
-            display: inline-block;
         }
         .index {
             color: $color-coral;
             font-size: 10px;
-            display: inline-block;
-            margin-top: -10px;
         }
     }
 }
