@@ -6,9 +6,9 @@
 
     if (typeof Array.prototype.forEach !== 'function') {
         Array.prototype.forEach = function(cb){
-          for (var i = 0; i < this.length; i++){
-            cb.apply(this, [this[i], i, this]);
-          }
+            for (var i = 0; i < this.length; i++){
+                cb.apply(this, [this[i], i, this]);
+            }
         };
     }
     if (Object.defineProperty
@@ -16,19 +16,19 @@
         && Object.getOwnPropertyDescriptor(Element.prototype, "textContent")
         && !Object.getOwnPropertyDescriptor(Element.prototype, "textContent").get) {
         (function() {
-          var innerText = Object.getOwnPropertyDescriptor(Element.prototype, "innerText");
-          Object.defineProperty(Element.prototype, "textContent",
-           {
-             get: function() {
-               return innerText.get.call(this);
-             },
-             set: function(s) {
-               return innerText.set.call(this, s);
-             }
-           }
-         );
+            var innerText = Object.getOwnPropertyDescriptor(Element.prototype, "innerText");
+            Object.defineProperty(Element.prototype, "textContent",
+                {
+                    get: function() {
+                        return innerText.get.call(this);
+                    },
+                    set: function(s) {
+                        return innerText.set.call(this, s);
+                    }
+                }
+            );
         })();
-      }
+    }
 
 
     /**
@@ -104,7 +104,7 @@
                     fixFootnoteContent = (function () {
                         return encodeURIComponent(newfootnoteContent);
                     }()),
-                    htmlTemplate = '<span class="fnoteWrap" contenteditable="false"><button type="button" class="fnoteBtn" data-content="'+fixFootnoteContent+'">{FOOTNOTE_INDEX}</button></span>',
+                    htmlTemplate = '<span class="fnoteWrap" contenteditable="false"><button type="button" class="fnoteBtn" data-content="'+fixFootnoteContent+'">*</button></span>',
                     totalFootNote = editor.getDoc().querySelectorAll('.fnoteBtn'),
                     totalCount = totalFootNote.length,
                     html;
@@ -193,7 +193,6 @@
 
                 } else {
                     // last add
-                    // html = replaceTmpl(htmlTemplate,{FOOTNOTE_INDEX : totalCount + 1});
                     html = replaceTmpl(htmlTemplate,{FOOTNOTE_INDEX : '*'});
                     editor.selection.collapse(0);
                 }
@@ -246,7 +245,6 @@
 
     function Plugin () {
         global.add('footnotes', function (editor) {
-            // editor.ui.registry.addIcon('fnote','<img src="'+ tinyMCE.baseURL + '/plugins/footnotes/img/fn.png' +'">')
             editor.ui.registry.addIcon('fnote','<img src="/vendor/tinymce/footnotes/img/fn.png' +'">')
             Commands.register(editor);
             Buttons.register(editor);
