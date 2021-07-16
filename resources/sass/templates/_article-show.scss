@@ -19,11 +19,14 @@
     }
 
     .hero-image {
-        margin-bottom: 35px;
-        overflow: hidden;
-        border-radius: 16px;
+        margin-bottom: 45px;
+
         img {
-            margin-bottom: 20px;
+            border-radius: 16px;
+        }
+        .caption{
+            margin-top: 20px;
+            margin-bottom: -10px;
         }
     }
 
