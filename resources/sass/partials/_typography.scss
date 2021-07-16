@@ -67,7 +67,30 @@ h5 {
 h6 {
 
 }
+blockquote{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
+    color: $color-blue;
+    padding-left: 30px;
+    position: relative;
+    margin: 40px 0;
 
+    &:before{
+        content: '';
+        //height: 100%;
+        width: 4px;
+        background-color: $color-blue;
+        left: 0;
+        bottom: 5px;
+        top: 5px;
+        position: absolute;
+    }
+    p{
+
+    }
+}
 .intro-large,
 .intro-large p {
     font-style: normal;
