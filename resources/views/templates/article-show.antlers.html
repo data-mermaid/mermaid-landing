@@ -114,12 +114,13 @@
                         {{ /attachments }}
                     </div>
                     {{ /if }}
+                    <div class="footnotes"></div>
                 </div>
             </div>
         </div>
     </div>
     {{ if categories }}
-    {{ collection:articles limit="2" paginate="true" as="posts" taxonomy:categories="{categories:slug}" id:not="{id}" }}
+    {{ collection:articles limit="2" paginate="false" as="posts" taxonomy:categories="{categories:slug}" id:not="{id}" }}
     {{ if posts }}
     <div class="related">
         <div class="container">
