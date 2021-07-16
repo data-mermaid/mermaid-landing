@@ -19,4 +19,24 @@
             }
         }
     }
+
+    ul{
+        list-style: none;
+        padding-left: 0;
+        li{
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 28px;
+            &:before{
+                content: '';
+                left: 0;
+                top: 11px;
+                position: absolute;
+                border-radius: 50%;
+                height: 7px;
+                width: 7px;
+                background-color: $color-blue;
+            }
+        }
+    }
 }
