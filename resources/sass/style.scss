@@ -17,6 +17,7 @@
 @import "partials/accordion";
 
 @import "components/image-gallery";
+@import "components/paragraph";
 @import "components/slideshow";
 @import "components/testimonial";
 @import "components/staffs";
@@ -29,9 +30,12 @@
 @import "components/youtube";
 @import "components/video";
 @import "components/image-text";
+
 @import "components/subscribe-cta";
+@import "components/animated-header";
 
 
 @import "templates/page-generic";
 @import "templates/home";
 @import "templates/article-list";
+@import "templates/article-show";

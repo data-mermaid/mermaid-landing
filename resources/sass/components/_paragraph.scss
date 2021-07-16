@@ -1,0 +1,22 @@
+.sets.paragraph {
+    ol {
+        counter-reset: mermaid-counter;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            counter-increment: mermaid-counter;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 28px;
+
+            &:before{
+                content: counter(mermaid-counter);
+                color: $color-blue;
+                font-weight: bold;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}
