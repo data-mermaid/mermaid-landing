@@ -2,9 +2,11 @@
     padding-top: 90px;
     padding-bottom: 90px;
     border-bottom: 1px solid $color-blue-light;
-    &:first-child{
+
+    &:first-child {
         padding-top: 0;
     }
+
     &:last-child {
         border-bottom: 0;
     }
@@ -58,17 +60,20 @@
             //margin-bottom: 40px;
             margin-bottom: auto;
             margin-top: auto;
-            img{
-                max-height: 100px;
+
+            img {
+                max-height: 80px;
             }
         }
 
     }
-    .partner-stack{
-        [class*=col]{
+
+    .partner-stack {
+        [class*=col] {
             display: flex;
             margin-bottom: 80px;
-            .partner{
+
+            .partner {
                 margin-top: auto;
                 margin-bottom: auto;
                 margin-left: auto;
