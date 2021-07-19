@@ -2,7 +2,9 @@
     padding-top: 90px;
     padding-bottom: 90px;
     border-bottom: 1px solid $color-blue-light;
-
+    &:first-child{
+        padding-top: 0;
+    }
     &:last-child {
         border-bottom: 0;
     }
@@ -52,7 +54,27 @@
             }
         }
 
+        &.stacked {
+            //margin-bottom: 40px;
+            margin-bottom: auto;
+            margin-top: auto;
+            img{
+                max-height: 100px;
+            }
+        }
 
+    }
+    .partner-stack{
+        [class*=col]{
+            display: flex;
+            margin-bottom: 80px;
+            .partner{
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     }
 
     @include media-breakpoint-up(xxl) {

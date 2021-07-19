@@ -4,12 +4,13 @@
             <div class="col">
                 <div class="narrow-content">
                     {{ if heading }}
-                        <h3 class="">
-                            {{ heading }}
-                        </h3>
+                    <h3 class="">
+                        {{ heading }}
+                    </h3>
                     {{ /if }}
-    
+                    
                     {{ group }}
+                    {{ if display_as_carousel }}
                     <div class="partners-slide slick-partners" data-slide-number="4">
                         {{ users }}
                         <div class="partner">
@@ -21,6 +22,23 @@
                         </div>
                         {{ /users }}
                     </div>
+                    {{ else }}
+                    <div class="partner-stack">
+                        <div class="row">
+                            {{ users }}
+                            <div class="col-md-3 col-sm-6">
+                                <div class="partner stacked">
+                                    <a href="{{ url }}">
+                                        {{ glide:logo width="300" format="webp" }}
+                                        <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
+                                        {{ /glide:logo }}
+                                    </a>
+                                </div>
+                            </div>
+                            {{ /users }}
+                        </div>
+                    </div>
+                    {{ endif }}
                     {{ /group }}
                 </div>
             </div>
