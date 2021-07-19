@@ -99,14 +99,20 @@
                                     <img src="/images/icon/file/pdf.svg" alt="">
                                     {{ elseif extension == 'xls' || extension == 'xlsx' }}
                                     <img src="/images/icon/file/xls.svg" alt="">
+                                    {{ elseif extension == 'docx' || extension == 'doc' }}
+                                    <img src="/images/icon/file/doc.svg" alt="">
+                                    {{ elseif extension == 'jpg' || extension == 'jpeg' || extension == 'png' }}
+                                    <img src="/images/icon/file/image.svg" alt="">
+                                    {{ elseif extension == 'csv' }}
+                                    <img src="/images/icon/file/csv.svg" alt="">
                                     {{ elseif extension == 'zip' }}
                                     <img src="/images/icon/file/zip.svg" alt="">
                                     {{ else }}
-                                    <img src="/images/icon/file/link.svg" alt="">
+                                    <img src="/images/icon/file/zip.svg" alt="">
                                     {{ endif }}
                                 </span>
                                     <span class="name">
-                                    {{ basename }}
+                                    {{ basename }} {{ extension }}
                                 </span>
                                 </a>
                             </div>

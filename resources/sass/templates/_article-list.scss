@@ -249,6 +249,7 @@
 
         .article {
             border-radius: 8px;
+            border: 1px solid $color-gray-light;
             overflow: hidden;
             background: #FFF;
             margin-bottom: 40px;
@@ -399,5 +400,17 @@
         margin-bottom: 50px;
         width: 100%;
         justify-content: center;
+        .nav-link{
+            border: 1px solid $color-gray-light;
+        }
+    }
+
+    .pagination{
+        .page-link{
+            //&:not(.active),
+            //&:not(){
+            //    border: 1px solid $color-gray-light;
+            //}
+        }
     }
 }
