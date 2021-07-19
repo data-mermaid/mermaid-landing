@@ -154,7 +154,10 @@
             <div class="row">
                 <div class="col-md-8">
                     {{ if no_results }}
-                    <p>No stories found.</p>
+                        <div class="no-result">
+                            <h3>This content is currently unavailable</h3>
+                            <p>The link you opened may have expired</p>
+                        </div>
                     {{ else }}
                     {{ posts }}
                     <div class="article {{ if external }}external{{ /if }}">

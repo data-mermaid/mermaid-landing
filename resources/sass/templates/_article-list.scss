@@ -402,7 +402,20 @@
         justify-content: center;
         .nav-link{
             border: 1px solid $color-gray-light;
+            &.active{
+                border-color: $color-coral;
+            }
+            &:hover{
+                //border-color: $color-coral;
+            }
         }
+    }
+
+    .no-result{
+        border-radius: 8px;
+        border: 1px solid $color-gray-light;
+        padding: 25px 30px;
+        background-color: $color-white;
     }
 
     .pagination{
