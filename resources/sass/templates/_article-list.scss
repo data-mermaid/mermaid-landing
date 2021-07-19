@@ -128,11 +128,12 @@
             }
 
             .meta {
+                font-size: 14px;
                 margin-bottom: 10px;
 
                 .external-source {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .external-source-separator {
@@ -141,7 +142,7 @@
 
                 .category {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .published-date {
@@ -316,10 +317,11 @@
 
             .meta {
                 margin-bottom: 10px;
+                font-size: 14px;
 
                 .external-source {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .external-source-separator {
@@ -328,7 +330,7 @@
 
                 .category {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .published-date {
