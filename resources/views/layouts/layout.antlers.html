@@ -7,6 +7,8 @@
     {{ if environment != 'production' }}
         <meta name="robots" content="noindex,nofollow" />
     {{ /if }}
+    {{ yield:captcha_head }}
+    
     <title>{{ yield:page-title ?? title | ucfirst }} | {{ settings:site_name }}</title>
     <link rel="stylesheet" href="{{ mix src='css/style.css' }}">
 </head>

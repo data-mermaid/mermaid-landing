@@ -23,6 +23,13 @@ sections:
           icon: textarea
           listable: hidden
       -
+        handle: display_as_carousel
+        field:
+          display: 'Display as carousel'
+          type: toggle
+          icon: toggle
+          listable: hidden
+      -
         handle: users
         field:
           collapse: false

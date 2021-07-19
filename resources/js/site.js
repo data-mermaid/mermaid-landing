@@ -4,6 +4,7 @@ window.$ = window.jQuery = $;
 window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
 
 import './partials/header';
+import './partials/cookie';
 
 import './component-sets/form-ajax';
 import './component-sets/slideshow';

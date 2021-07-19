@@ -128,11 +128,12 @@
             }
 
             .meta {
+                font-size: 14px;
                 margin-bottom: 10px;
 
                 .external-source {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .external-source-separator {
@@ -141,7 +142,7 @@
 
                 .category {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .published-date {
@@ -248,6 +249,7 @@
 
         .article {
             border-radius: 8px;
+            border: 1px solid $color-gray-light;
             overflow: hidden;
             background: #FFF;
             margin-bottom: 40px;
@@ -316,10 +318,11 @@
 
             .meta {
                 margin-bottom: 10px;
+                font-size: 14px;
 
                 .external-source {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .external-source-separator {
@@ -328,7 +331,7 @@
 
                 .category {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .published-date {
@@ -397,5 +400,30 @@
         margin-bottom: 50px;
         width: 100%;
         justify-content: center;
+        .nav-link{
+            border: 1px solid $color-gray-light;
+            &.active{
+                border-color: $color-coral;
+            }
+            &:hover{
+                //border-color: $color-coral;
+            }
+        }
+    }
+
+    .no-result{
+        border-radius: 8px;
+        border: 1px solid $color-gray-light;
+        padding: 25px 30px;
+        background-color: $color-white;
+    }
+
+    .pagination{
+        .page-link{
+            //&:not(.active),
+            //&:not(){
+            //    border: 1px solid $color-gray-light;
+            //}
+        }
     }
 }

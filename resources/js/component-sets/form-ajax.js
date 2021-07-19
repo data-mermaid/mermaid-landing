@@ -21,10 +21,16 @@ $(function () {
             success: function (data) {
                 showSuccess($form);
                 enableInputs($form);
+                $('html, body').animate({
+                    scrollTop: $form.offset().top - 150
+                }, 500);
             },
             error  : function (data) {
                 showError($form, data.responseJSON.error);
                 enableInputs($form)
+                $('html, body').animate({
+                    scrollTop: $form.offset().top - 150
+                }, 500);
             }
         });
 
