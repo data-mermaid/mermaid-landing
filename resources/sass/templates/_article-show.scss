@@ -14,7 +14,7 @@
 
         .category {
             font-weight: 500;
-            color: $color-coral;
+            //color: $color-coral;
         }
     }
 
@@ -91,7 +91,8 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin-top: 200px;
+        padding-top: 100px;
+        padding-bottom: 30px;
 
         .share-button {
             height: 44px;
@@ -197,10 +198,11 @@
 
             .meta {
                 margin-bottom: 10px;
+                font-size: 14px;
 
                 .external-source {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .external-source-separator {
@@ -209,7 +211,7 @@
 
                 .category {
                     font-weight: 500;
-                    color: $color-coral;
+                    //color: $color-coral;
                 }
 
                 .published-date {

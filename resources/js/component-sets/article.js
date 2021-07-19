@@ -20,4 +20,8 @@ $(function () {
         }, 3000);
 
     })
+
+
+    $('.share-button-container').css('margin-top',
+        $('.title').height() + $('.meta').height());
 });
