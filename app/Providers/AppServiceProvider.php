@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\ChangelogsController;
 use Illuminate\Support\ServiceProvider;
-use Statamic\Statamic;
+use Statamic\Facades\Utility;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +27,15 @@ class AppServiceProvider extends ServiceProvider
     {
         // Statamic::script('app', 'cp');
         // Statamic::style('app', 'cp');
+        Utility::make('changelogs')
+            ->title(__('MERMAID Changelogs'))
+            ->navTitle(__('Changelogs'))
+            ->description(__('Fetch the latest changelogs of MERMAID API'))
+            ->icon('git')
+            ->action([ChangelogsController::class, 'index'])
+            ->routes(function ($router) {
+                $router->post('/', [ChangelogsController::class, 'update'])->name('update');
+            })
+            ->register();
     }
 }
