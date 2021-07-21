@@ -1,6 +1,15 @@
 <?php
 
 return [
+   /*
+   |--------------------------------------------------------------------------
+   | Custom Config
+   |--------------------------------------------------------------------------
+   |
+   */
+
+    'changelog_url' => env('CHANGELOG_URL', 'https://changelog.datamermaid.org'),
+    'changelog_path' => env('CHANGELOG_PATH', 'changelog/mermaid-changelog.json'),
 
     /*
     |--------------------------------------------------------------------------

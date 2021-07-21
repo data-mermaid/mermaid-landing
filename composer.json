@@ -1,10 +1,16 @@
 {
     "name": "statamic/statamic",
     "description": "Statamic",
-    "keywords": ["statamic", "cms", "flat file", "laravel"],
+    "keywords": [
+        "statamic",
+        "cms",
+        "flat file",
+        "laravel"
+    ],
     "type": "project",
     "require": {
         "php": "^7.3 || ^8.0",
+        "ext-json": "*",
         "aryehraber/statamic-captcha": "^1.5",
         "doctrine/dbal": "^3.1",
         "fideloper/proxy": "^4.2",
@@ -15,7 +21,7 @@
         "mitydigital/statamic-tinymce-cloud": "^1.0",
         "pecotamic/sitemap": "^1.2",
         "simonridley/tracking-code-manager": "dev-master",
-        "statamic/cms": "3.1.27"
+        "statamic/cms": "3.1.29"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -40,7 +46,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

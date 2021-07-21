@@ -1,6 +1,6 @@
 <div class="page-generic-container page-changelog">
     {{ partial src="partials/_animated-wave" }}
-    
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -15,77 +15,32 @@
             </div>
         </div>
     </div>
-    
+
     <div class="content">
         <div class="narrow-content">
             <div class="changelogs">
+                {{ changelog }}
                 <div class="version">
-                    <h3>v1.1 2021-06-14</h3>
+                    <h3>{{ version }} {{ release_date }}</h3>
                     <table class="table">
-                        <tr>
-                            <td>
-                                <span class="badge feature">Feature</span>
-                            </td>
-                            <td>
-                                Catchall/trash top-level benthic attribute
-                            </td>
-                            <td>
-                                <span class="badge feature-item">API</span>
-                                <span class="badge feature-item">Collect App</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge feature">Feature</span>
-                            </td>
-                            <td>
-                                Dash: Show information in fish box below kg/ha, “Number of families recorded” - with "read more" modal
-                            </td>
-                            <td>
-                                <span class="badge feature-item">Collect App</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge bug">Bug</span>
-                            </td>
-                            <td>
-                                Dash: Show information in fish box below kg/ha, “Number of families recorded” - with "read more" modal
-                            </td>
-                            <td>
-                                <span class="badge feature-item">Collect App</span>
-                            </td>
-                        </tr>
+                        {{ changes }}
+                            <tr>
+                                <td>
+                                    <span class="badge {{ is_bug ? 'bug' : 'feature' }}"> {{ is_bug ? 'Bug' : 'Feature' }}</span>
+                                </td>
+                                <td>
+                                    {{ name | trim }}
+                                </td>
+                                <td>
+                                    {{ apps }}
+                                        <span class="badge feature-item">{{ value }}</span>
+                                    {{ /apps }}
+                                </td>
+                            </tr>
+                        {{ /changes }}
                     </table>
                 </div>
-                <div class="version">
-                    <h3>v1.1 2021-06-14</h3>
-                    <table class="table">
-                        <tr>
-                            <td>
-                                <span class="badge feature">Feature</span>
-                            </td>
-                            <td>
-                                Catchall/trash top-level benthic attribute
-                            </td>
-                            <td>
-                                <span class="badge feature-item">API</span>
-                                <span class="badge feature-item">Collect App</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge feature">Feature</span>
-                            </td>
-                            <td>
-                                Dash: Show information in fish box below kg/ha, “Number of families recorded” - with "read more" modal
-                            </td>
-                            <td>
-                                <span class="badge feature-item">Collect App</span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                {{ /changelog }}
             </div>
         </div>
     </div>
