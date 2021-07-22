@@ -1,0 +1,85 @@
+.page-tutorial {
+    padding-top: 170px;
+    margin-bottom: -100px;
+
+    .side-menu-col {
+
+    }
+
+    .tutorial-side-menu {
+        border-right: 1px solid $color-blue-light-2;
+        padding-bottom: 200px;
+        max-width: 280px;
+        width: 280px;
+        margin-right: 40px;
+
+        .nav {
+            .nav-link {
+                font-weight: bold;
+                font-size: 20px;
+                color: $color-black-text;
+                padding: 3px 20px 3px 0;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    color: $color-coral;
+                }
+
+                &.current {
+                    color: $color-coral;
+                }
+            }
+
+            .nav {
+                .nav-item {
+                }
+
+                .nav-link {
+                    font-size: 16px;
+                    font-weight: normal;
+                }
+
+                .nav {
+                    padding-left: 30px;
+
+                    .nav-item {
+                    }
+
+                    .nav-link {
+                        font-size: 16px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+    .intro-large {
+        &:before {
+            display: none;
+        }
+    }
+
+    .tutorial-content {
+        padding-bottom: 200px;
+        .heading{
+            margin-bottom: 50px;
+        }
+        .breadcrumbs{
+            font-weight: 500;
+            font-size: 14px;
+            .separator{
+                margin: 0 5px;
+            }
+        }
+
+        .narrow-content {
+            //width: 100%;
+            //max-width: 100%;
+        }
+
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
