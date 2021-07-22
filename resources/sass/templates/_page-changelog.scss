@@ -41,10 +41,24 @@
 
         &:first-child {
             padding-top: 0;
+            border-top: 0;
+        }
+        &.hide + .version:not(.hide){
+            padding-top: 0;
+            border-top: 0;
         }
 
-        &:last-child {
-            border-bottom: 0;
+        &.hide{
+            display: none;
+        }
+    }
+
+    .changelog-pagination{
+        margin-top: 60px;
+        .page-item{
+            &.hide{
+                display: none;
+            }
         }
     }
 }

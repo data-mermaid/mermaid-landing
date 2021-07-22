@@ -19,3 +19,4 @@ import './component-sets/floating-icons';
 import './component-sets/article';
 
 import './page/home';
+import './page/changelog';
