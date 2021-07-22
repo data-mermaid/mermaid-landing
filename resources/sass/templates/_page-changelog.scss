@@ -21,6 +21,16 @@
             &:last-child {
                 padding-right: 0;
             }
+            &.type{
+                min-width: 90px;
+            }
+            &.label{
+                min-width: 120px;
+            }
+            &.desc {
+                width: 100%;
+                max-width: 565px;
+            }
         }
     }
 
@@ -29,9 +39,10 @@
         padding-bottom: 30px;
         padding-top: 50px;
 
-        &:first-child{
+        &:first-child {
             padding-top: 0;
         }
+
         &:last-child {
             border-bottom: 0;
         }

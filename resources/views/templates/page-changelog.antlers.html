@@ -25,13 +25,13 @@
                     <table class="table">
                         {{ changes }}
                             <tr>
-                                <td>
+                                <td class="type">
                                     <span class="badge {{ is_bug ? 'bug' : 'feature' }}"> {{ is_bug ? 'Bug' : 'Feature' }}</span>
                                 </td>
-                                <td>
+                                <td class="desc">
                                     {{ name | trim }}
                                 </td>
-                                <td>
+                                <td class="label">
                                     {{ apps }}
                                         <span class="badge feature-item">{{ value }}</span>
                                     {{ /apps }}
