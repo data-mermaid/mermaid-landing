@@ -1,12 +1,13 @@
 title: Tutorials
-template: templates/article-show
+template: templates/tutorial
 layout: main
-mount: c15930d3-b5a9-4f99-b1eb-05e347c0a830
-taxonomies:
-  - categories
+mount: 37ccd59f-0dbf-4c20-a3f5-34997d5e598a
 revisions: false
 route: '{mount}/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
   future: private
+structure:
+  root: false
+  max_depth: 3

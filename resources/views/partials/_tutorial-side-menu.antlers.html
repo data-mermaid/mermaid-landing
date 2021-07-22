@@ -1,0 +1,27 @@
+<div class="tutorial-side-menu">
+    {{ nav:collection:tutorials paginate="false"}}
+    <div  class="nav flex-column">
+        {{ if depth == 1 }}
+            <div class="nav-item">
+                <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+            </div>
+        {{ if children }}
+        {{ *recursive children* }}
+        {{ /if }}
+        
+        {{ elseif depth == 2 }}
+        <div class="nav-item">
+            <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+            {{ if children }}
+            {{ *recursive children* }}
+            {{ /if }}
+        </div>
+        
+        {{ elseif depth == 3 }}
+        <div class="nav-item">
+            <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+        </div>
+        {{ /if }}
+    </div>
+    {{ /nav:collection:tutorials }}
+</div>

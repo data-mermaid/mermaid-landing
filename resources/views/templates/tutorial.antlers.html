@@ -1,0 +1,39 @@
+<div class="page-tutorial">
+    {{ partial src="partials/_animated-wave" }}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex">
+                    <div class="side-menu-col">
+                        {{ partial src="partials/_tutorial-side-menu" }}
+                    </div>
+                    <div class="tutorial-content">
+                        <div class="heading">
+                            <h1 class="main-title">{{ title }}</h1>
+                            
+                            <div class="breadcrumbs">
+                                {{ if parent:title }}
+                                {{ parent:title }}
+                                <img class="separator" src="/images/icon/slash-breadcrumbs.svg" alt="">
+                                {{ title }}
+                                {{ /if }}
+                            </div>
+                        </div>
+                            {{ if intro }}
+                            <div class="intro-large">
+                                {{ intro }}
+                            </div>
+                            {{ /if }}
+                        
+                        <div class="content">
+                            {{ page_components }}
+                            {{ partial src="components/{type}" }}
+                            {{ /page_components }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
