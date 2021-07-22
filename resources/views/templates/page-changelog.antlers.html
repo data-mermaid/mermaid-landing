@@ -20,18 +20,18 @@
         <div class="narrow-content">
             <div class="changelogs">
                 {{ changelog }}
-                <div class="version">
+                <div class="version version-index-{{ index }} {{ if index >= 3 }} hide {{ /if }}" data-index="{{ index }}">
                     <h3>{{ version }} {{ release_date }}</h3>
                     <table class="table">
                         {{ changes }}
                             <tr>
-                                <td>
+                                <td class="type">
                                     <span class="badge {{ is_bug ? 'bug' : 'feature' }}"> {{ is_bug ? 'Bug' : 'Feature' }}</span>
                                 </td>
-                                <td>
+                                <td class="desc">
                                     {{ name | trim }}
                                 </td>
-                                <td>
+                                <td class="label">
                                     {{ apps }}
                                         <span class="badge feature-item">{{ value }}</span>
                                     {{ /apps }}
@@ -41,6 +41,33 @@
                     </table>
                 </div>
                 {{ /changelog }}
+            </div>
+            
+            <div class="pagination-container">
+                <nav class="align-center">
+                    <ul class="pagination justify-content-center changelog-pagination">
+                        <li class="page-item prev">
+                            <a class="page-link" href="#"></a>
+                        </li>
+                        <li class="page-item ellipsis ellipsis-prev">
+                            <span class="page-link">...</span>
+                        </li>
+                        {{ changelog }}
+                        {{ if index % 3  ===  0 }}
+                        <li class="page-item page-number" data-page="{{ index | divide:3 | add:1 }}">
+                            <a class="page-link" data-page="{{ index | divide:3 | add:1 }}" href="#">{{ index | divide:3 | add:1 }}</a>
+                        </li>
+                        {{ /if }}
+                        {{ /changelog }}
+                        <li class="page-item ellipsis ellipsis-next">
+                            <span class="page-link">...</span>
+                        </li>
+                        <li class="page-item next">
+                            <a class="page-link" href="#"></a>
+                        </li>
+                        
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
