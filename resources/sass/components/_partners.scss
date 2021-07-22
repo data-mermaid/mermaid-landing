@@ -33,6 +33,13 @@
                     right: -77px;
                 }
             }
+            .slick-track{
+                display: flex;
+                .slick-slide{
+                    margin-bottom: auto;
+                    margin-top: auto;
+                }
+            }
         }
     }
 
