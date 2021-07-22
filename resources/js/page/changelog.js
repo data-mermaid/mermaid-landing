@@ -42,20 +42,24 @@ $(document).ready(function () {
         $('.changelog-pagination .page-number[data-page="' + (page - 2) + '"]').prevAll('.page-number').addClass('hide');
         $('.changelog-pagination .page-number[data-page="' + (page + 2) + '"]').nextAll('.page-number').addClass('hide');
 
+
+
         if (page < 4) {
             $('.changelog-pagination .ellipsis-prev').addClass('hide');
         } else {
             $('.changelog-pagination .ellipsis-prev').removeClass('hide');
+            // $('.changelog-pagination .page-number').first().removeClass('hide');
         }
 
-        if (page > (totalPage - 3)) {
+        if (page > (totalPage - 4)) {
             $('.changelog-pagination .ellipsis-next').addClass('hide');
         } else {
             $('.changelog-pagination .ellipsis-next').removeClass('hide');
+            // $('.changelog-pagination .page-number').last().removeClass('hide');
         }
 
-        $('.changelogs .version').addClass('hide');
 
+        $('.changelogs .version').addClass('hide');
         for (let i = ((page - 1) * 3); i <= (page * 3) - 1; i++) {
             // console.log(i);
             $('.changelogs .version[data-index="' + i + '"]').removeClass('hide');
