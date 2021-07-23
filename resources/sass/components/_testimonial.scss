@@ -88,6 +88,8 @@
                 top: 0;
                 height: 100%;
                 width: 100%;
+                max-width: 300px;
+                max-height: 300px;
                 border-radius: 50%;
                 background-color: $color-purple-light;
                 z-index: -1;
@@ -127,6 +129,11 @@
             line-height: 34px;
             font-weight: 500;
             margin-bottom: 8px;
+        }
+
+        @include media-breakpoint-down(md){
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }

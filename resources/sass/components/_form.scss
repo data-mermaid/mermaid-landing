@@ -41,4 +41,10 @@
             margin-top: 20px;
         }
     }
+    @include media-breakpoint-down(md){
+        .form-container{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
 }
