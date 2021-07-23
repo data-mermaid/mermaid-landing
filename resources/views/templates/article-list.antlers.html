@@ -11,7 +11,7 @@
     <div class="featured-articles">
         <div class="container">
             <div class="row">
-                <div class="col-md-6" data-aos="fade-up">
+                <div class="col-lg-6" data-aos="fade-up">
                     {{ collection:articles limit="1" featured:is="true"}}
                     <div class="article featured {{ if external }}external{{ /if }}">
                         <div class="thumbnail">
@@ -66,7 +66,7 @@
                     </div>
                     {{ /collection:articles }}
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     {{ collection:articles limit="3" offset="1" featured:is="true" }}
                     {{ if !no_results }}
                     <div class="article {{ if external }}external{{ /if }}">
@@ -129,7 +129,7 @@
     </div>
     {{ /if }}
     
-    {{ collection:articles limit="3" paginate="true" as="posts" taxonomy:categories=get:category }}
+    {{ collection:articles limit="6" paginate="true" as="posts" taxonomy:categories=get:category }}
     <div class="articles {{ if get:page > 1 || get:category != null }} no-bg {{ /if }}">
         <div class="container">
             <div class="row">
@@ -153,7 +153,7 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     {{ if no_results }}
                         <div class="no-result">
                             <h3>This content is currently unavailable</h3>
@@ -217,7 +217,7 @@
                     {{ partial:_pagination }}
                     {{ endif }}
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     {{ partial src="components/subscribe-cta" class="small" }}
                 </div>
             </div>
