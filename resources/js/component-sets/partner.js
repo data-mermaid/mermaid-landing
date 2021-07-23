@@ -20,7 +20,16 @@ $(function () {
             // infinite      : true,
             // adaptiveHeight: true,
             autoplay     : false,
-            autoplaySpeed: 3000
+            autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    }
+                },
+            ],
         })
     });
 });

@@ -563,6 +563,13 @@
                 margin-bottom: 8px;
             }
         }
+
+        @include media-breakpoint-down(md) {
+            .testimonial {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
     }
 
     .section.partners {
@@ -581,14 +588,21 @@
             .slick-slide{
                 margin-bottom: auto;
                 margin-top: auto;
+                & > div{
+                    display: flex;
+                    .partner{
+                        margin-top: auto;
+                        margin-bottom: auto;
+                    }
+                }
             }
         }
 
         .partner {
             text-align: center;
-
+            display: block;
             a {
-                display: inline-block;
+                display: block;
 
                 img {
                     max-width: 100%;
@@ -597,6 +611,8 @@
                     transition: 0.3s all ease-in-out;
                     padding-left: 10px;
                     padding-right: 10px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 &:hover {
@@ -610,6 +626,12 @@
         @include media-breakpoint-up(xxl) {
             .container {
                 //max-width: 1200px;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            .slick-partners {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     }
