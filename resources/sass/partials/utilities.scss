@@ -8,8 +8,21 @@
     }
 }
 
+@include media-breakpoint-down(md) {
+    .container{
+
+    }
+    .row {
+        --bs-gutter-x: 40px;
+    }
+}
+
 body{
     max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.container{
     overflow-x: hidden;
 }
 
