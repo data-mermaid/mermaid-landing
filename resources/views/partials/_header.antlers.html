@@ -1,12 +1,15 @@
-<header id="main-header" class="main-header">
+<header id="main-header" class="main-header vanish">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="{{ settings:logo }}" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button class="navbar-toggler collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -38,59 +41,6 @@
                             </li>
                         {{ /if }}
 
-                    {{ /nav:main_nav }}
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<header id="sticky-header" class="main-header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="{{ settings:logo }}" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    {{ nav:main_nav }}
-                    {{ if children }}
-                    <li class="nav-item dropdown {{ if is_current || is_parent }}current{{ /if }}">
-                        <a href="{{ url }}"
-                           {{ if is_external }} target="_blank "{{ /if }}
-                           class="nav-link dropdown-toggle"
-                           data-bs-toggle="dropdown"
-                        >
-                            {{ title }}
-                        </a>
-                        <ul class="dropdown-menu">
-                            {{ children }}
-                            <li>
-                                <a href="{{ url }}"
-                                    {{ if is_external }} target="_blank "{{ /if }}
-                                   class="dropdown-item {{ if is_current }}current{{ /if }}"
-                                >
-                                    {{ title }}
-                                </a>
-                            </li>
-                            {{ /children }}
-                        </ul>
-                    </li>
-                    {{ else }}
-                    <li class="nav-item {{ if is_current }}  current {{ /if }}">
-                        <a href="{{ url }}"
-                           class="nav-link"
-                            {{ if is_external }} target="_blank "{{ /if }}
-                        >
-                            {{ title }}
-                        </a>
-                    </li>
-                    {{ /if }}
-                    
                     {{ /nav:main_nav }}
                 </ul>
             </div>

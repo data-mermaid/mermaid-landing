@@ -1,36 +1,39 @@
 $(function () {
     let oldScroll = $(window).scrollTop();
     let didScroll = false;
-    $(window).scroll(function () {
-        didScroll = true;
-    });
 
-    /*throttling the scroll function*/
-    setInterval(function () {
-        if (didScroll) {
-            didScroll = false;
-            $stickyHeader = $('#sticky-header');
-            /* if scrolled past main header show sticky header*/
-            // if ($(this).scrollTop() > 150){
-            //     $('#sticky-header').addClass("sticky");
-            // }
-            // else{
-            //     $('#sticky-header').removeClass("sticky");
-            // }
-            if ($(this).scrollTop() > 300) {
-                $('.scroll-button').css('opacity', 0);
-            }
-            /* if scroll up show sticky header*/
-            if (oldScroll > $(this).scrollTop()) {
-                if ($(this).scrollTop() < 80) {
-                    $stickyHeader.removeClass("sticky");
+    $('#main-header .navbar-toggler').click(function(){
+        $('#main-header').toggleClass('open');
+        $('body').toggleClass('static');
+    })
+
+    setTimeout(function(){
+        $navbar = $('#main-header');
+        if(window.pageYOffset === 0){
+            $navbar.removeClass("reveal");
+            $navbar.removeClass("vanish");
+            $navbar.addClass("top");
+        } else {
+            $navbar.addClass("reveal");
+            $navbar.removeClass("vanish");
+            $navbar.removeClass("top");
+        }
+    }, 300);
+    setInterval(function(){
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            $navbar = $('#main-header');
+
+            if (prevScrollpos > currentScrollPos) {
+                if (currentScrollPos === 0) {
+                    $navbar.addClass("top").removeClass("reveal").removeClass("vanish");
                 } else {
-                    $stickyHeader.addClass("sticky");
+                    $navbar.addClass("reveal").removeClass("vanish").removeClass("top");
                 }
             } else {
-                $stickyHeader.removeClass("sticky");
+                $navbar.addClass("vanish").removeClass("reveal").removeClass("top");
             }
-            oldScroll = $(window).scrollTop();
-        }
-    }, 250);
+        };
+    },300);
 })

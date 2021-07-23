@@ -1,4 +1,9 @@
-.sets.image-text{
+.sets.image-text {
     margin-top: 90px;
     margin-bottom: 100px;
+    @include media-breakpoint-down(md) {
+        img {
+            margin-bottom: 30px;
+        }
+    }
 }

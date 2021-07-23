@@ -43,6 +43,7 @@
 }
 
 #image-gallery-popup {
+    z-index: 10000;
     .btn-close {
         position: absolute;
         border-radius: 50%;

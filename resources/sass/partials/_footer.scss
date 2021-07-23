@@ -49,6 +49,9 @@ footer.main-footer {
         .btn {
             //margin-top: 15px;
         }
+        @include media-breakpoint-down(md){
+            margin-bottom: 40px;
+        }
     }
 
     .footer-menu {
@@ -59,10 +62,10 @@ footer.main-footer {
         .nav-item {
             width: 50%;
             margin-bottom: 2px;
+            padding-right: 5px;
             a {
                 color: rgba($color-white, 0.6);
                 transition: all 0.2s ease-in-out;
-
                 &:hover {
                     color: $color-white;
                 }
@@ -118,6 +121,20 @@ footer.main-footer {
                     vertical-align: bottom;
                 }
             }
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 40px;
+            .label{
+                margin-top: 5px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size: 14px;
+        .content-container {
+            padding-bottom: 40px;
         }
     }
 }
