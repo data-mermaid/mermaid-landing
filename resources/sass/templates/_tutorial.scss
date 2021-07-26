@@ -53,6 +53,7 @@
             }
         }
     }
+
     .intro-large {
         &:before {
             display: none;
@@ -61,13 +62,16 @@
 
     .tutorial-content {
         padding-bottom: 200px;
-        .heading{
+
+        .heading {
             margin-bottom: 50px;
         }
-        .breadcrumbs{
+
+        .breadcrumbs {
             font-weight: 500;
             font-size: 14px;
-            .separator{
+
+            .separator {
                 margin: 0 5px;
             }
         }
@@ -80,6 +84,18 @@
         .container {
             padding-left: 0;
             padding-right: 0;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .side-menu-col {
+            .tutorial-side-menu {
+                width: 100%;
+                max-width: 100%;
+                margin-right: 0;
+                border-right: 0;
+                padding-bottom: 40px;
+            }
         }
     }
 }
