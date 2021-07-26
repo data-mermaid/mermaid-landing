@@ -481,7 +481,7 @@
             }
 
             @include media-breakpoint-down(md) {
-                max-width: calc(100vw - 40px);
+                max-width: calc(100vw - 60px);
                 margin-left: 30px;
                 margin-right: 30px;
 
@@ -568,6 +568,25 @@
             .testimonial {
                 padding-left: 0;
                 padding-right: 0;
+
+                .avatar {
+                    margin-bottom: 20px;
+
+                    img {
+                        max-width: 250px;
+                    }
+
+                    &:before {
+                        max-height: 250px;
+                        max-width: 250px;
+                    }
+                }
+
+                .text {
+                    .intro-large {
+                        margin-bottom: 30px;
+                    }
+                }
             }
         }
     }
@@ -582,15 +601,19 @@
         .slick-partners {
             padding-left: 30px;
             padding-right: 30px;
-            .slick-track{
+
+            .slick-track {
                 display: flex;
             }
-            .slick-slide{
+
+            .slick-slide {
                 margin-bottom: auto;
                 margin-top: auto;
-                & > div{
+
+                & > div {
                     display: flex;
-                    .partner{
+
+                    .partner {
                         margin-top: auto;
                         margin-bottom: auto;
                     }
@@ -601,6 +624,7 @@
         .partner {
             text-align: center;
             display: block;
+
             a {
                 display: block;
 

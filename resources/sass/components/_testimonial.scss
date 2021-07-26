@@ -1,5 +1,5 @@
-.sets.testimonial{
-    .slick-testimonial{
+.sets.testimonial {
+    .slick-testimonial {
         .slick-dots {
             list-style: none;
             padding-left: 0;
@@ -7,6 +7,7 @@
             z-index: 5;
             margin-bottom: 0;
             text-align: center;
+
             li {
                 display: inline-block;
                 //opacity: 0;
@@ -51,8 +52,8 @@
             }
         }
 
-        .slick-list{
-            .slick-track{
+        .slick-list {
+            .slick-track {
                 display: flex;
             }
         }
@@ -131,9 +132,28 @@
             margin-bottom: 8px;
         }
 
-        @include media-breakpoint-down(md){
+        @include media-breakpoint-down(md) {
             padding-left: 0;
             padding-right: 0;
+
+            .avatar {
+                max-height: 250px;
+                margin-bottom: 20px;
+
+                img {
+                    max-width: 250px;
+                }
+
+                &:before {
+                    max-width: 250px;
+                    max-height: 250px;
+                }
+            }
+            .text {
+                .intro-large {
+                    margin-bottom: 30px;
+                }
+            }
         }
     }
 }
