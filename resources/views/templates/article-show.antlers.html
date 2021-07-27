@@ -18,24 +18,24 @@
                             </svg>
                         </a>
                     </div>
-    
+
                     <div class="share-button copy">
                         <a href="#" class="copy-url-to-clipboard" data-url="{{ current_url }}">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.23472 8.41197V18.7649H13.5877V8.41197H3.23472ZM14.1503 5.82373H2.67206C1.55337 5.82373 0.646484 6.73061 0.646484 7.84931V19.3276C0.646484 20.4463 1.55337 21.3531 2.67206 21.3531H14.1503C15.269 21.3531 16.1759 20.4463 16.1759 19.3276V7.84931C16.1759 6.73061 15.269 5.82373 14.1503 5.82373Z"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.41148 0.647217C10.9997 0.647217 17.4703 0.647217 17.4703 0.647217C21.3527 0.647217 21.3527 3.99202 21.3527 3.99202C21.3527 3.99202 21.3527 11.1993 21.3527 13.5884C21.3527 15.9775 18.7644 16.1766 18.7644 16.1766V4.52957C18.7644 4.52957 18.7644 3.23545 17.4703 3.23545H5.82324C5.82324 3.23545 5.82324 0.647217 8.41148 0.647217Z"/>
                             </svg>
-                            
+
                             <span class="copied-tooltip">Link copied</span>
                         </a>
                     </div>
                 </div>
-                
-                
+
+
             </div>
             <div class="col-md-10">
                 <h1 class="title">{{ title }}</h1>
-                
+
                 <div class="meta">
                     {{ if external }}
                     <span class="external-source">
@@ -43,7 +43,7 @@
                         </span>
                     <img class="external-source-separator" src="/images/icon/slash-breadcrumbs.svg" alt="">
                     {{ /if }}
-                    
+
                     {{ if categories }}
                     <span class="category">
                         {{ categories }}
@@ -52,11 +52,11 @@
                     </span>
                     —
                     {{ /if }}
-                    
+
                     <span class="published-date">
                         {{ publish_date format="d M Y" }}
                     </span>
-                    
+
                     {{ if updated_by }}
                     —
                     <span class="author">
@@ -66,7 +66,7 @@
                     </span>
                     {{ /if }}
                 </div>
-                
+
                 {{ if hero_image }}
                 <div class="hero-image">
                     {{ glide:hero_image width="1200" format="webp" }}
@@ -77,16 +77,16 @@
                     {{ /glide:hero_image }}
                 </div>
                 {{ /if }}
-                
+
                 <div class="content">
                     <div class="intro intro-large">
                         {{ intro }}
                     </div>
-                    
+
                     {{ page_components }}
                     {{ partial src="components/{type}" }}
                     {{ /page_components }}
-                    
+
                     {{ if attachments }}
                     <div class="attachments">
                         <h4>Attachment</h4>
@@ -112,7 +112,7 @@
                                     {{ endif }}
                                 </span>
                                     <span class="name">
-                                    {{ basename }} {{ extension }}
+                                    {{ title_file }} {{ basename }} {{ extension }}
                                 </span>
                                 </a>
                             </div>
@@ -163,7 +163,7 @@
                                         <img class="external-source-separator" src="/images/icon/slash-breadcrumbs.svg"
                                              alt="">
                                         {{ /if }}
-                                
+
                                         {{ if categories }}
                                         <span class="category">
                                     {{ categories }}
@@ -172,7 +172,7 @@
                                     </span>
                                         —
                                         {{ /if }}
-                                
+
                                         <span class="published-date">
                                     {{ publish_date format="d M Y" }}
                                     </span>
