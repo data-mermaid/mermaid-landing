@@ -10,10 +10,10 @@
 
 @include media-breakpoint-down(md) {
     .container{
-        --bs-gutter-x: 30px;
+        --bs-gutter-x: 20px;
     }
     .row {
-        --bs-gutter-x: 30px;
+        --bs-gutter-x: 20px;
     }
 }
 

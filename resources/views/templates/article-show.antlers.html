@@ -106,13 +106,17 @@
                                     {{ elseif extension == 'csv' }}
                                     <img src="/images/icon/file/csv.svg" alt="">
                                     {{ elseif extension == 'zip' }}
-                                    <img src="/images/icon/file/zip.svg" alt="">
+                                    <img src="/images/icon/file/other.svg" alt="">
                                     {{ else }}
-                                    <img src="/images/icon/file/zip.svg" alt="">
+                                    <img src="/images/icon/file/other.svg" alt="">
                                     {{ endif }}
                                 </span>
-                                    <span class="name">
-                                    {{ title_file }} {{ basename }} {{ extension }}
+                                <span class="name">
+                                    {{ if title_file }}
+                                        {{ title_file }}
+                                    {{ else }}
+                                        {{ basename }}
+                                    {{ endif }}
                                 </span>
                                 </a>
                             </div>
