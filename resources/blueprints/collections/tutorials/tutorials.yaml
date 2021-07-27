@@ -82,7 +82,7 @@ sections:
           type: template
           icon: template
           listable: hidden
-          default: templates/article-show
+          default: templates/tutorial
   meta_data:
     display: 'Meta Data'
     fields:
