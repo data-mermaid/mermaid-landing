@@ -297,6 +297,12 @@
 
             .navbar-brand {
                 height: 74px;
+                @include media-breakpoint-down(md){
+                    height: 54px;
+                    img{
+                        height: 28px;
+                    }
+                }
             }
 
             .nav-link {
@@ -345,6 +351,9 @@
 
         .navbar-brand {
             height: 114px;
+            @include media-breakpoint-down(md){
+                height: 74px;
+            }
         }
 
         .navbar-toggler {
@@ -422,6 +431,9 @@
                     &:before {
                         display: none;
                     }
+                    &.dropdown-toggle{
+                        display: none;
+                    }
                 }
 
                 &:nth-last-child(1),
@@ -443,13 +455,18 @@
                     box-shadow: none;
                     padding-top: 0;
                     padding-bottom: 0;
-                    margin-top: 10px!important;
+                    margin-top: 0px!important;
 
                     .dropdown-item {
                         margin-top: 0;
                         margin-bottom: 10px;
-                        font-size: 20px;
-                        line-height: 30px;
+                        //font-size: 20px;
+                        //line-height: 30px;
+
+                        margin-left: 0;
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 34px;
                     }
 
                     li {
