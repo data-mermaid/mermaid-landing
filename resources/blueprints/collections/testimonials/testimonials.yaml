@@ -33,6 +33,8 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          instructions: 'Recommended max characters: 160 (but you can push to 190 if you must)'
+          character_limit: '190'
       -
         handle: photo
         field:

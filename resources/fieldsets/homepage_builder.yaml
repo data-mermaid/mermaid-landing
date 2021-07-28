@@ -303,7 +303,7 @@ fields:
                       icon: text
                       listable: hidden
                   -
-                    handle: value
+                    handle: number
                     field:
                       input_type: text
                       antlers: false
@@ -311,6 +311,8 @@ fields:
                       type: text
                       icon: text
                       listable: hidden
+                      validate:
+                        - numeric
                 mode: table
                 max_rows: 4
                 min_rows: 4

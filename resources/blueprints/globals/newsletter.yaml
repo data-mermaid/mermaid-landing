@@ -19,12 +19,15 @@ sections:
             	"height": 500,
             	"menubar": false,
             	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
+            		"advlist autolink lists link image charmap print preview anchor footnotes",
             		"searchreplace visualblocks code fullscreen",
             		"insertdatetime media table paste code help wordcount",
             		"code"
             	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+            	"external_plugins": {
+                    "footnotes": "/vendor/tinymce/footnotes/plugin.js"
+                },
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
             }
           display: Lead
           type: tinymce_cloud
