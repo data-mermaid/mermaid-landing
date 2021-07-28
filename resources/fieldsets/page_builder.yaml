@@ -24,7 +24,7 @@ fields:
                   	"external_plugins": {
                           "footnotes": "/vendor/tinymce/footnotes/plugin.js"
                       },
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
                   }
                 display: Content
                 type: tinymce_cloud
@@ -81,12 +81,15 @@ fields:
                   	"height": 500,
                   	"menubar": false,
                   	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor",
+                  		"advlist autolink lists link image charmap print preview anchor footnotes",
                   		"searchreplace visualblocks code fullscreen",
                   		"insertdatetime media table paste code help wordcount",
                   		"code"
                   	],
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  	"external_plugins": {
+                          "footnotes": "/vendor/tinymce/footnotes/plugin.js"
+                      },
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
                   }
                 display: Text
                 type: tinymce_cloud
@@ -422,6 +425,8 @@ fields:
                           type: textarea
                           icon: textarea
                           listable: hidden
+                          instructions: 'Recommended max characters: 135'
+                          character_limit: '135'
                 display: Features
                 type: replicator
                 icon: replicator

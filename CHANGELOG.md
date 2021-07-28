@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Homepage builder refinement [#20-homepage-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/20)
+- Refactoring for the Test Scenario Review (adding some legends and char limit, add hyperlink to WYSIWYG) [#30-mermaid-test-scenario-be](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/30)
 
 ### Fixed
 
