@@ -1,12 +1,12 @@
 .sets.form {
     padding-top: 90px;
-    padding-bottom: 90px;
-    .row{
-        --bs-gutter-x: 40px;
-    }
-
+    padding-bottom: 50px;
     &:first-child {
         padding-top: 0;
+    }
+
+    .row{
+        --bs-gutter-x: 40px;
     }
 
     .form-container {

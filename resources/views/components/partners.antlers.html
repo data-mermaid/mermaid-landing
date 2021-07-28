@@ -1,4 +1,4 @@
-<section class="section sets partners">
+<section class="section sets partners {{ if group:display_as_carousel }}carousel{{ /if }}">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -24,7 +24,7 @@
                     </div>
                     {{ else }}
                     <div class="partner-stack">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             {{ users }}
                             <div class="col-md-3 col-6">
                                 <div class="partner stacked">

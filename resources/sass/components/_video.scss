@@ -1,6 +1,6 @@
 .sets.video {
-    margin-top: 90px;
-    margin-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     .caption {
         margin-top: 10px;
@@ -9,5 +9,12 @@
     video{
         border-radius: 16px;
         overflow: hidden;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 35px;
+        padding-bottom: 35px;
     }
 }
