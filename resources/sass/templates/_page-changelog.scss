@@ -61,4 +61,40 @@
             }
         }
     }
+
+    @include media-breakpoint-down(md){
+        .table{
+            tr{
+                display: flex;
+                flex-direction: column;
+                td{
+                    padding: 0;
+                    &:nth-child(1){
+                        order: (2)
+                    }
+                    &:nth-child(2){
+                        order: 1;
+                        padding-top: 15px;
+                        padding-bottom: 5px;
+                    }
+                    &:nth-child(3){
+                        order: 3;
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid $color-blue-light-3;
+                    }
+                    .badge{
+                        padding: 2px 15px;
+                    }
+                }
+                &:last-child{
+                    td{
+                        &:nth-child(3) {
+                            border-bottom: 0;
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
