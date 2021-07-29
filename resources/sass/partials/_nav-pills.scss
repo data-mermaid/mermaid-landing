@@ -13,7 +13,7 @@
             z-index: 1;
             overflow: hidden;
 
-            &:focus{
+            &:focus {
                 box-shadow: none;
             }
 
@@ -42,6 +42,7 @@
 
             &:hover {
                 color: $color-white;
+
                 &:before, &:after {
                     transition: all 2s ease 0s, opacity 0.2s ease;
                     opacity: 1;
@@ -77,6 +78,14 @@
                 &:hover {
                     //background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
                 }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .nav-item {
+            .nav-link {
+                margin-bottom: 10px;
             }
         }
     }

@@ -246,14 +246,41 @@
                 }
             }
 
-            @include media-breakpoint-down(md){
+            @include media-breakpoint-down(md) {
                 .thumbnail {
                     max-width: 100%;
                     width: 100%;
                     margin-bottom: 20px;
                 }
-                .d-flex{
+                .d-flex {
                     flex-direction: column;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: 20px;
+            .article {
+                padding-bottom: 50px;
+
+                .thumbnail {
+                    margin-bottom: 20px;
+                }
+
+                &.featured {
+                    .thumbnail {
+                        margin-bottom: 20px;
+                    }
+
+                    .title {
+                        font-size: 28px;
+                        line-height: 38px;
+                        margin-bottom: 10px;
+                    }
+
+                    .meta {
+                        margin-bottom: 10px;
+                    }
                 }
             }
         }
@@ -262,7 +289,7 @@
     .articles {
         background-color: $color-blue-light;
         padding-top: 110px;
-        padding-bottom: 310px;
+        padding-bottom: 260px;
         margin-bottom: -200px;
 
         &.no-bg {
@@ -383,14 +410,23 @@
                 }
             }
 
-            @include media-breakpoint-down(md){
+            @include media-breakpoint-down(md) {
                 .thumbnail {
                     max-width: 100%;
                     width: 100%;
                 }
-                .d-flex{
+                .d-flex {
                     flex-direction: column;
                 }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            padding-top: 80px;
+            padding-bottom: 240px;
+
+            .subscribe-cta {
+                margin-top: 20px;
             }
         }
     }
@@ -444,6 +480,10 @@
             &:hover {
                 //border-color: $color-coral;
             }
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 30px;
         }
     }
 
