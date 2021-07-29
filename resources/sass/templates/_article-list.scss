@@ -425,6 +425,14 @@
             padding-top: 80px;
             padding-bottom: 240px;
 
+            .article{
+                .content{
+                    padding: 20px 20px;
+                    .title{
+                        margin-bottom: 0;
+                    }
+                }
+            }
             .subscribe-cta {
                 margin-top: 20px;
             }

@@ -177,6 +177,12 @@
         }
 
         @include media-breakpoint-down(md) {
+            .principle-container {
+                .title {
+                    margin-bottom: 30px;
+                }
+            }
+
             .intro-outer-container {
                 padding-top: 70px;
                 padding-bottom: 35px;
