@@ -140,7 +140,7 @@
                                 All Stories
                             </a>
                         </li>
-                        {{ taxonomy from="categories" }}
+                        {{ taxonomy from="categories" min_count="1" }}
                         <li class="nav-item">
                             <a class="nav-link {{ if get:category === slug }}active{{ /if }}"
                                href="?category={{ slug }}">{{ title }}</a>
