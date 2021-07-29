@@ -190,14 +190,27 @@
 
             .principle-container {
                 margin-top: 0;
-                border-radius: 0;
-                padding-top: 70px;
-                padding-bottom: 30px;
+                padding: 70px 20px 30px;
             }
         }
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-down(sm) {
+            .principle-container {
+                border-radius: 0;
+            }
+            .intro-container {
+                padding-left: 20px;
+
+                .intro-large {
+                    &:before {
+                        left: -20px;
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
             .intro-outer-container {
-                background-image: none!important;
+                background-image: none !important;
             }
         }
     }
