@@ -1,6 +1,6 @@
 .sets.image-gallery {
-    margin-top: 90px;
-    margin-bottom: 90px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     .heading {
         margin-bottom: 40px;
@@ -40,10 +40,26 @@
             }
         }
     }
+
+    @include media-breakpoint-down(md) {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 35px;
+        padding-bottom: 30px;
+        .heading {
+            margin-bottom: 30px;
+        }
+        .images-container {
+            a.image {
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
 
 #image-gallery-popup {
     z-index: 10000;
+
     .btn-close {
         position: absolute;
         border-radius: 50%;

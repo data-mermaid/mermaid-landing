@@ -297,6 +297,12 @@
 
             .navbar-brand {
                 height: 74px;
+                @include media-breakpoint-down(md){
+                    height: 54px;
+                    img{
+                        height: 28px;
+                    }
+                }
             }
 
             .nav-link {
@@ -345,6 +351,9 @@
 
         .navbar-brand {
             height: 114px;
+            @include media-breakpoint-down(md){
+                height: 74px;
+            }
         }
 
         .navbar-toggler {
@@ -401,8 +410,12 @@
 
 
     @include media-breakpoint-down(lg) {
-        overflow-y: scroll;
         transition: 0.3s all ease-in-out;
+
+        &.open{
+            overflow-y: scroll;
+        }
+
         .navbar-brand {
             img {
                 max-height: 34px;
@@ -413,6 +426,7 @@
                 margin-left: 0;
                 margin-right: 0;
                 margin-bottom: 10px;
+                position: relative;
 
                 .nav-link {
                     font-weight: 500;
@@ -421,6 +435,26 @@
 
                     &:before {
                         display: none;
+                    }
+                    &.dropdown-toggle{
+                        display: none;
+                    }
+                }
+
+                &.current{
+                    .nav-link{
+                        &:before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 20px;
+                            height: 2px;
+                            left: 0;
+                            bottom: -2px;
+                            background-color: #FE472F;
+                            opacity: 1;
+                            transition: all 0.3s ease-in-out;
+                        }
                     }
                 }
 
@@ -443,13 +477,18 @@
                     box-shadow: none;
                     padding-top: 0;
                     padding-bottom: 0;
-                    margin-top: 10px!important;
+                    margin-top: 0px!important;
 
                     .dropdown-item {
                         margin-top: 0;
                         margin-bottom: 10px;
-                        font-size: 20px;
-                        line-height: 30px;
+                        //font-size: 20px;
+                        //line-height: 30px;
+                        padding: 3px 0;
+                        margin-left: 0;
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 34px;
                     }
 
                     li {

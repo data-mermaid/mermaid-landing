@@ -1,6 +1,6 @@
 .sets.features {
-    margin-top: 62px;
-    margin-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 0;
 
     .row {
         --bs-gutter-x: 30px;
@@ -28,6 +28,26 @@
 
         .title {
             margin-bottom: 20px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-top: 35px;
+        padding-bottom: 0;
+        .feature {
+            margin-bottom: 35px;
+        }
+        .heading{
+            margin-bottom: 30px;
+        }
+        .feature{
+            margin-bottom: 35px;
+            .image{
+                margin-bottom: 10px;
+            }
+            .title{
+                margin-bottom: 10px;
+            }
         }
     }
 }
