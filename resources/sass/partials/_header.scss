@@ -297,9 +297,9 @@
 
             .navbar-brand {
                 height: 74px;
-                @include media-breakpoint-down(md){
+                @include media-breakpoint-down(md) {
                     height: 54px;
-                    img{
+                    img {
                         height: 28px;
                     }
                 }
@@ -351,7 +351,7 @@
 
         .navbar-brand {
             height: 114px;
-            @include media-breakpoint-down(md){
+            @include media-breakpoint-down(md) {
                 height: 74px;
             }
         }
@@ -412,7 +412,7 @@
     @include media-breakpoint-down(lg) {
         transition: 0.3s all ease-in-out;
 
-        &.open{
+        &.open {
             overflow-y: scroll;
         }
 
@@ -433,16 +433,39 @@
                     font-size: 24px;
                     line-height: 34px;
 
+                    &:focus {
+                        color: $color-white;
+                    }
+
                     &:before {
                         display: none;
                     }
-                    &.dropdown-toggle{
+
+                    &.dropdown-toggle {
                         display: none;
+                    }
+
+                    &:hover:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 20px;
+                        height: 2px;
+                        left: 0;
+                        bottom: -2px;
+                        background-color: #FE472F;
+                        opacity: 1;
+                        transition: all 0.3s ease-in-out;
                     }
                 }
 
-                &.current{
-                    .nav-link{
+                &.current {
+                    .nav-link {
+                        &:focus {
+                            color: $color-white;
+                        }
+
+                        &:hover:before,
                         &:before {
                             content: "";
                             display: block;
@@ -477,7 +500,7 @@
                     box-shadow: none;
                     padding-top: 0;
                     padding-bottom: 0;
-                    margin-top: 0px!important;
+                    margin-top: 0px !important;
 
                     .dropdown-item {
                         margin-top: 0;
@@ -489,6 +512,10 @@
                         font-weight: 500;
                         font-size: 24px;
                         line-height: 34px;
+
+                        &:focus {
+                            background-color: transparent;
+                        }
                     }
 
                     li {
@@ -526,9 +553,10 @@
                 }
             }
         }
-        &.top{
-            .navbar-toggler{
-                .icon-bar{
+
+        &.top {
+            .navbar-toggler {
+                .icon-bar {
                     background-color: $color-white;
                 }
             }
