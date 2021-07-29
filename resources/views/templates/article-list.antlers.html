@@ -129,7 +129,7 @@
     </div>
     {{ /if }}
     
-    {{ collection:articles limit="3" paginate="true" as="posts" taxonomy:categories=get:category }}
+    {{ collection:articles limit="6" paginate="true" as="posts" taxonomy:categories=get:category }}
     <div class="articles {{ if get:page > 1 || get:category != null }} no-bg {{ /if }}">
         <div class="container">
             <div class="row">
@@ -140,7 +140,7 @@
                                 All Stories
                             </a>
                         </li>
-                        {{ taxonomy from="categories" }}
+                        {{ taxonomy from="categories" min_count="1" }}
                         <li class="nav-item">
                             <a class="nav-link {{ if get:category === slug }}active{{ /if }}"
                                href="?category={{ slug }}">{{ title }}</a>
