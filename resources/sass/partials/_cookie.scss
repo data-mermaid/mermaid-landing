@@ -47,4 +47,16 @@
         margin-top: auto;
         white-space: nowrap;
     }
+
+    @include media-breakpoint-down(lg){
+        max-width: 100%;
+    }
+    @include media-breakpoint-down(md){
+        .d-flex{
+            flex-direction: column;
+        }
+        .btn-container{
+            margin-top: 10px;
+        }
+    }
 }

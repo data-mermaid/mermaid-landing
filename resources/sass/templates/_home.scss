@@ -274,16 +274,42 @@
                 }
             }
             @include media-breakpoint-down(md) {
-                margin-bottom: 20px;
+                margin-bottom: 30px;
                 .number {
                     font-size: 50px;
+                    &:before {
+                        width: 70px;
+                        height: 70px;
+                    }
                 }
-                label {
+                .label {
                     line-height: 1.5;
+                    letter-spacing: 2px;
                     font-size: 16px;
+                    overflow-wrap: break-word;
                 }
             }
-        }
+            @include media-breakpoint-down(sm) {
+                .number {
+                    font-size: 40px;
+                    &:before {
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+                .label {
+                    line-height: 1.5;
+                    letter-spacing: 1px;
+                    //font-size: 14px;
+                }
+            }
+            @include media-breakpoint-down(xs) {
+                .label {
+                    line-height: 1.5;
+                    letter-spacing: 1px;
+                    font-size: 14px;
+                }
+            }
 
         @include media-breakpoint-down(md) {
             hr {
@@ -328,6 +354,8 @@
                 }
             }
         }
+
+
     }
 
     .section.stories {
@@ -593,6 +621,22 @@
         @include media-breakpoint-down(md) {
             padding-top: 70px;
             padding-bottom: 70px;
+
+            .view-more {
+                .arrow {
+                    display: none;
+                    transform: translateX(0);
+                    &.after{
+                        display: inline-block;
+                        opacity: 1;
+                    }
+                }
+                .label {
+                    transform: translateX(0);
+                }
+
+            }
+
             .story {
                 &:first-child {
                     border-top: 1px solid $color-blue-light-2;
@@ -811,7 +855,8 @@
                 padding-right: 0;
                 display: flex;
                 flex-wrap: wrap;
-                .partner{
+
+                .partner {
                     margin-bottom: 60px;
                     flex: 0 0 auto;
                     width: 50%;
