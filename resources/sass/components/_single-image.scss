@@ -5,6 +5,11 @@
     img {
         border-radius: 16px;
     }
+
+    .caption {
+        margin-top: 10px;
+    }
+
     @include media-breakpoint-down(md) {
         margin-top: 0;
         margin-bottom: 0;

@@ -2,18 +2,18 @@
     padding-top: 35px;
     padding-bottom: 35px;
     ol {
-        counter-reset: mermaid-counter;
+        counter-reset: mermaid-ol-counter;
         list-style: none;
         padding-left: 0;
 
-        li {
-            counter-increment: mermaid-counter;
+        & > li {
+            counter-increment: mermaid-ol-counter;
             position: relative;
             padding-left: 30px;
             margin-bottom: 28px;
 
             &:before {
-                content: counter(mermaid-counter);
+                content: counter(mermaid-ol-counter);
                 color: $color-blue;
                 font-weight: bold;
                 position: absolute;
@@ -25,8 +25,9 @@
     ul {
         list-style: none;
         padding-left: 0;
-
-        li {
+        counter-reset: mermaid-ul-counter;
+        & > li {
+            counter-increment: mermaid-ul-counter;
             position: relative;
             padding-left: 30px;
             margin-bottom: 28px;
