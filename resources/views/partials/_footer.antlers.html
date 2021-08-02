@@ -26,7 +26,7 @@
                         <div class="icons">
                         {{ social_media:social_media }}
                             <div class="icon {{ type }}">
-                                <a href="{{ prefix }}{{ url }}">
+                                <a href="{{ prefix }}{{ url }}" target="_blank">
                                     <img src="/images/icon/{{ type }}.svg" alt="">
                                 </a>
                             </div>
@@ -42,7 +42,7 @@
                         {{ /nav:footer_nav }}
                     </div>
                     <div class="copyright">
-                        Copyright &copy; {{ now format="Y" }} {{ settings:site_name }}.
+                        Copyright &copy; {{ now format="Y" }} {{ settings:site_name }}
                     </div>
                 </div>
             </div>
