@@ -277,6 +277,7 @@
                 margin-bottom: 30px;
                 .number {
                     font-size: 50px;
+
                     &:before {
                         width: 70px;
                         height: 70px;
@@ -292,6 +293,7 @@
             @include media-breakpoint-down(sm) {
                 .number {
                     font-size: 40px;
+
                     &:before {
                         width: 70px;
                         height: 70px;
@@ -300,16 +302,11 @@
                 .label {
                     line-height: 1.5;
                     letter-spacing: 1px;
-                    //font-size: 14px;
-                }
-            }
-            @include media-breakpoint-down(xs) {
-                .label {
-                    line-height: 1.5;
-                    letter-spacing: 1px;
                     font-size: 14px;
                 }
             }
+
+        }
 
         @include media-breakpoint-down(md) {
             hr {
