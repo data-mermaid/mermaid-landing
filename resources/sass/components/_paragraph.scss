@@ -1,6 +1,8 @@
 .sets.paragraph {
     padding-top: 35px;
     padding-bottom: 35px;
+    overflow-wrap: break-word;
+
     ol {
         counter-reset: mermaid-ol-counter;
         list-style: none;
