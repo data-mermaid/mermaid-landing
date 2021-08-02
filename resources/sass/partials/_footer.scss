@@ -1,6 +1,12 @@
 footer.main-footer {
     padding-top: 40px;
     color: rgba($color-white, 0.6);
+    position: relative;
+
+    .footer-separator{
+        z-index: -1;
+        margin-bottom: -4px;
+    }
 
     .content-container {
         background-color: $color-blue-dark-2;
@@ -87,26 +93,27 @@ footer.main-footer {
         .icons {
             display: flex;
             flex-wrap: wrap;
-
+            margin-left: -12px;
+            margin-right: -12px;
             .icon {
                 margin-left: 12px;
                 margin-right: 12px;
-
-                &:first-child {
-                    margin-left: 0;
-                }
-
-                &:last-child {
-                    margin-right: 0;
-                }
+                margin-bottom: 7px;
+                //&:first-child {
+                //    margin-left: 0;
+                //}
+                //
+                //&:last-child {
+                //    margin-right: 0;
+                //}
 
                 a {
                     opacity: 0.5;
                     transition: 0.2s all ease-in-out;
                     display: block;
                     width: 18px;
-                    height: 18px;
-
+                    //height: 18px;
+                    height: 100%;
                     &:hover {
                         opacity: 1;
                     }
@@ -115,10 +122,7 @@ footer.main-footer {
                 img {
                     max-width: 100%;
                     max-height: 100%;
-                    //width: 18px;
-                    //height: 18px;
-                    //max-width: 18px;
-                    //max-height: 18px;
+
                     vertical-align: bottom;
                 }
             }
