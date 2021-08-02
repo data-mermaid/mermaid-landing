@@ -1,10 +1,24 @@
+<div class="d-md-none tutorial-side-menu-header">
+    <div>
+        <button class="btn back-to-menu-button">
+            Back to main menu
+        </button>
+    </div>
+    <div class="close-button-container">
+        <button class="close-button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+</div>
 <div class="tutorial-side-menu">
-    {{ nav:collection:tutorials paginate="false"}}
-    <div  class="nav flex-column">
+    {{ nav:collection:tutorials paginate="false" }}
+    <div class="nav flex-column">
         {{ if depth == 1 }}
-            <div class="nav-item">
-                <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
-            </div>
+        <div class="nav-item">
+            <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+        </div>
         {{ if children }}
         {{ *recursive children* }}
         {{ /if }}
