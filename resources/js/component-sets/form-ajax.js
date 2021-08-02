@@ -21,6 +21,7 @@ $(function () {
             success: function (data) {
                 showSuccess($form);
                 enableInputs($form);
+                clearInputs($form);
                 $('html, body').animate({
                     scrollTop: $form.offset().top - 150
                 }, 500);
@@ -33,6 +34,9 @@ $(function () {
                 }, 500);
             }
         });
+        function clearInputs($form){
+            $form.find('input, textarea').val('');
+        }
 
         function disableInputs($form) {
             $form.find('input, textarea, select, button').attr('disabled', true);
