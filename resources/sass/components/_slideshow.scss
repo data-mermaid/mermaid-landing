@@ -2,10 +2,26 @@
     padding-top: 60px;
     padding-bottom: 60px;
 
-    //.slick-slide{
-    //    border-radius: 16px;
-    //    overflow: hidden;
-    //}
+
+    .slick-arrow{
+        &.slick-prev{
+            left: -64px;
+        }
+        &.slick-next{
+            right: -64px;
+        }
+    }
+
+    @include media-breakpoint-down(xl){
+        .slick-arrow{
+            &.slick-prev{
+                left: -27px;
+            }
+            &.slick-next{
+                right: -27px;
+            }
+        }
+    }
     @include media-breakpoint-down(md) {
         margin-top: 0;
         margin-bottom: 0;
