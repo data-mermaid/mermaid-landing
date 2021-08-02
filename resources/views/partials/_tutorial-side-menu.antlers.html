@@ -1,41 +1,56 @@
-<div class="d-md-none tutorial-side-menu-header">
-    <div>
-        <button class="btn back-to-menu-button">
-            Back to main menu
-        </button>
-    </div>
-    <div class="close-button-container">
-        <button class="close-button">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-    </div>
-</div>
-<div class="tutorial-side-menu">
-    {{ nav:collection:tutorials paginate="false" }}
-    <div class="nav flex-column">
-        {{ if depth == 1 }}
-        <div class="nav-item">
-            <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+<div class="container">
+    <div class="d-lg-none tutorial-side-menu-header">
+        <div>
+            <button class="btn back-to-menu-button">
+                Back to main menu
+            </button>
         </div>
-        {{ if children }}
-        {{ *recursive children* }}
-        {{ /if }}
-        
-        {{ elseif depth == 2 }}
-        <div class="nav-item">
-            <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+        <div class="close-button-container">
+            <button class="close-button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </div>
+
+<div class="tutorial-side-menu">
+        {{ nav:collection:tutorials paginate="false" }}
+        <div class="nav flex-column">
+            {{ if depth == 1 }}
+            <div class="nav-item">
+                <a
+                        {{ if children }}
+                        class="nav-link collapse-link collapsed {{ if is_current || is_parent }} current {{ /if }}"
+                        data-bs-toggle="collapse" data-bs-target="#tutorial-menu-item-{{ index }}"
+                        href="#"
+                        {{ else }}
+                        class="nav-link {{ if is_current }} current {{ /if }}"
+                        href="{{ url }}"
+                        {{ endif }}
+                >{{ title }}</a>
+            </div>
+            
             {{ if children }}
-            {{ *recursive children* }}
+            <div id="tutorial-menu-item-{{ index }}" class="collapse {{ if is_current || is_parent }} show {{ /if }}">
+                {{ *recursive children* }}
+            </div>
+            {{ /if }}
+            
+            {{ elseif depth == 2 }}
+            <div class="nav-item">
+                <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+                {{ if children }}
+                {{ *recursive children* }}
+                {{ /if }}
+            </div>
+            
+            {{ elseif depth == 3 }}
+            <div class="nav-item">
+                <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
+            </div>
             {{ /if }}
         </div>
-        
-        {{ elseif depth == 3 }}
-        <div class="nav-item">
-            <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
-        </div>
-        {{ /if }}
-    </div>
-    {{ /nav:collection:tutorials }}
+        {{ /nav:collection:tutorials }}
+</div>
 </div>
