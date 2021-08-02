@@ -52,6 +52,7 @@
         max-width: 100%;
     }
     @include media-breakpoint-down(md){
+        padding: 25px 20px;
         .d-flex{
             flex-direction: column;
         }
