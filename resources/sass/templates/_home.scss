@@ -809,7 +809,17 @@
             .slick-partners {
                 padding-left: 0;
                 padding-right: 0;
+                display: flex;
+                flex-wrap: wrap;
+                .partner{
+                    margin-bottom: 60px;
+                    flex: 0 0 auto;
+                    width: 50%;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
             }
+
         }
     }
 
