@@ -2,24 +2,27 @@ $(function () {
     let oldScroll = $(window).scrollTop();
     let didScroll = false;
     const mainNavbar = '#navbarNav'
-    $('#main-header .navbar-toggler').click(function(e){
+    $('#main-header .navbar-toggler').click(function (e) {
         const mainNavbar = $(this).attr('data-bs-target');
-        if($('.page-tutorial').length){
-            if($(this).hasClass('collapsed')){
 
+        $('body').toggleClass('static');
+        if ($('.page-tutorial').length) {
+            if ($(this).hasClass('collapsed')) {
+                $('#main-header').removeClass('open');
             } else {
                 $('.side-menu-col').toggleClass('open');
-                console.log(target);
                 $(mainNavbar).removeClass('show');
             }
         }
-        $('#main-header').toggleClass('open');
-        $('body').toggleClass('static');
+        else{
+            $('#main-header').toggleClass('open');
+
+        }
     })
 
-    setTimeout(function(){
+    setTimeout(function () {
         $navbar = $('#main-header');
-        if(window.pageYOffset === 0){
+        if (window.pageYOffset === 0) {
             $navbar.removeClass("reveal");
             $navbar.removeClass("vanish");
             $navbar.addClass("top");
@@ -29,32 +32,57 @@ $(function () {
             $navbar.removeClass("top");
         }
     }, 300);
-    setInterval(function(){
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function () {
-            var currentScrollPos = window.pageYOffset;
-            $navbar = $('#main-header');
 
-            if (prevScrollpos > currentScrollPos) {
-                if (currentScrollPos === 0) {
-                    $navbar.addClass("top").removeClass("reveal").removeClass("vanish");
-                } else {
-                    $navbar.addClass("reveal").removeClass("vanish").removeClass("top");
-                }
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        const currentScrollPos = window.pageYOffset;
+
+        if (currentScrollPos > 0) {
+            $navbar.addClass("fixed").removeClass('top');
+            if (prevScrollpos >= currentScrollPos) {
+                $navbar.addClass("reveal").removeClass("vanish").removeClass("top");
             } else {
                 $navbar.addClass("vanish").removeClass("reveal").removeClass("top");
             }
-        };
-    },300);
+        }
 
-    $('.page-tutorial .tutorial-side-menu-header .close-button-container .close-button').click(function(){
+        prevScrollpos = currentScrollPos;
+
+        if (currentScrollPos <= 0) {
+            setTimeout(function () {
+                $navbar.addClass("top").removeClass("fixed").removeClass("reveal").removeClass("vanish");
+            }, 150);
+        }
+    }
+
+
+    // setInterval(function(){
+    //     const prevScrollpos = window.pageYOffset;
+    //     window.onscroll = function () {
+    //         const currentScrollPos = window.pageYOffset;
+    //         $navbar = $('#main-header');
+    //         if (currentScrollPos === 0) {
+    //             $navbar.addClass("top").removeClass("reveal").removeClass("vanish");
+    //         }
+    //         else {
+    //             if (prevScrollpos > currentScrollPos) {
+    //                 $navbar.addClass("reveal").removeClass("vanish").removeClass("top");
+    //             } else {
+    //                 $navbar.addClass("vanish").removeClass("reveal").removeClass("top");
+    //             }
+    //         }
+    //     };
+    // },300);
+
+    $('.page-tutorial .tutorial-side-menu-header .close-button-container .close-button').click(function () {
+        $('#main-header').removeClass('open');
         $('.side-menu-col').removeClass('open');
         $('body').removeClass('static');
         $('.navbar-toggler').addClass('collapsed');
         $(mainNavbar).removeClass('show');
     });
 
-    $('.tutorial-side-menu-header .back-to-menu-button').click(function(){
+    $('.tutorial-side-menu-header .back-to-menu-button').click(function () {
         $('.navbar-toggler').removeClass('collapsed');
         $('#main-header .navbar-collapse').addClass('show');
 
