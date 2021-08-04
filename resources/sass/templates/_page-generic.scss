@@ -43,6 +43,7 @@
     }
 
     @include media-breakpoint-down(md){
+        padding-top: 220px;
         h1.main-title {
             margin-bottom: 0;
             padding-bottom: 30px;
