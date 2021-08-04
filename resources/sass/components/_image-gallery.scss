@@ -11,6 +11,10 @@
     }
 
     .images-container {
+        .row{
+            --bs-gutter-x: 30px;
+        }
+
         a.image {
             cursor: pointer;
             display: block;
@@ -52,6 +56,9 @@
         .images-container {
             a.image {
                 margin-bottom: 20px;
+            }
+            .row{
+                --bs-gutter-x: 20px;
             }
         }
     }
