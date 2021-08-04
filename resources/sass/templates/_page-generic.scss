@@ -5,7 +5,8 @@
         padding-bottom: 50px;
         margin-bottom: 0;
     }
-    .intro.intro-large{
+
+    .intro.intro-large {
         margin-top: 50px;
         margin-bottom: 0;
     }
@@ -42,14 +43,14 @@
         }
     }
 
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(md) {
         padding-top: 220px;
         h1.main-title {
             margin-bottom: 0;
             padding-bottom: 30px;
         }
 
-        .intro.intro-large{
+        .intro.intro-large {
             margin-top: 30px;
             margin-bottom: 20px;
         }
