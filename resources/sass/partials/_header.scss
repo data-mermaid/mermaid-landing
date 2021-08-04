@@ -98,7 +98,7 @@
                     z-index: 2;
                 }
 
-                &:hover{
+                &:hover {
                     color: $color-blue-text;
 
                     &:before {
@@ -114,7 +114,6 @@
                 }
             }
 
-
             &.current {
                 .nav-link {
                     &:before {
@@ -126,7 +125,7 @@
             &:nth-last-child(1),
             &:nth-last-child(2) {
                 .nav-link {
-                    color: $color-white!important;
+                    color: $color-white !important;
                     padding: 3px 20px;
                     background-color: $color-coral;
                     border-radius: 15px;
@@ -164,8 +163,6 @@
                     }
 
                     &:hover {
-                        //background: $color-coral-dark-2;
-                        //color: white;
 
                         &:before, &:after {
                             transition: all 2s ease 0s, opacity 0.2s ease;
@@ -193,7 +190,6 @@
             border: none;
             background: transparent !important;
             padding: 5px 0 10px 0;
-            //display: block;
 
             &:hover {
                 background: transparent !important;
@@ -280,6 +276,7 @@
 
     &.fixed {
         background-color: $color-blue-dark;
+
         .navbar {
             //padding-top: 12px;
             //padding-bottom: 12px;
@@ -313,15 +310,6 @@
                     margin-top: 20px;
                 }
             }
-
-            //.navbar-collapse.show {
-            //    position: fixed;
-            //    top: 0;
-            //    left: 0;
-            //    width: 100%;
-            //    bottom: 0;
-            //    background-color: $color-blue-dark;
-            //}
 
             .navbar-toggler {
                 .icon-bar {
@@ -427,16 +415,17 @@
             .nav-item {
                 margin-left: 0;
                 margin-right: 0;
-                margin-bottom: 10px;
                 position: relative;
 
                 .nav-link {
                     font-weight: 500;
                     font-size: 24px;
                     line-height: 34px;
+                    margin-bottom: 10px;
 
                     &:focus {
                         color: $color-white;
+                        outline:none!important;
                     }
 
                     &:before {
@@ -444,7 +433,35 @@
                     }
 
                     &.dropdown-toggle {
-                        display: none;
+                        //display: none;
+                        position: relative;
+
+                        &:hover:before,
+                        &:before {
+                            content: "";
+                            display: block !important;
+                            position: absolute;
+                            left: auto;
+                            top: 50%;
+                            height: 20px;
+                            width: 20px;
+                            transform: translateY(-50%);
+                            transition: 0.1s all ease-in-out;
+                            background-image: url(/images/icon/slider-arrow.svg);
+                            background-size: 8px auto;
+                            background-repeat: no-repeat;
+                            background-position: center;
+
+                            right: 0;
+                            bottom: 0;
+                            background-color: transparent;
+                            filter: brightness(0) invert(1);
+                            opacity: 0.6!important;
+                        }
+
+                        &.show:before {
+                            transform: translateY(-50%) rotate(90deg);
+                        }
                     }
 
                     &:hover:before {
@@ -496,13 +513,23 @@
                 }
 
                 .dropdown-menu {
-                    opacity: 1;
-                    visibility: visible;
+                    max-height: 0;
+                    opacity: 0;
+                    //visibility: visible;
                     background-color: transparent;
                     box-shadow: none;
                     padding-top: 0;
                     padding-bottom: 0;
                     margin-top: 0px !important;
+                    padding-left: 20px;
+                    overflow: hidden;
+                    transition: 0.2s max-height ease-in-out;
+
+                    &.show {
+                        opacity: 1;
+                        visibility: visible;
+                        max-height: 10000px;
+                    }
 
                     .dropdown-item {
                         margin-top: 0;
@@ -523,7 +550,7 @@
                     li {
                         &:last-child {
                             .dropdown-item {
-                                margin-bottom: 0;
+                                //margin-bottom: 0;
                             }
                         }
                     }
