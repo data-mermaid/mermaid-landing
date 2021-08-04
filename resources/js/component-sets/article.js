@@ -1,9 +1,14 @@
 import Dotdotdot from 'dotdotdot-js';
 
 $(function () {
-    $('.article a').on("mouseover mouseleave", function(){
+    $('body')
+        .on('mouseover mouseleave', '.article a', function(){
         $(this).parents('.article').toggleClass('hover');
-    });
+        })
+        .on('mouseover mouseleave', '.publication a', function(){
+            $(this).parents('.publication').toggleClass('hover');
+        })
+
 
     var $temp = $("<input>");
 
@@ -27,24 +32,8 @@ $(function () {
     $('.share-button-container').css('margin-top',
         $('.title').height() + $('.meta').height());
 
-    // dotdotdot on article list pate
-    $('.article-list-page .article .title').each(function(){
-        $(this).dotdotdot({
-            fallbackToLetter: true,
-            watch: true,
-        });
-    });
-
-    // dotdotdot on homepage
-    $('.page-home .story .title').each(function(){
-        $(this).dotdotdot({
-            fallbackToLetter: true,
-            watch: true,
-        });
-    });
-
-    /*dotdotdot on related article*/
-    $('.related .article .title').each(function(){
+    // dotdotdot
+    $('.dotdotdot').each(function(){
         $(this).dotdotdot({
             fallbackToLetter: true,
             watch: true,

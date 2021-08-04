@@ -2,6 +2,7 @@ $(function () {
     let oldScroll = $(window).scrollTop();
     let didScroll = false;
     const mainNavbar = '#navbarNav'
+
     $('#main-header .navbar-toggler').click(function (e) {
         const mainNavbar = $(this).attr('data-bs-target');
 
@@ -35,8 +36,8 @@ $(function () {
 
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
+        $navbar = $('#main-header');
         const currentScrollPos = window.pageYOffset;
-
         if (currentScrollPos > 0) {
             $navbar.addClass("fixed").removeClass('top');
             if (prevScrollpos >= currentScrollPos) {
