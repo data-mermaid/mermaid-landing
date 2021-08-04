@@ -6,6 +6,7 @@
         border-right: 1px solid $color-blue-light-2;
         padding-bottom: 200px;
         max-width: 280px;
+        min-width: 280px;
         width: 280px;
         margin-right: 40px;
         padding-right: 20px;
@@ -95,6 +96,10 @@
     .tutorial-content {
         padding-bottom: 200px;
 
+        .narrow-content{
+            margin-left: 0;
+        }
+
         .heading {
             margin-bottom: 50px;
         }
@@ -140,7 +145,7 @@
             //display: none;
             opacity: 0;
             visibility: hidden;
-            transition: 0.2s opacity ease-in-out;
+            transition: 0.3s opacity ease-in-out;
 
             .container {
                 --bs-gutter-x: 20px;

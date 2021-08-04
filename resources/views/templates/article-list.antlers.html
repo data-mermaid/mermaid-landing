@@ -22,9 +22,10 @@
                                     href="{{ link to='{url}' }}"
                                     {{ endif }}
                             >
-                                {{ glide:hero_image width="600" format="webp" }}
-                                <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-                                {{ /glide:hero_image }}
+                                <span class="img-container"
+                                      style="background-image: url({{ glide:hero_image width="1000" format="webp" }})"
+                                >
+                                </span>
                             </a>
                         </div>
                         <div class="meta">
@@ -58,7 +59,6 @@
                             >
                                 {{ title }}
                             </a>
-                        
                         </h4>
                         <div class="excerpt">
                             {{ intro }}
@@ -79,9 +79,9 @@
                                         href="{{ link to='{url}' }}"
                                         {{ endif }}
                                 >
-                                    {{ glide:hero_image width="600" format="webp" }}
-                                    <img class=" img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-                                    {{ /glide:hero_image }}
+                                    <span class="img-container"
+                                          style="background-image: url({{ glide:hero_image width="1000" format="webp" }})"
+                                    ></span>
                                 </a>
                             </div>
                             <div class="content">
@@ -97,8 +97,8 @@
                                     {{ if categories }}
                                     <span class="category">
                                     {{ categories }}
-                                    {{ title }}
-                                    {{ /categories }}
+                                        {{ title }}
+                                        {{ /categories }}
                                     </span>
                                     —
                                     {{ /if }}
@@ -116,6 +116,7 @@
                                             {{ endif }}
                                     >
                                         {{ title }}
+                                    
                                     </a>
                                 </h4>
                             </div>
@@ -155,10 +156,10 @@
             <div class="row">
                 <div class="col-lg-8">
                     {{ if no_results }}
-                        <div class="no-result">
-                            <h3>This content is currently unavailable</h3>
-                            <p>The link you opened may have expired</p>
-                        </div>
+                    <div class="no-result">
+                        <h3>This content is currently unavailable</h3>
+                        <p>The link you opened may have expired</p>
+                    </div>
                     {{ else }}
                     {{ posts }}
                     <div class="article {{ if external }}external{{ /if }}">
@@ -171,9 +172,9 @@
                                         href="{{ link to='{url}' }}"
                                         {{ endif }}
                                 >
-                                    {{ glide:hero_image width="600" format="webp" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-                                    {{ /glide:hero_image }}
+                                    <span class="img-container"
+                                          style="background-image: url({{ glide:hero_image width="1000" format="webp" }})"
+                                    ></span>
                                 </a>
                             </div>
                             <div class="content">
@@ -196,8 +197,8 @@
                                     {{ /if }}
                                     
                                     <span class="published-date">
-                                            {{ publish_date format="d M Y" }}
-                                        </span>
+                                        {{ publish_date format="d M Y" }}
+                                    </span>
                                 </div>
                                 <h4 class="title">
                                     <a
@@ -208,6 +209,7 @@
                                             {{ endif }}
                                     >
                                         {{ title }}
+                                    
                                     </a>
                                 </h4>
                             </div>

@@ -122,15 +122,29 @@
                 //background-color: $color-blue-light;
                 min-width: 207px;
                 max-width: 207px;
+
                 //border-radius: 8px;
                 margin-right: 30px;
                 overflow: hidden;
                 position: relative;
 
                 a {
-                    display: block;
-                    border-radius: 8px;
-                    overflow: hidden;
+                    //display: block;
+                    //padding-bottom: 65%;
+                    //overflow: hidden;
+                    //width: 100%;
+                    //height: 100%;
+                    //position: relative;
+                    //
+                    //background-repeat: no-repeat;
+                    //background-size: cover;
+                    //background-position: center;
+
+                    img {
+                        position: absolute;
+                        object-fit: cover;
+                    }
+
                 }
 
             }
@@ -161,6 +175,8 @@
             .title {
                 color: $color-black-text;
                 font-weight: 500;
+                max-height: 90px;
+                overflow: hidden;
 
                 a {
                     color: $color-black-text;
@@ -201,7 +217,9 @@
                 .title {
                     font-size: 36px;
                     line-height: 48px;
-                    margin-bottom: 25px;
+                    max-height: 150px;
+                    overflow: hidden;
+                    //margin-bottom: 25px;
                 }
 
                 &.external {
@@ -309,26 +327,18 @@
                 max-width: 240px;
                 border-radius: 0;
                 position: relative;
-
                 a {
                     display: block;
-                    height: 100%;
-                    width: 100%;
                     overflow: hidden;
-
-                    img {
-                        object-fit: cover;
+                    height: 100%;
+                    //padding-bottom: 65%;
+                    border-radius: 0;
+                    .img-container{
+                        padding-bottom: 0;
                         height: 100%;
+                        display: block;
                         width: 100%;
-                        transition: 0.3s all ease-in-out;
                     }
-
-                    &:hover {
-                        img {
-                            transform: scale(1.04);
-                        }
-                    }
-
                 }
             }
 
@@ -392,6 +402,8 @@
             .title {
                 color: $color-black-text;
                 font-weight: 500;
+                max-height: 60px;
+                overflow: hidden;
 
                 a {
                     color: $color-black-text;
@@ -425,10 +437,11 @@
             padding-top: 80px;
             padding-bottom: 240px;
 
-            .article{
-                .content{
+            .article {
+                .content {
                     padding: 20px 20px;
-                    .title{
+
+                    .title {
                         margin-bottom: 0;
                     }
                 }
@@ -441,8 +454,21 @@
 
     .article {
         .thumbnail {
-            img {
-                transition: 0.3s all ease-in-out;
+            overflow: hidden;
+            position: relative;
+            a {
+                display: block;
+                overflow: hidden;
+                border-radius: 8px;
+                .img-container{
+                    padding-bottom: 65%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    display: block;
+                    position: relative;
+                    transition: 0.3s all ease-in-out;
+                }
             }
         }
 
@@ -458,9 +484,12 @@
 
             .thumbnail {
                 a {
-                    img {
+                    .img-container {
                         transform: scale(1.04);
                     }
+                    //img {
+                    //transform: scale(1.04);
+                    //}
                 }
             }
 
@@ -501,10 +530,12 @@
         padding: 25px 30px;
         background-color: $color-white;
         margin-bottom: 40px;
-        p:last-child{
+
+        p:last-child {
             margin-bottom: 0;
         }
-        @include media-breakpoint-down(md){
+
+        @include media-breakpoint-down(md) {
             padding: 15px 20px;
             margin-bottom: 20px;
         }

@@ -4,22 +4,26 @@
     overflow-wrap: break-word;
 
     ol {
-        counter-reset: mermaid-ol-counter;
-        list-style: none;
-        padding-left: 0;
-
+        //counter-reset: mermaid-ol-counter;
+        //list-style: none;
+        //padding-left: 0;
+        padding-left: 20px;
         & > li {
-            counter-increment: mermaid-ol-counter;
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 28px;
-
-            &:before {
-                content: counter(mermaid-ol-counter);
+            //counter-increment: mermaid-ol-counter;
+            //position: relative;
+            //padding-left: 30px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            &::marker{
                 color: $color-blue;
                 font-weight: bold;
-                position: absolute;
-                left: 0;
+            }
+            &:before {
+                //content: counter(mermaid-ol-counter);
+                //color: $color-blue;
+                //font-weight: bold;
+                //position: absolute;
+                //left: 0;
             }
         }
     }

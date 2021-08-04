@@ -207,7 +207,7 @@
             }
 
             .thumbnail {
-                //background-color: $color-blue-light;
+                background-color: $color-blue-light;
                 min-width: 207px;
                 max-width: 207px;
                 border-radius: 8px;
@@ -215,8 +215,18 @@
                 overflow: hidden;
                 position: relative;
 
-                img {
-                    transition: 0.3s all ease-in-out;
+                a{
+                    display: block;
+                    overflow: hidden;
+                    .img-container{
+                        padding-bottom: 65%;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        display: block;
+                        position: relative;
+                        transition: 0.3s all ease-in-out;
+                    }
                 }
             }
 
@@ -246,6 +256,8 @@
             .title {
                 color: $color-black-text;
                 font-weight: 500;
+                max-height: 90px;
+                overflow: hidden;
 
                 a {
                     color: $color-black-text;
@@ -339,7 +351,7 @@
 
                 .thumbnail {
                     a {
-                        img {
+                        .img-container {
                             transform: scale(1.04);
                         }
                     }
