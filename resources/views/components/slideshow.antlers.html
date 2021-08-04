@@ -9,15 +9,15 @@
                 {{ glide:images width="1200" format="webp" }}
                 <div class="slick-item">
                     <img class="img-fluid w-100" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
+                    {{ if caption }}
+                    <div class="caption">
+                        {{ caption }}
+                    </div>
+                    {{ /if }}
                 </div>
                 {{ /glide:images }}
             </div>
             {{ /slideshow }}
-            {{ if caption }}
-            <div class="caption">
-                {{ caption }}
-            </div>
-            {{ /if }}
         </div>
     </div>
 
