@@ -858,7 +858,7 @@
                 img {
                     max-width: 100%;
                     max-height: 80px;
-                    filter: grayscale(100%);
+                    filter: grayscale(100%) opacity(0.8);
                     transition: 0.3s all ease-in-out;
                     padding-left: 10px;
                     padding-right: 10px;
