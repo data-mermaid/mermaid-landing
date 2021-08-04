@@ -10,7 +10,7 @@ $(function () {
         dots          : true,
         infinite      : true,
         adaptiveHeight: true,
-        autoplay      : true,
+        autoplay      : false,
         autoplaySpeed : 3000
     })
 });
