@@ -279,13 +279,15 @@
         @include media-breakpoint-down(md) {
             padding-bottom: 20px;
             .article {
-                padding-bottom: 50px;
+                padding-bottom: 25px;
 
                 .thumbnail {
                     margin-bottom: 20px;
                 }
 
                 &.featured {
+                    padding-bottom: 35px;
+
                     .thumbnail {
                         margin-bottom: 20px;
                     }
