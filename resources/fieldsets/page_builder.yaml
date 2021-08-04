@@ -155,15 +155,6 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
-            -
-              handle: caption
-              field:
-                input_type: text
-                antlers: false
-                display: Caption
-                type: text
-                icon: text
-                listable: hidden
         image-gallery:
           display: 'Image Gallery'
           fields:
