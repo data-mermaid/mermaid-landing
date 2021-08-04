@@ -153,9 +153,10 @@
                                             href="{{ link to='{url}' }}"
                                             {{ endif }}
                                     >
-                                        {{ glide:hero_image width="600" format="webp" }}
-                                        <img class=" img-fluid" src="{{ url }}" alt="{{ alt }}" title="{{ title ?? alt }}">
-                                        {{ /glide:hero_image }}
+                                        <span class="img-container"
+                                             style="background-image: url({{ glide:hero_image width="600" format="webp" }})"
+                                        >
+                                        </span>
                                     </a>
                                 </div>
                                 <div class="content">

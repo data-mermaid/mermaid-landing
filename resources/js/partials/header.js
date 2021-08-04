@@ -27,7 +27,7 @@ $(function () {
             $navbar.removeClass("vanish");
             $navbar.addClass("top");
         } else {
-            $navbar.addClass("reveal");
+            $navbar.addClass('fixed').addClass("reveal");
             $navbar.removeClass("vanish");
             $navbar.removeClass("top");
         }

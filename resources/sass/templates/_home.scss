@@ -430,6 +430,19 @@
                 border-radius: 16px;
                 margin-bottom: 30px;
                 overflow: hidden;
+                a{
+                    display: block;
+                    overflow: hidden;
+                    .img-container{
+                        padding-bottom: 65%;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        display: block;
+                        position: relative;
+                        transition: 0.3s all ease-in-out;
+                    }
+                }
             }
 
             .meta {
@@ -458,6 +471,8 @@
             .title {
                 color: $color-black-text;
                 font-weight: 500;
+                max-height: 60px;
+                overflow: hidden;
 
                 a {
                     color: $color-black-text;
@@ -487,6 +502,8 @@
                     font-size: 34px;
                     line-height: 44px;
                     margin-bottom: 25px;
+                    max-height: 150px;
+                    overflow: hidden;
                 }
             }
         }
