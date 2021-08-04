@@ -9,7 +9,7 @@ $(function () {
     $('.slick-slideshow').slick({
         dots          : true,
         infinite      : true,
-        adaptiveHeight: false,
+        adaptiveHeight: true,
         autoplay      : true,
         autoplaySpeed : 3000
     })
