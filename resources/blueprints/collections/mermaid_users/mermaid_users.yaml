@@ -29,6 +29,8 @@ sections:
           type: toggle
           icon: toggle
           listable: hidden
+          instructions: 'Set true to enable the carousel mode (left aligned)'
+          default: false
       -
         handle: users
         field:
@@ -49,6 +51,7 @@ sections:
                     type: assets
                     icon: assets
                     listable: hidden
+                    instructions: 'Recommended dimension 80x80 px or 160x160 px'
                 -
                   handle: url
                   field:

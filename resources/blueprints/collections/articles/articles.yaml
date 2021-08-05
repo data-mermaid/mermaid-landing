@@ -21,6 +21,7 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          instructions: 'Recommended dimension 992x515 px or 1984x1030 px'
       -
         handle: intro
         field:
@@ -77,15 +78,6 @@ sections:
     display: Sidebar
     fields:
       -
-        handle: author
-        field:
-          max_items: 1
-          mode: select
-          display: Author
-          type: users
-          icon: users
-          listable: hidden
-      -
         handle: slug
         field:
           type: slug
@@ -94,6 +86,15 @@ sections:
           validate:
             - required
             - 'unique_entry_value:{collection},{id},{site}'
+      -
+        handle: author
+        field:
+          input_type: text
+          antlers: false
+          display: Author
+          type: text
+          icon: text
+          listable: hidden
       -
         handle: publish_date
         field:

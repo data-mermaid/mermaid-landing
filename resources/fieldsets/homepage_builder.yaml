@@ -21,6 +21,7 @@ fields:
                 icon: assets
                 listable: hidden
                 width: 66
+                instructions: 'Recommended dimension 1366x760 px or 2732x1520 px'
             -
               handle: show_icon
               field:
@@ -105,6 +106,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                instructions: 'Recommended dimension 1366x760 px or 2732x1520 px'
             -
               handle: column_section
               field:
@@ -154,6 +156,7 @@ fields:
                       type: assets
                       icon: assets
                       listable: hidden
+                      instructions: 'Recommended dimension 150x150 px or 300x300 px'
                 mode: stacked
                 max_rows: 3
                 min_rows: 3
@@ -221,6 +224,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                instructions: 'Recommended dimension 540x440 px or 1080x880 px'
             -
               handle: dashboard_section
               field:
@@ -277,6 +281,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                instructions: 'Recommended dimension 540x440 px or 1080x880 px'
         mermaid-by-number:
           display: 'Mermaid By Number'
           fields:
