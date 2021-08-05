@@ -9,7 +9,7 @@
         </div>
     </div>
     
-    {{ collection:newsletter_archives as="archives" limit="10" paginate="true" sort="publish_date:desc" }}
+    {{ collection:newsletter_archives sort="publish_date:desc" as="archives" limit="10" paginate="true" }}
     <div class="articles no-bg">
         <div class="container">
             <div class="row">
