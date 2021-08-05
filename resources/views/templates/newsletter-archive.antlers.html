@@ -1,0 +1,9 @@
+<div>
+    {{ collection:newsletter_archives as="archives" }}
+        {{ archives }}
+            <h2>{{ title }}</h2>
+            <a href="{{ link }}" target="_blank">{{ link }}</a>
+            {{ intro }}
+        {{ /archives }}
+    {{ /collection:newsletter_archives }}
+</div>

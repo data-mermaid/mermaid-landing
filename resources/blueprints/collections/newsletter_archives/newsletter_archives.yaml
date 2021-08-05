@@ -10,6 +10,17 @@ sections:
           required: true
           validate:
             - required
+          width: 50
+      -
+        handle: link
+        field:
+          input_type: text
+          antlers: false
+          display: Link
+          type: text
+          icon: text
+          width: 50
+          listable: true
       -
         handle: hero_image
         field:
@@ -30,18 +41,6 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
-      -
-        handle: url
-        field:
-          input_type: text
-          antlers: false
-          display: Url
-          type: text
-          icon: text
-          width: 50
-          listable: hidden
-          if:
-            external: 'equals true'
   sidebar:
     display: Sidebar
     fields:
