@@ -43,6 +43,22 @@
         }
     }
 
+    &.page-404 {
+        h1.main-title {
+            padding-bottom: 25px;
+        }
+        .image-404{
+            transform: translateY(-50px);
+        }
+        @include media-breakpoint-down(md) {
+            .image-404 {
+                transform: none;
+                margin-bottom: 40px;
+                max-width: 250px;
+            }
+        }
+    }
+
     @include media-breakpoint-down(md) {
         padding-top: 220px;
         h1.main-title {
