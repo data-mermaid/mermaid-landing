@@ -130,7 +130,7 @@
     </div>
     {{ /if }}
     
-    {{ collection:articles sort="publish_date:desc" limit="2" paginate="true" as="posts" taxonomy:categories=get:category }}
+    {{ collection:articles sort="publish_date:desc" limit="10" paginate="true" as="posts" taxonomy:categories=get:category }}
     <div class="articles {{ if get:page > 1 || get:category != null }} no-bg {{ /if }}">
         <div class="container">
             <div class="row">
