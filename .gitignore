@@ -28,3 +28,4 @@ public/js/site.js
 storage/forms/*
 public/fonts/GT*
 /content/
+package-lock.json
