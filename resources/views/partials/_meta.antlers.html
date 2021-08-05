@@ -1,38 +1,39 @@
 <!-- Title -->
 {{ if meta_title }}
-<meta name="title" content="{{ meta_title }}">
-<meta property="og:title" content="{{ meta_title }}">
-<meta property="twitter:title" content="{{ meta_title }}">
+<meta name="title" content="{{ meta_title }}" />
+<meta property="og:title" content="{{ meta_title }}" />
+<meta property="twitter:title" content="{{ meta_title }}" />
 {{ else }}
-<meta name="title" content="{{ title }}">
-<meta property="og:title" content="{{ title }}">
-<meta property="twitter:title" content="{{ title }}">
+<meta name="title" content="{{ title }}" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="twitter:title" content="{{ title }}" />
 {{ endif }}
 
 <!-- description -->
 {{ if meta_description }}
-<meta name="description" content="{{ meta_description }}">
-<meta property="og:description" content="{{ meta_description }}">
-<meta property="twitter:description" content="{{ meta_description }}">
+<meta name="description" content="{{ meta_description }}" />
+<meta property="og:description" content="{{ meta_description }}" />
+<meta property="twitter:description" content="{{ meta_description }}" />
 {{ else }}
-<meta name="description" content="{{ intro }}">
-<meta property="og:description" content="{{ intro }}">
-<meta property="twitter:description" content="{{ intro }}">
+<meta name="description" content="{{ intro }}" />
+<meta property="og:description" content="{{ intro }}" />
+<meta property="twitter:description" content="{{ intro }}" />
 {{ endif }}
 
 <!-- meta image -->
 {{ if meta_image }}
-<meta property="og:image" content="{{ link to='{meta_image:0}' absolute='true' }}">
-<meta property="twitter:image" content="{{ link to='{meta_image:0}' absolute='true' }}">
+<meta property="og:image" content="{{ link to='{meta_image:0}' absolute='true' }}" />
+<meta property="twitter:image" content="{{ link to='{meta_image:0}' absolute='true' }}" />
 {{ else }}
-<meta property="og:image" content="{{ link to='{hero_image}' absolute='true' }}">
-<meta property="twitter:image" content="{{ link to='{hero_image}' absolute='true' }}">
+<meta property="og:image" content="{{ link to='{hero_image}' absolute='true' }}" />
+<meta property="twitter:image" content="{{ link to='{hero_image}' absolute='true' }}" />
 {{ endif }}
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{ link to='{ slug }' absolute='true' }}">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ current_full_url }}" />
+
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ link to='{slug}' absolute='true' }}">
+<meta property="twitter:url" content="{{ current_full_url }}" />
