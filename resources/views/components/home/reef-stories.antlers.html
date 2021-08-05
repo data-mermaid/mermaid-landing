@@ -71,7 +71,7 @@
                 {{ /collection:articles }}
             </div>
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                {{ collection:articles limit="4" offset="1" }}
+                {{ collection:articles limit="4" offset="1" sort="publish_date:desc" }}
                 <div class="story {{ if external }}external{{ /if }}">
                     <div class="meta">
                         {{ if external }}
