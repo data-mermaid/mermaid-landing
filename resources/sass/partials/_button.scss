@@ -104,6 +104,14 @@
         padding-bottom: 13px;
         padding-top: 13px;
     }
+
+    &.btn-small{
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: none;
+        padding: 5px 24px;
+        font-weight: normal;
+    }
 }
 
 .btn-close {
