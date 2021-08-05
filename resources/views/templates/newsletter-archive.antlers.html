@@ -1,9 +1,59 @@
-<div>
-    {{ collection:newsletter_archives as="archives" }}
-        {{ archives }}
-            <h2>{{ title }}</h2>
-            <a href="{{ link }}" target="_blank">{{ link }}</a>
-            {{ intro }}
-        {{ /archives }}
+<div class="article-list-page">
+    {{ partial src="partials/_animated-wave" }}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>{{ title }}</h1>
+            </div>
+        </div>
+    </div>
+    
+    {{ collection:newsletter_archives as="archives" limit="10" paginate="true" }}
+    <div class="articles no-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    {{ if no_results }}
+                    <div class="no-result">
+                        <h3>This content is currently unavailable</h3>
+                        <p>The link you opened may have expired</p>
+                    </div>
+                    {{ else }}
+                    {{ archives }}
+                    <div class="article {{ if external }}external{{ /if }}">
+                        <div class="d-flex">
+                            <div class="thumbnail">
+                                <a href="{{ link }}" target="_blank"
+                                >
+                                    <span class="img-container"
+                                          style="background-image: url({{ glide:hero_image width="1000" format="webp" }})"
+                                    ></span>
+                                </a>
+                            </div>
+                            <div class="content">
+                                <div class="meta">
+                                    <span class="published-date">
+                                        {{ publish_date format="d M Y" }}
+                                    </span>
+                                </div>
+                                <h4 class="title dotdotdot">
+                                    <a href="{{ link }}" target="_blank">
+                                        {{ title }}
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    {{ /archives }}
+                    {{ partial:_pagination }}
+                    {{ endif }}
+                </div>
+                <div class="col-lg-4">
+                    {{ partial src="components/subscribe-cta" class="small" }}
+                </div>
+            </div>
+        </div>
+    </div>
     {{ /collection:newsletter_archives }}
 </div>
