@@ -54,12 +54,6 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function makeCustomSection()
     {
-        Nav::extend(function ($nav) {
-            $nav->remove('Dashboard');
-        });
-        Nav::topLevel('Playground')
-            ->icon('playground');
-
         return $this;
     }
 }
