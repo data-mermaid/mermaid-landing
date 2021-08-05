@@ -5,6 +5,9 @@ namespace App\Providers;
 use App\Http\Controllers\ChangelogsController;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Facades\Utility;
+use Statamic\Facades\CP\Nav;
+use Statamic\Contracts\Entries\Collection;
+use Statamic\Facades\Collection as CollectionAPI;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -37,5 +40,26 @@ class AppServiceProvider extends ServiceProvider
                 $router->post('/', [ChangelogsController::class, 'update'])->name('update');
             })
             ->register();
+
+        /**
+         * CP Navigation modification
+         */
+        $this->makeCustomSection();
+    }
+
+    /**
+     * Make fields section items.
+     *
+     * @return $this
+     */
+    protected function makeCustomSection()
+    {
+        Nav::extend(function ($nav) {
+            $nav->remove('Dashboard');
+        });
+        Nav::topLevel('Playground')
+            ->icon('playground');
+
+        return $this;
     }
 }

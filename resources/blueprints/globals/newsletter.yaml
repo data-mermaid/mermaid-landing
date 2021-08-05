@@ -65,7 +65,7 @@ sections:
           type: assets
           icon: assets
           listable: true
-          instructions: Small
+          instructions: 'Recommended dimension 373x340 px or 746x680 px'
           width: 50
       -
         handle: large_image
@@ -78,6 +78,6 @@ sections:
           display: Image
           type: assets
           icon: assets
-          instructions: Large
+          instructions: 'Recommended dimension 1200x560 px or 2400x1120 px'
           listable: true
           width: 50

@@ -47,6 +47,7 @@ sections:
           icon: assets
           listable: hidden
           container: assets
+          instructions: 'Recommended dimension 300x300 px or 600x600 px'
   sidebar:
     display: Sidebar
     fields:

@@ -1,4 +1,4 @@
-title: Staffs
+title: Teams
 sections:
   main:
     display: Main
@@ -49,6 +49,7 @@ sections:
           icon: assets
           listable: hidden
           container: assets
+          instructions: 'Recommended dimension 200x200 px or 400x400 px'
       -
         handle: position
         field:

@@ -45,6 +45,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                instructions: 'Recommended dimension 785x440 px or 1570x880 px'
         image-text:
           display: 'Image Text'
           fields:
@@ -61,6 +62,7 @@ fields:
                 icon: assets
                 width: 75
                 listable: hidden
+                instructions: 'Recommended dimension 785x440 px or 1570x880 px'
             -
               handle: position
               field:
@@ -179,7 +181,7 @@ fields:
                 icon: entries
                 listable: hidden
         staff:
-          display: Staff
+          display: Teams
           fields:
             -
               handle: title
@@ -196,7 +198,7 @@ fields:
                 mode: select
                 collections:
                   - staffs
-                display: Staff
+                display: Team
                 type: entries
                 icon: entries
                 listable: hidden
@@ -352,6 +354,7 @@ fields:
                 icon: assets
                 width: 50
                 listable: hidden
+                instructions: 'Recommended dimension 1366x660 px or 2732x1320 px'
             -
               handle: position
               field:
@@ -408,6 +411,7 @@ fields:
                           type: assets
                           icon: assets
                           listable: hidden
+                          instructions: 'Recommended dimension 135x135 px or 270x270 px'
                       -
                         handle: title
                         field:
