@@ -57,12 +57,10 @@
                         {{ publish_date format="d M Y" }}
                     </span>
 
-                    {{ if updated_by }}
+                    {{ if author }}
                     —
                     <span class="author">
-                        {{ updated_by }}
-                        {{ name }}
-                        {{ /updated_by }}
+                        by {{ author }}
                     </span>
                     {{ /if }}
                 </div>
