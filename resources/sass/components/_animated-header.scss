@@ -28,4 +28,8 @@
             }
         }
     }
+
+    @include media-breakpoint-down(sm){
+        top: 80px;
+    }
 }

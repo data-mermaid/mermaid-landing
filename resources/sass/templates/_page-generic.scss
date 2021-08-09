@@ -71,4 +71,14 @@
             margin-bottom: 20px;
         }
     }
+    @include media-breakpoint-down(sm) {
+        padding-top: 140px;
+        .animated-header{
+            top: 80px;
+        }
+        .intro.intro-large{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
 }
