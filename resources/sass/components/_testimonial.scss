@@ -1,69 +1,12 @@
-.sets.testimonial {
-    .slick-testimonial {
-        .slick-dots {
-            list-style: none;
-            padding-left: 0;
-            bottom: 20px;
-            z-index: 5;
-            margin-bottom: 0;
-            text-align: center;
-
-            li {
-                display: inline-block;
-                //opacity: 0;
-                position: relative;
-
-                button {
-                    font-size: 0;
-                    line-height: 0;
-                    height: 20px;
-                    width: 20px;
-                    background: transparent;
-                    border: 0;
-
-                    &:after {
-                        content: '';
-                        left: 50%;
-                        top: 50%;
-                        height: 6px;
-                        width: 6px;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        background: #333;
-                        border-radius: 50%;
-                    }
-                }
-
-                &.slick-active {
-                    button {
-                        &:before {
-                            content: '';
-                            left: 50%;
-                            top: 50%;
-                            height: 18px;
-                            width: 18px;
-                            transform: translate(-50%, -50%);
-                            position: absolute;
-                            background: rgba(#333, 0.3);
-                            border-radius: 50%;
-                        }
-                    }
-                }
-            }
-        }
-
-        .slick-list {
-            .slick-track {
-                display: flex;
-            }
-        }
-    }
-}
-
-
 .sets.testimonials {
     padding-top: 50px;
     padding-bottom: 50px;
+
+    .slick-testimonials{
+        .slick-dots{
+            text-align: left;
+        }
+    }
 
     .testimonial {
         padding-top: 60px;
@@ -137,21 +80,48 @@
             padding-right: 0;
 
             .avatar {
-                max-height: 250px;
+                //max-height: 250px;
                 margin-bottom: 20px;
 
                 img {
-                    max-width: 250px;
+                    //max-width: 250px;
+                    max-width: 180px;
+                    max-height: 180px;
+                    margin-left: 0;
                 }
 
                 &:before {
-                    max-width: 250px;
-                    max-height: 250px;
+                    //max-width: 250px;
+                    //max-height: 250px;
+                    max-width: 180px;
+                    max-height: 180px;
                 }
             }
             .text {
                 .intro-large {
-                    margin-bottom: 30px;
+                    margin-bottom: 15px;
+                    p {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+            .name {
+                font-size: 20px;
+                line-height: 30px;
+                margin-bottom: 0;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            .avatar {
+                img {
+                    max-width: 120px;
+                    max-height: 120px;
+                    margin-left: 0;
+                }
+
+                &:before {
+                    max-width: 120px;
+                    max-height: 120px;
                 }
             }
         }
@@ -160,7 +130,7 @@
     @include media-breakpoint-down(md) {
         padding-top: 35px;
         padding-bottom: 35px;
-        .testimonial{
+        .testimonial {
             padding-top: 20px
         }
     }
