@@ -408,5 +408,10 @@
         @include media-breakpoint-down(md) {
             padding-top: 40px;
         }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: -80px;
+            padding-bottom: 50px;
+        }
     }
 }
