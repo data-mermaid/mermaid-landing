@@ -75,6 +75,8 @@ $(function () {
     //     };
     // },300);
 
+    $('#main-header .dropdown-menu .dropdown-item.current').parents('.nav-item').addClass('current');
+
     $('.page-tutorial .tutorial-side-menu-header .close-button-container .close-button').click(function () {
         $('#main-header').removeClass('open');
         $('.side-menu-col').removeClass('open');
@@ -90,4 +92,5 @@ $(function () {
         $('.side-menu-col').removeClass('open');
         $('#main-header').addClass('open');
     })
+
 })
