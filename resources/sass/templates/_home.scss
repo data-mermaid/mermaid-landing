@@ -936,6 +936,28 @@
                     padding-left: 10px;
                     padding-right: 10px;
                 }
+                .slick-track{
+                    .slick-slide{
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        display: flex;
+                        height: 100%;
+                        width: calc(50vw - 20px)!important;
+                        flex-direction: column;
+                        &>div{
+                            margin-bottom: 60px;
+                            &:last-child{
+                                margin-bottom: 30px;
+                            }
+                        }
+                        //.partner{
+                        //    margin-bottom: 60px;
+                        //    &:last-child{
+                        //        margin-bottom: 30px;
+                        //    }
+                        //}
+                    }
+                }
             }
         }
         @include media-breakpoint-down(sm) {
