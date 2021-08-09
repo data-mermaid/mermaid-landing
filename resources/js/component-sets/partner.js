@@ -25,16 +25,17 @@ $(function () {
                 responsive   : [
                     {
                         breakpoint  : 767,
-                        settings    : "unslick",
+                        // settings    : "unslick",
 
-                        // settings: {
+                        settings: {
+                            dots: true,
                             // slidesPerRow: 2,
-                            // rows        : 2,
+                            rows        : 2,
                             // slidesToShow: 4,
                             // slidesToScroll: 4,
-                            // slidesToShow: 2,
+                            slidesToShow: 2,
                             // slidesToScroll: 1,
-                        // }
+                        }
                     },
                 ],
             })
@@ -42,9 +43,12 @@ $(function () {
     }
 
     slickIt();
+
     $(window).resize(function () {
         let $windowWidth = $(window).width();
         if ($windowWidth > 767) {
+            slickIt();
+        } else {
             slickIt();
         }
     });
