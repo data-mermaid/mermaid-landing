@@ -16,20 +16,30 @@ $(function () {
     $slick = $('.slick-testimonials')
     $slick.slick({
         // dots          : true,
-        arrows         : true,
+        arrows        : true,
         infinite      : true,
         adaptiveHeight: false,
         autoplay      : false,
         // autoplaySpeed : time*1000
+        responsive: [
+            {
+                breakpoint: 767,
+                settings  : {
+                    dots: true,
+                    //     slidesToShow: 2,
+                    //     slidesToScroll: 1,
+                }
+            },
+        ],
     })
 
     $bar = $('.slick-testimonials + .slider-progress .progress');
 
     $slick.on({
-        mouseenter: function() {
+        mouseenter: function () {
             isPause = true;
         },
-        mouseleave: function() {
+        mouseleave: function () {
             isPause = false;
         }
     });
@@ -42,13 +52,12 @@ $(function () {
     }
 
     function interval() {
-        if(isPause === false) {
-            percentTime += 1 / (time+0.1);
+        if (isPause === false) {
+            percentTime += 1 / (time + 0.1);
             $bar.css({
-                width: percentTime+"%"
+                width: percentTime + "%"
             });
-            if(percentTime >= 100)
-            {
+            if (percentTime >= 100) {
                 $slick.slick('slickNext');
                 startProgressbar();
             }
@@ -57,9 +66,10 @@ $(function () {
 
     function resetProgressbar() {
         $bar.css({
-            width: 0+'%'
+            width: 0 + '%'
         });
         clearTimeout(tick);
     }
+
     startProgressbar();
 });

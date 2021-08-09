@@ -72,5 +72,44 @@ $(function () {
                 $form.find('.alert-danger').text('Oops, something went wrong');
             }
         }
-    })
+    });
+
+    function rescaleGoogleCaptcha(){
+        $captcha =  $('.g-recaptcha iframe');
+        var width = $captcha.parent().width();
+        var scale;
+        if (width < 302) {
+            scale = width / 302;
+        } else{
+            scale = 1.0;
+        }
+
+        $captcha.css('transform', 'scale(' + scale + ')');
+        $captcha.css('-webkit-transform', 'scale(' + scale + ')');
+        $captcha.css('transform-origin', '0 0');
+        $captcha.css('-webkit-transform-origin', '0 0');
+    }
+    function rescaleHCaptcha(){
+        $captcha =  $('.h-captcha iframe');
+        var width = $captcha.parent().width();
+        var scale;
+        if (width < 303) {
+            scale = width / 302;
+        } else{
+            scale = 1.0;
+        }
+
+        $captcha.css('transform', 'scale(' + scale + ')');
+        $captcha.css('-webkit-transform', 'scale(' + scale + ')');
+        $captcha.css('transform-origin', '0 0');
+        $captcha.css('-webkit-transform-origin', '0 0');
+    }
+
+    rescaleGoogleCaptcha();
+    rescaleHCaptcha();
+
+    $( window ).resize(function() {
+        rescaleGoogleCaptcha();
+        rescaleHCaptcha();
+    });
 })

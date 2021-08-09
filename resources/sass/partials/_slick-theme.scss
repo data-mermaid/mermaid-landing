@@ -6,6 +6,7 @@
         z-index: 5;
         margin-bottom: 0;
         text-align: center;
+        margin-top: 15px;
 
         li {
             display: inline-block;
@@ -24,18 +25,22 @@
                     content: '';
                     left: 50%;
                     top: 50%;
-                    height: 6px;
-                    width: 6px;
+                    height: 10px;
+                    width: 10px;
                     transform: translate(-50%, -50%);
                     position: absolute;
-                    background: $color-coral;
+                    background: $color-blue;
                     border-radius: 50%;
                 }
             }
 
             &.slick-active {
                 button {
+                    &:after{
+                        background: $color-coral;
+                    }
                     &:before {
+                        display: none;
                         content: '';
                         left: 50%;
                         top: 50%;

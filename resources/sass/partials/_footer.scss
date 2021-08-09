@@ -3,7 +3,7 @@ footer.main-footer {
     color: rgba($color-white, 0.6);
     position: relative;
 
-    .footer-separator{
+    .footer-separator {
         z-index: -1;
         margin-bottom: -4px;
     }
@@ -56,7 +56,8 @@ footer.main-footer {
         .btn {
             //margin-top: 15px;
         }
-        @include media-breakpoint-down(md){
+
+        @include media-breakpoint-down(md) {
             margin-bottom: 40px;
         }
     }
@@ -70,9 +71,11 @@ footer.main-footer {
             width: 50%;
             margin-bottom: 2px;
             padding-right: 5px;
+
             a {
                 color: rgba($color-white, 0.6);
                 transition: all 0.2s ease-in-out;
+
                 &:hover {
                     color: $color-white;
                 }
@@ -95,6 +98,7 @@ footer.main-footer {
             flex-wrap: wrap;
             margin-left: -12px;
             margin-right: -12px;
+
             .icon {
                 margin-left: 12px;
                 margin-right: 12px;
@@ -114,6 +118,7 @@ footer.main-footer {
                     width: 18px;
                     //height: 18px;
                     height: 100%;
+
                     &:hover {
                         opacity: 1;
                     }
@@ -130,7 +135,7 @@ footer.main-footer {
 
         @include media-breakpoint-down(md) {
             margin-bottom: 40px;
-            .label{
+            .label {
                 margin-top: 5px;
             }
         }
@@ -139,8 +144,14 @@ footer.main-footer {
     @include media-breakpoint-down(md) {
         font-size: 14px;
         padding-top: 35px;
+
         .content-container {
             padding-bottom: 40px;
+        }
+
+        .logo {
+            height: 34px;
+            margin-bottom: 40px;
         }
     }
 }

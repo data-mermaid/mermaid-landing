@@ -100,9 +100,11 @@
             background: linear-gradient(25deg, darken($color-purple-light, 10), rgba(darken($color-purple-light, 10), 0)) !important;
         }
     }
+
     @include media-breakpoint-down(md){
-        padding-bottom: 13px;
-        padding-top: 13px;
+        padding: 16px 20px;
+        font-size: 14px;
+        line-height: 14px;
     }
 
     &.btn-small{

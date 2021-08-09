@@ -9,6 +9,10 @@
         .nav-item {
             .nav-link {
                 text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+
+                @include media-breakpoint-down(lg) {
+                    text-shadow: none;
+                }
             }
 
             &:nth-last-child(1),
@@ -657,11 +661,13 @@
                     display: none;
                     transform: translateX(0);
                     width: 15px;
+
                     &.after {
                         display: inline-block;
                         opacity: 1;
                         margin-left: 10px;
-                        img{
+
+                        img {
                             max-width: 15px;
                         }
                     }
@@ -698,8 +704,8 @@
                     }
 
                     .title {
-                        font-size: 28px;
-                        line-height: 38px;
+                        font-size: 20px;
+                        line-height: 30px;
                         margin-bottom: 10px;
                     }
                 }
@@ -711,6 +717,12 @@
         padding-top: 20px;
         margin-top: 0;
         margin-bottom: 0;
+
+        .slick-slider {
+            .slick-dots {
+                text-align: left;
+            }
+        }
 
         .testimonial {
             padding-top: 60px;
@@ -790,12 +802,13 @@
                     margin-bottom: 25px;
 
                     img {
-                        max-width: 250px;
+                        max-width: 200px;
+                        margin-left: 0;
                     }
 
                     &:before {
-                        max-height: 250px;
-                        max-width: 250px;
+                        max-height: 200px;
+                        max-width: 200px;
                     }
                 }
 
@@ -813,6 +826,30 @@
                     font-size: 20px;
                     line-height: 30px;
                     margin-bottom: 0;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding-top: 10px;
+            padding-bottom: 30px;
+            .testimonial {
+                padding-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+
+                .avatar {
+                    margin-bottom: 25px;
+
+                    img {
+                        max-width: 120px;
+                        margin-left: 0;
+                    }
+
+                    &:before {
+                        max-height: 120px;
+                        max-width: 120px;
+                    }
                 }
             }
         }
@@ -900,7 +937,15 @@
                     padding-right: 10px;
                 }
             }
-
+        }
+        @include media-breakpoint-down(sm) {
+            .slick-partners {
+                .partner {
+                    img {
+                        max-height: 50px;
+                    }
+                }
+            }
         }
     }
 }
