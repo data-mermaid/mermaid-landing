@@ -19,12 +19,12 @@ fields:
                   		"advlist autolink lists link image charmap print preview anchor footnotes",
                   		"searchreplace visualblocks code fullscreen",
                   		"insertdatetime media table paste code help wordcount",
-                  		"code"
+                  		"code table"
                   	],
                   	"external_plugins": {
                           "footnotes": "/vendor/tinymce/footnotes/plugin.js"
                       },
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | table | removeformat | code"
                   }
                 display: Content
                 type: tinymce_cloud
