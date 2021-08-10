@@ -75,7 +75,13 @@ $(function () {
     //     };
     // },300);
 
+    /* add current to parent because statamic bug hasnt fixed yet */
+    /* homepage */
     $('#main-header .dropdown-menu .dropdown-item.current').parents('.nav-item').addClass('current');
+    /* tutorial page*/
+    $('.tutorial-side-menu .collapse .nav-link.current')
+        .parents('.collapse').addClass('show')
+        .siblings('.collapse-link').removeClass('collapsed');
 
     $('.page-tutorial .tutorial-side-menu-header .close-button-container .close-button').click(function () {
         $('#main-header').removeClass('open');
