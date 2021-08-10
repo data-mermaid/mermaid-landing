@@ -81,7 +81,7 @@ $(function () {
     /* tutorial page*/
     $('.tutorial-side-menu .collapse .nav-link.current')
         .parents('.collapse').addClass('show')
-        .siblings('.collapse-link').removeClass('collapsed');
+        .siblings('.nav-item').find('.collapse-link').removeClass('collapsed');
 
     $('.page-tutorial .tutorial-side-menu-header .close-button-container .close-button').click(function () {
         $('#main-header').removeClass('open');
