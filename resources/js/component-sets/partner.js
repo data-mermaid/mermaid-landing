@@ -14,27 +14,19 @@ $(function () {
             }
 
             $(this).slick({
-                // dots          : true,
                 arrows        : true,
                 slidesToShow  : slideNumber,
                 slidesToScroll: 1,
-                // infinite      : true,
-                // adaptiveHeight: true,
-                autoplay     : false,
-                autoplaySpeed: 3000,
-                responsive   : [
+                autoplay      : false,
+                autoplaySpeed : 3000,
+                infinite      : false,
+                responsive    : [
                     {
-                        breakpoint  : 767,
-                        // settings    : "unslick",
-
-                        settings: {
-                            dots: true,
-                            // slidesPerRow: 2,
+                        breakpoint: 767,
+                        settings  : {
+                            dots        : true,
                             rows        : 2,
-                            // slidesToShow: 4,
-                            // slidesToScroll: 4,
                             slidesToShow: 2,
-                            // slidesToScroll: 1,
                         }
                     },
                 ],
@@ -44,12 +36,12 @@ $(function () {
 
     slickIt();
 
-    $(window).resize(function () {
-        let $windowWidth = $(window).width();
-        if ($windowWidth > 767) {
-            slickIt();
-        } else {
-            slickIt();
-        }
-    });
+    // $(window).resize(function () {
+    //     let $windowWidth = $(window).width();
+    //     if ($windowWidth > 767) {
+    //         slickIt();
+    //     } else {
+    //         slickIt();
+    //     }
+    // });
 });
