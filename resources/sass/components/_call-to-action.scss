@@ -1,10 +1,13 @@
 .sets.cta {
-    position: relative;
-    //box-shadow: 0px 10px 80px rgba(52, 65, 79, 0.2);
-    filter: drop-shadow(0px 10px 80px rgba(52, 65, 79, 0.2));
-    padding: 135px 60px 135px 60px;
     margin-top: 55px;
     margin-bottom: 55px;
+
+    .cta-container {
+        position: relative;
+        //box-shadow: 0px 10px 80px rgba(52, 65, 79, 0.2);
+        filter: drop-shadow(0px 10px 80px rgba(52, 65, 79, 0.2));
+        padding: 135px 60px 135px 60px;
+    }
 
     .bg-container {
         position: absolute;
@@ -112,12 +115,16 @@
         }
     }
 
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(md) {
         margin-top: 35px;
         margin-bottom: 35px;
-        margin-left: 20px;
-        margin-right: 20px;
-        width: calc(100% - 40px);
-        padding: 40px 20px 60px 20px
+        .cta-container {
+
+            //margin-left: 20px;
+            //margin-right: 20px;
+            padding: 40px 20px 60px 20px
+        }
+        //width: calc(100% - 40px);
+
     }
 }

@@ -17,13 +17,14 @@ $(function () {
                 arrows        : true,
                 slidesToShow  : slideNumber,
                 slidesToScroll: 1,
-                autoplay     : false,
-                autoplaySpeed: 3000,
-                responsive   : [
+                autoplay      : false,
+                autoplaySpeed : 3000,
+                infinite      : false,
+                responsive    : [
                     {
-                        breakpoint  : 767,
-                        settings: {
-                            dots: true,
+                        breakpoint: 767,
+                        settings  : {
+                            dots        : true,
                             rows        : 2,
                             slidesToShow: 2,
                         }
