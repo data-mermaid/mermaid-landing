@@ -1,10 +1,6 @@
 .article-show {
     padding-top: 170px;
 
-    .animated-header {
-        z-index: -1;
-    }
-
     h1.title {
         margin-bottom: 13px;
     }
@@ -396,7 +392,7 @@
                 &.external {
                     .thumbnail {
                         a {
-                            &:before{
+                            &:before {
                                 border: none;
                             }
                         }
@@ -413,5 +409,9 @@
             margin-bottom: -80px;
             padding-bottom: 50px;
         }
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-top: 140px;
     }
 }
