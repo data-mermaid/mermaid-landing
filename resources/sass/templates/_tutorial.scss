@@ -280,4 +280,8 @@
             }
         }
     }
+
+    @include media-breakpoint-down(md) {
+        padding-top: 140px;
+    }
 }
