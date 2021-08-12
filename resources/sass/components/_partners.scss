@@ -81,10 +81,19 @@
                 padding-left: 10px;
                 padding-right: 10px;
             }
-            @include media-breakpoint-down(sm) {
-                img {
-                    max-height: 50px;
-                }
+        }
+    }
+
+    .partner-stack {
+        [class*=col] {
+            display: flex;
+            margin-bottom: 80px;
+
+            .partner {
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
@@ -119,18 +128,16 @@
             }
         }
 
-    }
-
-    .partner-stack {
-        [class*=col] {
-            display: flex;
-            margin-bottom: 80px;
-
-            .partner {
-                margin-top: auto;
-                margin-bottom: auto;
-                margin-left: auto;
-                margin-right: auto;
+        @include media-breakpoint-down(sm) {
+            a {
+                img {
+                    max-height: 50px;
+                }
+            }
+            &.stacked{
+                img {
+                    max-height: 50px;
+                }
             }
         }
     }
