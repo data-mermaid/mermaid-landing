@@ -157,29 +157,6 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
-        image-gallery:
-          display: 'Image Gallery'
-          fields:
-            -
-              handle: title
-              field:
-                input_type: text
-                antlers: false
-                display: Title
-                type: text
-                icon: text
-                listable: hidden
-            -
-              handle: gallery
-              field:
-                max_items: 1
-                mode: default
-                collections:
-                  - image_galleries
-                display: Gallery
-                type: entries
-                icon: entries
-                listable: hidden
         staff:
           display: Teams
           fields:
@@ -517,3 +494,4 @@ fields:
       instructions: 'Build your page by using various predefined content models.'
       if:
         template: 'contains_any page-show, article-show, tutorial'
+        external: 'equals false'
