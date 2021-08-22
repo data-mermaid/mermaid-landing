@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Changed
+- Update Statamic core [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
 - Remove Image gallery collection [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
 - Hide page builder on article if external is true [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
 - Remove unused fieldset [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
