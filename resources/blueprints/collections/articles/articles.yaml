@@ -94,7 +94,9 @@ sections:
           display: Author
           type: text
           icon: text
-          listable: hidden
+          listable: true
+          unless:
+            external: 'equals true'
       -
         handle: publish_date
         field:

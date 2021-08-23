@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Changed
+- Update Statamic core [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
+- Remove Image gallery collection [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
+- Hide page builder on article if external is true [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
+- Remove unused fieldset [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
 - Update Statamic core, tidy up Control Panel, rename fields, adding some required field [#32-mermaid-finalize-be](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/32)
 - Homepage builder refinement [#20-homepage-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/20)
 - Refactoring for the Test Scenario Review (adding some legends and char limit, add hyperlink to WYSIWYG) [#30-mermaid-test-scenario-be](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/30)
