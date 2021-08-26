@@ -1,0 +1,48 @@
+<script>
+    window.onload = function(){
+        window.print();
+    }
+</script>
+<div class="page-tutorial page-tutorial-download">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="narrow-content">
+                    {{ nav:collection:tutorials paginate="false" }}
+                    {{ if depth == 1 }}
+                    <div class="page-break"></div>
+                    {{ /if }}
+                    <div class="chapter" id="{{ id }}">
+                        <div class="heading">
+                            {{ if depth == 1 }}
+                            <h1 class="main-title">{{ title }}</h1>
+                            {{ elseif depth == 2 }}
+                            <h2 class="main-title">{{ title }}</h2>
+                            {{ elseif depth == 3 }}
+                            <h3 class="main-title">{{ title }}</h3>
+                            {{ endif }}
+                        </div>
+                        
+                        {{ if intro }}
+                        <div class="intro-large">
+                            {{ intro }}
+                        </div>
+                        {{ /if }}
+                        
+                        <div class="content">
+                            {{ page_components }}
+                            {{ partial src="components/{type}" }}
+                            {{ /page_components }}
+                        </div>
+                        {{ if children }}
+                        <div class="subchapters">
+                            {{ *recursive children* }}
+                        </div>
+                        {{ /if }}
+                    </div>
+                    {{ /nav:collection:tutorials }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
