@@ -16,7 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
-<body class="page-{{ slug }} {{ if current_template=="templates/home" }} template-home {{ /if }}" >
+<body class="page-{{ slug }} {{ if current_template=="templates/home" }} template-home {{ /if }} {{ if current_template=="templates/tutorial-download" }} template-tutorial-download {{ /if }}" >
 {{ yield:seo_body }}
 {{ partial:_header }}
 

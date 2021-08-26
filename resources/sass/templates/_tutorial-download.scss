@@ -1,0 +1,91 @@
+.page-tutorial-download {
+    margin-bottom: 0;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    .chapter {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        border-bottom: 1px solid $color-blue-light-2;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        .content {
+            .container {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .chapter {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            border-bottom: 0;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+    }
+}
+
+.template-tutorial-download {
+    #main-header {
+        display: none !important;
+    }
+
+    .main-footer {
+        display: none !important;
+    }
+}
+
+
+@media print {
+    @page {
+        size: A4; /* DIN A4 standard, Europe */
+        margin: 20mm;
+    }
+
+    .template-tutorial-download {
+        padding-bottom: 0!important;
+        padding-top: 0!important;
+
+        .page-break {
+            display: block;
+            page-break-before: always;
+        }
+
+        .chapter {
+            border-bottom: 0;
+            padding-top: 0!Important;
+            padding-bottom: 0!Important;
+            .chapter {
+                padding-top: 20px!important;
+                padding-bottom: 20px!important;;
+                .chapter {
+                    padding-top: 5px!important;
+                    padding-bottom: 5px!important;;
+                }
+            }
+        }
+
+        .accordion-collapse {
+            display: block !important;
+        }
+
+        .sets.paragraph {
+            blockquote {
+                &:before{
+                    display: none!important;
+                }
+                padding-left: 0;
+            }
+        }
+    }
+}
