@@ -1,30 +1,53 @@
-<div class="page-generic-container page-404">
-    {{ partial src="partials/_animated-wave" }}
-    
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="narrow-content">
-                    <div class="row flex-md-row-reverse">
-                        <div class="col-md-6">
-                            <img src="/images/404.png" alt="" class="img-fluid image-404" />
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="main-title">Page not found</h1>
-                            <p>The requested URL was not found on this website</p>
-                            <a  href="/" class="btn btn-primary btn-small">
-                                Return to Homepage
-                            </a>
+{{ redirects:redirects where="url_old:{current_uri}" }}
+    {{ redirect to="{entry:url}" response="{response}" }}
+{{ /redirects:redirects }}
+
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+<head>
+    {{ partial:partials/seo }}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 | {{ settings:site_name }}</title>
+    <link rel="stylesheet" href="{{ mix src='css/style.css' }}">
+    <link rel="icon" href="{{ settings:fav_icon }}" type="image/gif" sizes="16x16">
+    {{ partial:_meta }}
+    {{ if environment != 'production' }}
+    <meta name="robots" content="noindex,nofollow"/>
+    {{ /if }}
+    {{ yield:captcha_head }}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+<div id="root">
+    {{ yield:seo_body }}
+    {{ partial:_header }}
+    <div class="page-generic-container page-404">
+        {{ partial src="partials/_animated-wave" }}
+        
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="narrow-content">
+                        <div class="row flex-md-row-reverse">
+                            <div class="col-md-6">
+                                <img src="/images/404.png" alt="" class="img-fluid image-404"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="main-title">Page not found</h1>
+                                <p>The requested URL was not found on this website</p>
+                                <a href="/" class="btn btn-primary btn-small">
+                                    Return to Homepage
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="content">
-        {{ page_components }}
-        {{ partial src="components/{type}" }}
-        {{ /page_components }}
-    </div>
 </div>
+{{ partial:_footer }}
+</body>
