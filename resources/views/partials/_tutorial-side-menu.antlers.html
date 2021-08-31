@@ -13,7 +13,7 @@
             </button>
         </div>
     </div>
-
+    
     <div class="tutorial-side-menu">
         {{ nav:collection:tutorials paginate="false" }}
         <div class="nav flex-column">
@@ -54,5 +54,8 @@
             {{ /if }}
         </div>
         {{ /nav:collection:tutorials }}
+        <div class="download-btn-container">
+            <a href="/{{ segment_1 }}/download" target="_blank" class="btn btn-primary btn-small">Download</a>
+        </div>
     </div>
 </div>
