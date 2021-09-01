@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ### Added
+- Add logic to get admin email according to project id [#36-contact-us-use-receiver-from-table-view](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/36)
 - Create new utilities' menu for fetching changelog MERMAID API [#27-changelog-mechanism](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/27)
 - Add new Module tutorials [#26-module-tutorials](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/26)
 - Add CTA, Image box, features component to Page builder fieldset [#23-page-builder-adjustment](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/23)
