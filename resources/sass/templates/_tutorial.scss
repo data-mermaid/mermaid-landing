@@ -58,6 +58,10 @@
                         &:after {
                             transform: translate(-50%, -50%);
                         }
+
+                        &:hover {
+                            color: $color-coral;
+                        }
                     }
                 }
             }
@@ -91,7 +95,7 @@
             }
         }
 
-        .download-btn-container{
+        .download-btn-container {
             margin-top: 15px;
         }
     }
