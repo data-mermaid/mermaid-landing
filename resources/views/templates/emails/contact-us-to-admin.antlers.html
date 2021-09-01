@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MERMAID received a message from {{ fields:name:value }} {{ fields:email:value }}</title>
+</head>
+<body>
+<p>Dear {{ fields:admin_name:value ?? 'MERMAID Admin' }},</p>
+
+<p>On {{ date format="l, F j Y g:i A" }} MERMAID received a message from {{ fields:name:value }} {{ fields:email:value }}</p>
+
+{{ if fields:project_id:value }}
+<strong>Project ID: {{ fields:project_id:value }}</strong>
+<br/>
+<br/>
+{{ /if }}
+
+<strong>{{ fields:subject:value }}</strong>
+
+<p>{{ fields:message:value }}</p>
+
+<p>Thank you!</p>
+</body>
+</html>
