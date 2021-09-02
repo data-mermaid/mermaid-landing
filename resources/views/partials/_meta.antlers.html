@@ -22,11 +22,15 @@
 
 <!-- meta image -->
 {{ if meta_image }}
-<meta property="og:image" content="{{ link to='{meta_image:0}' absolute='true' }}" />
-<meta property="twitter:image" content="{{ link to='{meta_image:0}' absolute='true' }}" />
+<meta property="og:image" content="{{ glide:meta_image:0 absolute='true' width='1500' format='jpg' }}" />
+<meta property="twitter:image" content="{{ glide:meta_image:0 absolute='true' width='1500' format='jpg' }}" />
+<!-- <meta property="og:image" content="{{ link to='{meta_image:0}' absolute='true' }}" />
+<meta property="twitter:image" content="{{ link to='{meta_image:0}' absolute='true' }}" /> -->
 {{ else }}
-<meta property="og:image" content="{{ link to='{hero_image}' absolute='true' }}" />
-<meta property="twitter:image" content="{{ link to='{hero_image}' absolute='true' }}" />
+<!-- <meta property="og:image" content="{{ link to='{hero_image}' absolute='true' }}" />
+<meta property="twitter:image" content="{{ link to='{hero_image}' absolute='true' }}" /> -->
+<meta property="og:image" content="{{ glide:hero_image absolute='true' width='1500' format='jpg'}}" />
+<meta property="twitter:image" content="{{ glide:hero_image absolute='true' width='1500' format='jpg'}}" />
 {{ endif }}
 
 <!-- Open Graph / Facebook -->
