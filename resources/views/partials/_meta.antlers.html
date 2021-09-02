@@ -14,10 +14,14 @@
 <meta name="description" content="{{ meta_description }}" />
 <meta property="og:description" content="{{ meta_description }}" />
 <meta property="twitter:description" content="{{ meta_description }}" />
-{{ else }}
+{{ elseif intro }}
 <meta name="description" content="{{ intro }}" />
 <meta property="og:description" content="{{ intro }}" />
 <meta property="twitter:description" content="{{ intro }}" />
+{{ else }}
+<meta name="description" content="{{ social_media:default_description }}" />
+<meta property="og:description" content="{{ social_media:default_description }}" />
+<meta property="twitter:description" content="{{ social_media:default_description }}" />
 {{ endif }}
 
 <!-- meta image -->
