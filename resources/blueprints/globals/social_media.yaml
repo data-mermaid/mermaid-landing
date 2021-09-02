@@ -143,6 +143,13 @@ sections:
           localizable: true
           display: 'Social media'
       -
+        handle: social_media_share
+        field:
+          display: 'Social media meta data'
+          type: section
+          icon: section
+          listable: hidden
+      -
         handle: default_share_image
         field:
           mode: grid
@@ -152,4 +159,12 @@ sections:
           display: 'Default share image'
           type: assets
           icon: assets
+          listable: hidden
+      -
+        handle: default_description
+        field:
+          antlers: false
+          display: 'Default description'
+          type: textarea
+          icon: textarea
           listable: hidden
