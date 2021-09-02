@@ -25,9 +25,9 @@ sections:
                     prepend: 'https://www.facebook.com/'
                     display: URL
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.facebook.com/'
             instagram:
@@ -43,9 +43,9 @@ sections:
                     prepend: 'https://www.instagram.com/'
                     display: URL
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.instagram.com/'
             linkedin:
@@ -61,9 +61,9 @@ sections:
                     prepend: 'https://www.linkedin.com/'
                     display: URL
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.linkedin.com/'
             twitter:
@@ -79,9 +79,9 @@ sections:
                     prepend: 'https://www.twitter.com/'
                     display: URL
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.twitter.com/'
             vimeo:
@@ -97,9 +97,9 @@ sections:
                     prepend: 'https://www.vimeo.com/'
                     display: URL
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.vimeo.com/'
             youtube:
@@ -115,9 +115,9 @@ sections:
                     prepend: 'https://www.youtube.com/'
                     display: URL
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.youtube.com/'
             github:
@@ -133,12 +133,23 @@ sections:
                     prepend: 'https://www.github.com/'
                     display: URL
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.github.com/'
           type: replicator
           listable: hidden
           localizable: true
           display: 'Social media'
+      -
+        handle: default_share_image
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Default share image'
+          type: assets
+          icon: assets
+          listable: hidden
