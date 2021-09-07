@@ -3,10 +3,12 @@
 <meta name="title" content="{{ meta_title }} | {{ settings:site_name }}" />
 <meta property="og:title" content="{{ meta_title }} | {{ settings:site_name }}" />
 <meta property="twitter:title" content="{{ meta_title }} | {{ settings:site_name }}" />
+<title>{{ meta_title }} | {{ settings:site_name }}</title>
 {{ else }}
 <meta name="title" content="{{ title }} | {{ settings:site_name }}" />
 <meta property="og:title" content="{{ title }} | {{ settings:site_name }}" />
 <meta property="twitter:title" content="{{ title }} | {{ settings:site_name }}" />
+<title>{{ yield:page-title ?? title | ucfirst }} | {{ settings:site_name }}</title>
 {{ endif }}
 
 <!-- description -->
