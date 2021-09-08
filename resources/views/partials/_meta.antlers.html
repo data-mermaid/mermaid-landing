@@ -1,9 +1,16 @@
 <!-- Title -->
 {{ if meta_title }}
-<meta name="title" content="{{ meta_title }} | {{ settings:site_name }}" />
-<meta property="og:title" content="{{ meta_title }} | {{ settings:site_name }}" />
-<meta property="twitter:title" content="{{ meta_title }} | {{ settings:site_name }}" />
-<title>{{ meta_title }} | {{ settings:site_name }}</title>
+    {{ if current_uri == homepage }}
+        <meta name="title" content="{{ meta_title }}" />
+        <meta property="og:title" content="{{ meta_title }}" />
+        <meta property="twitter:title" content="{{ meta_title }}" />
+        <title>{{ meta_title }}</title>
+    {{ else }}
+        <meta name="title" content="{{ meta_title }} | {{ settings:site_name }}" />
+        <meta property="og:title" content="{{ meta_title }} | {{ settings:site_name }}" />
+        <meta property="twitter:title" content="{{ meta_title }} | {{ settings:site_name }}" />
+        <title>{{ meta_title }} | {{ settings:site_name }}</title>
+    {{ endif }}
 {{ else }}
 <meta name="title" content="{{ title }} | {{ settings:site_name }}" />
 <meta property="og:title" content="{{ title }} | {{ settings:site_name }}" />
@@ -30,11 +37,7 @@
 {{ if meta_image }}
 <meta property="og:image" content="{{ glide:meta_image absolute='true' width='1500' format='jpg' }}" />
 <meta property="twitter:image" content="{{ glide:meta_image absolute='true' width='1500' format='jpg' }}" />
-<!-- <meta property="og:image" content="{{ link to='{meta_image:0}' absolute='true' }}" />
-<meta property="twitter:image" content="{{ link to='{meta_image:0}' absolute='true' }}" /> -->
 {{ elseif hero_image }}
-<!-- <meta property="og:image" content="{{ link to='{hero_image}' absolute='true' }}" />
-<meta property="twitter:image" content="{{ link to='{hero_image}' absolute='true' }}" /> -->
 <meta property="og:image" content="{{ glide:hero_image absolute='true' width='1500' format='jpg'}}" />
 <meta property="twitter:image" content="{{ glide:hero_image absolute='true' width='1500' format='jpg'}}" />
 {{ else }}
@@ -45,7 +48,6 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ current_full_url }}" />
-
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
