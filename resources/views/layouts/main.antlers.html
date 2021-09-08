@@ -2,7 +2,9 @@
 <html lang="{{ site:short_locale }}">
 <head>
     {{ partial:partials/seo }}
+    {{ partial:_meta }}
     {{ yield:captcha_head }}
+    <link rel="stylesheet" href="{{ mix src='css/style.css' }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
