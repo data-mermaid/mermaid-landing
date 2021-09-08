@@ -1,10 +1,11 @@
+
 # Changelog
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [v1.0.0] - 2021-09-08
 
 ### Changed
 - Update Statamic core [#34-cms-refinement](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/34)
@@ -26,3 +27,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add CTA, Image box, features component to Page builder fieldset [#23-page-builder-adjustment](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/23)
 - Add Social Media and Newsletter globals variable [#22-globals-variable](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/22)
 - Homepage builder fieldset [#18-homepage-component-cms](https://gitlab.com/catalyzecommunications/wcs-mermaid/-/issues/18)
+
