@@ -48,3 +48,33 @@ sections:
           listable: hidden
           validate:
             - required
+      -
+        handle: project_id
+        field:
+          input_type: text
+          antlers: false
+          default: 'null'
+          display: 'Project ID'
+          type: text
+          icon: text
+          listable: true
+      -
+        handle: admin_email
+        field:
+          input_type: text
+          antlers: false
+          display: 'Admin Email'
+          type: text
+          icon: text
+          listable: true
+          width: 50
+      -
+        handle: admin_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Admin Name'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden

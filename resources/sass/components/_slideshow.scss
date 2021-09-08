@@ -1,99 +1,49 @@
-.sets.slideshow {
-    .slick-slideshow {
-        .slick-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
-            z-index: 5;
-            font-size: 0;
-            line-height: 0;
-            border: none;
-            border-top: 3px solid white;
-            border-right: 3px solid white;
-            background: transparent;
+.sets.slideshow{
+    padding-top: 60px;
+    padding-bottom: 60px;
 
-            &.slick-prev {
-                left: 20px;
-                transform: rotate(225deg);
-
-                &:before {
-                    content: '';
-                    color: black;
-                }
-            }
-
-            &.slick-next {
-                right: 20px;
-                transform: rotate(45deg);
-
-                &:before {
-                    color: black;
-                    content: '';
-                }
-            }
+    .caption{
+        margin-top: 10px;
+    }
+    .slick-arrow{
+        &.slick-prev{
+            left: -64px;
         }
-
-        .slick-dots {
-            list-style: none;
-            padding-left: 0;
-            position: absolute;
-            bottom: 20px;
-            z-index: 5;
-            margin-bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-
-            li {
-                display: inline-block;
-                //opacity: 0;
-                position: relative;
-
-                button {
-                    font-size: 0;
-                    line-height: 0;
-                    height: 20px;
-                    width: 20px;
-                    background: transparent;
-                    border: 0;
-
-                    &:after {
-                        content: '';
-                        left: 50%;
-                        top: 50%;
-                        height: 6px;
-                        width: 6px;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        background: white;
-                        border-radius: 50%;
-                    }
-                }
-
-                &.slick-active {
-                    button {
-                        &:before {
-                            content: '';
-                            left: 50%;
-                            top: 50%;
-                            height: 18px;
-                            width: 18px;
-                            transform: translate(-50%, -50%);
-                            position: absolute;
-                            background: rgba(255, 255, 255, 0.3);
-                            border-radius: 50%;
-                        }
-                    }
-                }
-            }
-
+        &.slick-next{
+            right: -64px;
         }
+    }
 
-        .slick-list{
-            .slick-track{
-                display: flex;
+    @include media-breakpoint-down(xl){
+        .slick-arrow{
+            &.slick-prev{
+                left: -27px;
+            }
+            &.slick-next{
+                right: -27px;
             }
         }
     }
+    @include media-breakpoint-down(md) {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 35px;
+        padding-bottom: 25px;
+    }
 }
+
+.article-show{
+    .sets.slideshow{
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+}
+
+.page-tutorial {
+    .sets.slideshow {
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+}
+
+

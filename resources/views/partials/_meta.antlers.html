@@ -1,17 +1,62 @@
-<!-- Primary Meta Tags -->
-<meta name="title" content="{{ meta_title }}">
-<meta name="description" content="{{ meta_description }}">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="{{ settings:fav_icon }}" type="image/gif" sizes="16x16">
+{{ if environment != 'production' }}
+<meta name="robots" content="noindex,nofollow" />
+{{ /if }}
+
+<!-- Title -->
+{{ if meta_title }}
+    {{ if current_uri == homepage }}
+        <meta name="title" content="{{ meta_title }}" />
+        <meta property="og:title" content="{{ meta_title }}" />
+        <meta property="twitter:title" content="{{ meta_title }}" />
+        <title>{{ meta_title }}</title>
+    {{ else }}
+        <meta name="title" content="{{ meta_title }} | {{ settings:site_name }}" />
+        <meta property="og:title" content="{{ meta_title }} | {{ settings:site_name }}" />
+        <meta property="twitter:title" content="{{ meta_title }} | {{ settings:site_name }}" />
+        <title>{{ meta_title }} | {{ settings:site_name }}</title>
+    {{ endif }}
+{{ else }}
+<meta name="title" content="{{ title }} | {{ settings:site_name }}" />
+<meta property="og:title" content="{{ title }} | {{ settings:site_name }}" />
+<meta property="twitter:title" content="{{ title }} | {{ settings:site_name }}" />
+<title>{{ yield:page-title ?? title | ucfirst }} | {{ settings:site_name }}</title>
+{{ endif }}
+
+<!-- description -->
+{{ if meta_description }}
+<meta name="description" content="{{ meta_description }}" />
+<meta property="og:description" content="{{ meta_description }}" />
+<meta property="twitter:description" content="{{ meta_description }}" />
+{{ elseif intro }}
+<meta name="description" content="{{ intro }}" />
+<meta property="og:description" content="{{ intro }}" />
+<meta property="twitter:description" content="{{ intro }}" />
+{{ else }}
+<meta name="description" content="{{ social_media:default_description }}" />
+<meta property="og:description" content="{{ social_media:default_description }}" />
+<meta property="twitter:description" content="{{ social_media:default_description }}" />
+{{ endif }}
+
+<!-- meta image -->
+{{ if meta_image }}
+<meta property="og:image" content="{{ glide:meta_image absolute='true' width='1500' format='jpg' }}" />
+<meta property="twitter:image" content="{{ glide:meta_image absolute='true' width='1500' format='jpg' }}" />
+{{ elseif hero_image }}
+<meta property="og:image" content="{{ glide:hero_image absolute='true' width='1500' format='jpg'}}" />
+<meta property="twitter:image" content="{{ glide:hero_image absolute='true' width='1500' format='jpg'}}" />
+{{ else }}
+<meta property="og:image" content="{{glide:social_media:default_share_image absolute='true' width='1500' format='jpg'}}" />
+<meta property="twitter:image" content="{{ glide:social_media:default_share_image absolute='true' width='1500' format='jpg'}}" />
+{{ endif }}
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{ link to='{ slug }' absolute='true' }}">
-<meta property="og:title" content="{{ meta_title }}">
-<meta property="og:description" content="{{ meta_description }}">
-<meta property="og:image" content="{{ link to='{meta_image:0}' absolute='true' }}">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ current_full_url }}" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ link to='{slug}' absolute='true' }}">
-<meta property="twitter:title" content="{{ meta_title }}">
-<meta property="twitter:description" content="{{ meta_description }}">
-<meta property="twitter:image" content="{{ link to='{meta_image:0}' absolute='true' }}">
+<meta property="twitter:url" content="{{ current_full_url }}" />

@@ -1,0 +1,143 @@
+.sets.subscribe-cta {
+    position: relative;
+    //box-shadow: 0px 10px 80px rgba(52, 65, 79, 0.2);
+    filter: drop-shadow(0px 10px 80px rgba(52, 65, 79, 0.2));
+    padding: 135px 60px 135px 60px;
+
+    .bg-container {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 16px;
+        overflow: hidden;
+
+        /* SVG masking */
+        mask: url('/images/subscribe-mask.svg');
+        mask-size: cover;
+        mask-position: center bottom;
+        mask-repeat: no-repeat;
+    }
+
+    .bg-image {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+
+    .bg-gradient {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        background: linear-gradient(90deg, rgba(4, 46, 90, 0.5) 26%, rgba(0, 0, 0, 0) 68%) !important;
+        z-index: 1;
+    }
+
+    .wave {
+        display: none;
+        margin-top: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .shadow {
+        flex-grow: 2;
+        width: 100%;
+        box-shadow: 0px 10px 80px rgba(52, 65, 79, 0.2) !important;
+    }
+
+    .row {
+        position: relative;
+        z-index: 3;
+    }
+
+    .content {
+        max-width: 400px;
+        color: $color-white;
+        z-index: 2;
+
+        h2 {
+            color: $color-white;
+            margin-bottom: 15px;
+        }
+
+        .intro-medium {
+            margin-bottom: 30px;
+        }
+
+        p {
+            color: $color-white;
+        }
+
+        a:not(.btn) {
+            color: $color-white;
+            text-decoration: none;
+            position: relative;
+            transition: 0.2s all ease-in-out;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 100%;
+                transition: 0.2s all ease-in-out;
+                height: 1px;
+                background-color: rgba($color-white, 0.5);;
+            }
+
+            &:hover {
+                &:after {
+                    height: 2px;
+                    background-color: rgba($color-white, 0.5);;
+                }
+            }
+        }
+    }
+
+    &.small {
+        padding: 50px 30px 115px 30px;
+
+        .content{
+            max-width: 210px;
+            h3 {
+                color: $color-white;
+                margin-bottom: 10px;
+            }
+
+            .intro-medium {
+                margin-bottom: 25px;
+                font-size: 14px;
+                line-height: 20px;
+                p {
+                    color: $color-white;
+                    margin-bottom: 25px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+        .btn {
+            font-size: 14px;
+            line-height: 24px;
+            text-transform: none;
+            padding: 5px 24px;
+            font-weight: normal;
+        }
+    }
+}

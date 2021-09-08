@@ -1,0 +1,83 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: lead
+        field:
+          init: |-
+            {
+            	"height": 500,
+            	"menubar": false,
+            	"plugins": [
+            		"advlist autolink lists link image charmap print preview anchor footnotes",
+            		"searchreplace visualblocks code fullscreen",
+            		"insertdatetime media table paste code help wordcount",
+            		"code"
+            	],
+            	"external_plugins": {
+                    "footnotes": "/vendor/tinymce/footnotes/plugin.js"
+                },
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
+            }
+          display: Lead
+          type: tinymce_cloud
+          icon: textarea
+          listable: hidden
+      -
+        handle: button_label
+        field:
+          input_type: text
+          antlers: false
+          display: 'Button Label'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+      -
+        handle: button_url
+        field:
+          input_type: text
+          antlers: false
+          display: 'Button Url'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+      -
+        handle: small_image
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Image
+          type: assets
+          icon: assets
+          listable: true
+          instructions: 'Recommended dimension 373x340 px or 746x680 px'
+          width: 50
+      -
+        handle: large_image
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Image
+          type: assets
+          icon: assets
+          instructions: 'Recommended dimension 1200x560 px or 2400x1120 px'
+          listable: true
+          width: 50

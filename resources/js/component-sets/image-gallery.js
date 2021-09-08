@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(".sets.image-gallery .gallery .filter-button").click(function () {
+    $(".image-gallery .gallery .filter-button").click(function () {
         const $parent = $(this).parent().closest('.gallery');
         const value = $(this).attr('data-filter');
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     const imagePopup = new bootstrap.Modal(document.getElementById('image-gallery-popup'));
 
-    $('.sets.image-gallery a.image').click(function () {
+    $('.image-gallery a.image').click(function () {
         const $popup = $('#image-gallery-popup');
         const imageUrl = $(this).attr('data-image');
         const title = $(this).attr('data-title');

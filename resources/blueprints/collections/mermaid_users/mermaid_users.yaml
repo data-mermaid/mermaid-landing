@@ -1,0 +1,78 @@
+title: 'Partners'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Group
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: description
+        field:
+          antlers: false
+          display: Description
+          type: textarea
+          icon: textarea
+          listable: hidden
+      -
+        handle: display_as_carousel
+        field:
+          display: 'Display as carousel'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions: 'Set true to enable the carousel mode (left aligned)'
+          default: false
+      -
+        handle: users
+        field:
+          collapse: false
+          sets:
+            user:
+              display: User
+              fields:
+                -
+                  handle: logo
+                  field:
+                    mode: grid
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    max_files: 1
+                    display: Logo
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    instructions: 'Recommended dimension 80x80 px or 160x160 px'
+                -
+                  handle: url
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Url
+                    type: text
+                    icon: text
+                    listable: hidden
+          display: Users
+          type: replicator
+          icon: replicator
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required

@@ -1,6 +1,10 @@
-<div class="sets video my-4">
-    <video class='w-100 img-fluid' src="{{ video_url | embed_url }}" controls></video>
-    <div>
-    {{ file:caption }}
+<div class="container sets video">
+    <div class="row">
+        <div class="col">
+            <video class='w-100 img-fluid' src="{{ video_url | embed_url }}" controls></video>
+            <div class="caption">
+                {{ file:caption }}
+            </div>
+        </div>
     </div>
 </div>

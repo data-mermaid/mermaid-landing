@@ -6,13 +6,15 @@
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "production": "mix --production"
+        "production": "mix --production",
+        "prod": "mix --production"
     },
     "devDependencies": {
         "@popperjs/core": "^2.9.2",
         "autoprefixer": "^10.1.0",
         "bootstrap": "^5.0.0-beta3",
         "cross-env": "^7.0",
+        "exports-loader": "^3.0.0",
         "laravel-mix": "^6.0",
         "postcss": "^8.2.1",
         "postcss-import": "^14.0.0",
@@ -25,9 +27,14 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "cookies-eu-banner": "^2.0.1",
+        "dotdotdot-js": "^4.1.0",
         "jquery": "^3.6.0",
         "magnific-popup": "^1.1.0",
+        "parallax-js": "^3.1.0",
         "popper.js": "^1.16.1",
-        "slick-carousel": "^1.8.1"
+        "scrollmagic": "^2.0.8",
+        "slick-carousel": "^1.8.1",
+        "waypoints": "^4.0.1"
     }
 }

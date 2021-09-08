@@ -1,0 +1,34 @@
+.sets.single-image {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    img {
+        border-radius: 16px;
+    }
+
+    .caption {
+        margin-top: 10px;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+}
+
+
+.article-show {
+    .sets.single-image {
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+}
+
+.page-tutorial {
+    .sets.single-image {
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+}

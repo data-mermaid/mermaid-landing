@@ -31,8 +31,12 @@ sections:
           icon: assets
           listable: hidden
           instructions: 'The image you want to add.'
+          if:
+            template: 'equals template-with-hero-image'
       -
         import: page_builder
+      -
+        import: homepage_builder
   sidebar:
     display: Sidebar
     fields:
@@ -62,6 +66,7 @@ sections:
           type: template
           icon: template
           listable: hidden
+          default: templates/page-show
   meta_data:
     display: 'Meta Data'
     fields:
@@ -92,3 +97,4 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          max_files: 1

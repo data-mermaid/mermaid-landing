@@ -1,0 +1,92 @@
+.nav.nav-pills {
+    .nav-item {
+        .nav-link {
+            background: $color-white;
+            font-size: 14px;
+            line-height: 28px;
+            padding: 2px 25px;
+            border-radius: 16px;
+            margin-left: 5px;
+            margin-right: 5px;
+            position: relative;
+            transition: opacity 0.3s cubic-bezier(0.2, 0, 0.1, 1), transform 0.3s cubic-bezier(0.2, 0, 0.1, 1), box-shadow 1.5s ease, color 1.5s ease, background 1.5s ease;
+            z-index: 1;
+            overflow: hidden;
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -50%;
+                left: -50%;
+                height: 0;
+                padding-bottom: 200%;
+                border-radius: 35%;
+                z-index: -1;
+                pointer-events: none;
+                transition: all 0s ease 1s, opacity 1s cubic-bezier(0.2, 0, 0.1, 1);
+                opacity: 0;
+            }
+
+            &:before {
+                transform: translate3d(-5%, 4.8em, 0) rotate(330deg);
+            }
+
+            &:after {
+                transform: translate3d(5%, 4.8em, 0) rotate(0deg);
+            }
+
+            &:hover {
+                color: $color-white;
+
+                &:before, &:after {
+                    transition: all 2s ease 0s, opacity 0.2s ease;
+                    opacity: 1;
+                    transform: translate3d(0, -1em, 0) rotate(
+                                    180deg
+                    );
+                }
+            }
+
+            /* basic color */
+            &:before {
+                background: linear-gradient(25deg, $color-coral, rgba($color-coral, 0)) !important;
+                //background: $color-coral-dark-2;
+            }
+
+            &:after {
+                background: linear-gradient(25deg, $color-coral, rgba($color-coral, 0)) !important;
+            }
+
+            &.active {
+                color: $color-white;
+                background-color: $color-coral;
+
+                &:before {
+                    background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
+                    //background: $color-coral-dark-2;
+                }
+
+                &:after {
+                    background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
+                }
+
+                &:hover {
+                    //background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .nav-item {
+            .nav-link {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

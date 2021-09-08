@@ -1,4 +1,4 @@
-title: Staffs
+title: Teams
 sections:
   main:
     display: Main
@@ -22,17 +22,21 @@ sections:
             	"height": 500,
             	"menubar": false,
             	"plugins": [
-            		"advlist autolink lists link image charmap print preview anchor",
+            		"advlist autolink lists link image charmap print preview anchor footnotes",
             		"searchreplace visualblocks code fullscreen",
             		"insertdatetime media table paste code help wordcount",
             		"code"
             	],
-            	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+            	"external_plugins": {
+                    "footnotes": "/vendor/tinymce/footnotes/plugin.js"
+                },
+            	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
             }
           display: Profile
           type: tinymce_cloud
           icon: textarea
           listable: hidden
+          instructions: 'Recommended max characters: ideally 180 (but you can push to 200 if you must)'
       -
         handle: avatar
         field:
@@ -45,12 +49,22 @@ sections:
           icon: assets
           listable: hidden
           container: assets
+          instructions: 'Recommended dimension 200x200 px or 400x400 px'
       -
         handle: position
         field:
           input_type: text
           antlers: false
           display: Position
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: organization
+        field:
+          input_type: text
+          antlers: false
+          display: Organization
           type: text
           icon: text
           listable: hidden

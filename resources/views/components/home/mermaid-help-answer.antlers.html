@@ -1,0 +1,42 @@
+<section class="section principles">
+    <div class="img-bg" style="background-image:url({{ glide:image width="1920" format="webp" }}) ">
+        {{ partial src="partials/_floating-icons" }}
+    </div>
+    <div class="container intro-outer-container" style="background-image:url({{ glide:image width="1920" format="webp" }})" >
+        <div class="row">
+            <div class="col">
+                <div class="intro-container">
+                    <div class="intro-medium text-light" data-aos="fade-up">
+                        {{ help_heading }}
+                    </div>
+                    <div class="intro-large text-light" data-aos="fade-up">
+                        {{ lead }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container principle-container" data-aos="fade-up">
+        <div class="row">
+            <div class="col">
+                <h3 class="title">
+                    {{ column_heading }}
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            {{ column }}
+            <div class="col-md-4">
+                <div class="principle">
+                    {{ glide:image width="400" format="webp" }}
+                    <img class="img-fluid" src="{{ url }}" alt="{{ alt }}">
+                    {{ /glide:image }}
+                    <h3>{{ title }}</h3>
+                    <p>{{ lead }}</p>
+                </div>
+            </div>
+            {{ /column }}
+        </div>
+    </div>
+</section>

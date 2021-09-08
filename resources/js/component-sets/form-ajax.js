@@ -21,12 +21,22 @@ $(function () {
             success: function (data) {
                 showSuccess($form);
                 enableInputs($form);
+                clearInputs($form);
+                $('html, body').animate({
+                    scrollTop: $form.offset().top - 150
+                }, 500);
             },
             error  : function (data) {
                 showError($form, data.responseJSON.error);
                 enableInputs($form)
+                $('html, body').animate({
+                    scrollTop: $form.offset().top - 150
+                }, 500);
             }
         });
+        function clearInputs($form){
+            $form.find('input, textarea').val('');
+        }
 
         function disableInputs($form) {
             $form.find('input, textarea, select, button').attr('disabled', true);
@@ -62,5 +72,44 @@ $(function () {
                 $form.find('.alert-danger').text('Oops, something went wrong');
             }
         }
-    })
+    });
+
+    function rescaleGoogleCaptcha(){
+        $captcha =  $('.g-recaptcha iframe');
+        var width = $captcha.parent().width();
+        var scale;
+        if (width < 302) {
+            scale = width / 302;
+        } else{
+            scale = 1.0;
+        }
+
+        $captcha.css('transform', 'scale(' + scale + ')');
+        $captcha.css('-webkit-transform', 'scale(' + scale + ')');
+        $captcha.css('transform-origin', '0 0');
+        $captcha.css('-webkit-transform-origin', '0 0');
+    }
+    function rescaleHCaptcha(){
+        $captcha =  $('.h-captcha iframe');
+        var width = $captcha.parent().width();
+        var scale;
+        if (width < 303) {
+            scale = width / 302;
+        } else{
+            scale = 1.0;
+        }
+
+        $captcha.css('transform', 'scale(' + scale + ')');
+        $captcha.css('-webkit-transform', 'scale(' + scale + ')');
+        $captcha.css('transform-origin', '0 0');
+        $captcha.css('-webkit-transform-origin', '0 0');
+    }
+
+    rescaleGoogleCaptcha();
+    rescaleHCaptcha();
+
+    $( window ).resize(function() {
+        rescaleGoogleCaptcha();
+        rescaleHCaptcha();
+    });
 })

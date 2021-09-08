@@ -1,0 +1,145 @@
+.btn {
+    padding: 16px 40px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1px;
+    border-radius: 24px;
+    border-width: 0;
+    transition: opacity 0.3s cubic-bezier(0.2, 0, 0.1, 1), transform 0.3s cubic-bezier(0.2, 0, 0.1, 1), box-shadow 1.5s ease, color 1.5s ease, background 1.5s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -50%;
+        left: -50%;
+        height: 0;
+        padding-bottom: 200%;
+        border-radius: 35%;
+        z-index: -1;
+        pointer-events: none;
+        transition: all 0s ease 1s, opacity 1s cubic-bezier(0.2, 0, 0.1, 1);
+        opacity: 0;
+    }
+
+    &:before {
+        transform: translate3d(-5%, 4.8em, 0) rotate(330deg);
+    }
+
+    &:after {
+        transform: translate3d(5%, 4.8em, 0) rotate(0deg);
+    }
+
+    &:hover {
+        //background: $color-coral-dark-2;
+        //color: white;
+
+        &:before, &:after {
+            transition: all 2s ease 0s, opacity 0.2s ease;
+            opacity: 1;
+            transform: translate3d(0, -1em, 0) rotate(
+                            180deg
+            );
+        }
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    &.btn-primary {
+        color: $color-white;
+        background-color: $color-coral;
+
+        &:before {
+            background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
+            //background: $color-coral-dark-2;
+        }
+
+        &:after {
+            background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
+        }
+
+        &:hover {
+            //background: linear-gradient(25deg, $color-coral-dark-2, rgba($color-coral-dark-2, 0)) !important;
+        }
+    }
+
+    &.btn-light {
+        color: $color-blue !important;
+        background-color: $color-white;
+
+        &:before {
+            background: linear-gradient(25deg, $color-blue-light-2, rgba($color-blue-light-2, 0)) !important;
+        }
+
+        &:after {
+            background: linear-gradient(25deg, $color-blue-light-2, rgba($color-blue-light-2, 0)) !important;
+        }
+
+        &:hover {
+            //background: $color-blue-light-2;
+        }
+    }
+
+    &.btn-secondary {
+        color: $color-blue-text !important;
+        background-color: $color-purple-light;
+
+        &:before {
+            background: linear-gradient(25deg, darken($color-purple-light, 10), rgba(darken($color-purple-light, 10), 0)) !important;
+        }
+
+        &:after {
+            background: linear-gradient(25deg, darken($color-purple-light, 10), rgba(darken($color-purple-light, 10), 0)) !important;
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        padding: 16px 20px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    &.btn-small{
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: none;
+        padding: 5px 24px;
+        font-weight: normal;
+    }
+}
+
+.btn-close {
+    //background: url(/images/icon/close.svg);
+    background: none;
+    opacity: 1;
+    position: relative;
+
+    &:before {
+        content: '✕';
+        color: $color-coral;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 22px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    &:hover {
+        &:before {
+            color: $color-coral-dark;
+        }
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+}

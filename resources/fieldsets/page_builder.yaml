@@ -1,9 +1,9 @@
 title: 'Page Builder'
 fields:
   -
-    handle: components
+    handle: page_components
     field:
-      collapse: false
+      collapse: accordion
       sets:
         paragraph:
           display: Paragraph
@@ -16,36 +16,19 @@ fields:
                   	"height": 500,
                   	"menubar": false,
                   	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor",
+                  		"advlist autolink lists link image charmap print preview anchor footnotes",
                   		"searchreplace visualblocks code fullscreen",
                   		"insertdatetime media table paste code help wordcount",
-                  		"code"
+                  		"code table"
                   	],
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  	"external_plugins": {
+                          "footnotes": "/vendor/tinymce/footnotes/plugin.js"
+                      },
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | table | removeformat | code"
                   }
                 display: Content
                 type: tinymce_cloud
                 icon: textarea
-                listable: hidden
-        pullout-quote:
-          display: 'Pullout Quote'
-          fields:
-            -
-              handle: quote_text
-              field:
-                antlers: false
-                display: 'Quote Text'
-                type: textarea
-                icon: textarea
-                listable: hidden
-            -
-              handle: quotee
-              field:
-                input_type: text
-                antlers: false
-                display: Quotee
-                type: text
-                icon: text
                 listable: hidden
         single-image:
           display: 'Single Image'
@@ -62,6 +45,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                instructions: 'Recommended dimension 785x440 px or 1570x880 px'
         image-text:
           display: 'Image Text'
           fields:
@@ -78,6 +62,7 @@ fields:
                 icon: assets
                 width: 75
                 listable: hidden
+                instructions: 'Recommended dimension 785x440 px or 1570x880 px'
             -
               handle: position
               field:
@@ -98,12 +83,15 @@ fields:
                   	"height": 500,
                   	"menubar": false,
                   	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor",
+                  		"advlist autolink lists link image charmap print preview anchor footnotes",
                   		"searchreplace visualblocks code fullscreen",
                   		"insertdatetime media table paste code help wordcount",
                   		"code"
                   	],
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code"
+                  	"external_plugins": {
+                          "footnotes": "/vendor/tinymce/footnotes/plugin.js"
+                      },
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
                   }
                 display: Text
                 type: tinymce_cloud
@@ -169,31 +157,8 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
-        image-gallery:
-          display: 'Image Gallery'
-          fields:
-            -
-              handle: title
-              field:
-                input_type: text
-                antlers: false
-                display: Title
-                type: text
-                icon: text
-                listable: hidden
-            -
-              handle: gallery
-              field:
-                max_items: 1
-                mode: default
-                collections:
-                  - image_galleries
-                display: Gallery
-                type: entries
-                icon: entries
-                listable: hidden
         staff:
-          display: Staff
+          display: Teams
           fields:
             -
               handle: title
@@ -210,9 +175,63 @@ fields:
                 mode: select
                 collections:
                   - staffs
-                display: Staff
+                display: Team
                 type: entries
                 icon: entries
+                listable: hidden
+        featured-publication:
+          display: 'Featured Publication'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: publications
+              field:
+                collapse: accordion
+                sets:
+                  publication:
+                    display: Publication
+                    fields:
+                      -
+                        handle: title
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Title
+                          type: text
+                          icon: text
+                          listable: hidden
+                      -
+                        handle: url
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Url
+                          type: text
+                          icon: text
+                          listable: hidden
+                      -
+                        handle: image
+                        field:
+                          mode: grid
+                          container: assets
+                          restrict: false
+                          allow_uploads: true
+                          max_files: 1
+                          display: Image
+                          type: assets
+                          icon: assets
+                          listable: hidden
+                display: Publications
+                type: replicator
+                icon: replicator
                 listable: hidden
         faq:
           display: FAQ
@@ -278,8 +297,201 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+        image-box:
+          display: 'Image Box'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: subtitle
+              field:
+                input_type: text
+                antlers: false
+                display: Subtitle
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                width: 50
+                listable: hidden
+                instructions: 'Recommended dimension 1366x660 px or 2732x1320 px'
+            -
+              handle: position
+              field:
+                options:
+                  top: Top
+                  bottom: Bottom
+                display: Position
+                default: top
+                type: button_group
+                icon: button_group
+                width: 25
+                listable: hidden
+            -
+              handle: mode
+              field:
+                options:
+                  dark: Dark
+                  light: Light
+                display: Mode
+                default: light
+                type: button_group
+                icon: button_group
+                width: 25
+                listable: hidden
+        feature:
+          display: Feature
+          fields:
+            -
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: features
+              field:
+                collapse: false
+                sets:
+                  feature:
+                    display: Feature
+                    fields:
+                      -
+                        handle: image
+                        field:
+                          mode: grid
+                          container: assets
+                          restrict: false
+                          allow_uploads: true
+                          max_files: 1
+                          display: Image
+                          type: assets
+                          icon: assets
+                          listable: hidden
+                          instructions: 'Recommended dimension 135x135 px or 270x270 px'
+                      -
+                        handle: title
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Title
+                          type: text
+                          icon: text
+                          listable: hidden
+                      -
+                        handle: lead
+                        field:
+                          antlers: false
+                          display: Lead
+                          type: textarea
+                          icon: textarea
+                          listable: hidden
+                          instructions: 'Recommended max characters: 135'
+                          character_limit: '135'
+                display: Features
+                type: replicator
+                icon: replicator
+                listable: hidden
+        call-to-action:
+          display: 'Call To Action'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: button_label
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Label'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: button_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Url'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+        partners:
+          display: Partners
+          fields:
+            -
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: group
+              field:
+                max_items: 1
+                mode: select
+                collections:
+                  - mermaid_users
+                display: Group
+                type: entries
+                icon: entries
+                listable: hidden
       display: 'Page Builder'
       type: replicator
       icon: replicator
       listable: false
       instructions: 'Build your page by using various predefined content models.'
+      if:
+        template: 'contains_any page-show, article-show, tutorial'
+        external: 'equals false'

@@ -1,0 +1,63 @@
+.accordion {
+    .accordion-item {
+        border-left: 0;
+        border-right: 0;
+        border-color: $color-blue-light-2;
+    }
+
+    .accordion-header {
+        .accordion-button {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: $color-coral;
+            padding: 12px 20px 12px 45px;
+            background-color: #FFF;
+            transition: 0.2s all ease-in-out;
+            border: 0;
+            box-shadow: none;
+
+            &:after {
+                display: none;
+            }
+
+            &:before {
+                content: '-';
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 34px;
+                line-height: 54px;
+            }
+
+            &.collapsed {
+                color: $color-black-text;
+
+                &:before {
+                    content: '+';
+                }
+            }
+
+            &:hover {
+                color: $color-coral;
+            }
+
+        }
+    }
+
+    .accordion-body {
+        padding: 0 20px 20px 45px;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.accordion-container {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}

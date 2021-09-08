@@ -1,0 +1,30 @@
+<section class="section testimonials">
+    <div class="container">
+        <div class="testimonials-slide slick-testimonials">
+            {{ testimony }}
+            <div class="testimonial">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="avatar">
+                            <img src="{{ glide:photo width="500" format="webp" }}" alt="{{ photo:alt }}">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="text">
+                            <div class="intro-large">
+                                <p>{{ quotes }}</p>
+                            </div>
+                            <div class="name">
+                                {{ title }}
+                            </div>
+                            <div class="occupation">
+                                {{ position }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /testimony }}
+        </div>
+    </div>
+</section>

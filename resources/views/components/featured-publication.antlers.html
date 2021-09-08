@@ -1,0 +1,26 @@
+<div class="sets featured-publication">
+    {{ if title }}
+    <h3 class="heading">{{ title }}</h3>
+    {{ /if }}
+    {{ publications }}
+    <div class="publication external">
+        <div class="d-flex">
+            <div class="thumbnail">
+                <a href="{{ url }}" target="_blank">
+                    {{ glide:image width="600" format="webp" }}
+                    <span class="img-container"
+                          style="background-image: url({{ url }})"
+                    >
+                    </span>
+                    {{ /glide:image }}
+                </a>
+            </div>
+            <div class="content">
+                <h4 class="title dotdotdot">
+                    <a href="{{ url }}" target="_blank">{{ title }}</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+    {{ /publications }}
+</div>

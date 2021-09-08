@@ -1,0 +1,33 @@
+.sets.youtube {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .caption {
+        margin-top: 10px;
+    }
+
+    .ratio{
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    @include media-breakpoint-down(md) {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+}
+
+.article-show {
+    .sets.youtube {
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+}
+
+.page-tutorial {
+    .sets.youtube {
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+}

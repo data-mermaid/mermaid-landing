@@ -1,0 +1,70 @@
+title: 'Newsletter Archives'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          width: 50
+      -
+        handle: link
+        field:
+          input_type: text
+          antlers: false
+          display: Link
+          type: text
+          icon: text
+          width: 50
+          listable: true
+      -
+        handle: hero_image
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Hero Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions: 'Recommended dimension 992x515 px or 1984x1030 px'
+      -
+        handle: intro
+        field:
+          antlers: false
+          display: Intro
+          type: textarea
+          icon: textarea
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+      -
+        handle: publish_date
+        field:
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '1990-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Publish Date'
+          type: date
+          icon: date
+          listable: hidden

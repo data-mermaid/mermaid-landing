@@ -7,10 +7,10 @@ require("slick-carousel/slick/slick.css");
 
 $(function () {
     $('.slick-slideshow').slick({
-        dots          : true,
+        dots          : false,
         infinite      : true,
         adaptiveHeight: true,
-        autoplay      : true,
+        autoplay      : false,
         autoplaySpeed : 3000
     })
 });

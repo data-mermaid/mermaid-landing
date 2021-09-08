@@ -1,0 +1,399 @@
+title: 'Homepage Builder'
+fields:
+  -
+    handle: home_components
+    field:
+      collapse: accordion
+      sets:
+        banner:
+          display: Banner
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+                width: 66
+                instructions: 'Recommended dimension 1366x760 px or 2732x1520 px'
+            -
+              handle: show_icon
+              field:
+                display: 'Show Icon'
+                type: toggle
+                icon: toggle
+                width: 33
+                listable: hidden
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: subtitle
+              field:
+                input_type: text
+                antlers: false
+                display: Subtitle
+                type: text
+                icon: text
+                listable: hidden
+        introduction:
+          display: Introduction
+          fields:
+            -
+              handle: main_text
+              field:
+                antlers: false
+                display: 'Main Text'
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: secondary_text
+              field:
+                antlers: false
+                display: 'Secondary Text'
+                type: textarea
+                icon: textarea
+                listable: hidden
+        mermaid-help-answer:
+          display: 'Mermaid Help Answer'
+          fields:
+            -
+              handle: help_answer_section
+              field:
+                display: 'Help Answer Section'
+                type: section
+                icon: section
+                listable: hidden
+            -
+              handle: help_heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+                instructions: 'Recommended dimension 1366x760 px or 2732x1520 px'
+            -
+              handle: column_section
+              field:
+                display: 'Column Section'
+                type: section
+                icon: section
+                listable: hidden
+            -
+              handle: column_heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: column
+              field:
+                fields:
+                  -
+                    handle: title
+                    field:
+                      input_type: text
+                      antlers: false
+                      display: Title
+                      type: text
+                      icon: text
+                      listable: hidden
+                  -
+                    handle: lead
+                    field:
+                      antlers: false
+                      display: Lead
+                      type: textarea
+                      icon: textarea
+                      listable: hidden
+                  -
+                    handle: image
+                    field:
+                      mode: grid
+                      container: assets
+                      restrict: false
+                      allow_uploads: true
+                      max_files: 1
+                      display: Image
+                      type: assets
+                      icon: assets
+                      listable: hidden
+                      instructions: 'Recommended dimension 150x150 px or 300x300 px'
+                mode: stacked
+                max_rows: 3
+                min_rows: 3
+                reorderable: true
+                display: Column
+                type: grid
+                icon: grid
+                listable: hidden
+        mermaid-tools:
+          display: 'Mermaid Tools'
+          fields:
+            -
+              handle: collect_section
+              field:
+                display: 'Collect Section'
+                type: section
+                icon: section
+                listable: hidden
+                instructions: 'Will appear on left side'
+            -
+              handle: collect_heading
+              field:
+                antlers: false
+                display: Heading
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: collect_lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: collect_button_label
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Label'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: collect_button_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Url'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: collect_image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+                instructions: 'Recommended dimension 540x440 px or 1080x880 px'
+            -
+              handle: dashboard_section
+              field:
+                display: 'Dashboard Section'
+                type: section
+                icon: section
+                listable: hidden
+                instructions: 'Will appear on right side'
+            -
+              handle: dashboard_heading
+              field:
+                antlers: false
+                display: Heading
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: dashboard_lead
+              field:
+                antlers: false
+                display: Lead
+                type: textarea
+                icon: textarea
+                listable: hidden
+            -
+              handle: dashboard_button_label
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Label'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: dashboard_button_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'Button Url'
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: dashboard_image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+                instructions: 'Recommended dimension 540x440 px or 1080x880 px'
+        mermaid-by-number:
+          display: 'Mermaid By Number'
+          fields:
+            -
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: numbers
+              field:
+                fields:
+                  -
+                    handle: label
+                    field:
+                      input_type: text
+                      antlers: false
+                      display: Label
+                      type: text
+                      icon: text
+                      listable: hidden
+                  -
+                    handle: number
+                    field:
+                      input_type: text
+                      antlers: false
+                      display: Value
+                      type: text
+                      icon: text
+                      listable: hidden
+                      validate:
+                        - numeric
+                mode: table
+                max_rows: 4
+                min_rows: 4
+                reorderable: true
+                display: Numbers
+                type: grid
+                icon: grid
+                listable: hidden
+        reef-stories:
+          display: 'Reef Stories'
+          fields:
+            -
+              handle: list_of_article
+              field:
+                display: 'List of article'
+                type: section
+                icon: section
+                instructions: 'Automatically populate articles'
+                listable: hidden
+            -
+              handle: url
+              field:
+                input_type: text
+                antlers: false
+                display: Url
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: newsletter_component
+              field:
+                display: 'Newsletter Component'
+                type: section
+                icon: section
+                instructions: 'Will Displaying the newsletter component'
+                listable: hidden
+        testimonials:
+          display: Testimonials
+          fields:
+            -
+              handle: testimony
+              field:
+                mode: select
+                collections:
+                  - testimonials
+                display: Testimony
+                type: entries
+                icon: entries
+                listable: hidden
+        mermaid-users:
+          display: 'Mermaid Users'
+          fields:
+            -
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: group
+              field:
+                max_items: 1
+                mode: select
+                collections:
+                  - mermaid_users
+                display: Group
+                type: entries
+                icon: entries
+                listable: hidden
+      display: 'Homepage Builder'
+      type: replicator
+      icon: replicator
+      listable: false
+      instructions: 'Build your homepage by using various predefined content models.'
+      if_any:
+        template: 'equals templates/home'

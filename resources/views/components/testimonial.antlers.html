@@ -1,23 +1,39 @@
-<div class="sets testimonial my-4">
+<div class="sets testimonials">
     {{ if title }}
-        <h2>{{ title }}</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>{{ title }}</h3>
+            </div>
+        </div>
+    </div>
     {{ /if }}
-    <div class="slick-testimonial">
-        {{ testimony }}
-            <div class="slick-item">
+    <div class="container">
+        <div class="testimonials-slide slick-testimonials">
+            {{ testimony }}
+            <div class="testimonial">
                 <div class="row">
-                    <div class="col-md-2">
-                        <img class="img-fluid w-100" src="{{ glide:photo width="200" format="webp" }}" alt="{{ photo:alt }}">
-                    </div>
-                    <div class="col-md-10">
-                        <div class="mb-4">
-                            {{ quotes }}
+                    <div class="col-md-4">
+                        <div class="avatar">
+                            <img src="{{ glide:photo width="500" format="webp" }}" alt="{{ photo:alt }}">
                         </div>
-                        <h5>{{ title }}</h5>
-                        <h6 class="text-muted">{{ position }}</h6>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="text">
+                            <div class="intro-large">
+                                <p>{{ quotes }}</p>
+                            </div>
+                            <div class="name">
+                                {{ title }}
+                            </div>
+                            <div class="occupation">
+                                {{ position }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        {{ /testimony }}
+            {{ /testimony }}
+        </div>
     </div>
 </div>
