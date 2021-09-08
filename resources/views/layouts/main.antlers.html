@@ -2,15 +2,6 @@
 <html lang="{{ site:short_locale }}">
 <head>
     {{ partial:partials/seo }}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ mix src='css/style.css' }}">
-    <link rel="icon" href="{{ settings:fav_icon }}" type="image/gif" sizes="16x16">
-    {{ partial:_meta }}
-    {{ if environment != 'production' }}
-        <meta name="robots" content="noindex,nofollow" />
-    {{ /if }}
     {{ yield:captcha_head }}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
