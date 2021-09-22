@@ -46,7 +46,7 @@ jobs:
             - node_modules
             - ~/.yarn
 
-      # prepare the database
+      # prepare environment
       - run:
           name: "Create Environment file and generate app key"
           command: |
@@ -77,7 +77,7 @@ jobs:
       - run:
           name: "Run migration"
           command: |
-            php artisan migrate
+            # php artisan migrate
       
       - run:
           name: "Build NPM"
