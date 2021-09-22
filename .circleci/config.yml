@@ -1,13 +1,68 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
-# Use a package of configuration called an orb.
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.4.1
-# Orchestrate or schedule a set of jobs
-workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.4-node-browsers
+
+    steps:
+      - checkout
+
+      - run:
+          name: "Prepare Environment"
+          command: |
+            sudo apt update
+            sudo docker-php-ext-install zip
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            # "composer.lock" can be used if it is committed to the repo
+            - v1-dependencies-{{ checksum "composer.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: "Install PHP Dependencies"
+          command: composer install -n --prefer-dist
+
+      - run:
+          name: "Install Node Dependencies"
+          command: npm install
+
+      - run:
+          name: "Build Npm production"
+          command: npm run prod
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}
+          paths:
+            - ./vendor
+
+      # prepare the database
+      - run:
+          name: "Create Environment file and generate app key"
+          command: |
+            php artisan key:generate
+
+      - run:
+          name: "Run migration"
+          command: |
+            php artisan migrate
+
+      - run:
+          name: "Linking storage from filesystem"
+          command: php artisan storage:link
+
+      - run:
+          name: "Mount latest content from cloud"
+          command: php artisan mount:content
+
+      # Adjust file permission
+      - run:
+          name: "Adjust necessary dir/file permission"
+          command: sudo chmod -R 0777 storage bootstrap public/assets content
