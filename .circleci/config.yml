@@ -50,6 +50,7 @@ jobs:
       - run:
           name: "Create Environment file and generate app key"
           command: |
+            cp .env.example .env
             php artisan key:generate
 
       - run:
