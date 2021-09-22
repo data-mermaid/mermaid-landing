@@ -51,12 +51,38 @@ jobs:
           name: "Create Environment file and generate app key"
           command: |
             cp .env.example .env
+            echo "export APP_URL=$APP_URL" >> .env
+            echo "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
+            echo "export AWS_BUCKET=$AWS_BUCKET" >> .env
+            echo "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> .env
+            echo "export CAPTCHA_SECRET=$CAPTCHA_SECRET" >> .env
+            echo "export CAPTCHA_SITEKEY=$CAPTCHA_SITEKEY" >> .env
+            echo "export CHANGELOG_PATH=$CHANGELOG_PATH" >> .env
+            echo "export CHANGELOG_URL=$CHANGELOG_URL" >> .env
+            echo "export DB_DATABASE=$DB_DATABASE" >> .env
+            echo "export DB_DATABASE_2=$DB_DATABASE_2" >> .env
+            echo "export DB_HOST=$DB_HOST" >> .env
+            echo "export DB_HOST_2=$DB_HOST_2" >> .env
+            echo "export DB_PASSWORD=$DB_PASSWORD" >> .env
+            echo "export DB_PASSWORD_2=$DB_PASSWORD_2" >> .env
+            echo "export DB_USERNAME=$DB_USERNAME" >> .env
+            echo "export DB_USERNAME_2=$DB_USERNAME_2" >> .env
+            echo "export MAIL_HOST=$MAIL_HOST" >> .env
+            echo "export MAIL_PASSWORD=$MAIL_PASSWORD" >> .env
+            echo "export MAIL_PORT=$MAIL_PORT" >> .env
+            echo "export MAIL_USERNAME=$MAIL_USERNAME" >> .env
+            echo "export TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
             php artisan key:generate
 
       - run:
           name: "Run migration"
           command: |
             php artisan migrate
+      
+      - run:
+          name: "Build NPM"
+          command: |
+            npm run prod
 
       - run:
           name: "Linking storage from filesystem"
