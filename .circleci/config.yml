@@ -95,10 +95,9 @@ jobs:
           name: "Mount latest content from cloud"
           command: php artisan mount:content
 
-      # Adjust file permission
       - run:
-          name: "Adjust necessary dir/file permission"
-          command: sudo chmod -R 0777 storage bootstrap public/assets content
+          name: Make platform hook scripts executable
+          command: chmod +x .platform/hooks/**/*.sh
 
       # Add everything (except vendors that will be installed automatically and node_modules that are not needed because we already built js and css) to a ZIP
       - run:
