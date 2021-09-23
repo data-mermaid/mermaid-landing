@@ -84,6 +84,10 @@ jobs:
             echo -e "TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
 
       - run:
+          name: "Generate app key"
+          command: php artisan key:generate
+
+      - run:
           name: "Linking storage from filesystem"
           command: php artisan storage:link
 
