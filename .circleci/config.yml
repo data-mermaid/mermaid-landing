@@ -6,7 +6,7 @@ version: 2
 jobs:
   deploy:
     docker:
-      - image: circleci/php:7.4-node-browsers
+      - image: circleci/php:8.0-node-browsers
 
     working_directory: ~/repo
 
@@ -55,6 +55,37 @@ jobs:
           name: Install Node modules
           working_directory: ~/repo
           command: npm run prod
+
+      - run:
+          name: Setup Environment Variables
+          command: |
+            cp .env.example .env
+            echo -e "APP_URL=$APP_URL" >> .env
+            echo -e "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
+            echo -e "AWS_BUCKET=$AWS_BUCKET" >> .env
+            echo -e "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> .env
+            echo -e "CAPTCHA_SECRET=$CAPTCHA_SECRET" >> .env
+            echo -e "CAPTCHA_SITEKEY=$CAPTCHA_SITEKEY" >> .env
+            echo -e "CHANGELOG_PATH=$CHANGELOG_PATH" >> .env
+            echo -e "CHANGELOG_URL=$CHANGELOG_URL" >> .env
+            echo -e "DB_DATABASE=$DB_DATABASE" >> .env
+            echo -e "DB_DATABASE_2=$DB_DATABASE_2" >> .env
+            echo -e "DB_HOST=$DB_HOST" >> .env
+            echo -e "DB_HOST_2=$DB_HOST_2" >> .env
+            echo -e "DB_PASSWORD=$DB_PASSWORD" >> .env
+            echo -e "DB_PASSWORD_2=$DB_PASSWORD_2" >> .env
+            echo -e "DB_USERNAME=$DB_USERNAME" >> .env
+            echo -e "DB_USERNAME_2=$DB_USERNAME_2" >> .env
+            echo -e "EB_ENV_NAME=$EB_ENV_NAME" >> .env
+            echo -e "MAIL_HOST=$MAIL_HOST" >> .env
+            echo -e "MAIL_PASSWORD=$MAIL_PASSWORD" >> .env
+            echo -e "MAIL_PORT=$MAIL_PORT" >> .env
+            echo -e "MAIL_USERNAME=$MAIL_USERNAME" >> .env
+            echo -e "TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
+
+      - run:
+          name: "Migrate database"
+          command: php artisan migrate --force
 
       - run:
           name: "Linking storage from filesystem"
