@@ -48,8 +48,8 @@ jobs:
           working_directory: ~/repo
           command: |
             sudo apt-get -y -qq update
-            sudo apt-get install python-pip python-dev build-essential
-            sudo pip install "urllib3<1.23,>=1.21.1" awsebcli --upgrade
+            sudo apt-get install python3-pip python3-dev build-essential
+            sudo pip3 install "urllib3<1.23,>=1.21.1" awsebcli --upgrade
       # Build css and js (prod script builds these. you should make your own)
       - run:
           name: Install Node modules
