@@ -73,7 +73,7 @@ jobs:
       - run:
           name: ZIP project
           working_directory: ~/repo
-          command: zip YOUR_ZIP_NAME.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
+          command: zip main.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
 
       # Run EB deploy
       - run:
