@@ -4,85 +4,57 @@
 #
 version: 2
 jobs:
-  build:
+  deploy:
     docker:
-      # Specify the version you desire here
       - image: circleci/php:7.4-node-browsers
+
+    working_directory: ~/repo
 
     steps:
       - checkout
-      - run:
-          name: "Prepare Environment"
-          command: |
-            sudo apt update
-            sudo docker-php-ext-install zip
 
       # Download and cache dependencies
       - restore_cache:
           keys:
-            # "composer.lock" can be used if it is committed to the repo
-            - v1-dependencies-{{ checksum "composer.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+          - v1-dependencies-{{ checksum "composer.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
 
-      - run:
-          name: "Install PHP Dependencies"
-          command: composer install -n --prefer-dist
+      # Install PHP vendors
+      - run: composer install -n --prefer-dist
 
+      # Save vendors
       - save_cache:
-          key: v1-dependencies-{{ checksum "composer.json" }}
           paths:
             - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
 
-      # node cache
-      - restore_cache:
-          keys:
-            - node-v4-{{ checksum "package.json" }}
-            - node-v4-
+      # Install NPM packages for frontend things
       - run: npm install
+
+      # Save packages
       - save_cache:
-          key: node-v4-{{ checksum "package.json" }}
+          key: node-v3-{{ checksum "package.json" }}
           paths:
             - node_modules
             - ~/.yarn
 
-      # prepare environment
-      - run:
-          name: "Create Environment file and generate app key"
-          command: |
-            cp .env.example .env
-            echo "export APP_URL=$APP_URL" >> .env
-            echo "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
-            echo "export AWS_BUCKET=$AWS_BUCKET" >> .env
-            echo "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> .env
-            echo "export CAPTCHA_SECRET=$CAPTCHA_SECRET" >> .env
-            echo "export CAPTCHA_SITEKEY=$CAPTCHA_SITEKEY" >> .env
-            echo "export CHANGELOG_PATH=$CHANGELOG_PATH" >> .env
-            echo "export CHANGELOG_URL=$CHANGELOG_URL" >> .env
-            echo "export DB_DATABASE=$DB_DATABASE" >> .env
-            echo "export DB_DATABASE_2=$DB_DATABASE_2" >> .env
-            echo "export DB_HOST=$DB_HOST" >> .env
-            echo "export DB_HOST_2=$DB_HOST_2" >> .env
-            echo "export DB_PASSWORD=$DB_PASSWORD" >> .env
-            echo "export DB_PASSWORD_2=$DB_PASSWORD_2" >> .env
-            echo "export DB_USERNAME=$DB_USERNAME" >> .env
-            echo "export DB_USERNAME_2=$DB_USERNAME_2" >> .env
-            echo "export MAIL_HOST=$MAIL_HOST" >> .env
-            echo "export MAIL_PASSWORD=$MAIL_PASSWORD" >> .env
-            echo "export MAIL_PORT=$MAIL_PORT" >> .env
-            echo "export MAIL_USERNAME=$MAIL_USERNAME" >> .env
-            echo "export TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
-            php artisan key:generate
+      # run tests!
+      # - run: phpunit
 
+      # Install software required to run EB deployer
       - run:
-          name: "Run migration"
+          name: Installing deployment dependencies
+          working_directory: ~/repo
           command: |
-            # php artisan migrate
-      
+            sudo apt-get -y -qq update
+            sudo apt-get install python-pip python-dev build-essential
+            sudo pip install "urllib3<1.23,>=1.21.1" awsebcli --upgrade
+      # Build css and js (prod script builds these. you should make your own)
       - run:
-          name: "Build NPM"
-          command: |
-            npm run prod
+          name: Install Node modules
+          working_directory: ~/repo
+          command: npm run prod
 
       - run:
           name: "Linking storage from filesystem"
@@ -96,3 +68,24 @@ jobs:
       - run:
           name: "Adjust necessary dir/file permission"
           command: sudo chmod -R 0777 storage bootstrap public/assets content
+
+      # Add everything (except vendors that will be installed automatically and node_modules that are not needed because we already built js and css) to a ZIP
+      - run:
+          name: ZIP project
+          working_directory: ~/repo
+          command: zip YOUR_ZIP_NAME.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
+
+      # Run EB deploy
+      - run:
+          name: Deploying
+          command: eb deploy --staged $EB_ENV_NAME
+
+workflows:
+  version: 2
+  build:
+    jobs:
+    - deploy:
+        filters:
+          branches:
+            only:
+            - main
