@@ -59,6 +59,19 @@ class MountContent extends Command
             $bar->finish();
             $this->newLine();
 
+            $files = Storage::disk('s3')->allFiles('/');
+            $bar = $this->output->createProgressBar(count($files));
+
+            $this->info('Downloading assets from cloud...');
+
+            $bar->start();
+            foreach ($files as $file) {
+                Storage::disk('root')->put('public/assets/'.$file, Storage::disk('s3')->get($file));
+                $bar->advance();
+            }
+            $bar->finish();
+            $this->newLine();
+
             $this->info('Mounting finished!');
         } catch (\Exception $exception) {
             $this->error('Could not connect to AWS S3, please check your env');
