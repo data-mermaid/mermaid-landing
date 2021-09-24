@@ -22,15 +22,16 @@
                     {{ /errors }}
                 </div>
                 {{ /if }}
-    
+
                 <div class="alert alert-success d-none">
                     Message sent
                 </div>
                 <div class="alert alert-danger d-none">
                 </div>
-                
+
                 <div class="row was-validation">
                     {{ fields }}
+                    {{ if handle != 'project_id' and handle != 'admin_email' and handle != 'admin_name' }}
                     <div class="col-xs-12 {{ if width != '100' }} col-md-6 {{ /if }}">
                         <div class="field">
                             <label class="form-label">{{ display }}</label>
@@ -46,13 +47,22 @@
                             {{ /if }}
                         </div>
                     </div>
+                    {{ else }}
+                        {{ if handle == 'project_id' }}
+                            <input name={{ handle }} type="hidden" value="{{ get:project_id }}">
+                        {{ elseif handle == 'admin_email' }}
+                            <input name={{ handle }} type="hidden" value="{{ contact_email project_id=get:project_id show='emails' }}">
+                        {{ elseif handle == 'admin_name' }}
+                            <input name={{ handle }} type="hidden" value="{{ contact_email project_id=get:project_id show='name' }}">
+                        {{ /if }}
+                    {{ /if }}
                     {{ /fields }}
                 </div>
                 <div class="row form-footer">
                     <div class="col-md-6 col-xs-12">
                         <div class="captcha-container">
                             {{ captcha }}
-    
+
                             {{ if error:captcha }}
                             <p>{{ error:captcha }}</p>
                             {{ /if }}
@@ -63,7 +73,7 @@
                     </div>
                 </div>
                 {{ /if }}
-                
+
                 {{ /form:create }}
             </div>
         </div>

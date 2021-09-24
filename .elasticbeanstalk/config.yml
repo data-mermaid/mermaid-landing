@@ -1,0 +1,13 @@
+branch-defaults:
+  main:
+    environment: Mermaid-landing-staging-env
+  dev:
+    environment: Mermaid-landing-staging-env
+global:
+  application_name: mermaid-landing-staging
+  default_ec2_keyname: mermaid-landing
+  default_platform: PHP 8.0 running on 64bit Amazon Linux 2/3.3.5
+  default_region: us-east-1
+  sc: git
+deploy:
+  artifact: main.zip

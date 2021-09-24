@@ -1,1 +1,13 @@
 title: 'Contact Us'
+email:
+  -
+    to: '{{ admin_email ?? '' contact@datamermaid.org'' }}'
+    reply_to: '{{ admin_email ?? '' contact@datamermaid.org'' }}'
+    subject: 'New submission from contact us'
+    html: templates/emails/contact-us-to-admin
+  -
+    to: '{{ email }}'
+    from: koyanyaroo@gmail.com
+    reply_to: koyanyaroo@gmail.com
+    subject: 'Thank you for contacting MERMAID'
+    html: templates/emails/contact-us-to-sender
