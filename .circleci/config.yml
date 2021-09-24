@@ -82,6 +82,7 @@ jobs:
             echo -e "MAIL_PORT=$MAIL_PORT" >> .env
             echo -e "MAIL_USERNAME=$MAIL_USERNAME" >> .env
             echo -e "TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
+            echo -e "STATAMIC_LICENSE_KEY=$STATAMIC_LICENSE_KEY" >> .env
 
       - run:
           name: "Generate app key"
