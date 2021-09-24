@@ -15,7 +15,7 @@ $(function () {
 
             $(this).slick({
                 arrows        : true,
-                slidesToShow  : slideNumber,
+                slidesToShow  : parseInt(slideNumber),
                 slidesToScroll: 1,
                 autoplay      : false,
                 autoplaySpeed : 3000,
