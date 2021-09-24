@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class MountContent extends Command
 {
@@ -66,7 +67,10 @@ class MountContent extends Command
 
             $bar->start();
             foreach ($files as $file) {
-                Storage::disk('root')->put('public/assets/'.$file, Storage::disk('s3')->get($file));
+                if (Str::contains($file, 'content/')) { // Ignore content directory
+                    continue;
+                }
+                Storage::disk('root')->put('public/assets/' . $file, Storage::disk('s3')->get($file));
                 $bar->advance();
             }
             $bar->finish();
