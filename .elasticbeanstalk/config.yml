@@ -1,6 +1,8 @@
 branch-defaults:
   main:
     environment: Mermaid-landing-staging-env
+  dev:
+    environment: Mermaid-landing-staging-env
 global:
   application_name: mermaid-landing-staging
   default_ec2_keyname: mermaid-landing
