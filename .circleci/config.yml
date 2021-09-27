@@ -63,6 +63,7 @@ jobs:
             echo -e "APP_URL=$APP_URL" >> .env
             echo -e "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
             echo -e "AWS_BUCKET=$AWS_BUCKET" >> .env
+            echo -e "AWS_BUCKET_CONTENT=$AWS_BUCKET_CONTENT" >> .env
             echo -e "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> .env
             echo -e "CAPTCHA_SECRET=$CAPTCHA_SECRET" >> .env
             echo -e "CAPTCHA_SITEKEY=$CAPTCHA_SITEKEY" >> .env
