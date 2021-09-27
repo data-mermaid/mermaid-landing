@@ -114,7 +114,7 @@ jobs:
           working_directory: ~/repo
           command: zip main.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
 
-      # Run EB deploy
+      # Run EB deploy 
       - run:
           name: Deploying
           command: eb deploy --staged $EB_ENV_NAME
