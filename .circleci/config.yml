@@ -6,7 +6,7 @@ version: 2
 jobs:
   deploy:
     docker:
-      - image: circleci/php:7.4-node-browsers
+      - image: circleci/php:8.0-node-browsers
 
     working_directory: ~/repo
 
@@ -57,6 +57,42 @@ jobs:
           command: npm run prod
 
       - run:
+          name: Setup Environment Variables
+          command: |
+            cp .env.example .env
+            echo -e "APP_URL=$APP_URL" >> .env
+            echo -e "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
+            echo -e "AWS_BUCKET=$AWS_BUCKET" >> .env
+            echo -e "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> .env
+            echo -e "CAPTCHA_SECRET=$CAPTCHA_SECRET" >> .env
+            echo -e "CAPTCHA_SITEKEY=$CAPTCHA_SITEKEY" >> .env
+            echo -e "CHANGELOG_PATH=$CHANGELOG_PATH" >> .env
+            echo -e "CHANGELOG_URL=$CHANGELOG_URL" >> .env
+            echo -e "DB_DATABASE=$DB_DATABASE" >> .env
+            echo -e "DB_DATABASE_2=$DB_DATABASE_2" >> .env
+            echo -e "DB_HOST=$DB_HOST" >> .env
+            echo -e "DB_HOST_2=$DB_HOST_2" >> .env
+            echo -e "DB_PASSWORD=$DB_PASSWORD" >> .env
+            echo -e "DB_PASSWORD_2=$DB_PASSWORD_2" >> .env
+            echo -e "DB_USERNAME=$DB_USERNAME" >> .env
+            echo -e "DB_USERNAME_2=$DB_USERNAME_2" >> .env
+            echo -e "EB_ENV_NAME=$EB_ENV_NAME" >> .env
+            echo -e "MAIL_HOST=$MAIL_HOST" >> .env
+            echo -e "MAIL_PASSWORD=$MAIL_PASSWORD" >> .env
+            echo -e "MAIL_PORT=$MAIL_PORT" >> .env
+            echo -e "MAIL_USERNAME=$MAIL_USERNAME" >> .env
+            echo -e "TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
+            echo -e "STATAMIC_LICENSE_KEY=$STATAMIC_LICENSE_KEY" >> .env
+            echo -e "EB_ENV_NAME=$EB_ENV_NAME" >> .env
+            echo -e "EB_APP_NAME=$EB_APP_NAME" >> .env
+            echo -e "EB_KEY_NAME=$EB_KEY_NAME" >> .env
+            echo -e "EB_REGION=$EB_REGION" >> .env
+
+      - run:
+          name: "Generate app key"
+          command: php artisan key:generate
+
+      - run:
           name: "Linking storage from filesystem"
           command: php artisan storage:link
 
@@ -64,18 +100,21 @@ jobs:
           name: "Mount latest content from cloud"
           command: php artisan mount:content
 
-      # Adjust file permission
       - run:
-          name: "Adjust necessary dir/file permission"
-          command: sudo chmod -R 0777 storage bootstrap public/assets content
+          name: "Generate .elasticbeanstalk config file"
+          command: php artisan eb:config
+
+      - run:
+          name: Make platform hook scripts executable
+          command: chmod +x .platform/hooks/**/*.sh
 
       # Add everything (except vendors that will be installed automatically and node_modules that are not needed because we already built js and css) to a ZIP
       - run:
           name: ZIP project
           working_directory: ~/repo
-          command: zip YOUR_ZIP_NAME.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
+          command: zip main.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
 
-      # Run EB deploy
+      # Run EB deploy 
       - run:
           name: Deploying
           command: eb deploy --staged $EB_ENV_NAME
