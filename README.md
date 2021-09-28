@@ -1,2 +1,2 @@
 # MERMAID Landing site
-Public-facing landing site for MERMAID
+Public-facing landing site for MERMAID 
