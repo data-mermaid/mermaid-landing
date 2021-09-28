@@ -5,6 +5,6 @@
 # After the deployment, it's highly recommended
 # to re-run the caches for config, routes and views.
 
-php artisan optimize
+php artisan route:cache
 
 php artisan view:cache

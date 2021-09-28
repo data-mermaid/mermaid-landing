@@ -10,6 +10,7 @@ sudo chmod -R 777 storage/
 sudo chmod -R 777 bootstrap/cache/
 sudo chmod -R 777 content/
 sudo chmod -R 777 public/assets
+sudo chmod -R 777 public/assets/images
 
 # Storage Symlink Creation
 
