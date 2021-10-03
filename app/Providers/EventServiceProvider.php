@@ -48,7 +48,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (!config('app.enable_sync_cloud')) {
+        if (config('app.enable_sync_cloud')) {
             // Asset
             Event::listen(fn(AssetSaved $event) => $this->updateFileS3($event->asset->path()));
             Event::listen(fn(AssetDeleted $event) => $this->deleteFileS3($event->asset->path()));
