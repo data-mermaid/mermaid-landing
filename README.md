@@ -7,7 +7,7 @@
 - RDS database 
 
 ## Create new Elastic Beanstalk environment
-- Login with your IAM user to AWS EB service page
+- Login with IAM user to AWS EB service page
 - Create new EB Environment, select Web server environment
 - Fill in the forms as below:
     - Application name eg: `mermaid-landing-test`
