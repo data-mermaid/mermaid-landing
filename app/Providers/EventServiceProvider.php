@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Statamic\Events\AssetDeleted;
 use Statamic\Events\AssetSaved;
+use Statamic\Events\AssetUploaded;
 use Statamic\Events\CollectionDeleted;
 use Statamic\Events\CollectionSaved;
 use Statamic\Events\CollectionTreeDeleted;
@@ -27,6 +28,7 @@ use Statamic\Events\TaxonomyDeleted;
 use Statamic\Events\TaxonomySaved;
 use Statamic\Events\TermDeleted;
 use Statamic\Events\TermSaved;
+use Statamic\Facades\AssetContainer;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -50,7 +52,8 @@ class EventServiceProvider extends ServiceProvider
     {
         if (config('app.enable_sync_cloud')) {
             // Asset
-            Event::listen(fn(AssetSaved $event) => $this->updateFileS3($event->asset->path()));
+            Event::listen(fn(AssetUploaded $event) => $this->updateAssetsS3($event->asset->path()));
+            Event::listen(fn(AssetSaved $event) => $this->updateAssetsS3($event->asset->path()));
             Event::listen(fn(AssetDeleted $event) => $this->deleteFileS3($event->asset->path()));
 
             // Entry
@@ -109,6 +112,33 @@ class EventServiceProvider extends ServiceProvider
     }
 
     /**
+     * Update/override the file and sync to S3
+     * Dispatched after assets and meta has been uploaded/saved.
+     *
+     * @param string $path
+     */
+    private function updateAssetsS3(string $path)
+    {
+        try {
+            $file = ltrim(Str::replace(base_path(''), '', $path), '/');
+            $metaFile = '.meta/'.ltrim(Str::replace(base_path(''), '', $path), '/').'.yaml';
+
+            if (Storage::disk('s3')->exists($file)) {
+                Storage::disk('s3')->delete($file);
+            }
+
+            if (Storage::disk('s3')->exists($metaFile)) {
+                Storage::disk('s3')->delete($metaFile);
+            }
+
+            Storage::disk('s3')->put($file, Storage::disk('assets')->get($file));
+            Storage::disk('s3')->put($metaFile, Storage::disk('assets')->get($metaFile));
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+        }
+    }
+
+    /**
      * Delete the file and sync to S3
      * Dispatched after a resource has been deleted.
      *
@@ -118,9 +148,14 @@ class EventServiceProvider extends ServiceProvider
     {
         try {
             $file = ltrim(Str::replace(base_path(''), '', $path), '/');
+            $metaFile = '.meta/'.ltrim(Str::replace(base_path(''), '', $path), '/').'.yaml';
 
             if (Storage::disk('s3')->exists($file)) {
                 Storage::disk('s3')->delete($file);
+            }
+
+            if (Storage::disk('s3')->exists($metaFile)) {
+                Storage::disk('s3')->delete($metaFile);
             }
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
