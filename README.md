@@ -1,12 +1,12 @@
 # MERMAID Landing Site
 
 ## Prerequisites
-- AWS IAM user credentials with EB access
-- Access to Github Mermaid landing
-- Access to CircleCI for CI/CD scripts
-- Access to RDS database 
+- AWS IAM user credentials with Elastic Beanstalk access
+- Access to or fork of mermaid-landing git repository (this)
+- CircleCI access in order to use CI/CD scripts
+- RDS database 
 
-## Create new EB environments
+## Create new Elastic Beanstalk environment
 - Login with your IAM user to AWS EB service page
 - Create new EB Environment, select Web server environment
 - Fill in the forms as below:
@@ -22,8 +22,8 @@
         - **Instance:**
             - Check the appropriate EC2 security groups
 
-## Setup CircleCI env variables
-- Full list env variables
+## Environment variables
+- Full list of env variables
 ```
 APP_NAME="WCS MERMAID"
 APP_ENV=
