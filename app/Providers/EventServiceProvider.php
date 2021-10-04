@@ -27,6 +27,7 @@ use Statamic\Events\NavSaved;
 use Statamic\Events\NavTreeDeleted;
 use Statamic\Events\NavTreeSaved;
 use Statamic\Events\SubmissionCreated;
+use Statamic\Events\SubmissionDeleted;
 use Statamic\Events\TaxonomyDeleted;
 use Statamic\Events\TaxonomySaved;
 use Statamic\Events\TermDeleted;
@@ -92,6 +93,7 @@ class EventServiceProvider extends ServiceProvider
 
             // Form Submit
             Event::listen(fn(SubmissionCreated $event) => $this->uploadFormSubmitted($event));
+            Event::listen(fn(SubmissionDeleted $event) => $this->deleteFormSubmitted($event));
 //            Event::listen(fn(FormSubmitted $event) => $this->updateProjectAdmin($event));
         }
     }
@@ -182,6 +184,26 @@ class EventServiceProvider extends ServiceProvider
         $file = 'storage/forms/contact_us/' . $submissionId . '.yaml';
         try {
             Storage::disk('s3')->put($file, Storage::disk('root')->get($file));
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+        }
+    }
+
+    /**
+     * Delete form submission data on S3
+     * Dispatched after a form submission has been deleted.
+     *
+     * @param $event
+     * @return void
+     */
+    private function deleteFormSubmitted($event)
+    {
+        $submissionId = $event->submission->id();
+        $file = 'storage/forms/contact_us/' . $submissionId . '.yaml';
+        try {
+            if (Storage::disk('s3')->exists($file)) {
+                Storage::disk('s3')->delete($file);
+            }
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
         }
