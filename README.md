@@ -14,7 +14,7 @@
     - Environment name eg: `mermaid-landing-test-env`
     - Select platform for **PHP 8.0**
     - Select `Sample application` on **Application Code**
-    - On **Configure more options** edits 
+    - **Configure more options** edits 
         - **Software:**
             - Select Nginx for Proxy server and change Document root to `/public`
         - **Security:**
