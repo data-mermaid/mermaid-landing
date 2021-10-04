@@ -87,7 +87,8 @@ jobs:
             echo -e "EB_ENV_NAME=$EB_ENV_NAME" >> .env
             echo -e "EB_APP_NAME=$EB_APP_NAME" >> .env
             echo -e "EB_KEY_NAME=$EB_KEY_NAME" >> .env
-            echo -e "EB_REGION=$EB_REGION" >> .env
+            echo -e "MAIL_FROM_ADDRESS=$MAIL_FROM_ADDRESS" >> .env
+            echo -e "MAIL_FROM_NAME=$MAIL_FROM_NAME" >> .env
 
       - run:
           name: "Generate app key"
@@ -115,7 +116,7 @@ jobs:
           working_directory: ~/repo
           command: zip main.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
 
-      # Run EB deploy 
+      # Run EB deploy
       - run:
           name: Deploying
           command: eb deploy --staged $EB_ENV_NAME
