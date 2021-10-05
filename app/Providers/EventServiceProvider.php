@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -18,17 +19,19 @@ use Statamic\Events\CollectionTreeDeleted;
 use Statamic\Events\CollectionTreeSaved;
 use Statamic\Events\EntryDeleted;
 use Statamic\Events\EntrySaved;
+use Statamic\Events\FormSubmitted;
 use Statamic\Events\GlobalSetDeleted;
 use Statamic\Events\GlobalSetSaved;
 use Statamic\Events\NavDeleted;
 use Statamic\Events\NavSaved;
 use Statamic\Events\NavTreeDeleted;
 use Statamic\Events\NavTreeSaved;
+use Statamic\Events\SubmissionCreated;
+use Statamic\Events\SubmissionDeleted;
 use Statamic\Events\TaxonomyDeleted;
 use Statamic\Events\TaxonomySaved;
 use Statamic\Events\TermDeleted;
 use Statamic\Events\TermSaved;
-use Statamic\Facades\AssetContainer;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -87,6 +90,11 @@ class EventServiceProvider extends ServiceProvider
             // Term
             Event::listen(fn(TermSaved $event) => $this->updateFileS3($event->term->path()));
             Event::listen(fn(TermDeleted $event) => $this->deleteFileS3($event->term->path()));
+
+            // Form Submit
+            Event::listen(fn(SubmissionCreated $event) => $this->uploadFormSubmitted($event));
+            Event::listen(fn(SubmissionDeleted $event) => $this->deleteFormSubmitted($event));
+//            Event::listen(fn(FormSubmitted $event) => $this->updateProjectAdmin($event));
         }
     }
 
@@ -99,7 +107,7 @@ class EventServiceProvider extends ServiceProvider
     private function updateFileS3(string $path)
     {
         try {
-            $file = ltrim(Str::replace(base_path(''), '', $path), '/');
+            $file = $this->escapeFilename($path);
 
             if (Storage::disk('s3')->exists($file)) {
                 Storage::disk('s3')->delete($file);
@@ -120,8 +128,8 @@ class EventServiceProvider extends ServiceProvider
     private function updateAssetsS3(string $path)
     {
         try {
-            $file = ltrim(Str::replace(base_path(''), '', $path), '/');
-            $metaFile = '.meta/'.ltrim(Str::replace(base_path(''), '', $path), '/').'.yaml';
+            $file = $this->escapeFilename($path);
+            $metaFile = '.meta/' . $this->escapeFilename($path) . '.yaml';
 
             if (Storage::disk('s3')->exists($file)) {
                 Storage::disk('s3')->delete($file);
@@ -147,8 +155,8 @@ class EventServiceProvider extends ServiceProvider
     private function deleteFileS3(string $path)
     {
         try {
-            $file = ltrim(Str::replace(base_path(''), '', $path), '/');
-            $metaFile = '.meta/'.ltrim(Str::replace(base_path(''), '', $path), '/').'.yaml';
+            $file = $this->escapeFilename($path);
+            $metaFile = '.meta/' . $this->escapeFilename($path) . '.yaml';
 
             if (Storage::disk('s3')->exists($file)) {
                 Storage::disk('s3')->delete($file);
@@ -160,5 +168,75 @@ class EventServiceProvider extends ServiceProvider
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
         }
+    }
+
+    /**
+     * Upload submitted form data to S3
+     * Dispatched after a form submission has been created.
+     * This happens after has a form has been submitted on the front-end.
+     *
+     * @param $event
+     * @return void
+     */
+    private function uploadFormSubmitted($event)
+    {
+        $submissionId = $event->submission->id();
+        $file = 'storage/forms/contact_us/' . $submissionId . '.yaml';
+        try {
+            Storage::disk('s3')->put($file, Storage::disk('root')->get($file));
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+        }
+    }
+
+    /**
+     * Delete form submission data on S3
+     * Dispatched after a form submission has been deleted.
+     *
+     * @param $event
+     * @return void
+     */
+    private function deleteFormSubmitted($event)
+    {
+        $submissionId = $event->submission->id();
+        $file = 'storage/forms/contact_us/' . $submissionId . '.yaml';
+        try {
+            if (Storage::disk('s3')->exists($file)) {
+                Storage::disk('s3')->delete($file);
+            }
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+        }
+    }
+
+    /**
+     * Populate project admin details
+     * Dispatched when a Form is submitted on the front-end, before the Submission is created.
+     *
+     * @param $event
+     */
+    private function updateProjectAdmin($event)
+    {
+        $project_id = $event->submission->get('project_id');
+        if (isValidUUID($project_id)) {
+            $projectAdmin = DB::connection('pgsql_2')
+                ->table('vw_project_admins')
+                ->where('project_id', $project_id)
+                ->first();
+            if ($projectAdmin) {
+                $event->submission->set('admin_email', $projectAdmin->emails);
+                $event->submission->set('admin_name', $projectAdmin->name);
+            }
+        }
+    }
+
+    /**
+     *
+     * @param $path
+     * @return string
+     */
+    private function escapeFilename($path): string
+    {
+        return ltrim(Str::replace(base_path(''), '', $path), '/');
     }
 }
