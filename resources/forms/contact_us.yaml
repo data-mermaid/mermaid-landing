@@ -7,7 +7,5 @@ email:
     html: templates/emails/contact-us-to-admin
   -
     to: '{{ email }}'
-    from: koyanyaroo@gmail.com
-    reply_to: koyanyaroo@gmail.com
     subject: 'Thank you for contacting MERMAID'
     html: templates/emails/contact-us-to-sender

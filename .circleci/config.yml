@@ -63,6 +63,7 @@ jobs:
             echo -e "APP_URL=$APP_URL" >> .env
             echo -e "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
             echo -e "AWS_BUCKET=$AWS_BUCKET" >> .env
+            echo -e "AWS_BUCKET_CONTENT=$AWS_BUCKET_CONTENT" >> .env
             echo -e "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> .env
             echo -e "CAPTCHA_SECRET=$CAPTCHA_SECRET" >> .env
             echo -e "CAPTCHA_SITEKEY=$CAPTCHA_SITEKEY" >> .env
@@ -83,6 +84,11 @@ jobs:
             echo -e "MAIL_USERNAME=$MAIL_USERNAME" >> .env
             echo -e "TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
             echo -e "STATAMIC_LICENSE_KEY=$STATAMIC_LICENSE_KEY" >> .env
+            echo -e "EB_ENV_NAME=$EB_ENV_NAME" >> .env
+            echo -e "EB_APP_NAME=$EB_APP_NAME" >> .env
+            echo -e "EB_KEY_NAME=$EB_KEY_NAME" >> .env
+            echo -e "MAIL_FROM_ADDRESS=$MAIL_FROM_ADDRESS" >> .env
+            echo -e "MAIL_FROM_NAME=$MAIL_FROM_NAME" >> .env
 
       - run:
           name: "Generate app key"
@@ -95,6 +101,10 @@ jobs:
       - run:
           name: "Mount latest content from cloud"
           command: php artisan mount:content
+
+      - run:
+          name: "Generate .elasticbeanstalk config file"
+          command: php artisan eb:config
 
       - run:
           name: Make platform hook scripts executable
