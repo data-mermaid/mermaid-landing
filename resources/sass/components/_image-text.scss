@@ -22,6 +22,12 @@
     .sets.image-text {
         padding-top: 40px;
         padding-bottom: 35px;
+        .row {
+            --bs-gutter-x: 40px;
+        }
+        img{
+            border-radius: 8px;
+        }
     }
 }
 
