@@ -78,6 +78,8 @@ sections:
           display: Image
           type: assets
           icon: assets
-          instructions: 'Recommended dimension 1200x560 px or 2400x1120 px'
+          instructions: 'Recommended dimension 1920x896 px or 2400x1120 px'
           listable: true
           width: 50
+          instructions_position: above
+          show_filename: true
