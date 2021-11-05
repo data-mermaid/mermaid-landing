@@ -1,7 +1,12 @@
 <div class="container sets video">
     <div class="row">
         <div class="col">
-            <video class='w-100 img-fluid' src="{{ video_url | embed_url }}" controls></video>
+            <div class="position-relative">
+                <video class='w-100 img-fluid position-relative' src="{{ video_url | embed_url }}" controls></video>
+                {{ if current_template  == 'templates/tutorial-download' }}
+                <img class="youtube-play-icon" src="/images/icon/play.png" alt=""/>
+                {{ /if }}
+            </div>
             <div class="caption">
                 {{ file:caption }}
             </div>
