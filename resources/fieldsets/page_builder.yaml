@@ -99,13 +99,15 @@ fields:
               handle: slideshow
               field:
                 max_items: 1
-                mode: default
+                mode: select
                 collections:
                   - slideshows
                 display: Slideshow
                 type: entries
                 icon: entries
                 listable: hidden
+                instructions_position: above
+                create: true
         staff:
           display: Teams
           fields:
@@ -280,7 +282,7 @@ fields:
                 icon: assets
                 width: 50
                 listable: hidden
-                instructions: 'Recommended dimension 1920x928 px or 2732x1320 px'
+                instructions: 'Recommended dimension 1366x660 px or 1920x928 px'
                 instructions_position: above
                 show_filename: true
             -
