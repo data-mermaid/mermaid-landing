@@ -99,13 +99,15 @@ fields:
               handle: slideshow
               field:
                 max_items: 1
-                mode: default
+                mode: select
                 collections:
                   - slideshows
                 display: Slideshow
                 type: entries
                 icon: entries
                 listable: hidden
+                instructions_position: above
+                create: true
         staff:
           display: Teams
           fields:
@@ -127,60 +129,6 @@ fields:
                 display: Team
                 type: entries
                 icon: entries
-                listable: hidden
-        featured-publication:
-          display: 'Featured Publication'
-          fields:
-            -
-              handle: title
-              field:
-                input_type: text
-                antlers: false
-                display: Title
-                type: text
-                icon: text
-                listable: hidden
-            -
-              handle: publications
-              field:
-                collapse: accordion
-                sets:
-                  publication:
-                    display: Publication
-                    fields:
-                      -
-                        handle: title
-                        field:
-                          input_type: text
-                          antlers: false
-                          display: Title
-                          type: text
-                          icon: text
-                          listable: hidden
-                      -
-                        handle: url
-                        field:
-                          input_type: text
-                          antlers: false
-                          display: Url
-                          type: text
-                          icon: text
-                          listable: hidden
-                      -
-                        handle: image
-                        field:
-                          mode: grid
-                          container: assets
-                          restrict: false
-                          allow_uploads: true
-                          max_files: 1
-                          display: Image
-                          type: assets
-                          icon: assets
-                          listable: hidden
-                display: Publications
-                type: replicator
-                icon: replicator
                 listable: hidden
         faq:
           display: FAQ
@@ -280,7 +228,7 @@ fields:
                 icon: assets
                 width: 50
                 listable: hidden
-                instructions: 'Recommended dimension 1920x928 px or 2732x1320 px'
+                instructions: 'Recommended dimension 1366x660 px or 1920x928 px'
                 instructions_position: above
                 show_filename: true
             -

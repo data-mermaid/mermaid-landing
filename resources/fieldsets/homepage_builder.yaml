@@ -21,7 +21,7 @@ fields:
                 icon: assets
                 listable: hidden
                 width: 66
-                instructions: 'Recommended dimension 1920x1068 px or 2732x1520 px'
+                instructions: 'Recommended dimension 1366x760 px or 1920x1068 px'
                 instructions_position: above
                 show_filename: true
             -
@@ -108,7 +108,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
-                instructions: 'Recommended dimension 1920x1349 px or 2732x1520 px'
+                instructions: 'Recommended dimension 1366x966 px or 1920x1349 px'
                 instructions_position: above
                 show_filename: true
             -
