@@ -1,14 +1,16 @@
 <div class="container sets single-image">
     <div class="row">
-        {{ glide:image width="1200" format="webp" }}
         <div class="col">
-            <img class="img-fluid w-100" src="{{ url }}" alt="{{ alt }}">
-            {{ if caption }}
+            {{ if image:extension != "gif" }}
+                <img class="img-fluid w-100" src="{{ glide:image width="1200" format="webp" }}" alt="{{ image:alt }}">
+            {{ else }}
+                <img class="img-fluid w-100" src="{{ image:url }}" alt="{{ image:alt }}">
+            {{ endif }}
+            {{ if image:caption }}
             <div class="caption">
-                {{ caption }}
+                {{ image:caption }}
             </div>
             {{ /if }}
         </div>
-        {{ /glide:image }}
     </div>
 </div>
