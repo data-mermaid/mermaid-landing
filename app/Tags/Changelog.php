@@ -2,12 +2,35 @@
 
 namespace App\Tags;
 
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Statamic\Tags\Tags;
 
 class Changelog extends Tags
 {
+    /**
+     * @var bool
+     */
+    public bool $isSuccess = false;
+
+    /**
+     * @var array
+     */
+    public array $response = [];
+
+    public function __construct()
+    {
+        try {
+            $response = Http::get(config('app.changelog_url'));
+            if ($response->ok()) {
+                $this->isSuccess = true;
+                $this->response = $response->json();
+            }
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+        }
+    }
+
     /**
      * The {{ changelog }} tag.
      *
@@ -15,17 +38,17 @@ class Changelog extends Tags
      */
     public function index()
     {
-        if (!Storage::disk('public')->exists(config('app.changelog_path'))) {
-            fetchChangelog();
-        }
-        $lastModified = Storage::disk('public')->lastModified(config('app.changelog_path'));
+        return $this->response;
+    }
 
-        if (Carbon::now()->diffInHours(Carbon::parse($lastModified)) > 1 ){
-            fetchChangelog();
-        }
-
-        $path = Storage::disk('public')->path(config('app.changelog_path'));
-        $json = json_decode(file_get_contents($path), true);
-        return $json ?? [];
+    /**
+     * The {{ changelog:check }} tag.
+     * checking the status of the response
+     *
+     * @return bool
+     */
+    public function check(): bool
+    {
+        return $this->isSuccess;
     }
 }
