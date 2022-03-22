@@ -23,7 +23,7 @@
         "mitydigital/statamic-tinymce-cloud": "^1.0",
         "pecotamic/sitemap": "^1.2",
         "simonridley/tracking-code-manager": "dev-master",
-        "statamic/cms": "3.2.11"
+        "statamic/cms": "3.2.38"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
