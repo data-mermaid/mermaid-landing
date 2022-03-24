@@ -1,6 +1,8 @@
 branch-defaults:
   main:
     environment: $EB_ENV_NAME$
+    development:
+      environment: $EB_ENV_DEV_NAME$
 global:
   application_name: $EB_APP_NAME$
   default_ec2_keyname: $EB_KEY_NAME$

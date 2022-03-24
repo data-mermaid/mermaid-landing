@@ -74,6 +74,7 @@ class GenerateEBConfig extends Command
     {
         return [
             'EB_ENV_NAME' => env('EB_ENV_NAME'),
+            'EB_ENV_DEV_NAME' => env('EB_ENV_DEV_NAME'),
             'EB_APP_NAME' => env('EB_APP_NAME'),
             'EB_KEY_NAME' => env('EB_KEY_NAME'),
             'EB_REGION' => env('EB_REGION'),
