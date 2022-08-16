@@ -47,6 +47,7 @@ jobs:
           name: Installing deployment dependencies
           working_directory: ~/repo
           command: |
+            sudo wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
             sudo apt-get -y -qq update
             sudo apt-get install python3-pip python3-dev build-essential
             sudo pip3 install "urllib3<1.23,>=1.21.1" awsebcli --upgrade
