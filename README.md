@@ -24,6 +24,7 @@
 
 ## Environment variables
 - Full list of env variables
+
 ```
 APP_NAME="WCS MERMAID"
 APP_ENV=
