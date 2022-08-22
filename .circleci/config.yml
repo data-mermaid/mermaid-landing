@@ -66,10 +66,10 @@ workflows:
                 - staging
                 - main
       - deploy-beanstalk:
-          context: aws-creds
+          context: aws-mermaid-landing
           application-name: $EB_APP_NAME
           environment-name: $EB_ENV_NAME_STAGING
-          platform-version: $EB_PLATFORM_STAGING
+          platform-version: $EB_PLATFORM
           filters:
             branches:
               only:
@@ -78,10 +78,10 @@ workflows:
           requires:
             - node/run
       - deploy-beanstalk:
-          context: aws-creds
+          context: aws-mermaid-landing
           application-name: $EB_APP_NAME
           environment-name: $EB_ENV_NAME_PRODUCTION
-          platform-version: $EB_PLATFORM_PRODUCTION
+          platform-version: $EB_PLATFORM
           filters:
             branches:
               only:
