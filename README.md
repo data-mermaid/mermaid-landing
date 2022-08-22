@@ -1,111 +1,31 @@
 # MERMAID Landing Site
+MERMAID (Marine Ecological Research Management Aid) Landing Site. Transform underwater insights into data-driven actions that save coral reefs.
 
-## Prerequisites
-- AWS IAM user credentials with Elastic Beanstalk access
-- Access to or fork of mermaid-landing git repository (this)
-- CircleCI access in order to use CI/CD scripts
-- RDS database 
 
-## Create new Elastic Beanstalk environment
-- Login with IAM user to AWS EB service page
-- Create new EB Environment, select Web server environment
-- Fill in the forms as below:
-    - Application name eg: `mermaid-landing-test`
-    - Environment name eg: `mermaid-landing-test-env`
-    - Select platform for **PHP 8.0**
-    - Select `Sample application` on **Application Code**
-    - **Configure more options** edits 
-        - **Software:**
-            - Select Nginx for Proxy server and change Document root to `/public`
-        - **Security:**
-            - Select the appropriate EC2 key pair 
-        - **Instance:**
-            - Check the appropriate EC2 security groups
+## Development Environment
+---
+### Prequisite
+- Docker Installed
+- Have Access to some ENV value
 
-## Environment variables
-- Full list of env variables
-```
-APP_NAME="WCS MERMAID"
-APP_ENV=
-APP_KEY=
-APP_DEBUG=false
-APP_URL=
-TINYMCE_CLOUD_APIKEY=
+### How To
+Step by step to provision local environment
+1. Create an .env files by copying from .env.example and fill the required environment variable.
+2. Run this command ``` docker compose -f docker-compose.local.yml up ```
+2. To install the php dependencies, open other terminal and run ``` docker exec -it app composer install```
+3. To install nodejs dependencies for frontend, run ```docker exec -it app npm install```
+4. To build / mix the assets, run ```docker exec -it app npm development```
+5. Link the storage by runing this commnad ```docker exec -it app php artisan storage:link```
+6. Then mount the content by runing this command ```docker exec -it app php artisan mount:content```
+7. Any other command that you wanna run, just add prefix ```docker exec -it``` then follow with your command such as ```npm, composer, php artisan,  etc```
+7. Open http://localhost:8081 to access the website.
 
-STATAMIC_THEME=business
-STATAMIC_CUSTOM_CMS_NAME="WCS MERMAID CMS"
-STATAMIC_CUSTOM_LOGO_URL="/logo.png"
-STATAMIC_CUSTOM_FAVICON_URL="/favicon.png"
 
-STATAMIC_LICENSE_KEY=
-STATAMIC_STACHE_WATCHER=true
-STATAMIC_STATIC_CACHING_STRATEGY=null
-STATAMIC_REVISIONS_ENABLED=false
-STATAMIC_GRAPHQL_ENABLED=false
-STATAMIC_API_ENABLED=false
 
-STATAMIC_GIT_ENABLED=true
-STATAMIC_GIT_AUTOMATIC=false
+## Deployment
+---
+The deployment for this app is utilizing the CircleCI. For branching strategy, we use :
+- development : for development purpose ( branch for dev to collaborate )
+- staging : branch for staging environment, any push/accepted PR towards this branch will be deployed outomatically into staging env.
+- main : production branch, after staging is well tested, you could promote the deployment into production by merge the staging branch to main branch. This will be automatically deploy to production.
 
-LOG_CHANNEL=stack
-FILESYSTEM_DRIVER=s3
-FILESYSTEM_CLOUD=s3
-
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD=
-
-DB_CONNECTION_2=pgsql_2
-DB_HOST_2=127.0.0.1
-DB_PORT_2=5432
-DB_DATABASE_2=
-DB_USERNAME_2=
-DB_PASSWORD_2=
-
-BROADCAST_DRIVER=log
-CACHE_DRIVER=file
-QUEUE_CONNECTION=sync
-SESSION_DRIVER=file
-SESSION_LIFETIME=120
-
-MAIL_MAILER=
-MAIL_HOST=
-MAIL_PORT=
-MAIL_USERNAME=
-MAIL_PASSWORD=
-MAIL_ENCRYPTION=
-
-MAIL_FROM_ADDRESS=
-MAIL_FROM_NAME=
-
-ENABLE_SYNC_CLOUD=true
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=
-AWS_BUCKET=
-
-CHANGELOG_URL=
-CHANGELOG_PATH=
-
-STATAMIC_LINK_TO_DOCS=false
-STATAMIC_SUPPORT_URL=false
-
-CAPTCHA_SECRET=
-CAPTCHA_SITEKEY=
-
-EB_ENV_NAME=
-EB_APP_NAME=
-EB_KEY_NAME=
-EB_REGION=
-```
-- Add the following environment variables on CircleCI project setting page:
-    - `APP_URL` : your domain
-    - `EB_ENV_NAME` : your elastic beanstalk env name
-    - `EB_APP_NAME` : your elastic beanstalk app name
-    - `EB_REGION` : your elastic beanstalk region
-    - `EB_KEY_NAME` : your selected EC2 key pair
-    

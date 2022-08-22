@@ -2,4 +2,4 @@
 
 # Run migration
 
-php artisan migrate --force
+#  php artisan migrate --force

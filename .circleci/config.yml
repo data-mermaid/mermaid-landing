@@ -1,123 +1,91 @@
 version: '2.1'
+orbs:
+  eb: circleci/aws-elastic-beanstalk@2.0.1
+  node: circleci/node@5.0.2
 jobs:
-  deploy: &deploy
-    #circleci_ip_ranges: true
+  deploy-beanstalk:
+    parameters:
+      app-dir:
+          default: .
+          description: Path to the directory containing your application source code. My default, the current directory will be used.
+          type: string
+      application-name:
+          default: ""
+          description: The name of the application (used during `eb init`).
+          type: string
+      description:
+          default: ""
+          description: The description for the application version, enclosed in double quotation marks.
+          type: string
+      environment-name:
+          default: ""
+          description: The name of the existing environment (created with `eb create`) to update.
+          type: string
+      image:
+          default: cimg/base:stable
+          description: Enter a custom docker image for this job. By default CircleCI's optimized `cimg/base` image will be used.
+          type: string
+      label:
+          default: ""
+          description: Specify a label to use for the version that the EB CLI creates. If the label has already been used, the EB CLI redeploys the previous version with that label.
+          type: string
+      platform-version:
+          default: node.js
+          description: The platform version to use. You can specify a platform, a platform and version, a platform branch, a solution stack name, or a solution stack ARN. Use 'eb platform list' to get a list of available configurations.
+          type: string
     docker:
-      - image: dotsunited/git-ftp
+      - image: cimg/base:stable
     steps:
       - checkout
+      - attach_workspace:
+          at: .
+      - eb/setup
       - run:
-          name: Deploy Application
-          command: git ftp push --user $SERVER_USER --passwd $SERVER_PASS --insecure ftp://$SERVER_HOST:$SERVER_PORT/ -v
-  install_php_dependencies: &install_php_dependencies
-    #circleci_ip_ranges: true
-    machine:
-      enabled: true
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - $FINGERPRINT
-      - run:
-          name: Install Statamic Dependency
-          command: ssh $SERVER_USER@$SERVER_HOST "docker exec app composer install"
-  install_node_dependencies: &install_node_dependencies
-    #circleci_ip_ranges: true
-    machine:
-      enabled: true
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - $FINGERPRINT
-      - run:
-          name: Install Node Dependency
-          command: ssh $SERVER_USER@$SERVER_HOST "docker exec app npm ci"
-  build_frontend_assets: &build_frontend_assets
-    #circleci_ip_ranges: true
-    machine:
-      enabled: true
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - $FINGERPRINT
-      - run:
-          name: Build Frontend Assets
-          command: ssh $SERVER_USER@$SERVER_HOST "docker exec app npm run production"
-
-  deploy-staging:
-    <<: *deploy
-  install_php_dependencies-staging:
-    <<: *install_php_dependencies
-  install_node_dependencies-staging:
-    <<: *install_node_dependencies
-  build_frontend_assets-staging:
-    <<: *build_frontend_assets
-
-  deploy-production:
-    <<: *deploy
-  install_php_dependencies-production:
-    <<: *install_php_dependencies
-  install_node_dependencies-production:
-    <<: *install_node_dependencies
-  build_frontend_assets-production:
-    <<: *build_frontend_assets
+          command: |
+              eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p <<parameters.platform-version>>
+              eb deploy <<parameters.environment-name>> <<#parameters.label>>-l <<parameters.label>><</parameters.label>> <<#parameters.description>>-m <<parameters.description>><</parameters.description>>
+          name: EB Deploy
+          working_directory: <<parameters.app-dir>>
 
 workflows:
-  deployments:
+  elastic-beanstalk-workflow:
     jobs:
-      - deploy-staging:
-          context: mermaid-landing-staging
+      - node/run:
+          post-steps:
+            - persist_to_workspace:
+                root: .
+                paths:
+                  - public/js
+                  - public/css
+                  - public/fonts
+                  - public/mix-manifest.json
+          npm-run: production
           filters:
             branches:
               only:
-                staging
-      - install_php_dependencies-staging:
-          context: mermaid-landing-staging
+                - staging
+                - main
+      - deploy-beanstalk:
+          context: aws-mermaid-landing
+          application-name: $EB_APP_NAME
+          environment-name: $EB_ENV_NAME_STAGING
+          platform-version: $EB_PLATFORM
           filters:
             branches:
               only:
-                staging
+                - staging
+          label: version-stag-${CIRCLE_SHA1}
           requires:
-            - deploy-staging
-      - install_node_dependencies-staging:
-          context: mermaid-landing-staging
+            - node/run
+      - deploy-beanstalk:
+          context: aws-mermaid-landing
+          application-name: $EB_APP_NAME
+          environment-name: $EB_ENV_NAME_PRODUCTION
+          platform-version: $EB_PLATFORM
           filters:
             branches:
               only:
-                staging
+                - main
+          label: version-prod-${CIRCLE_SHA1}
           requires:
-            - deploy-staging
-      - build_frontend_assets-staging:
-          context: mermaid-landing-staging
-          filters:
-            branches:
-              only:
-                staging
-          requires:
-            - deploy-staging
-            - install_node_dependencies-staging
-
-
-      - deploy-production:
-          context: mermaid-landing-production
-          filters:
-            branches:
-              only:
-                main
-      - install_php_dependencies-production:
-          context: mermaid-landing-production
-          filters:
-            branches:
-              only:
-                main
-      - install_node_dependencies-production:
-          context: mermaid-landing-production
-          filters:
-            branches:
-              only:
-                main
-      - build_frontend_assets-production:
-          context: mermaid-landing-production
-          filters:
-            branches:
-              only:
-                main
+            - node/run
