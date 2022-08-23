@@ -29,3 +29,5 @@ The deployment for this app is utilizing the CircleCI. For branching strategy, w
 - staging : branch for staging environment, any push/accepted PR towards this branch will be deployed outomatically into staging env.
 - main : production branch, after staging is well tested, you could promote the deployment into production by merge the staging branch to main branch. This will be automatically deploy to production.
 
+## Note
+Staging & Production env are stored in ElasticBeanstalk in AWS, any changes of the env variable should be made in AWS Console
