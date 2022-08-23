@@ -12,8 +12,16 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
 .DS_Store
 /.circleci
+
 /.ebextensions
 .ebignore
+
+.env
+.gitignore
+.github/*
+.git
+
 README.md
