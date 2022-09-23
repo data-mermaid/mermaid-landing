@@ -94,7 +94,6 @@ class EventServiceProvider extends ServiceProvider
             // Form Submit
             Event::listen(fn(SubmissionCreated $event) => $this->uploadFormSubmitted($event));
             Event::listen(fn(SubmissionDeleted $event) => $this->deleteFormSubmitted($event));
-//            Event::listen(fn(FormSubmitted $event) => $this->updateProjectAdmin($event));
         }
     }
 
@@ -206,27 +205,6 @@ class EventServiceProvider extends ServiceProvider
             }
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
-        }
-    }
-
-    /**
-     * Populate project admin details
-     * Dispatched when a Form is submitted on the front-end, before the Submission is created.
-     *
-     * @param $event
-     */
-    private function updateProjectAdmin($event)
-    {
-        $project_id = $event->submission->get('project_id');
-        if (isValidUUID($project_id)) {
-            $projectAdmin = DB::connection('pgsql_2')
-                ->table('vw_project_admins')
-                ->where('project_id', $project_id)
-                ->first();
-            if ($projectAdmin) {
-                $event->submission->set('admin_email', $projectAdmin->emails);
-                $event->submission->set('admin_name', $projectAdmin->name);
-            }
         }
     }
 

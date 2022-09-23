@@ -45,7 +45,6 @@
                             if (err_msg !== "") {
                                 showErrorRibbon(err_msg);
                             }
-                            document.getElementById('contact-form').submit();
                         })
 
                 }).catch(err => showErrorRibbon("Token expired, please reload page"));
@@ -98,7 +97,7 @@
 
                 <div class="row was-validation">
                     {{ fields }}
-                    {{ if handle != 'project_id' and handle != 'admin_email' and handle != 'admin_name' }}
+                    {{ if handle != 'project_id' }}
                     <div class="col-xs-12 {{ if width != '100' }} col-md-6 {{ /if }}">
                         <div class="field">
                             <label class="form-label">{{ display }}</label>
@@ -117,12 +116,6 @@
                     {{ else }}
                     {{ if handle == 'project_id' }}
                     <input name={{ handle }} id={{ handle }} type="hidden" value="{{ get:project_id }}">
-                    {{ elseif handle == 'admin_email' }}
-                    <input name={{ handle }} id={{ handle }} type="hidden"
-                        value="{{ contact_email project_id=get:project_id show='emails' }}">
-                    {{ elseif handle == 'admin_name' }}
-                    <input name={{ handle }} id={{ handle }} type="hidden"
-                        value="{{ contact_email project_id=get:project_id show='name' }}">
                     {{ /if }}
                     {{ /if }}
                     {{ /fields }}
