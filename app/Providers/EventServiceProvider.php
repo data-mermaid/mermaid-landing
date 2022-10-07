@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
+use App\Notifications\FailedS3Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Statamic\Events\AssetDeleted;
@@ -106,6 +108,7 @@ class EventServiceProvider extends ServiceProvider
     private function updateFileS3(string $path)
     {
         try {
+            Log::info('updateFileS3: ' . $path);
             $file = $this->escapeFilename($path);
 
             if (Storage::disk('s3')->exists($file)) {
@@ -114,6 +117,8 @@ class EventServiceProvider extends ServiceProvider
 
             Storage::disk('s3')->put($file, Storage::disk('root')->get($file));
         } catch (\Exception $exception) {
+            $event = ['action' => 'Update File', 'path' => $path, 'message' => $exception->getMessage()];
+            Notification::route('mail', config('mail.event_notification'))->notify(new FailedS3Event($event));
             Log::error($exception->getMessage());
         }
     }
@@ -127,6 +132,7 @@ class EventServiceProvider extends ServiceProvider
     private function updateAssetsS3(string $path)
     {
         try {
+            Log::info('updateAssetsS3: ' . $path);
             $file = $this->escapeFilename($path);
             $metaFile = '.meta/' . $this->escapeFilename($path) . '.yaml';
 
@@ -141,6 +147,8 @@ class EventServiceProvider extends ServiceProvider
             Storage::disk('s3')->put($file, Storage::disk('assets')->get($file));
             Storage::disk('s3')->put($metaFile, Storage::disk('assets')->get($metaFile));
         } catch (\Exception $exception) {
+            $event = ['action' => 'Update Asset', 'path' => $path, 'message' => $exception->getMessage()];
+            Notification::route('mail', config('mail.event_notification'))->notify(new FailedS3Event($event));
             Log::error($exception->getMessage());
         }
     }
@@ -154,6 +162,7 @@ class EventServiceProvider extends ServiceProvider
     private function deleteFileS3(string $path)
     {
         try {
+            Log::info('deleteFileS3: ' . $path);
             $file = $this->escapeFilename($path);
             $metaFile = '.meta/' . $this->escapeFilename($path) . '.yaml';
 
@@ -165,6 +174,8 @@ class EventServiceProvider extends ServiceProvider
                 Storage::disk('s3')->delete($metaFile);
             }
         } catch (\Exception $exception) {
+            $event = ['action' => 'Delete File', 'path' => $path, 'message' => $exception->getMessage()];
+            Notification::route('mail', config('mail.event_notification'))->notify(new FailedS3Event($event));
             Log::error($exception->getMessage());
         }
     }
@@ -182,8 +193,11 @@ class EventServiceProvider extends ServiceProvider
         $submissionId = $event->submission->id();
         $file = 'storage/forms/contact_us/' . $submissionId . '.yaml';
         try {
+            Log::info('uploadFormSubmitted: ' . $file);
             Storage::disk('s3')->put($file, Storage::disk('root')->get($file));
         } catch (\Exception $exception) {
+            $event = ['action' => 'Upload submission', 'path' => $file, 'message' => $exception->getMessage()];
+            Notification::route('mail', config('mail.event_notification'))->notify(new FailedS3Event($event));
             Log::error($exception->getMessage());
         }
     }
@@ -200,10 +214,13 @@ class EventServiceProvider extends ServiceProvider
         $submissionId = $event->submission->id();
         $file = 'storage/forms/contact_us/' . $submissionId . '.yaml';
         try {
+            Log::info('deleteFormSubmitted: ' . $file);
             if (Storage::disk('s3')->exists($file)) {
                 Storage::disk('s3')->delete($file);
             }
         } catch (\Exception $exception) {
+            $event = ['action' => 'Delete submission', 'path' => $file, 'message' => $exception->getMessage()];
+            Notification::route('mail', config('mail.event_notification'))->notify(new FailedS3Event($event));
             Log::error($exception->getMessage());
         }
     }
