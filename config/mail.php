@@ -87,7 +87,7 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
-    'event_notification' => env('MAIL_EVENT_NOTIFICATION', 'webcontact@datamermaid.org'),
+    'event_notification' => env('MAIL_EVENT_NOTIFICATION', 'sysadmin@datamermaid.org'),
 
     /*
     |--------------------------------------------------------------------------

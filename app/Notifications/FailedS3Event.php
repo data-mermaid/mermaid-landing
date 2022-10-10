@@ -43,7 +43,7 @@ class FailedS3Event extends Notification
         return (new MailMessage)
             ->subject('Failed to backup content/asset')
             ->markdown('templates.emails.failed-s3-event', [
-                'event_date' => date('F jS, Y h:i:s A'),
+                'event_date' => date('c'),
                 'action' => $this->event['action'],
                 'path' => $this->event['path'],
                 'message' => $this->event['message']
