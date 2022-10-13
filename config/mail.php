@@ -87,6 +87,8 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'event_notification' => env('MAIL_EVENT_NOTIFICATION', 'sysadmin@datamermaid.org'),
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
