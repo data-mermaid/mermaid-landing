@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c719a9ee7614cb970e12799c0ac10d7",
+    "content-hash": "39cfc006d9c2a16e2b89971097455442",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -71,75 +71,6 @@
                 "source": "https://github.com/ajthinking/archetype/tree/v0.2.8"
             },
             "time": "2021-11-20T12:33:35+00:00"
-        },
-        {
-            "name": "aryehraber/statamic-captcha",
-            "version": "v1.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aryehraber/statamic-captcha.git",
-                "reference": "dfa090f27e474b04db909fe58530a6834ab4bf11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aryehraber/statamic-captcha/zipball/dfa090f27e474b04db909fe58530a6834ab4bf11",
-                "reference": "dfa090f27e474b04db909fe58530a6834ab4bf11",
-                "shasum": ""
-            },
-            "require": {
-                "statamic/cms": "^3.0"
-            },
-            "type": "statamic-addon",
-            "extra": {
-                "statamic": {
-                    "name": "Captcha",
-                    "slug": "captcha",
-                    "description": "Protect your Statamic forms using a Captcha service",
-                    "version": "1.5.0"
-                },
-                "laravel": {
-                    "providers": [
-                        "AryehRaber\\Captcha\\CaptchaServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "AryehRaber\\Captcha\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Aryeh Raber",
-                    "email": "aryeh.raber@gmail.com",
-                    "homepage": "https://aryeh.dev",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Protect your Statamic forms using a Captcha service",
-            "homepage": "https://github.com/aryehraber/statamic-captcha",
-            "keywords": [
-                "Forms",
-                "captcha",
-                "hcaptcha",
-                "recaptcha",
-                "statamic"
-            ],
-            "support": {
-                "issues": "https://github.com/aryehraber/statamic-captcha/issues",
-                "source": "https://github.com/aryehraber/statamic-captcha/tree/v1.8.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/aryehraber",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-03-08T09:37:47+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -10789,5 +10720,5 @@
         "ext-pdo": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }

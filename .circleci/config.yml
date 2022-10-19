@@ -1,133 +1,91 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-#
-version: 2
+version: '2.1'
+orbs:
+  eb: circleci/aws-elastic-beanstalk@2.0.1
+  node: circleci/node@5.0.2
 jobs:
-  deploy:
+  deploy-beanstalk:
+    parameters:
+      app-dir:
+          default: .
+          description: Path to the directory containing your application source code. My default, the current directory will be used.
+          type: string
+      application-name:
+          default: ""
+          description: The name of the application (used during `eb init`).
+          type: string
+      description:
+          default: ""
+          description: The description for the application version, enclosed in double quotation marks.
+          type: string
+      environment-name:
+          default: ""
+          description: The name of the existing environment (created with `eb create`) to update.
+          type: string
+      image:
+          default: cimg/base:stable
+          description: Enter a custom docker image for this job. By default CircleCI's optimized `cimg/base` image will be used.
+          type: string
+      label:
+          default: ""
+          description: Specify a label to use for the version that the EB CLI creates. If the label has already been used, the EB CLI redeploys the previous version with that label.
+          type: string
+      platform-version:
+          default: node.js
+          description: The platform version to use. You can specify a platform, a platform and version, a platform branch, a solution stack name, or a solution stack ARN. Use 'eb platform list' to get a list of available configurations.
+          type: string
     docker:
-      - image: circleci/php:8.0-node-browsers
-
-    working_directory: ~/repo
-
+      - image: cimg/base:stable
     steps:
       - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "composer.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      # Install PHP vendors
-      - run: composer install -n --prefer-dist
-
-      # Save vendors
-      - save_cache:
-          paths:
-            - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
-
-      # Install NPM packages for frontend things
-      - run: npm install
-
-      # Save packages
-      - save_cache:
-          key: node-v3-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.yarn
-
-      # run tests!
-      # - run: phpunit
-
-      # Install software required to run EB deployer
+      - attach_workspace:
+          at: .
+      - eb/setup
       - run:
-          name: Installing deployment dependencies
-          working_directory: ~/repo
           command: |
-            sudo wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-            sudo apt-get -y -qq update
-            sudo apt-get install python3-pip python3-dev build-essential
-            sudo pip3 install "urllib3<1.23,>=1.21.1" awsebcli --upgrade
-      # Build css and js (prod script builds these. you should make your own)
-      - run:
-          name: Install Node modules
-          working_directory: ~/repo
-          command: npm run prod
-
-      - run:
-          name: Setup Environment Variables
-          command: |
-            cp .env.example .env
-            echo -e "APP_URL=$APP_URL" >> .env
-            echo -e "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
-            echo -e "AWS_BUCKET=$AWS_BUCKET" >> .env
-            echo -e "AWS_BUCKET_CONTENT=$AWS_BUCKET_CONTENT" >> .env
-            echo -e "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> .env
-            echo -e "CAPTCHA_SECRET=$CAPTCHA_SECRET" >> .env
-            echo -e "CAPTCHA_SITEKEY=$CAPTCHA_SITEKEY" >> .env
-            echo -e "CHANGELOG_PATH=$CHANGELOG_PATH" >> .env
-            echo -e "CHANGELOG_URL=$CHANGELOG_URL" >> .env
-            echo -e "DB_DATABASE=$DB_DATABASE" >> .env
-            echo -e "DB_DATABASE_2=$DB_DATABASE_2" >> .env
-            echo -e "DB_HOST=$DB_HOST" >> .env
-            echo -e "DB_HOST_2=$DB_HOST_2" >> .env
-            echo -e "DB_PASSWORD=$DB_PASSWORD" >> .env
-            echo -e "DB_PASSWORD_2=$DB_PASSWORD_2" >> .env
-            echo -e "DB_USERNAME=$DB_USERNAME" >> .env
-            echo -e "DB_USERNAME_2=$DB_USERNAME_2" >> .env
-            echo -e "EB_ENV_NAME=$EB_ENV_NAME" >> .env
-            echo -e "MAIL_HOST=$MAIL_HOST" >> .env
-            echo -e "MAIL_PASSWORD=$MAIL_PASSWORD" >> .env
-            echo -e "MAIL_PORT=$MAIL_PORT" >> .env
-            echo -e "MAIL_USERNAME=$MAIL_USERNAME" >> .env
-            echo -e "TINYMCE_CLOUD_APIKEY=$TINYMCE_CLOUD_APIKEY" >> .env
-            echo -e "STATAMIC_LICENSE_KEY=$STATAMIC_LICENSE_KEY" >> .env
-            echo -e "EB_ENV_NAME=$EB_ENV_NAME" >> .env
-            echo -e "EB_APP_NAME=$EB_APP_NAME" >> .env
-            echo -e "EB_KEY_NAME=$EB_KEY_NAME" >> .env
-            echo -e "MAIL_FROM_ADDRESS=$MAIL_FROM_ADDRESS" >> .env
-            echo -e "MAIL_FROM_NAME=$MAIL_FROM_NAME" >> .env
-
-      - run:
-          name: "Generate app key"
-          command: php artisan key:generate
-
-      - run:
-          name: "Linking storage from filesystem"
-          command: php artisan storage:link
-
-      - run:
-          name: "Mount latest content from cloud"
-          command: php artisan mount:content
-
-      - run:
-          name: "Generate .elasticbeanstalk config file"
-          command: php artisan eb:config
-
-      - run:
-          name: Make platform hook scripts executable
-          command: chmod +x .platform/hooks/**/*.sh
-
-      # Add everything (except vendors that will be installed automatically and node_modules that are not needed because we already built js and css) to a ZIP
-      - run:
-          name: ZIP project
-          working_directory: ~/repo
-          command: zip main.zip -r * .[^.]* --exclude=vendor/* --exclude=node_modules/* --exclude=.circleci/* --exclude=.elasticbeanstalk/*
-
-      # Run EB deploy
-      - run:
-          name: Deploying
-          command: eb deploy --staged $EB_ENV_NAME
+              eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p <<parameters.platform-version>>
+              eb deploy <<parameters.environment-name>> <<#parameters.label>>-l <<parameters.label>><</parameters.label>> <<#parameters.description>>-m <<parameters.description>><</parameters.description>>
+          name: EB Deploy
+          working_directory: <<parameters.app-dir>>
 
 workflows:
-  version: 2
-  build:
+  elastic-beanstalk-workflow:
     jobs:
-      - deploy:
+      - node/run:
+          post-steps:
+            - persist_to_workspace:
+                root: .
+                paths:
+                  - public/js
+                  - public/css
+                  - public/fonts
+                  - public/mix-manifest.json
+          npm-run: production
+          filters:
+            branches:
+              only:
+                - staging
+                - main
+      - deploy-beanstalk:
+          context: aws-mermaid-landing
+          application-name: $EB_APP_NAME
+          environment-name: $EB_ENV_NAME_STAGING
+          platform-version: $EB_PLATFORM
+          filters:
+            branches:
+              only:
+                - staging
+          label: version-stag-${CIRCLE_SHA1}
+          requires:
+            - node/run
+      - deploy-beanstalk:
+          context: aws-mermaid-landing
+          application-name: $EB_APP_NAME
+          environment-name: $EB_ENV_NAME_PRODUCTION
+          platform-version: $EB_PLATFORM
           filters:
             branches:
               only:
                 - main
+          label: version-prod-${CIRCLE_SHA1}
+          requires:
+            - node/run
