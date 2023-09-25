@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class MountContent extends Command
 {
@@ -56,6 +57,48 @@ class MountContent extends Command
                 Storage::disk('root')->put($file, Storage::disk('s3')->get($file));
                 $bar->advance();
             }
+            $bar->finish();
+            $this->newLine();
+
+            $files = Storage::disk('s3')->allFiles('/');
+            $bar = $this->output->createProgressBar(count($files));
+
+            $this->info('Downloading assets from cloud...');
+
+            $bar->start();
+            foreach ($files as $file) {
+                if (Str::contains($file, 'content/') || Str::contains($file, 'storage/forms/contact_us/')) { // Ignore content directory
+                    continue;
+                }
+                Storage::disk('root')->put('public/assets/' . $file, Storage::disk('s3')->get($file));
+                $bar->advance();
+            }
+            $bar->finish();
+            $this->newLine();
+
+            $files = Storage::disk('s3')->allFiles('storage/forms/contact_us/');
+            $bar = $this->output->createProgressBar(count($files));
+
+            $this->info('Downloading form submission from cloud...');
+
+            $bar->start();
+            foreach ($files as $file) {
+                Storage::disk('root')->put($file, Storage::disk('s3')->get($file));
+                $bar->advance();
+            }
+            $bar->finish();
+            $this->newLine();
+
+            $files = Storage::disk('s3')->allFiles('resources/users/');
+            $bar = $this->output->createProgressBar(count($files));
+            $this->info('Downloading form user roles and groups from cloud...');
+
+            $bar->start();
+            foreach ($files as $file) {
+                Storage::disk('root')->put($file, Storage::disk('s3')->get($file));
+                $bar->advance();
+            }
+
             $bar->finish();
             $this->newLine();
 

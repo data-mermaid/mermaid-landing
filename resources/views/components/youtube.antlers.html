@@ -4,7 +4,12 @@
             {{ if url | is_embeddable }}
             <!-- Youtube and Vimeo -->
             <div class="ratio ratio-16x9">
-                <iframe src="{{ url | embed_url }}"></iframe>
+                {{ if current_template  == 'templates/tutorial-download'}}
+                    <img class="youtube-thumbnail" src="https://i3.ytimg.com/vi/{{ url replace="https://www.youtube.com/watch?v=" }}/maxresdefault.jpg" alt=""/>
+                    <img class="youtube-play-icon" src="/images/icon/play.png" alt=""/>
+                {{ else }}
+                    <iframe src="{{ url | embed_url }}"></iframe>
+                {{ endif }}
             </div>
             {{ else }}
             <!-- Other HTML5 video types -->

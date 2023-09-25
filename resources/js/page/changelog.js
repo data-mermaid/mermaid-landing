@@ -64,5 +64,14 @@ $(document).ready(function () {
             // console.log(i);
             $('.changelogs .version[data-index="' + i + '"]').removeClass('hide');
         }
+
+        $('.changelogs .version .desc').each(function(){
+            let str = $(this).html();
+            const regex = /(`.*?`)/g;
+            str = str.replaceAll(regex, '<code>$1</code>');
+            str = str.replaceAll('`','');
+            $(this).html(str);
+        });
+
     }
 })

@@ -1,21 +1,27 @@
 <div class="page-generic-container page-changelog">
     {{ partial src="partials/_animated-wave" }}
-    
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="narrow-content">
                     <h1 class="main-title">{{ title }}</h1>
-                    {{ if intro }}
-                    <div class="intro-large">
-                        {{ intro }}
-                    </div>
+                    {{ if {changelog:check} }}
+                        {{ if intro }}
+                        <div class="intro-large">
+                            {{ intro }}
+                        </div>
+                        {{ /if }}
+                    {{ else }}
+                        <p>Failed to fetch changelog, please try again later</p>
+                        <a href="/" class="btn btn-primary btn-small">
+                            Return to Homepage
+                        </a>
                     {{ /if }}
                 </div>
             </div>
         </div>
     </div>
-    
+    {{ if {changelog:check} }}
     <div class="content">
         <div class="container">
             <div class="row">
@@ -46,7 +52,7 @@
                             </div>
                             {{ /changelog }}
                         </div>
-        
+
                         <div class="pagination-container">
                             <nav class="align-center">
                                 <ul class="pagination justify-content-center changelog-pagination">
@@ -57,21 +63,20 @@
                                         <span class="page-link">...</span>
                                     </li>
                                     {{ changelog }}
-                    
+
                                     {{ if index % 3  ===  0 }}
                                     {{ if index | divide:3 | add:1 == total_results | divide:3 }}
                                     <!-- <li class="page-item ellipsis ellipsis-next">
                                         <span class="page-link">...</span>
                                     </li> -->
                                     {{ /if }}
-                    
-                    
+
                                     <li class="page-item page-number" data-page="{{ index | divide:3 | add:1 }}">
                                         <a class="page-link" data-page="{{ index | divide:3 | add:1 }}" href="#">
                                             {{ index | divide:3 | add:1 }}
                                         </a>
                                     </li>
-                    
+
                                     {{ if index | divide:3 | add:1 == 1 }}
                                     <!-- <li class="page-item ellipsis ellipsis-prev">
                                         <span class="page-link">...</span>
@@ -79,14 +84,13 @@
                                     {{ /if }}
                                     {{ /if }}
                                     {{ /changelog }}
-                    
+
                                     <li class="page-item ellipsis ellipsis-next">
                                         <span class="page-link">...</span>
                                     </li>
                                     <li class="page-item next">
                                         <a class="page-link" href="#"></a>
                                     </li>
-                
                                 </ul>
                             </nav>
                         </div>
@@ -95,4 +99,5 @@
             </div>
         </div>
     </div>
+    {{ /if }}
 </div>

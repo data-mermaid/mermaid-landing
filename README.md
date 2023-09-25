@@ -1,40 +1,111 @@
-<p align="center"><img src="https://statamic.com/assets/branding/Statamic-Logo+Wordmark-Rad.svg" width="400" alt="Statamic Logo" /></p>
+# MERMAID Landing Site
 
-## About Statamic 3
+## Prerequisites
+- AWS IAM user credentials with Elastic Beanstalk access
+- Access to or fork of mermaid-landing git repository (this)
+- CircleCI access in order to use CI/CD scripts
+- RDS database 
 
-Statamic 3 is the flat-first, Laravel + Git powered CMS designed for building beautiful, easy to manage websites.
+## Create new Elastic Beanstalk environment
+- Login with IAM user to AWS EB service page
+- Create new EB Environment, select Web server environment
+- Fill in the forms as below:
+    - Application name eg: `mermaid-landing-test`
+    - Environment name eg: `mermaid-landing-test-env`
+    - Select platform for **PHP 8.0**
+    - Select `Sample application` on **Application Code**
+    - **Configure more options** edits 
+        - **Software:**
+            - Select Nginx for Proxy server and change Document root to `/public`
+        - **Security:**
+            - Select the appropriate EC2 key pair 
+        - **Instance:**
+            - Check the appropriate EC2 security groups
 
-> **Note:** This repository contains the code for the Statamic application. To contribute to the core package, visit the [Statamic core package repository][cms-repo].
+## Environment variables
+- Full list of env variables
+```
+APP_NAME="WCS MERMAID"
+APP_ENV=
+APP_KEY=
+APP_DEBUG=false
+APP_URL=
+TINYMCE_CLOUD_APIKEY=
 
+STATAMIC_THEME=business
+STATAMIC_CUSTOM_CMS_NAME="WCS MERMAID CMS"
+STATAMIC_CUSTOM_LOGO_URL="/logo.png"
+STATAMIC_CUSTOM_FAVICON_URL="/favicon.png"
 
-## Learning Statamic
+STATAMIC_LICENSE_KEY=
+STATAMIC_STACHE_WATCHER=true
+STATAMIC_STATIC_CACHING_STRATEGY=null
+STATAMIC_REVISIONS_ENABLED=false
+STATAMIC_GRAPHQL_ENABLED=false
+STATAMIC_API_ENABLED=false
 
-Statamic 3 has extensive [documentation][docs]. We dedicate a significant amount of time and energy every day to improving them, so if something is unclear, feel free to open issues for anything you find confusing or incomplete. We are happy to consider anything you feel will make the docs and CMS better.
+STATAMIC_GIT_ENABLED=true
+STATAMIC_GIT_AUTOMATIC=false
 
-## Support
+LOG_CHANNEL=stack
+FILESYSTEM_DRIVER=s3
+FILESYSTEM_CLOUD=s3
 
-We provide official developer support on [Statamic 3 Pro](https://statamic.com/pricing) projects. Community-driven support is available on the [forum](https://statamic.com/forum) and in [Discord][discord].
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
 
+DB_CONNECTION_2=pgsql_2
+DB_HOST_2=127.0.0.1
+DB_PORT_2=5432
+DB_DATABASE_2=
+DB_USERNAME_2=
+DB_PASSWORD_2=
 
-## Contributing
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
 
-Thank you for considering contributing to Statamic! We simply ask that you review the [contribution guide][contribution] before you open issues or send pull requests.
+MAIL_MAILER=
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
 
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME=
 
-## Code of Conduct
+ENABLE_SYNC_CLOUD=true
 
-In order to ensure that the Statamic community is welcoming to all and generally a rad place to belong, please review and abide by the [Code of Conduct](https://github.com/statamic/cms/wiki/Code-of-Conduct).
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=
+AWS_BUCKET=
 
+CHANGELOG_URL=
+CHANGELOG_PATH=
 
-## Important Links
+STATAMIC_LINK_TO_DOCS=false
+STATAMIC_SUPPORT_URL=false
 
-- [Statamic Main Site](https://statamic.com)
-- [Statamic 3 Documentation][docs]
-- [Statamic 3 Core Package Repo][cms-repo]
-- [Statamic 3 Migrator](https://github.com/statamic/migrator)
-- [Statamic Discord][discord]
+CAPTCHA_SECRET=
+CAPTCHA_SITEKEY=
 
-[docs]: https://statamic.dev/
-[discord]: https://statamic.com/discord
-[contribution]: https://github.com/statamic/cms/blob/master/CONTRIBUTING.md
-[cms-repo]: https://github.com/statamic/cms
+EB_ENV_NAME=
+EB_APP_NAME=
+EB_KEY_NAME=
+EB_REGION=
+```
+- Add the following environment variables on CircleCI project setting page:
+    - `APP_URL` : your domain
+    - `EB_ENV_NAME` : your elastic beanstalk env name
+    - `EB_APP_NAME` : your elastic beanstalk app name
+    - `EB_REGION` : your elastic beanstalk region
+    - `EB_KEY_NAME` : your selected EC2 key pair
+    
