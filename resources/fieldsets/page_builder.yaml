@@ -30,6 +30,9 @@ fields:
                 type: tinymce_cloud
                 icon: textarea
                 listable: hidden
+                instructions_position: above
+                visibility: visible
+                config: Default
         single-image:
           display: 'Single Image'
           fields:
@@ -97,6 +100,9 @@ fields:
                 type: tinymce_cloud
                 icon: textarea
                 listable: hidden
+                instructions_position: above
+                visibility: visible
+                config: Default
         youtube:
           display: Youtube
           fields:
@@ -492,6 +498,9 @@ fields:
       icon: replicator
       listable: false
       instructions: 'Build your page by using various predefined content models.'
+      instructions_position: above
+      visibility: visible
+      previews: true
       if:
         template: 'contains_any page-show, article-show, tutorial'
         external: 'equals false'
