@@ -11,6 +11,7 @@ sections:
           type: text
           icon: text
           listable: hidden
+          localizable: true
       -
         handle: lead
         field:
@@ -33,6 +34,10 @@ sections:
           type: tinymce_cloud
           icon: textarea
           listable: hidden
+          instructions_position: above
+          visibility: visible
+          config: Default
+          localizable: true
       -
         handle: button_label
         field:
@@ -43,6 +48,7 @@ sections:
           icon: text
           width: 50
           listable: hidden
+          localizable: true
       -
         handle: button_url
         field:
@@ -53,6 +59,7 @@ sections:
           icon: text
           width: 50
           listable: hidden
+          localizable: false
       -
         handle: small_image
         field:
@@ -67,6 +74,7 @@ sections:
           listable: true
           instructions: 'Recommended dimension 373x340 px or 746x680 px'
           width: 50
+          localizable: false
       -
         handle: large_image
         field:
@@ -83,3 +91,4 @@ sections:
           width: 50
           instructions_position: above
           show_filename: true
+          localizable: false
