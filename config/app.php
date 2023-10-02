@@ -11,6 +11,9 @@ return [
     'changelog_url' => env('CHANGELOG_URL', 'https://changelog.datamermaid.org'),
     'changelog_path' => env('CHANGELOG_PATH', 'changelog/mermaid-changelog.json'),
     'enable_sync_cloud' => env('ENABLE_SYNC_CLOUD', false),
+    'recaptcha_site_key' => env('RECAPTCHA_SITE_KEY', '6LeBdr8hAAAAAGgzC25qIsk6c5M4FfNfyZdB-i-I'),
+    'contact_api_url' => env('CONTACT_API_URL', 'https://dev-api.datamermaid.org/v1/contactmermaid/'),
+    'contact_project_api_url' => env('CONTACT_PROJECT_API_URL', 'https://dev-api.datamermaid.org/v1/contactprojectadmins/'),
 
     /*
     |--------------------------------------------------------------------------

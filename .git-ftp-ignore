@@ -1,0 +1,6 @@
+.env
+.gitignore
+.circleci/*
+.github/*
+.platform/*
+.ebignore

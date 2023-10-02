@@ -1,0 +1,18 @@
+version: "3.2"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-fpm
+    image: mermaid-landing-app
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www
+    networks:
+      - internal-communication
+
+networks:
+  internal-communication:
+    driver: bridge
+    external: true

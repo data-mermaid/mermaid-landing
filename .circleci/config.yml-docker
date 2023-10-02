@@ -1,0 +1,123 @@
+version: '2.1'
+jobs:
+  deploy: &deploy
+    #circleci_ip_ranges: true
+    docker:
+      - image: dotsunited/git-ftp
+    steps:
+      - checkout
+      - run:
+          name: Deploy Application
+          command: git ftp push --user $SERVER_USER --passwd $SERVER_PASS --insecure ftp://$SERVER_HOST:$SERVER_PORT/ -v
+  install_php_dependencies: &install_php_dependencies
+    #circleci_ip_ranges: true
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - $FINGERPRINT
+      - run:
+          name: Install Statamic Dependency
+          command: ssh $SERVER_USER@$SERVER_HOST "docker exec app composer install"
+  install_node_dependencies: &install_node_dependencies
+    #circleci_ip_ranges: true
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - $FINGERPRINT
+      - run:
+          name: Install Node Dependency
+          command: ssh $SERVER_USER@$SERVER_HOST "docker exec app npm ci"
+  build_frontend_assets: &build_frontend_assets
+    #circleci_ip_ranges: true
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - $FINGERPRINT
+      - run:
+          name: Build Frontend Assets
+          command: ssh $SERVER_USER@$SERVER_HOST "docker exec app npm run production"
+
+  deploy-staging:
+    <<: *deploy
+  install_php_dependencies-staging:
+    <<: *install_php_dependencies
+  install_node_dependencies-staging:
+    <<: *install_node_dependencies
+  build_frontend_assets-staging:
+    <<: *build_frontend_assets
+
+  deploy-production:
+    <<: *deploy
+  install_php_dependencies-production:
+    <<: *install_php_dependencies
+  install_node_dependencies-production:
+    <<: *install_node_dependencies
+  build_frontend_assets-production:
+    <<: *build_frontend_assets
+
+workflows:
+  deployments:
+    jobs:
+      - deploy-staging:
+          context: mermaid-landing-staging
+          filters:
+            branches:
+              only:
+                staging
+      - install_php_dependencies-staging:
+          context: mermaid-landing-staging
+          filters:
+            branches:
+              only:
+                staging
+          requires:
+            - deploy-staging
+      - install_node_dependencies-staging:
+          context: mermaid-landing-staging
+          filters:
+            branches:
+              only:
+                staging
+          requires:
+            - deploy-staging
+      - build_frontend_assets-staging:
+          context: mermaid-landing-staging
+          filters:
+            branches:
+              only:
+                staging
+          requires:
+            - deploy-staging
+            - install_node_dependencies-staging
+
+
+      - deploy-production:
+          context: mermaid-landing-production
+          filters:
+            branches:
+              only:
+                main
+      - install_php_dependencies-production:
+          context: mermaid-landing-production
+          filters:
+            branches:
+              only:
+                main
+      - install_node_dependencies-production:
+          context: mermaid-landing-production
+          filters:
+            branches:
+              only:
+                main
+      - build_frontend_assets-production:
+          context: mermaid-landing-production
+          filters:
+            branches:
+              only:
+                main
