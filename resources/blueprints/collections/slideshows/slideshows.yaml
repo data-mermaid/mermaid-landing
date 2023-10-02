@@ -14,6 +14,7 @@ sections:
           listable: hidden
           input_type: text
           antlers: false
+          localizable: true
       -
         handle: description
         field:
@@ -39,6 +40,7 @@ sections:
           instructions_position: above
           visibility: visible
           config: Default
+          localizable: true
       -
         handle: images
         field:
@@ -50,6 +52,15 @@ sections:
           icon: assets
           listable: hidden
           instructions: 'Recommended dimension 785x440 px or 1570x880 px'
+          localizable: false
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -57,7 +68,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required
