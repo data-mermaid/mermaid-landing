@@ -23,7 +23,7 @@ sections:
         field:
           type: slug
           required: true
-          localizable: false
+          localizable: true
           validate:
             - required
 title: Category
