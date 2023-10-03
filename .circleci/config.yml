@@ -50,6 +50,8 @@ jobs:
 workflows:
   elastic-beanstalk-workflow:
     jobs:
+      - node/install:
+          node-version: '16.13'
       - node/run:
           post-steps:
             - persist_to_workspace:
