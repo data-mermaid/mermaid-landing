@@ -47,20 +47,9 @@ jobs:
           name: EB Deploy
           working_directory: <<parameters.app-dir>>
 
-  install-node:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - node/install:
-          install-yarn: true
-          node-version: '16.13'
-      - run: node --version
-
 workflows:
   elastic-beanstalk-workflow:
     jobs:
-      - install-node
       - node/run:
           post-steps:
             - persist_to_workspace:
@@ -71,6 +60,7 @@ workflows:
                   - public/fonts
                   - public/mix-manifest.json
           npm-run: production
+          version: '16.13'
           filters:
             branches:
               only:
