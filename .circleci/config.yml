@@ -46,6 +46,16 @@ jobs:
               eb deploy <<parameters.environment-name>> <<#parameters.label>>-l <<parameters.label>><</parameters.label>> <<#parameters.description>>-m <<parameters.description>><</parameters.description>>
           name: EB Deploy
           working_directory: <<parameters.app-dir>>
+  
+  install-node-example:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
 
 workflows:
   elastic-beanstalk-workflow:
