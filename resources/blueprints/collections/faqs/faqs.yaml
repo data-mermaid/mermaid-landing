@@ -36,6 +36,9 @@ sections:
           type: tinymce_cloud
           icon: textarea
           listable: hidden
+          instructions_position: above
+          visibility: visible
+          config: Default
   sidebar:
     display: Sidebar
     fields:
@@ -43,7 +46,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required

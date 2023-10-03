@@ -36,6 +36,9 @@ sections:
           type: tinymce_cloud
           icon: textarea
           listable: hidden
+          instructions_position: above
+          visibility: visible
+          config: Default
           instructions: 'Recommended max characters: ideally 180 (but you can push to 200 if you must)'
       -
         handle: avatar

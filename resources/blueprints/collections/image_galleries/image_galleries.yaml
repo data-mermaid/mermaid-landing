@@ -36,6 +36,9 @@ sections:
           type: tinymce_cloud
           icon: textarea
           listable: hidden
+          instructions_position: above
+          visibility: visible
+          config: Default
       -
         handle: images
         field:

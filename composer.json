@@ -12,6 +12,8 @@
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
         "ext-pdo": "*",
+        "appswithlove/statamic-one-click-content-translation": "^3.4",
+        "aryehraber/statamic-captcha": "1.10.0",
         "doctrine/dbal": "^3.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
@@ -19,10 +21,10 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "mitydigital/statamic-tinymce-cloud": "^1.0",
+        "mitydigital/statamic-tinymce-cloud": "^2.1",
         "pecotamic/sitemap": "^1.2",
         "simonridley/tracking-code-manager": "dev-master",
-        "statamic/cms": "3.2.38"
+        "statamic/cms": "3.4.11"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

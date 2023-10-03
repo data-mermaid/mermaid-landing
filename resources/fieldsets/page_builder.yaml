@@ -30,6 +30,9 @@ fields:
                 type: tinymce_cloud
                 icon: textarea
                 listable: hidden
+                instructions_position: above
+                visibility: visible
+                config: Default
         single-image:
           display: 'Single Image'
           fields:
@@ -46,6 +49,60 @@ fields:
                 icon: assets
                 listable: hidden
                 instructions: 'Recommended dimension 785x440 px or 1570x880 px'
+        image-text:
+          display: 'Image Text'
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                width: 75
+                listable: hidden
+                instructions: 'Recommended dimension 785x440 px or 1570x880 px'
+            -
+              handle: position
+              field:
+                options:
+                  left: Left
+                  right: Right
+                display: Position
+                default: left
+                type: button_group
+                icon: button_group
+                width: 25
+                listable: hidden
+            -
+              handle: text
+              field:
+                init: |-
+                  {
+                  	"height": 500,
+                  	"menubar": false,
+                  	"plugins": [
+                  		"advlist autolink lists link image charmap print preview anchor footnotes",
+                  		"searchreplace visualblocks code fullscreen",
+                  		"insertdatetime media table paste code help wordcount",
+                  		"code"
+                  	],
+                  	"external_plugins": {
+                          "footnotes": "/vendor/tinymce/footnotes/plugin.js"
+                      },
+                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
+                  }
+                display: Text
+                type: tinymce_cloud
+                icon: textarea
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+                config: Default
         youtube:
           display: Youtube
           fields:
@@ -99,15 +156,13 @@ fields:
               handle: slideshow
               field:
                 max_items: 1
-                mode: select
+                mode: default
                 collections:
                   - slideshows
                 display: Slideshow
                 type: entries
                 icon: entries
                 listable: hidden
-                instructions_position: above
-                create: true
         staff:
           display: Teams
           fields:
@@ -129,6 +184,60 @@ fields:
                 display: Team
                 type: entries
                 icon: entries
+                listable: hidden
+        featured-publication:
+          display: 'Featured Publication'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: publications
+              field:
+                collapse: accordion
+                sets:
+                  publication:
+                    display: Publication
+                    fields:
+                      -
+                        handle: title
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Title
+                          type: text
+                          icon: text
+                          listable: hidden
+                      -
+                        handle: url
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Url
+                          type: text
+                          icon: text
+                          listable: hidden
+                      -
+                        handle: image
+                        field:
+                          mode: grid
+                          container: assets
+                          restrict: false
+                          allow_uploads: true
+                          max_files: 1
+                          display: Image
+                          type: assets
+                          icon: assets
+                          listable: hidden
+                display: Publications
+                type: replicator
+                icon: replicator
                 listable: hidden
         faq:
           display: FAQ
@@ -228,9 +337,7 @@ fields:
                 icon: assets
                 width: 50
                 listable: hidden
-                instructions: 'Recommended dimension 1366x660 px or 1920x928 px'
-                instructions_position: above
-                show_filename: true
+                instructions: 'Recommended dimension 1366x660 px or 2732x1320 px'
             -
               handle: position
               field:
@@ -392,5 +499,8 @@ fields:
       listable: false
       instructions: 'Build your page by using various predefined content models.'
       instructions_position: above
+      visibility: visible
+      previews: true
       if:
         template: 'contains_any page-show, article-show, tutorial'
+        external: 'equals false'
