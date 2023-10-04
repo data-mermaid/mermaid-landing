@@ -402,3 +402,4 @@ fields:
       instructions_position: above
       if_any:
         template: 'equals templates/home'
+      localizable: true

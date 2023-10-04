@@ -14,6 +14,7 @@ sections:
           listable: hidden
           input_type: text
           antlers: false
+          localizable: false
       -
         handle: profile
         field:
@@ -40,6 +41,7 @@ sections:
           visibility: visible
           config: Default
           instructions: 'Recommended max characters: ideally 180 (but you can push to 200 if you must)'
+          localizable: true
       -
         handle: avatar
         field:
@@ -53,6 +55,7 @@ sections:
           listable: hidden
           container: assets
           instructions: 'Recommended dimension 200x200 px or 400x400 px'
+          localizable: false
       -
         handle: position
         field:
@@ -62,6 +65,7 @@ sections:
           type: text
           icon: text
           listable: hidden
+          localizable: false
       -
         handle: organization
         field:
@@ -71,6 +75,7 @@ sections:
           type: text
           icon: text
           listable: hidden
+          localizable: false
       -
         handle: link
         field:
@@ -78,6 +83,15 @@ sections:
           type: link
           icon: link
           listable: hidden
+          localizable: false
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -85,7 +99,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required

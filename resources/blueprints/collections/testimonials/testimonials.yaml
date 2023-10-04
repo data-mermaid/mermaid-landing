@@ -15,6 +15,7 @@ sections:
           listable: hidden
           input_type: text
           antlers: false
+          localizable: false
       -
         handle: position
         field:
@@ -25,6 +26,7 @@ sections:
           icon: text
           width: 50
           listable: hidden
+          localizable: false
       -
         handle: quotes
         field:
@@ -35,6 +37,7 @@ sections:
           listable: hidden
           instructions: 'Recommended max characters: 160 (but you can push to 190 if you must)'
           character_limit: '190'
+          localizable: true
       -
         handle: photo
         field:
@@ -48,6 +51,15 @@ sections:
           listable: hidden
           container: assets
           instructions: 'Recommended dimension 300x300 px or 600x600 px'
+          localizable: false
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -55,7 +67,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required

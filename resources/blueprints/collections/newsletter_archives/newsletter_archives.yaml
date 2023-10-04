@@ -11,6 +11,7 @@ sections:
           validate:
             - required
           width: 50
+          localizable: true
       -
         handle: link
         field:
@@ -21,6 +22,7 @@ sections:
           icon: text
           width: 50
           listable: true
+          localizable: false
       -
         handle: hero_image
         field:
@@ -33,6 +35,7 @@ sections:
           icon: assets
           listable: hidden
           instructions: 'Recommended dimension 992x515 px or 1984x1030 px'
+          localizable: false
       -
         handle: intro
         field:
@@ -41,6 +44,15 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          localizable: true
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -48,7 +60,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required
@@ -68,3 +79,4 @@ sections:
           type: date
           icon: date
           listable: hidden
+          localizable: false
