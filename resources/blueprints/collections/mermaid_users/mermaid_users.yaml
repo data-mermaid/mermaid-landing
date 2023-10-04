@@ -1,4 +1,4 @@
-title: 'Partners'
+title: Partners
 sections:
   main:
     display: Main
@@ -14,6 +14,7 @@ sections:
           listable: hidden
           input_type: text
           antlers: false
+          localizable: true
       -
         handle: description
         field:
@@ -22,6 +23,7 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          localizable: true
       -
         handle: display_as_carousel
         field:
@@ -31,6 +33,7 @@ sections:
           listable: hidden
           instructions: 'Set true to enable the carousel mode (left aligned)'
           default: false
+          localizable: false
       -
         handle: users
         field:
@@ -65,6 +68,15 @@ sections:
           type: replicator
           icon: replicator
           listable: hidden
+          localizable: false
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -72,7 +84,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required

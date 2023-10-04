@@ -12,13 +12,15 @@ MERMAID (Marine Ecological Research Management Aid) Landing Site. Transform unde
 Step by step to provision local environment
 1. Create an .env files by copying from .env.example and fill the required environment variable.
 2. Run this command ``` docker compose -f docker-compose.local.yml up ```
-2. To install the php dependencies, open other terminal and run ``` docker exec -it app composer install```
-3. To install nodejs dependencies for frontend, run ```docker exec -it app npm install```
-4. To build / mix the assets, run ```docker exec -it app npm development```
-5. Link the storage by runing this commnad ```docker exec -it app php artisan storage:link```
-6. Then mount the content by runing this command ```docker exec -it app php artisan mount:content```
+2. To install the php dependencies, open other terminal and run ``` docker exec -it php-fpm composer install```
+3. To install nodejs dependencies for frontend, run ```docker exec -it php-fpm npm install```
+4. To build / mix the assets, run ```docker exec -it php-fpm npm development```
+5. Link the storage by runing this commnad ```docker exec -it php-fpm php artisan storage:link```
+6. Then mount the content by runing this command ```docker exec -it php-fpm php artisan mount:content```
 7. Any other command that you wanna run, just add prefix ```docker exec -it``` then follow with your command such as ```npm, composer, php artisan,  etc```
-7. Open http://localhost:8081 to access the website.
+8. Open http://localhost:8081 to access the website.
+
+Note : you also could log into container using sh by typing ``` docker exec -it php-fpm sh ``` ( to fix the files permission, environment, etc )
 
 
 

@@ -504,3 +504,4 @@ fields:
       if:
         template: 'contains_any page-show, article-show, tutorial'
         external: 'equals false'
+      localizable: true
