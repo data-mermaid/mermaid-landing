@@ -10,6 +10,7 @@ sections:
           required: true
           validate:
             - required
+          localizable: true
       -
         handle: intro
         field:
@@ -18,8 +19,17 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          localizable: true
       -
         import: page_builder
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -32,11 +42,11 @@ sections:
           type: users
           icon: users
           listable: hidden
+          localizable: false
       -
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required
@@ -56,6 +66,7 @@ sections:
           type: date
           icon: date
           listable: hidden
+          localizable: false
       -
         handle: categories
         field:
@@ -66,6 +77,7 @@ sections:
           mode: select
           listable: hidden
           max_items: 1
+          localizable: false
       -
         handle: keywords
         field:
@@ -74,6 +86,7 @@ sections:
           icon: tags
           instructions: 'Press enter'
           listable: hidden
+          localizable: false
       -
         handle: template
         field:
@@ -83,6 +96,16 @@ sections:
           icon: template
           listable: hidden
           default: templates/tutorial
+          localizable: false
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - tutorials
+          max_items: 1
+          listable: false
+          localizable: true
   meta_data:
     display: 'Meta Data'
     fields:
@@ -94,6 +117,7 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          localizable: true
       -
         handle: meta_title
         field:
@@ -103,6 +127,7 @@ sections:
           type: text
           icon: text
           listable: hidden
+          localizable: true
       -
         handle: meta_image
         field:
@@ -114,3 +139,4 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          localizable: false

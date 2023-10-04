@@ -14,6 +14,7 @@ sections:
           listable: hidden
           input_type: text
           antlers: false
+          localizable: true
       -
         handle: answer
         field:
@@ -39,6 +40,15 @@ sections:
           instructions_position: above
           visibility: visible
           config: Default
+          localizable: true
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
