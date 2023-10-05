@@ -1,4 +1,4 @@
-Sadmin:
+admin:
   title: Administrators
   roles:
     - admin
