@@ -1,0 +1,6 @@
+name: 'Projects Catalyze'
+super: true
+roles:
+  - admin
+id: 49bd478c-7fd9-4cc4-ae26-619da21694dc
+password_hash: $2y$10$dLTlAkLnqTyZ/t.Lc8iPJ.UAM7LYrh779/lN.obMjw1FuRSE9fzwC
