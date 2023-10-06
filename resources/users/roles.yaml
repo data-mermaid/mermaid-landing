@@ -2,3 +2,12 @@ admin:
   title: Administrator
   permissions:
     - super
+devs:
+  title: Devs
+editor:
+  title: Editor
+  permissions:
+    - 'view faqs entries'
+    - 'edit faqs entries'
+    - 'view newsletter_archives entries'
+    - 'edit newsletter_archives entries'
