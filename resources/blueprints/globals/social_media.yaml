@@ -8,6 +8,7 @@ sections:
           type: section
           listable: hidden
           display: 'Social media links'
+          localizable: false
       -
         handle: social_media
         field:
@@ -140,7 +141,7 @@ sections:
                     default: 'https://www.github.com/'
           type: replicator
           listable: hidden
-          localizable: true
+          localizable: false
           display: 'Social media'
       -
         handle: social_media_share
@@ -149,6 +150,7 @@ sections:
           type: section
           icon: section
           listable: hidden
+          localizable: false
       -
         handle: default_share_image
         field:
@@ -160,6 +162,7 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          localizable: false
       -
         handle: default_description
         field:
@@ -168,3 +171,4 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          localizable: true
