@@ -28,7 +28,7 @@ return [
         ],
         'ID' => [
             'name' => 'Bahasa Indonesia',
-            'locale' => 'in_ID',
+            'locale' => 'id',
             'url' => env('APP_URL_ID'),
         ],
         'FJ' => [
