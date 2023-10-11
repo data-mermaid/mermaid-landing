@@ -41,9 +41,11 @@
                             </li>
                         {{ /if }}
                     {{ /nav:main_nav }}
+                </ul>
+                <ul class="navbar-nav">
                     <!-- Language -->
                     {{ if current_uri | segment(1) == 'documentation' }}
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown dropdown-language">
                         <a href="{{ url }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             {{ locale == 'default' ? 'EN' : locale }}
                         </a>
