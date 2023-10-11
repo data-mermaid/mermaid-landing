@@ -122,8 +122,8 @@
                 }
             }
 
-            &:nth-last-child(2),
-            &:nth-last-child(3) {
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
                 .nav-link {
                     color: $color-white !important;
                     padding: 3px 20px;
@@ -175,14 +175,20 @@
                 }
             }
 
-            &:nth-last-child(2) {
+            &:nth-last-child(1) {
                 margin-left: 8px;
                 margin-right: 0;
             }
 
-            &:nth-last-child(3) {
+            &:nth-last-child(2) {
                 margin-right: 8px;
                 margin-left: 10px;
+            }
+        }
+
+        .dropdown-language {
+            .nav-link {
+                background-color: $color-blue-text !important;
             }
         }
 
@@ -261,6 +267,7 @@
         }
 
     }
+
 
     .navbar-brand {
         display: flex;
@@ -500,8 +507,8 @@
                     }
                 }
 
-                &:nth-last-child(2),
-                &:nth-last-child(3) {
+                &:nth-last-child(1),
+                &:nth-last-child(2) {
                     margin: 10px 0;
 
                     .nav-link {
