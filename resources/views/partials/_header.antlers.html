@@ -44,14 +44,23 @@
                 </ul>
                 <ul class="navbar-nav">
                     <!-- Language -->
-                    {{ if current_uri | segment(1) == 'documentation' }}
+                    {{ if current_uri | segment(1) == 'documentation' ||
+                    current_uri | segment(2) == 'dokumentasi' ||
+                    current_uri | segment(2) == 'la-documentation' ||
+                    current_uri | segment(2) == 'documentacao' ||
+                    current_uri | segment(2) == 'documentacion'
+                    }}
                     <li class="nav-item dropdown dropdown-language">
                         <a href="{{ url }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             {{ locale == 'default' ? 'EN' : locale }}
                         </a>
                         <ul class="dropdown-menu">
                             {{ locales self="false" }}
-                            <li><a href="{{ locale:url }}/{{ current_uri | segment(1) }}/{{ slug }}" class="dropdown-item">{{ locale:name }}</a></li>
+                                <li>
+                                    <a href="{{ permalink }}" class="dropdown-item">
+                                        {{ locale:name }}
+                                    </a>
+                                </li>
                             {{ /locales }}
                         </ul>
                     </li>
