@@ -20,46 +20,46 @@ return [
             'locale' => 'en_US',
             'url' => '/',
         ],
-        'AR' => [
+        /*'AR' => [
             'name' => 'Arabic',
             'locale' => 'ar_AE',
             'url' => env('APP_URL_AR'),
             'direction' => 'rtl',
-        ],
+        ],*/
         'ID' => [
             'name' => 'Bahasa Indonesia',
             'locale' => 'id',
             'url' => env('APP_URL_ID'),
         ],
-        'FJ' => [
+        /*'FJ' => [
             'name' => 'Fijian',
             'locale' => 'en_FJ',
             'url' => env('APP_URL_FJ'),
-        ],
+        ],*/
         'FR' => [
             'name' => 'French',
             'locale' => 'fr',
             'url' => env('APP_URL_FR'),
         ],
-        'PT_BR' => [
+        'PT' => [
             'name' => 'Portuguese (Brazil)',
-            'locale' => 'pt_BR',
-            'url' => env('APP_URL_PT_BR'),
+            'locale' => 'pt',
+            'url' => env('APP_URL_PT'),
         ],
-        'PT_MZ' => [
+        /*'PT_MZ' => [
             'name' => 'Portuguese (Mozambique)',
             'locale' => 'pt_MZ',
             'url' => env('APP_URL_PT_BR'),
-        ],
+        ],*/
         'ES' => [
             'name' => 'Spanish',
             'locale' => 'es',
             'url' => env('APP_URL_ES'),
         ],
-        'SW' => [
+       /* 'SW' => [
             'name' => 'Swahili',
             'locale' => 'sw',
             'url' => env('APP_URL_SW'),
-        ],
+        ],*/
     ],
 ];

@@ -33,6 +33,7 @@ fields:
                 instructions_position: above
                 visibility: visible
                 config: Default
+                localizable: false
         single-image:
           display: 'Single Image'
           fields:
@@ -49,6 +50,7 @@ fields:
                 icon: assets
                 listable: hidden
                 instructions: 'Recommended dimension 785x440 px or 1570x880 px'
+                localizable: false
         image-text:
           display: 'Image Text'
           fields:
@@ -66,6 +68,7 @@ fields:
                 width: 75
                 listable: hidden
                 instructions: 'Recommended dimension 785x440 px or 1570x880 px'
+                localizable: false
             -
               handle: position
               field:
@@ -78,6 +81,7 @@ fields:
                 icon: button_group
                 width: 25
                 listable: hidden
+                localizable: false
             -
               handle: text
               field:
@@ -103,6 +107,7 @@ fields:
                 instructions_position: above
                 visibility: visible
                 config: Default
+                localizable: false
         youtube:
           display: Youtube
           fields:
@@ -113,6 +118,7 @@ fields:
                 type: video
                 icon: video
                 listable: hidden
+                localizable: false
             -
               handle: caption
               field:
@@ -122,6 +128,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
         video:
           display: Video
           fields:
@@ -140,6 +147,7 @@ fields:
                 validate:
                   - 'mimes:mp4'
                   - 'mimetypes:video/mp4'
+                localizable: false
         slideshow:
           display: Slideshow
           fields:
@@ -152,6 +160,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: slideshow
               field:
@@ -163,6 +172,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
         staff:
           display: Teams
           fields:
@@ -175,6 +185,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: staff
               field:
@@ -185,6 +196,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
         featured-publication:
           display: 'Featured Publication'
           fields:
@@ -197,6 +209,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: publications
               field:
@@ -239,6 +252,7 @@ fields:
                 type: replicator
                 icon: replicator
                 listable: hidden
+                localizable: false
         faq:
           display: FAQ
           fields:
@@ -251,6 +265,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: faq
               field:
@@ -261,6 +276,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
         form:
           display: Form
           fields:
@@ -273,6 +289,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: form_type
               field:
@@ -281,6 +298,7 @@ fields:
                 type: form
                 icon: form
                 listable: hidden
+                localizable: false
         testimonial:
           display: Testimonial
           fields:
@@ -293,6 +311,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: testimony
               field:
@@ -303,6 +322,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
         image-box:
           display: 'Image Box'
           fields:
@@ -315,6 +335,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: subtitle
               field:
@@ -324,6 +345,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: image
               field:
@@ -338,6 +360,7 @@ fields:
                 width: 50
                 listable: hidden
                 instructions: 'Recommended dimension 1366x660 px or 2732x1320 px'
+                localizable: false
             -
               handle: position
               field:
@@ -350,6 +373,7 @@ fields:
                 icon: button_group
                 width: 25
                 listable: hidden
+                localizable: false
             -
               handle: mode
               field:
@@ -362,6 +386,7 @@ fields:
                 icon: button_group
                 width: 25
                 listable: hidden
+                localizable: false
         feature:
           display: Feature
           fields:
@@ -374,6 +399,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: features
               field:
@@ -418,6 +444,7 @@ fields:
                 type: replicator
                 icon: replicator
                 listable: hidden
+                localizable: false
         call-to-action:
           display: 'Call To Action'
           fields:
@@ -430,6 +457,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: lead
               field:
@@ -438,6 +466,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: button_label
               field:
@@ -448,6 +477,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: button_url
               field:
@@ -458,6 +488,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: image
               field:
@@ -470,6 +501,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                localizable: false
         partners:
           display: Partners
           fields:
@@ -482,6 +514,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: group
               field:
@@ -493,6 +526,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
       display: 'Page Builder'
       type: replicator
       icon: replicator
@@ -501,7 +535,6 @@ fields:
       instructions_position: above
       visibility: visible
       previews: true
+      localizable: true
       if:
         template: 'contains_any page-show, article-show, tutorial'
-        external: 'equals false'
-      localizable: true
