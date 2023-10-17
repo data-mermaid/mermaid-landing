@@ -99,4 +99,6 @@ $(function () {
         $('#main-header').addClass('open');
     })
 
+    $('#main-header .navbar-nav a').attr('target','_self');
+
 })
