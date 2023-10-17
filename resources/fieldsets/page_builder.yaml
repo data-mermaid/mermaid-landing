@@ -11,29 +11,53 @@ fields:
             -
               handle: content
               field:
-                init: |-
-                  {
-                  	"height": 500,
-                  	"menubar": false,
-                  	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor footnotes",
-                  		"searchreplace visualblocks code fullscreen",
-                  		"insertdatetime media table paste code help wordcount",
-                  		"code table"
-                  	],
-                  	"external_plugins": {
-                          "footnotes": "/vendor/tinymce/footnotes/plugin.js"
-                      },
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | table | removeformat | code"
-                  }
+                collapse: false
+                always_show_set_button: false
+                previews: true
+                smart_typography: false
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                  - image
+                  - table
+                  - h1
+                  - h4
+                  - h5
+                  - underline
+                  - strikethrough
+                  - code
+                  - alignleft
+                  - aligncenter
+                  - alignright
+                  - alignjustify
+                container: assets
+                save_html: false
+                inline: false
+                toolbar_mode: fixed
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                antlers: false
+                remove_empty_nodes: false
                 display: Content
-                type: tinymce_cloud
-                icon: textarea
+                type: bard
+                icon: bard
+                localizable: false
                 listable: hidden
                 instructions_position: above
                 visibility: visible
-                config: Default
-                localizable: false
         single-image:
           display: 'Single Image'
           fields:
@@ -85,29 +109,52 @@ fields:
             -
               handle: text
               field:
-                init: |-
-                  {
-                  	"height": 500,
-                  	"menubar": false,
-                  	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor footnotes",
-                  		"searchreplace visualblocks code fullscreen",
-                  		"insertdatetime media table paste code help wordcount",
-                  		"code"
-                  	],
-                  	"external_plugins": {
-                          "footnotes": "/vendor/tinymce/footnotes/plugin.js"
-                      },
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | removeformat | code"
-                  }
+                collapse: false
+                always_show_set_button: false
+                previews: true
+                smart_typography: false
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                  - image
+                  - table
+                  - h1
+                  - h4
+                  - h5
+                  - underline
+                  - strikethrough
+                  - code
+                  - alignleft
+                  - aligncenter
+                  - alignright
+                  - alignjustify
+                save_html: false
+                inline: false
+                toolbar_mode: fixed
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                antlers: false
+                remove_empty_nodes: false
                 display: Text
-                type: tinymce_cloud
-                icon: textarea
+                type: bard
+                icon: bard
+                localizable: false
                 listable: hidden
                 instructions_position: above
                 visibility: visible
-                config: Default
-                localizable: false
         youtube:
           display: Youtube
           fields:
