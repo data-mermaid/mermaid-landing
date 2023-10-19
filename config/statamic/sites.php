@@ -41,12 +41,13 @@ return [
             'locale' => 'fr',
             'url' => env('APP_URL_FR'),
         ],
+        /*
         'PT' => [
             'name' => 'Portuguese (Brazil)',
             'locale' => 'pt',
             'url' => env('APP_URL_PT'),
         ],
-        /*'PT_MZ' => [
+        'PT_MZ' => [
             'name' => 'Portuguese (Mozambique)',
             'locale' => 'pt_MZ',
             'url' => env('APP_URL_PT_BR'),
