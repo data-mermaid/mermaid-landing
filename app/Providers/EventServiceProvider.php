@@ -34,6 +34,8 @@ use Statamic\Events\TaxonomyDeleted;
 use Statamic\Events\TaxonomySaved;
 use Statamic\Events\TermDeleted;
 use Statamic\Events\TermSaved;
+use Statamic\Events\UserSaved;
+use Statamic\Events\UserDeleted;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -96,6 +98,10 @@ class EventServiceProvider extends ServiceProvider
             // Form Submit
             Event::listen(fn(SubmissionCreated $event) => $this->uploadFormSubmitted($event));
             Event::listen(fn(SubmissionDeleted $event) => $this->deleteFormSubmitted($event));
+
+            // User
+            Event::listen(fn(UserSaved $event) => $this->updateFileS3($event->user->path()));
+            Event::listen(fn(UserDeleted $event) => $this->deleteFileS3($event->user->path()));
         }
     }
 
