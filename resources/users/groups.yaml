@@ -2,11 +2,3 @@ admin:
   title: Administrators
   roles:
     - admin
-devs:
-  title: Devs
-  roles:
-    - devs
-editor:
-  title: Editor
-  roles:
-    - editor
