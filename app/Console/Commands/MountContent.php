@@ -47,6 +47,7 @@ class MountContent extends Command
             }
             $this->info('Preparing connection...');
 
+            // CONTENT
             $files = Storage::disk('s3')->allFiles('content');
             $bar = $this->output->createProgressBar(count($files));
 
@@ -60,6 +61,22 @@ class MountContent extends Command
             $bar->finish();
             $this->newLine();
 
+            // USERS
+            $files = Storage::disk('s3')->allFiles('users');
+            $bar = $this->output->createProgressBar(count($files));
+
+            $this->info('Downloading users from cloud...');
+
+            $bar->start();
+            foreach ($files as $file) {
+                Storage::disk('root')->put($file, Storage::disk('s3')->get($file));
+                $bar->advance();
+            }
+            $bar->finish();
+            $this->newLine();
+
+
+            // ASSETS
             $files = Storage::disk('s3')->allFiles('/');
             $bar = $this->output->createProgressBar(count($files));
 
@@ -67,7 +84,11 @@ class MountContent extends Command
 
             $bar->start();
             foreach ($files as $file) {
-                if (Str::contains($file, 'content/') || Str::contains($file, 'storage/forms/contact_us/')) { // Ignore content directory
+                if (
+                    Str::contains($file, 'content/')
+                    || Str::contains($file, 'users/')
+                    || Str::contains($file, 'storage/forms/contact_us/')
+                ) { // Ignore content directory
                     continue;
                 }
                 Storage::disk('root')->put('public/assets/' . $file, Storage::disk('s3')->get($file));
@@ -76,6 +97,7 @@ class MountContent extends Command
             $bar->finish();
             $this->newLine();
 
+            // SUBMISSION
             $files = Storage::disk('s3')->allFiles('storage/forms/contact_us/');
             $bar = $this->output->createProgressBar(count($files));
 
@@ -89,6 +111,7 @@ class MountContent extends Command
             $bar->finish();
             $this->newLine();
 
+            // USER ROLES AND GROUPS
             $files = Storage::disk('s3')->allFiles('resources/users/');
             $bar = $this->output->createProgressBar(count($files));
             $this->info('Downloading form user roles and groups from cloud...');
