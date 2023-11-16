@@ -84,7 +84,12 @@ class EventServiceProvider extends ServiceProvider
             Event::listen(fn(CollectionTreeDeleted $event) => $this->deleteFileS3($event->tree->path()));
 
             // GlobalSet
-            Event::listen(fn(GlobalSetSaved $event) => $this->updateFileS3($event->globals->path()));
+            Event::listen(function(GlobalSetSaved $event){
+                foreach ($event->globals->localizations() as $locale => $global) {
+                    $this->updateFileS3($global->path());
+                }
+                $this->updateFileS3($event->globals->path());
+            });
             Event::listen(fn(GlobalSetDeleted $event) => $this->deleteFileS3($event->globals->path()));
 
             // Taxonomy
