@@ -45,19 +45,19 @@
                 <ul class="navbar-nav">
                     <!-- Language -->
                     {{ if current_uri | segment(1) == '' ||
-                    current_uri | segment(2) == 'index' ||
-                    current_uri | segment(2) == 'about-mermaid' ||
-                    current_uri | segment(2) == 'contact-project' ||
-                    current_uri | segment(2) == 'download' ||
-                    current_uri | segment(2) == 'newsletter-archives' ||
-                    current_uri | segment(2) == 'open-source-stack' ||
-                    current_uri | segment(2) == 'partners-and-teams' ||
-                    current_uri | segment(2) == 'reef-stories' ||
-                    current_uri | segment(2) == 'terms-of-service'
+                    current_uri | segment(1) == 'index' ||
+                    current_uri | segment(1) == 'about-mermaid' ||
+                    current_uri | segment(1) == 'contact-project' ||
+                    current_uri | segment(1) == 'download' ||
+                    current_uri | segment(1) == 'newsletter-archives' ||
+                    current_uri | segment(1) == 'open-source-stack' ||
+                    current_uri | segment(1) == 'partners-and-teams' ||
+                    current_uri | segment(1) == 'reef-stories' ||
+                    current_uri | segment(1) == 'terms-of-service'
                     }}
                     {{ else }}
                     <li class="nav-item dropdown dropdown-language">
-                        <a href="{{ url }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             {{ locale == 'default' ? 'EN' : locale }}
                         </a>
                         <ul class="dropdown-menu">
