@@ -169,6 +169,7 @@ fields:
                 instructions_position: above
                 visibility: visible
                 placeholder: 'https://www.youtube.com/watch?v='
+                instructions: 'To make thumbnail appear on download in print/pdf, please use youtube format url https://www.youtube.com/watch?v=[YOUR_VIDEO_ID]'
             -
               handle: caption
               field:
