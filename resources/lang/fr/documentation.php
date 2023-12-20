@@ -14,5 +14,6 @@ return [
     */
 
     'download' => 'Télécharger',
+    'toc' => 'Table des matières',
 
 ];

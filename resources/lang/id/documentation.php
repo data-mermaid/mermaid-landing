@@ -14,5 +14,6 @@ return [
     */
 
     'download' => 'Unduh',
+    'toc' => 'Daftar Isi',
 
 ];
