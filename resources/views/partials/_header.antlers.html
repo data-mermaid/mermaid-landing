@@ -13,6 +13,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    {{ site:dump }}
                     {{ nav:main_nav }}
                         {{ if children }}
                             <li class="nav-item dropdown {{ if is_current || is_parent }}current{{ /if }}">
@@ -43,19 +44,6 @@
                     {{ /nav:main_nav }}
                 </ul>
                 <ul class="navbar-nav">
-                    <!-- Language -->
-                    {{ if current_uri | segment(1) == '' ||
-                    current_uri | segment(1) == 'index' ||
-                    current_uri | segment(1) == 'about-mermaid' ||
-                    current_uri | segment(1) == 'contact-project' ||
-                    current_uri | segment(1) == 'download' ||
-                    current_uri | segment(1) == 'newsletter-archives' ||
-                    current_uri | segment(1) == 'open-source-stack' ||
-                    current_uri | segment(1) == 'partners-and-teams' ||
-                    current_uri | segment(1) == 'reef-stories' ||
-                    current_uri | segment(1) == 'terms-of-service'
-                    }}
-                    {{ else }}
                     <li class="nav-item dropdown dropdown-language">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             {{ locale == 'default' ? 'EN' : locale }}
@@ -70,7 +58,6 @@
                             {{ /locales }}
                         </ul>
                     </li>
-                    {{ /if }}
                 </ul>
 
                 {{ locale:full }}
