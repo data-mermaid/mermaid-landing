@@ -2,5 +2,5 @@
 
 return [
   'follow' => 'Ikuti kami',
-  'designed' => 'Didesain & dibangun oleh Catalyze',
+  'designed' => 'Didesain & dibangun oleh',
 ];
