@@ -138,7 +138,7 @@
                     <ul class="nav nav-pills categories">
                         <li class="nav-item">
                             <a href="{{ current_uri }}" class="nav-link {{ if get:category === null }}active{{ /if }}">
-                                All Stories
+                                {{ trans:article.all }}
                             </a>
                         </li>
                         {{ taxonomy from="categories" min_count="1" }}
@@ -157,8 +157,8 @@
                 <div class="col-lg-8">
                     {{ if no_results }}
                     <div class="no-result">
-                        <h3>This content is currently unavailable</h3>
-                        <p>The link you opened may have expired</p>
+                        <h3>{{ trans:common.unavailable }}</h3>
+                        <p>{{ trans:common.expired }}</p>
                     </div>
                     {{ else }}
                     {{ posts }}

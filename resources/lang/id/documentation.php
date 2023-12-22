@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'back' => 'Kembali ke menu utama',
     'download' => 'Unduh',
     'toc' => 'Daftar Isi',
 

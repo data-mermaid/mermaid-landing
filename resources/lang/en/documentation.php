@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'back' => 'Back to main menu',
     'download' => 'Download',
     'toc' => 'Table of Contents',
 ];
