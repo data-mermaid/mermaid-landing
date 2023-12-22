@@ -16,8 +16,8 @@
                 <div class="col-lg-8">
                     {{ if no_results }}
                     <div class="no-result">
-                        <h3>This content is currently unavailable</h3>
-                        <p>The link you opened may have expired</p>
+                        <h3>{{ trans:common.unavailable }}</h3>
+                        <p>{{ trans:common.expired }}</p>
                     </div>
                     {{ else }}
                     {{ archives }}

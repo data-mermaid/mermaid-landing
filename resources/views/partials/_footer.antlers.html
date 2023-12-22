@@ -22,7 +22,7 @@
                 <div class="col-md-5 col-lg-4">
                     {{ if social_media:social_media }}
                     <div class="social-media">
-                        <div class="label">Follow us on</div>
+                        <div class="label">{{ trans:footer.follow }}</div>
                         <div class="icons">
                             {{ social_media:social_media }}
                             <div class="icon {{ type }}">
@@ -45,7 +45,7 @@
                         Copyright &copy; {{ now format="Y" }} {{ settings:site_name }}
                     </div>
                     <div class="copyright">
-                        Designed & built by <a href="https://wearecatalyze.com" target="_blank">Catalyze</a>
+                        {{ trans:footer.designed }} <a href="https://wearecatalyze.com" target="_blank">Catalyze</a>
                     </div>
                 </div>
             </div>
