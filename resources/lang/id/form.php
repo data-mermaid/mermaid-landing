@@ -2,4 +2,5 @@
 
 return [
   'sent' => 'Pesan terkirim',
+  'submit' => 'Kirim',
 ];
