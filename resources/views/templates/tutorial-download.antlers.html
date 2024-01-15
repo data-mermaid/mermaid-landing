@@ -9,6 +9,21 @@
         <div class="row">
             <div class="col">
                 <div class="narrow-content">
+
+                    <!-- Table of Contents -->
+                    <div class="heading">
+                        <h1 class="main-title">{{ trans:documentation.toc }}</h1>
+                    </div>
+                    <div class="tutorial-side-menu">
+                        {{ nav:collection:tutorials paginate="false" }}
+                        <div class="nav flex-column">
+                            <div class="nav-item">
+                                <a class="nav-link" href="#{{ id }}">{{ title }}</a>
+                            </div>
+                        </div>
+                        {{ /nav:collection:tutorials }}
+                    </div>
+
                     {{ nav:collection:tutorials paginate="false" }}
                     {{ if depth == 1 }}
                     <div class="page-break"></div>

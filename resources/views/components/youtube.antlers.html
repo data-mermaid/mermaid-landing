@@ -5,7 +5,7 @@
             <!-- Youtube and Vimeo -->
             <div class="ratio ratio-16x9">
                 {{ if current_template  == 'templates/tutorial-download'}}
-                <img class="youtube-thumbnail" src="https://i3.ytimg.com/vi/{{ url replace='https://www.youtube.com/watch?v='|'' }}/maxresdefault.jpg" alt=""/>
+                    <img class="youtube-thumbnail" src="https://i3.ytimg.com/vi/{{ url replace='https://www.youtube.com/watch?v='|'' }}/0.jpg" alt=""/>
                     <img class="youtube-play-icon" src="/images/icon/play.png" alt=""/>
                 {{ else }}
                     <iframe src="{{ url | embed_url }}"></iframe>

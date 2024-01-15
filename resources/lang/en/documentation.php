@@ -14,5 +14,5 @@ return [
     */
 
     'download' => 'Download',
-
+    'toc' => 'Table of Contents',
 ];
