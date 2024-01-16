@@ -10,7 +10,7 @@ return [
     'formality' => 'more',
     'target_lang_for_en' => 'en-US',
     'target_lang_for_id' => 'id',
-    'target_lang_for_fr' => 'fr',
-    'target_lang_for_es' => 'es',
+    // 'target_lang_for_fr' => 'fr',
+    // 'target_lang_for_es' => 'es',
 
 ];

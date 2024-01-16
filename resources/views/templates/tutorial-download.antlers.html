@@ -17,9 +17,25 @@
                     <div class="tutorial-side-menu">
                         {{ nav:collection:tutorials paginate="false" }}
                         <div class="nav flex-column">
-                            <div class="nav-item">
-                                <a class="nav-link" href="#{{ id }}">{{ title }}</a>
-                            </div>
+                            {{ if depth == 1 }}
+                                <div class="nav-item">
+                                    <a class="nav-link" href="#{{ id }}">{{ title }}</a>
+                                </div>
+                                {{ if children }}
+                                <div id="tutorial-menu-item-{{ index }}" class="collapse show">
+                                    {{ *recursive children* }}
+                                </div>
+                                {{ /if }}
+                            {{ elseif depth == 2 }}
+                                <div class="nav-item">
+                                    {{ if children }}
+                                    <span class="nav-link" href="#{{ id }}">{{ title }}</span>
+                                    {{ *recursive children* }}
+                                    {{ else }}
+                                    <a class="nav-link" href="#{{ id }}">{{ title }}</a>
+                                    {{ endif }}
+                                </div>
+                            {{ /if }}
                         </div>
                         {{ /nav:collection:tutorials }}
                     </div>
