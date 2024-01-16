@@ -31,15 +31,20 @@ return [
             'locale' => 'id',
             'url' => env('APP_URL_ID'),
         ],
-        /*'FJ' => [
-            'name' => 'Fijian',
-            'locale' => 'en_FJ',
-            'url' => env('APP_URL_FJ'),
-        ],
         'FR' => [
             'name' => 'French',
             'locale' => 'fr',
             'url' => env('APP_URL_FR'),
+        ],
+        'ES' => [
+            'name' => 'Spanish',
+            'locale' => 'es',
+            'url' => env('APP_URL_ES'),
+        ],
+        /*'FJ' => [
+            'name' => 'Fijian',
+            'locale' => 'en_FJ',
+            'url' => env('APP_URL_FJ'),
         ],
         'PT' => [
             'name' => 'Portuguese (Brazil)',
@@ -50,11 +55,6 @@ return [
             'name' => 'Portuguese (Mozambique)',
             'locale' => 'pt_MZ',
             'url' => env('APP_URL_PT_BR'),
-        ],
-        'ES' => [
-            'name' => 'Spanish',
-            'locale' => 'es',
-            'url' => env('APP_URL_ES'),
         ],
         'SW' => [
             'name' => 'Swahili',

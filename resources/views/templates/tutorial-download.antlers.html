@@ -1,9 +1,20 @@
 <script>
-    window.onload = function(){
+    CallPrint();
+    function CallPrint() {
         window.print();
         setTimeout(window.close, 500);
     }
 </script>
+<style>
+    .page-break {
+        display: block;
+        page-break-before: always;
+        break-after: always;
+    }
+    .nav-item-print-sub {
+        padding-left:2rem;
+    }
+</style>
 <div class="page-tutorial page-tutorial-download">
     <div class="container">
         <div class="row">
@@ -27,7 +38,7 @@
                                 </div>
                                 {{ /if }}
                             {{ elseif depth == 2 }}
-                                <div class="nav-item">
+                                <div class="nav-item nav-item-print-sub">
                                     {{ if children }}
                                     <span class="nav-link" href="#{{ id }}">{{ title }}</span>
                                     {{ *recursive children* }}
@@ -54,13 +65,13 @@
                             <h3 class="main-title">{{ title }}</h3>
                             {{ endif }}
                         </div>
-                        
+
                         {{ if intro }}
                         <div class="intro-large">
                             {{ intro }}
                         </div>
                         {{ /if }}
-                        
+
                         <div class="content">
                             {{ page_components }}
                             {{ partial src="components/{type}" }}
