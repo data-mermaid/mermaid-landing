@@ -1,14 +1,56 @@
 <script>
-    window.onload = function(){
+    CallPrint();
+    function CallPrint() {
         window.print();
         setTimeout(window.close, 500);
     }
 </script>
+<style>
+    .page-break {
+        display: block;
+        page-break-before: always;
+        break-after: always;
+    }
+    .nav-item-print-sub {
+        padding-left:2rem;
+    }
+</style>
 <div class="page-tutorial page-tutorial-download">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="narrow-content">
+
+                    <!-- Table of Contents -->
+                    <div class="heading">
+                        <h1 class="main-title">{{ trans:documentation.toc }}</h1>
+                    </div>
+                    <div class="tutorial-side-menu">
+                        {{ nav:collection:tutorials paginate="false" }}
+                        <div class="nav flex-column">
+                            {{ if depth == 1 }}
+                                <div class="nav-item">
+                                    <a class="nav-link" href="#{{ id }}">{{ title }}</a>
+                                </div>
+                                {{ if children }}
+                                <div id="tutorial-menu-item-{{ index }}" class="collapse show">
+                                    {{ *recursive children* }}
+                                </div>
+                                {{ /if }}
+                            {{ elseif depth == 2 }}
+                                <div class="nav-item nav-item-print-sub">
+                                    {{ if children }}
+                                    <span class="nav-link" href="#{{ id }}">{{ title }}</span>
+                                    {{ *recursive children* }}
+                                    {{ else }}
+                                    <a class="nav-link" href="#{{ id }}">{{ title }}</a>
+                                    {{ endif }}
+                                </div>
+                            {{ /if }}
+                        </div>
+                        {{ /nav:collection:tutorials }}
+                    </div>
+
                     {{ nav:collection:tutorials paginate="false" }}
                     {{ if depth == 1 }}
                     <div class="page-break"></div>
@@ -23,13 +65,13 @@
                             <h3 class="main-title">{{ title }}</h3>
                             {{ endif }}
                         </div>
-                        
+
                         {{ if intro }}
                         <div class="intro-large">
                             {{ intro }}
                         </div>
                         {{ /if }}
-                        
+
                         <div class="content">
                             {{ page_components }}
                             {{ partial src="components/{type}" }}

@@ -14,5 +14,6 @@ return [
     */
 
     'download' => 'Descargar',
+    'toc' => 'Tabla de Contenidos',
 
 ];
