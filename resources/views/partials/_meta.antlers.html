@@ -23,7 +23,13 @@
 <meta name="title" content="{{ title }} | {{ settings:site_name }}" />
 <meta property="og:title" content="{{ title }} | {{ settings:site_name }}" />
 <meta property="twitter:title" content="{{ title }} | {{ settings:site_name }}" />
-<title>{{ yield:page-title ?? title | ucfirst }} | {{ settings:site_name }}</title>
+<title>
+    {{ if yield:page-title || title }}
+        {{ title | ucfirst }} | {{ settings:site_name }}
+    {{ else }}
+        {{ settings:site_name }}
+    {{ /if }}
+</title>
 {{ endif }}
 
 <!-- description -->

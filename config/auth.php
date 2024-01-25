@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'statamic' => [
+            'driver' => 'session',
+            'provider' => 'statamic',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -66,14 +71,14 @@ return [
     */
 
     'providers' => [
-//        'users' => [
-//            'driver' => 'statamic',
-//        ],
+        'users' => [
+            'driver' => 'statamic',
+        ],
 
-         'users' => [
+         /*'users' => [
              'driver' => 'eloquent',
              'model' => App\Models\User::class,
-         ],
+         ],*/
 
         // 'users' => [
         //     'driver' => 'database',

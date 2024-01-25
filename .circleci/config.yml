@@ -60,6 +60,7 @@ workflows:
                   - public/fonts
                   - public/mix-manifest.json
           npm-run: production
+          version: '16.13'
           filters:
             branches:
               only:

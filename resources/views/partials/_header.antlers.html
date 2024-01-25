@@ -40,9 +40,28 @@
                                 </a>
                             </li>
                         {{ /if }}
-
                     {{ /nav:main_nav }}
                 </ul>
+                {{#
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown dropdown-language">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            {{ locale == 'default' ? 'EN' : locale }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            {{ locales self="false" }}
+                                <li>
+                                    <a href="{{ permalink }}" class="dropdown-item">
+                                        {{ locale:name }}
+                                    </a>
+                                </li>
+                            {{ /locales }}
+                        </ul>
+                    </li>
+                </ul>
+
+                {{ locale:full }}
+                #}}
             </div>
         </div>
     </nav>

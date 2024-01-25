@@ -14,6 +14,7 @@ sections:
           listable: hidden
           input_type: text
           antlers: false
+          localizable: true
       -
         handle: answer
         field:
@@ -36,6 +37,18 @@ sections:
           type: tinymce_cloud
           icon: textarea
           listable: hidden
+          instructions_position: above
+          visibility: visible
+          config: Default
+          localizable: true
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -43,7 +56,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required

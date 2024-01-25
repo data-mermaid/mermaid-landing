@@ -186,6 +186,12 @@
             }
         }
 
+        .dropdown-language {
+            .nav-link {
+                background-color: $color-blue-text !important;
+            }
+        }
+
         .navbar-toggler {
             border: none;
             background: transparent !important;
@@ -261,6 +267,7 @@
         }
 
     }
+
 
     .navbar-brand {
         display: flex;

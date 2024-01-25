@@ -10,6 +10,7 @@ sections:
           required: true
           validate:
             - required
+          localizable: true
       -
         handle: hero_image
         field:
@@ -22,6 +23,7 @@ sections:
           icon: assets
           listable: hidden
           instructions: 'Recommended dimension 992x515 px or 1984x1030 px'
+          localizable: false
       -
         handle: intro
         field:
@@ -30,6 +32,7 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          localizable: true
       -
         handle: external
         field:
@@ -37,6 +40,7 @@ sections:
           type: toggle
           icon: toggle
           listable: hidden
+          localizable: false
       -
         handle: external_link
         field:
@@ -49,6 +53,7 @@ sections:
           listable: hidden
           if:
             external: 'equals true'
+          localizable: false
       -
         handle: external_resource
         field:
@@ -61,6 +66,7 @@ sections:
           width: 50
           if:
             external: 'equals true'
+          localizable: false
       -
         import: page_builder
       -
@@ -74,6 +80,15 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          localizable: false
+      -
+        handle: one_click_content_translation
+        field:
+          display: 'One-click Content Translation'
+          type: one_click_content_translation_inputs
+          listable: hidden
+          visibility: hidden
+          localizable: false
   sidebar:
     display: Sidebar
     fields:
@@ -81,7 +96,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required
@@ -97,6 +111,7 @@ sections:
           listable: true
           unless:
             external: 'equals true'
+          localizable: false
       -
         handle: publish_date
         field:
@@ -112,6 +127,7 @@ sections:
           type: date
           icon: date
           listable: hidden
+          localizable: false
       -
         handle: categories
         field:
@@ -122,6 +138,7 @@ sections:
           mode: select
           listable: hidden
           max_items: 1
+          localizable: false
       -
         handle: keywords
         field:
@@ -130,6 +147,7 @@ sections:
           icon: tags
           instructions: 'Press enter'
           listable: hidden
+          localizable: false
       -
         handle: featured
         field:
@@ -137,6 +155,7 @@ sections:
           type: toggle
           icon: toggle
           listable: hidden
+          localizable: false
       -
         handle: template
         field:
@@ -146,6 +165,7 @@ sections:
           icon: template
           listable: hidden
           default: templates/article-show
+          localizable: false
   meta_data:
     display: 'Meta Data'
     fields:
@@ -157,6 +177,7 @@ sections:
           type: textarea
           icon: textarea
           listable: hidden
+          localizable: true
       -
         handle: meta_title
         field:
@@ -166,6 +187,7 @@ sections:
           type: text
           icon: text
           listable: hidden
+          localizable: true
       -
         handle: meta_image
         field:
@@ -177,3 +199,4 @@ sections:
           type: assets
           icon: assets
           listable: hidden
+          localizable: false

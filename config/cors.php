@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
+    'paths' => ['api/*','cp/one-click-content-translation'],
 
     'allowed_methods' => ['*'],
 

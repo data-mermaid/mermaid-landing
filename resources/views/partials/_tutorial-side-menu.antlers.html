@@ -2,7 +2,7 @@
     <div class="d-lg-none tutorial-side-menu-header">
         <div>
             <button class="btn back-to-menu-button">
-                Back to main menu
+                {{ trans:documentation.back }}
             </button>
         </div>
         <div class="close-button-container">
@@ -13,7 +13,7 @@
             </button>
         </div>
     </div>
-    
+
     <div class="tutorial-side-menu">
         {{ nav:collection:tutorials paginate="false" }}
         <div class="nav flex-column">
@@ -30,13 +30,13 @@
                         {{ endif }}
                 >{{ title }}</a>
             </div>
-            
+
             {{ if children }}
             <div id="tutorial-menu-item-{{ index }}" class="collapse {{ if is_current || is_parent }} show {{ /if }}">
                 {{ *recursive children* }}
             </div>
             {{ /if }}
-            
+
             {{ elseif depth == 2 }}
             <div class="nav-item">
                 {{ if children }}
@@ -46,7 +46,7 @@
                 <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
                 {{ endif }}
             </div>
-            
+
             {{ elseif depth == 3 }}
             <div class="nav-item">
                 <a class="nav-link {{ if is_current }} current {{ /if }}" href="{{ url }}">{{ title }}</a>
@@ -55,7 +55,13 @@
         </div>
         {{ /nav:collection:tutorials }}
         <div class="download-btn-container">
-            <a href="/{{ segment_1 }}/download" target="_blank" class="btn btn-primary btn-small">Download</a>
+            {{ nav:collection:pages }}
+                {{ children }}
+                    <a href="{{ permalink }}" target="_blank" class="btn btn-primary btn-small">
+                        {{ trans:documentation.download }}
+                    </a>
+                {{ /children }}
+            {{ /nav:collection:pages }}
         </div>
     </div>
 </div>

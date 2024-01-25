@@ -11,25 +11,53 @@ fields:
             -
               handle: content
               field:
-                init: |-
-                  {
-                  	"height": 500,
-                  	"menubar": false,
-                  	"plugins": [
-                  		"advlist autolink lists link image charmap print preview anchor footnotes",
-                  		"searchreplace visualblocks code fullscreen",
-                  		"insertdatetime media table paste code help wordcount",
-                  		"code table"
-                  	],
-                  	"external_plugins": {
-                          "footnotes": "/vendor/tinymce/footnotes/plugin.js"
-                      },
-                  	"toolbar": "undo redo | formatselect | bold italic backcolor | link blockquote | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | footnotes | table | removeformat | code"
-                  }
+                collapse: false
+                always_show_set_button: false
+                previews: true
+                smart_typography: false
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                  - image
+                  - table
+                  - h1
+                  - h4
+                  - h5
+                  - underline
+                  - strikethrough
+                  - code
+                  - alignleft
+                  - aligncenter
+                  - alignright
+                  - alignjustify
+                container: assets
+                save_html: false
+                inline: false
+                toolbar_mode: fixed
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                antlers: false
+                remove_empty_nodes: false
                 display: Content
-                type: tinymce_cloud
-                icon: textarea
+                type: bard
+                icon: bard
+                localizable: false
                 listable: hidden
+                instructions_position: above
+                visibility: visible
         single-image:
           display: 'Single Image'
           fields:
@@ -46,6 +74,87 @@ fields:
                 icon: assets
                 listable: hidden
                 instructions: 'Recommended dimension 785x440 px or 1570x880 px'
+                localizable: false
+        image-text:
+          display: 'Image Text'
+          fields:
+            -
+              handle: image
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                width: 75
+                listable: hidden
+                instructions: 'Recommended dimension 785x440 px or 1570x880 px'
+                localizable: false
+            -
+              handle: position
+              field:
+                options:
+                  left: Left
+                  right: Right
+                display: Position
+                default: left
+                type: button_group
+                icon: button_group
+                width: 25
+                listable: hidden
+                localizable: false
+            -
+              handle: text
+              field:
+                collapse: false
+                always_show_set_button: false
+                previews: true
+                smart_typography: false
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                  - image
+                  - table
+                  - h1
+                  - h4
+                  - h5
+                  - underline
+                  - strikethrough
+                  - code
+                  - alignleft
+                  - aligncenter
+                  - alignright
+                  - alignjustify
+                save_html: false
+                inline: false
+                toolbar_mode: fixed
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                antlers: false
+                remove_empty_nodes: false
+                display: Text
+                type: bard
+                icon: bard
+                localizable: false
+                listable: hidden
+                instructions_position: above
+                visibility: visible
         youtube:
           display: Youtube
           fields:
@@ -56,6 +165,11 @@ fields:
                 type: video
                 icon: video
                 listable: hidden
+                localizable: false
+                instructions_position: above
+                visibility: visible
+                placeholder: 'https://www.youtube.com/watch?v='
+                instructions: 'To make thumbnail appear on download in print/pdf, please use youtube format url https://www.youtube.com/watch?v=[YOUR_VIDEO_ID]'
             -
               handle: caption
               field:
@@ -65,6 +179,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
         video:
           display: Video
           fields:
@@ -83,6 +198,7 @@ fields:
                 validate:
                   - 'mimes:mp4'
                   - 'mimetypes:video/mp4'
+                localizable: false
         slideshow:
           display: Slideshow
           fields:
@@ -95,19 +211,19 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: slideshow
               field:
                 max_items: 1
-                mode: select
+                mode: default
                 collections:
                   - slideshows
                 display: Slideshow
                 type: entries
                 icon: entries
                 listable: hidden
-                instructions_position: above
-                create: true
+                localizable: false
         staff:
           display: Teams
           fields:
@@ -120,6 +236,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: staff
               field:
@@ -130,6 +247,63 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
+        featured-publication:
+          display: 'Featured Publication'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+                localizable: false
+            -
+              handle: publications
+              field:
+                collapse: accordion
+                sets:
+                  publication:
+                    display: Publication
+                    fields:
+                      -
+                        handle: title
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Title
+                          type: text
+                          icon: text
+                          listable: hidden
+                      -
+                        handle: url
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Url
+                          type: text
+                          icon: text
+                          listable: hidden
+                      -
+                        handle: image
+                        field:
+                          mode: grid
+                          container: assets
+                          restrict: false
+                          allow_uploads: true
+                          max_files: 1
+                          display: Image
+                          type: assets
+                          icon: assets
+                          listable: hidden
+                display: Publications
+                type: replicator
+                icon: replicator
+                listable: hidden
+                localizable: false
         faq:
           display: FAQ
           fields:
@@ -142,6 +316,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: faq
               field:
@@ -152,6 +327,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
         form:
           display: Form
           fields:
@@ -164,6 +340,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: form_type
               field:
@@ -172,6 +349,7 @@ fields:
                 type: form
                 icon: form
                 listable: hidden
+                localizable: false
         testimonial:
           display: Testimonial
           fields:
@@ -184,6 +362,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: testimony
               field:
@@ -194,6 +373,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
         image-box:
           display: 'Image Box'
           fields:
@@ -206,6 +386,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: subtitle
               field:
@@ -215,6 +396,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: image
               field:
@@ -228,9 +410,8 @@ fields:
                 icon: assets
                 width: 50
                 listable: hidden
-                instructions: 'Recommended dimension 1366x660 px or 1920x928 px'
-                instructions_position: above
-                show_filename: true
+                instructions: 'Recommended dimension 1366x660 px or 2732x1320 px'
+                localizable: false
             -
               handle: position
               field:
@@ -243,6 +424,7 @@ fields:
                 icon: button_group
                 width: 25
                 listable: hidden
+                localizable: false
             -
               handle: mode
               field:
@@ -255,6 +437,7 @@ fields:
                 icon: button_group
                 width: 25
                 listable: hidden
+                localizable: false
         feature:
           display: Feature
           fields:
@@ -267,6 +450,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: features
               field:
@@ -311,6 +495,7 @@ fields:
                 type: replicator
                 icon: replicator
                 listable: hidden
+                localizable: false
         call-to-action:
           display: 'Call To Action'
           fields:
@@ -323,6 +508,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: lead
               field:
@@ -331,6 +517,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: button_label
               field:
@@ -341,6 +528,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: button_url
               field:
@@ -351,6 +539,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: image
               field:
@@ -363,6 +552,7 @@ fields:
                 type: assets
                 icon: assets
                 listable: hidden
+                localizable: false
         partners:
           display: Partners
           fields:
@@ -375,6 +565,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: group
               field:
@@ -386,11 +577,15 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
       display: 'Page Builder'
       type: replicator
       icon: replicator
       listable: false
       instructions: 'Build your page by using various predefined content models.'
       instructions_position: above
+      visibility: visible
+      previews: true
+      localizable: true
       if:
         template: 'contains_any page-show, article-show, tutorial'

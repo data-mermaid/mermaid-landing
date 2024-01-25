@@ -24,6 +24,7 @@ fields:
                 instructions: 'Recommended dimension 1366x760 px or 1920x1068 px'
                 instructions_position: above
                 show_filename: true
+                localizable: false
             -
               handle: show_icon
               field:
@@ -32,6 +33,7 @@ fields:
                 icon: toggle
                 width: 33
                 listable: hidden
+                localizable: false
             -
               handle: title
               field:
@@ -41,6 +43,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: subtitle
               field:
@@ -50,6 +53,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
         introduction:
           display: Introduction
           fields:
@@ -61,6 +65,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: secondary_text
               field:
@@ -69,6 +74,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
         mermaid-help-answer:
           display: 'Mermaid Help Answer'
           fields:
@@ -79,6 +85,7 @@ fields:
                 type: section
                 icon: section
                 listable: hidden
+                localizable: false
             -
               handle: help_heading
               field:
@@ -88,6 +95,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: lead
               field:
@@ -96,6 +104,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: image
               field:
@@ -111,6 +120,7 @@ fields:
                 instructions: 'Recommended dimension 1366x966 px or 1920x1349 px'
                 instructions_position: above
                 show_filename: true
+                localizable: false
             -
               handle: column_section
               field:
@@ -118,6 +128,7 @@ fields:
                 type: section
                 icon: section
                 listable: hidden
+                localizable: false
             -
               handle: column_heading
               field:
@@ -127,6 +138,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: column
               field:
@@ -169,6 +181,7 @@ fields:
                 type: grid
                 icon: grid
                 listable: hidden
+                localizable: false
         mermaid-tools:
           display: 'Mermaid Tools'
           fields:
@@ -180,6 +193,7 @@ fields:
                 icon: section
                 listable: hidden
                 instructions: 'Will appear on left side'
+                localizable: false
             -
               handle: collect_heading
               field:
@@ -188,6 +202,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: collect_lead
               field:
@@ -196,6 +211,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: collect_button_label
               field:
@@ -206,6 +222,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: collect_button_url
               field:
@@ -216,6 +233,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: collect_image
               field:
@@ -229,6 +247,7 @@ fields:
                 icon: assets
                 listable: hidden
                 instructions: 'Recommended dimension 540x440 px or 1080x880 px'
+                localizable: false
             -
               handle: dashboard_section
               field:
@@ -237,6 +256,7 @@ fields:
                 icon: section
                 listable: hidden
                 instructions: 'Will appear on right side'
+                localizable: false
             -
               handle: dashboard_heading
               field:
@@ -245,6 +265,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: dashboard_lead
               field:
@@ -253,6 +274,7 @@ fields:
                 type: textarea
                 icon: textarea
                 listable: hidden
+                localizable: false
             -
               handle: dashboard_button_label
               field:
@@ -263,6 +285,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: dashboard_button_url
               field:
@@ -273,6 +296,7 @@ fields:
                 icon: text
                 width: 50
                 listable: hidden
+                localizable: false
             -
               handle: dashboard_image
               field:
@@ -286,6 +310,7 @@ fields:
                 icon: assets
                 listable: hidden
                 instructions: 'Recommended dimension 540x440 px or 1080x880 px'
+                localizable: false
         mermaid-by-number:
           display: 'Mermaid By Number'
           fields:
@@ -298,6 +323,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: numbers
               field:
@@ -330,6 +356,7 @@ fields:
                 type: grid
                 icon: grid
                 listable: hidden
+                localizable: false
         reef-stories:
           display: 'Reef Stories'
           fields:
@@ -341,6 +368,7 @@ fields:
                 icon: section
                 instructions: 'Automatically populate articles'
                 listable: hidden
+                localizable: false
             -
               handle: url
               field:
@@ -350,6 +378,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: newsletter_component
               field:
@@ -358,6 +387,7 @@ fields:
                 icon: section
                 instructions: 'Will Displaying the newsletter component'
                 listable: hidden
+                localizable: false
         testimonials:
           display: Testimonials
           fields:
@@ -371,6 +401,7 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
         mermaid-users:
           display: 'Mermaid Users'
           fields:
@@ -383,6 +414,7 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
+                localizable: false
             -
               handle: group
               field:
@@ -394,11 +426,15 @@ fields:
                 type: entries
                 icon: entries
                 listable: hidden
+                localizable: false
       display: 'Homepage Builder'
       type: replicator
       icon: replicator
       listable: false
       instructions: 'Build your homepage by using various predefined content models.'
       instructions_position: above
+      localizable: true
+      visibility: visible
+      previews: true
       if_any:
         template: 'equals templates/home'
