@@ -25,7 +25,7 @@ return [
             'locale' => 'ar_AE',
             'url' => env('APP_URL_AR'),
             'direction' => 'rtl',
-        ],*/
+        ],
         'ID' => [
             'name' => 'Bahasa Indonesia',
             'locale' => 'id',
@@ -41,7 +41,7 @@ return [
             'locale' => 'es',
             'url' => env('APP_URL_ES'),
         ],
-        /*'FJ' => [
+        'FJ' => [
             'name' => 'Fijian',
             'locale' => 'en_FJ',
             'url' => env('APP_URL_FJ'),
