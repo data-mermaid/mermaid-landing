@@ -2,7 +2,7 @@
     CallPrint();
     function CallPrint() {
         window.print();
-        setTimeout(window.close, 500);
+        //setTimeout(window.close, 500);
     }
 </script>
 <style>
@@ -20,7 +20,6 @@
         <div class="row">
             <div class="col">
                 <div class="narrow-content">
-
                     <!-- Table of Contents -->
                     <div class="heading">
                         <h1 class="main-title">{{ trans:documentation.toc }}</h1>
@@ -30,7 +29,7 @@
                         <div class="nav flex-column">
                             {{ if depth == 1 }}
                                 <div class="nav-item">
-                                    <a class="nav-link" href="#{{ id }}">{{ title }}</a>
+                                    <a class="nav-link" href="#{{ id }}" target="_self">{{ title }}</a>
                                 </div>
                                 {{ if children }}
                                 <div id="tutorial-menu-item-{{ index }}" class="collapse show">
@@ -40,10 +39,10 @@
                             {{ elseif depth == 2 }}
                                 <div class="nav-item nav-item-print-sub">
                                     {{ if children }}
-                                    <span class="nav-link" href="#{{ id }}">{{ title }}</span>
+                                    <span class="nav-link" href="#{{ id }}" target="_self">{{ title }}</span>
                                     {{ *recursive children* }}
                                     {{ else }}
-                                    <a class="nav-link" href="#{{ id }}">{{ title }}</a>
+                                    <a class="nav-link" href="#{{ id }}" target="_self">{{ title }}</a>
                                     {{ endif }}
                                 </div>
                             {{ /if }}

@@ -83,6 +83,11 @@
         .page-break {
             display: block;
             page-break-before: always;
+            break-after: always;
+        }
+
+        .nav-item-print-sub {
+            padding-left:2rem;
         }
 
         .chapter {
