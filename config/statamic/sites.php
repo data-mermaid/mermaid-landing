@@ -20,16 +20,16 @@ return [
             'locale' => 'en_US',
             'url' => env('APP_URL'),
         ],
+        'ID' => [
+            'name' => 'Bahasa Indonesia',
+            'locale' => 'id',
+            'url' => env('APP_URL_ID'),
+        ],
         /*'AR' => [
             'name' => 'Arabic',
             'locale' => 'ar_AE',
             'url' => env('APP_URL_AR'),
             'direction' => 'rtl',
-        ],
-        'ID' => [
-            'name' => 'Bahasa Indonesia',
-            'locale' => 'id',
-            'url' => env('APP_URL_ID'),
         ],
         'FR' => [
             'name' => 'French',
