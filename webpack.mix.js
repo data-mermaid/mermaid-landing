@@ -1,4 +1,6 @@
+require('dotenv').config();
 const mix = require('laravel-mix');
+let webpack = require('webpack');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -9,6 +11,20 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+
+ let dotenvplugin = new webpack.DefinePlugin({
+    'process.env': {
+        MIX_RECAPTCHA_SITE_KEY: JSON.stringify(process.env.MIX_RECAPTCHA_SITE_KEY || '6LeBdr8hAAAAAGgzC25qIsk6c5M4FfNfyZdB-i-I'),
+        MIX_CONTACT_API_URL: JSON.stringify(process.env.MIX_CONTACT_API_URL || 'https://dev-api.datamermaid.org/v1/contactmermaid/'),
+        MIX_CONTACT_PROJECT_API_URL: JSON.stringify(process.env.MIX_CONTACT_PROJECT_API_URL || 'https://dev-api.datamermaid.org/v1/contactprojectadmins/'),
+    }
+});
+
+mix.webpackConfig({
+    plugins: [
+        dotenvplugin,
+    ]
+});
 
 mix.autoload({
    'jquery': ['$', 'window.jQuery', "jQuery", "window.$", "jquery", "window.jquery"],
