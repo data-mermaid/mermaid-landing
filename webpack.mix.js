@@ -16,6 +16,7 @@ mix.autoload({
 });
 
 mix.js('resources/js/site.js', 'public/js')
+    .js('resources/js/recaptcha.js', 'public/js')
     .sourceMaps();
 
 /* tailwind compiler*/
